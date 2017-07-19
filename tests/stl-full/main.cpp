@@ -17,7 +17,6 @@
 #include <condition_variable>
 #include <csetjmp>
 #include <csignal>
-#include <cstdalign>
 #include <cstdarg>
 #include <cstdbool>
 #include <cstddef>
