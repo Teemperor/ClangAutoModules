@@ -19,7 +19,7 @@ function run_test {
   
   cd "$build_dir"
   test_name=`basename "$1"`
-  echo "Running test: $test_name"
+  echo "- Running test: $test_name"
   
   # Copy our test directory to the tmp directory
   rm -rf "$test_name"
@@ -47,17 +47,19 @@ function run_test {
     CXX_FLAGS="$CXX_FLAGS -Rmodule-build"
   fi
 
-  cmake -DCMAKE_C_FLAGS="$FLAGS"  -DCMAKE_CXX_FLAGS="$CXX_FLAGS" ..
-  make VERBOSE=1
+  cmake -DCMAKE_C_FLAGS="$FLAGS"  -DCMAKE_CXX_FLAGS="$CXX_FLAGS" .. > log.txt 2>&1 
+  make VERBOSE=1 >> log.txt 2>&1 
   set +e
   
   if [ "$skip_checks" == "NO" ] ; then
+    had_fail="FALSE"
     while read p; do
       # Verify that we used the right modules
       find ./pcms/ -name "$p-*\\.pcm" | grep -q .
 
       if [ $? -ne 0 ]; then
         errors+=("$test_name -> can't find $p")
+        had_fail="TRUE"
         echo "ERROR: $test_name -> can't find PCM for $p"
         echo "PWD: $(pwd)"
         cd ..
@@ -67,9 +69,12 @@ function run_test {
         echo "YAML:"
         cat ClangModules_*.yaml
       else
-        echo "Found PCM for $p: $(find . -name "$p-*\\.pcm")"
+        echo "-- Found PCM for $p: $(find . -name "$p-*\\.pcm")"
       fi
     done < ../NEEDS_PCMS
+    if [ "$had_fail" == "TRUE" ] ; then
+      cat log.txt
+    fi
   fi
 }
 
