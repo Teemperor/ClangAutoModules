@@ -3,6 +3,7 @@
 declare -a errors
 
 function run_test {
+  set -e
   test_dir="$1"
   build_dir="$2"
   source_dir="$3"
@@ -23,6 +24,8 @@ function run_test {
   cp    "$source_dir"/ClangModules.cmake .
   cp -r "$source_dir"/files .
   
+  set +e
+
   # Build the project
   cd ..
   mkdir build
@@ -37,7 +40,11 @@ function run_test {
     if [ $? -ne 0 ]; then
       errors+=("$test_name -> can't find $p")
       echo "ERROR: $test_name -> can't find PCM for $p"
+      echo "PWD: $(pwd)"
+      cd ..
+      echo "TREE:"
       tree
+      cd build
     else
       echo "Found PCM for $p: $(find . -name "$p-*\\.pcm")"
     fi
