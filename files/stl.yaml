@@ -1,0 +1,12 @@
+{
+  'version': 0,
+  'roots': [
+    { 'name': '@PATH_PLACEHOLDER@', 'type': 'directory',
+      'contents': [
+        { 'name': 'module.modulemap', 'type': 'file',
+          'external-contents': '@MODULEMAP_PLACEHOLDER@'
+        }
+      ]
+    }
+  ]
+}
