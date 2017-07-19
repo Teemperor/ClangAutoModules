@@ -1,5 +1,10 @@
 language: cpp
 
+addons:
+  apt:
+    packages:
+    - tree
+
 compiler:
   - clang
   - gcc

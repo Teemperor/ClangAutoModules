@@ -37,6 +37,7 @@ function run_test {
     if [ $? -ne 0 ]; then
       errors+=("$test_name -> can't find $p")
       echo "ERROR: $test_name -> can't find PCM for $p"
+      tree
     else
       echo "Found PCM for $p: $(find . -name "$p-*\\.pcm")"
     fi
