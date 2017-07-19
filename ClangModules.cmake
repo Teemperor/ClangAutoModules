@@ -99,6 +99,6 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" ST
   
   set(ENV{LANG} ${LANG_BAK})
   
-  add_compile_options(-fmodules -fimplicit-module-maps)
+  add_compile_options(-fmodules -fcxx-modules)
   add_compile_options(-fmodules-cache-path=${CMAKE_BINARY_DIR}/pcms)
 endif()
