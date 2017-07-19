@@ -3,16 +3,11 @@ language: cpp
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
-      - tree
+      - llvm-toolchain-trusty-4.0
     packages:
       - libgnome-keyring-dev
-      - clang
-
-addons:
-  apt:
-    packages:
-    - tree
+      - clang-4.0
+      - tree
 
 compiler:
   - clang
