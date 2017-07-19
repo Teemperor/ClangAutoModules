@@ -63,50 +63,6 @@ matrix:
         - TEST_CHECK=NO
 
     - os: linux
-      compiler: clang
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.5']
-          packages: ['clang-3.5']
-      env:
-        - CXX_COMPILER=clang++-3.5
-        - COMPILER=clang-3.5
-        - TEST_CHECK=NO
-
-    - os: linux
-      compiler: clang
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.6']
-          packages: ['clang-3.6']
-      env:
-        - CXX_COMPILER=clang++-3.6
-        - COMPILER=clang-3.6
-        - TEST_CHECK=NO
-
-    - os: linux
-      compiler: clang
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.7']
-          packages: ['clang-3.7']
-      env:
-        - CXX_COMPILER=clang++-3.7
-        - COMPILER=clang-3.7
-        - TEST_CHECK=NO
-
-    - os: linux
-      compiler: clang
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.8']
-          packages: ['clang-3.8']
-      env:
-        - CXX_COMPILER=clang++-3.8
-        - COMPILER=clang-3.8
-        - TEST_CHECK=NO
-
-    - os: linux
       dist: trusty
       compiler: clang
       addons:
@@ -149,28 +105,6 @@ matrix:
       env:
         - CXX_COMPILER=clang++
         - COMPILER=clang
-
-    - os: linux
-      compiler: gcc
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-6']
-      env:
-        - CXX_COMPILER=g++-6
-        - COMPILER=gcc
-        - TEST_CHECK=NO
-
-    - os: linux
-      dist: trusty
-      compiler: clang
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-4.0']
-          packages: ['clang-4.0', 'clang-tidy-4.0']
-      env:
-        - CXX_COMPILER=clang++-4.0
-        - COMPILER=clang-4.0
         
         
 addons:
