@@ -105,8 +105,15 @@ matrix:
       env:
         - CXX_COMPILER=clang++
         - COMPILER=clang
-        
-        
+
+    - os: osx
+      osx_image: xcode9
+      compiler: clang
+      env:
+        - CXX_COMPILER=clang++
+        - COMPILER=clang
+
+
 addons:
   apt:
     packages:
