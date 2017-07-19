@@ -28,7 +28,7 @@ function run_test {
   mkdir build
   cd build
   cmake ..
-  make
+  make VERBOSE=1
   
   while read p; do
     # Verify that we used the right modules
