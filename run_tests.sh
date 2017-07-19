@@ -1,5 +1,14 @@
 #!/bin/bash
 
+skip_checks="NO"
+export CC="$1"
+export CXX="$2"
+
+if [ "$3" == "NO" ]; then
+  echo "Disabling PCM checks. Only testing for compilation..."
+  skip_checks="YES"
+fi
+
 declare -a errors
 
 function run_test {
@@ -10,7 +19,7 @@ function run_test {
   
   cd "$build_dir"
   test_name=`basename "$1"`
-  echo "Running: $test_name"
+  echo "Running test: $test_name"
   
   # Copy our test directory to the tmp directory
   rm -rf "$test_name"
@@ -24,7 +33,6 @@ function run_test {
   cp    "$source_dir"/ClangModules.cmake .
   cp -r "$source_dir"/files .
   
-  set +e
 
   # Build the project
   cd ..
@@ -32,23 +40,26 @@ function run_test {
   cd build
   cmake ..
   make VERBOSE=1
+  set +e
   
-  while read p; do
-    # Verify that we used the right modules
-    find ./pcms/ -name "$p-*\\.pcm" | grep -q .
+  if [ "$skip_checks" == "NO" ] ; then
+    while read p; do
+      # Verify that we used the right modules
+      find ./pcms/ -name "$p-*\\.pcm" | grep -q .
 
-    if [ $? -ne 0 ]; then
-      errors+=("$test_name -> can't find $p")
-      echo "ERROR: $test_name -> can't find PCM for $p"
-      echo "PWD: $(pwd)"
-      cd ..
-      echo "TREE:"
-      tree
-      cd build
-    else
-      echo "Found PCM for $p: $(find . -name "$p-*\\.pcm")"
-    fi
-  done < ../NEEDS_PCMS
+      if [ $? -ne 0 ]; then
+        errors+=("$test_name -> can't find $p")
+        echo "ERROR: $test_name -> can't find PCM for $p"
+        echo "PWD: $(pwd)"
+        cd ..
+        echo "TREE:"
+        tree
+        cd build
+      else
+        echo "Found PCM for $p: $(find . -name "$p-*\\.pcm")"
+      fi
+    done < ../NEEDS_PCMS
+  fi
 }
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
