@@ -2,6 +2,15 @@ language: cpp
 
 addons:
   apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      - tree
+    packages:
+      - libgnome-keyring-dev
+      - clang
+
+addons:
+  apt:
     packages:
     - tree
 
