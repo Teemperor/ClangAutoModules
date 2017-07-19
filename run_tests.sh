@@ -59,6 +59,8 @@ function run_test {
         echo "TREE:"
         tree
         cd build
+        echo "YAML:"
+        cat ClangModules_*.yaml
       else
         echo "Found PCM for $p: $(find . -name "$p-*\\.pcm")"
       fi
