@@ -57,3 +57,11 @@ for test_dir in $DIR/tests/*
 do
   run_test "$test_dir" `pwd` "$DIR"
 done
+
+if [ ${#errors[@]} -eq 0 ]; then
+    echo "No errors. All tests passed."
+else
+    echo "Tests failed:"
+    printf '%s\n' "${errors[@]}"
+    exit 1
+fi
