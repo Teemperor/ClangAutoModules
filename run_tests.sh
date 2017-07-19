@@ -1,5 +1,7 @@
 #!/bin/bash
 
+declare -a errors
+
 function run_test {
   test_dir="$1"
   build_dir="$2"
@@ -28,8 +30,17 @@ function run_test {
   cmake ..
   make
   
-  # Verify that we used the right modules
-  
+  while read p; do
+    # Verify that we used the right modules
+    find ./pcms/ -name "$p-*\\.pcm" | grep -q .
+
+    if [ $? -ne 0 ]; then
+      errors+=("$test_name -> can't find $p")
+      echo "ERROR: $test_name -> can't find PCM for $p"
+    else
+      echo "Found PCM for $p: $(find . -name "$p-*\\.pcm")"
+    fi
+  done < ../NEEDS_PCMS
 }
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
