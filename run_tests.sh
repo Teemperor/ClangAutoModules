@@ -38,11 +38,7 @@ function run_test {
   cd ..
   mkdir build
   cd build
-  if [ "$skip_checks" == "NO" ] ; then
-    cmake -DCMAKE_C_FLAGS="-H"  -DCMAKE_CXX_FLAGS="-H" ..
-  else
-    cmake ..
-  fi
+  cmake -DCMAKE_C_FLAGS="-H"  -DCMAKE_CXX_FLAGS="-H" ..
   make VERBOSE=1
   set +e
   
