@@ -38,7 +38,16 @@ function run_test {
   cd ..
   mkdir build
   cd build
-  cmake -DCMAKE_C_FLAGS="-H"  -DCMAKE_CXX_FLAGS="-H" ..
+  FLAGS="-H"
+  if [[ $CXX == *"clang"* ]]; then
+    FLAGS="$FLAGS -Rmodule-build"
+  fi
+  CXX_FLAGS="-H"
+  if [[ $CXX == *"clang"* ]]; then
+    CXX_FLAGS="$CXX_FLAGS -Rmodule-build"
+  fi
+
+  cmake -DCMAKE_C_FLAGS="$FLAGS"  -DCMAKE_CXX_FLAGS="$CXX_FLAGS" ..
   make VERBOSE=1
   set +e
   
