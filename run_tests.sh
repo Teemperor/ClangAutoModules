@@ -47,9 +47,17 @@ function run_test {
     CXX_FLAGS="$CXX_FLAGS -Rmodule-build"
   fi
 
-  cmake -DCMAKE_C_FLAGS="$FLAGS"  -DCMAKE_CXX_FLAGS="$CXX_FLAGS" .. > log.txt 2>&1 
-  make VERBOSE=1 >> log.txt 2>&1 
   set +e
+  cmake -DCMAKE_C_FLAGS="$FLAGS"  -DCMAKE_CXX_FLAGS="$CXX_FLAGS" .. > log.txt 2>&1 
+  if [ $? -ne 0 ]; then
+    echo "cmake failed!"
+    cat log.txt
+  fi
+  make VERBOSE=1 >> log.txt 2>&1
+  if [ $? -ne 0 ]; then
+    echo "make failed!"
+    cat log.txt
+  fi
   
   if [ "$skip_checks" == "NO" ] ; then
     had_fail="FALSE"
