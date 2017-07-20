@@ -50,7 +50,7 @@ module stl {
   module "locale" { header "locale" export * } //  Localization utilities
   module "map" { header "map" export * } // std::map and std::multimap associative containers
   module "memory" { header "memory" export * } //  Higher level memory management utilities
-  module "memory_resource" { header "memory_resource" export * } // (since C++17) Polymorphic allocators and memory resources
+  //module "memory_resource" { header "memory_resource" export * } // (since C++17) Polymorphic allocators and memory resources
   module "mutex" { header "mutex" export * } // (since C++11) mutual exclusion primitives
   module "new" { header "new" export * } // Low-level memory management utilities
   module "numeric" { header "numeric" export * } // Numeric operations on values in containers
