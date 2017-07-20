@@ -48,21 +48,18 @@ function run_test {
   fi
 
   set +e
-  cmake -DCMAKE_C_FLAGS="$FLAGS"  -DCMAKE_CXX_FLAGS="$CXX_FLAGS" .. > log.txt 2>&1 
+  cmake -DCMAKE_C_FLAGS="$FLAGS"  -DCMAKE_CXX_FLAGS="$CXX_FLAGS" ..
   if [ $? -ne 0 ]; then
     echo "CMake failed!"
     errors+=("$test_name -> CMake error")
-    cat log.txt
   fi
-  make VERBOSE=1 >> log.txt 2>&1
+  make VERBOSE=1
   if [ $? -ne 0 ]; then
     echo "make failed!"
     errors+=("$test_name -> make error")
-    cat log.txt
   fi
   
   if [ "$skip_checks" == "NO" ] ; then
-    had_fail="FALSE"
     while read p; do
       # Verify that we used the right modules
       find ./pcms/ -name "$p-*\\.pcm" | grep -q .
@@ -82,9 +79,6 @@ function run_test {
         echo "-- Found PCM for $p: $(find . -name "$p-*\\.pcm")"
       fi
     done < ../NEEDS_PCMS
-    if [ "$had_fail" == "TRUE" ] ; then
-      cat log.txt
-    fi
   fi
 }
 
