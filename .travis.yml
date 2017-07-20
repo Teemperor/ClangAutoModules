@@ -11,39 +11,6 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-4.8']
-      env:
-        - CXX_COMPILER=g++-4.8
-        - COMPILER=gcc-4.8
-        - TEST_CHECK=NO
-
-    - os: linux
-      compiler: gcc
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-4.9']
-      env:
-        - CXX_COMPILER=g++-4.9
-        - COMPILER=gcc-4.9
-        - TEST_CHECK=NO
-
-    - os: linux
-      compiler: gcc
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-5']
-      env:
-        - CXX_COMPILER=g++-5
-        - COMPILER=gcc-5
-        - TEST_CHECK=NO
-
-    - os: linux
-      compiler: gcc
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test']
           packages: ['g++-6']
       env:
         - CXX_COMPILER=g++-6
