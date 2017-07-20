@@ -83,15 +83,29 @@ function(ClangModules_SetupSTL)
   endforeach()
   
   if (stl_mount_path)
-    ClangModules_MountModulemap(VFS "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl.yaml" PATH "${stl_mount_path}"
-                                MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl.modulemap")
+    if(ClangModules_STD STREQUAL "c++03")
+      ClangModules_MountModulemap(VFS "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl.yaml"
+                                  PATH "${stl_mount_path}"
+                                  MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl03.modulemap")
+    elseif(ClangModules_STD STREQUAL "c++11")
+      ClangModules_MountModulemap(VFS "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl.yaml"
+                                  PATH "${stl_mount_path}"
+                                  MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl11.modulemap")
+    elseif(ClangModules_STD STREQUAL "c++14")
+      ClangModules_MountModulemap(VFS "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl.yaml"
+                                  PATH "${stl_mount_path}"
+                                  MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl14.modulemap")
+    elseif(ClangModules_STD STREQUAL "c++17")
+      # Untested as of now
+      #ClangModules_MountModulemap(VFS "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl.yaml"
+      #                            PATH "${stl_mount_path}"
+      #                            MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl17.modulemap")
+    endif()
   endif()
 endfunction()
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "AppleClang")
   message(STATUS "Configuring ClangModules")
-  #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ")
-  #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} )
   
   set(LANG_BAK $ENV{LANG})
   set(ENV{LANG} C)

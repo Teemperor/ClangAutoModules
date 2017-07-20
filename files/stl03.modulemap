@@ -1,0 +1,51 @@
+module stl {
+  module "algorithm" { header "algorithm" export * } // Algorithms that operate on containers
+  module "bitset" { header "bitset" export * } //  std::bitset class template
+  module "cassert" { header "cassert" export * } // Conditionally compiled macro that compares its argument to zero
+  module "cctype" { header "cctype" export * } //  functions to determine the type contained in character data
+  module "cerrno" { header "cerrno" export * } //  Macro containing the last error number
+  module "cfloat" { header "cfloat" export * } //  limits of float types
+  module "climits" { header "climits" export * } // limits of integral types
+  module "clocale" { header "clocale" export * } // C localization utilities
+  module "cmath" { header "cmath" export * } // Common mathematics functions
+  module "complex" { header "complex" export * } // Complex number type
+  module "csetjmp" { header "csetjmp" export * } // Macro (and function) that saves (and jumps) to an execution context
+  module "csignal" { header "csignal" export * } // Functions and macro constants for signal management
+  module "cstdarg" { header "cstdarg" export * } // Handling of variable length argument lists
+  module "cstddef" { header "cstddef" export * } // typedefs for types such as size_t, NULL and others
+  module "cstdio" { header "cstdio" export * } //  C-style input-output functions
+  module "cstdlib" { header "cstdlib" export * } // General purpose utilities: program control, dynamic memory allocation, random numbers, sort and search
+  module "cstring" { header "cstring" export * } // various narrow character string handling functions
+  module "ctime" { header "ctime" export * } // C-style time/date utilites
+  module "cwchar" { header "cwchar" export * } //  various wide and multibyte string handling functions
+  module "cwctype" { header "cwctype" export * } // functions for determining the type of wide character data
+  module "deque" { header "deque" export * } // std::deque container
+  module "exception" { header "exception" export * } // Exception handling utilities
+  module "fstream" { header "fstream" export * } // std::basic_fstream, std::basic_ifstream, std::basic_ofstream class templates and several typedefs
+  module "functional" { header "functional" export * } //  Function objects, designed for use with the standard algorithms
+  module "iomanip" { header "iomanip" export * } // Helper functions to control the format or input and output
+  module "iosfwd" { header "iosfwd" export * } //  forward declarations of all classes in the input/output library
+  module "ios" { header "ios" export * } // std::ios_base class, std::basic_ios class template and several typedefs
+  module "iostream" { header "iostream" export * } //  several standard stream objects
+  module "istream" { header "istream" export * } // std::basic_istream class template and several typedefs
+  module "iterator" { header "iterator" export * } //  Container iterators
+  module "limits" { header "limits" export * } //  standardized way to query properties of arithmetic types
+  module "list" { header "list" export * } //  std::list container
+  module "locale" { header "locale" export * } //  Localization utilities
+  module "map" { header "map" export * } // std::map and std::multimap associative containers
+  module "memory" { header "memory" export * } //  Higher level memory management utilities
+  module "new" { header "new" export * } // Low-level memory management utilities
+  module "numeric" { header "numeric" export * } // Numeric operations on values in containers
+  module "ostream" { header "ostream" export * } // std::basic_ostream, std::basic_iostream class templates and several typedefs
+  module "queue" { header "queue" export * } // std::queue and std::priority_queue container adaptorsssion processing
+  module "set" { header "set" export * } // std::set and std::multiset associative containers
+  module "sstream" { header "sstream" export * } // std::basic_stringstream, std::basic_istringstream, std::basic_ostringstream class templates and several typedefs
+  module "stack" { header "stack" export * } // std::stack container adaptor
+  module "stdexcept" { header "stdexcept" export * } // Standard exception objects
+  module "streambuf" { header "streambuf" export * } // std::basic_streambuf class template
+  module "string" { header "string" export * } //  std::basic_string class template
+  module "typeinfo" { header "typeinfo" export * } //  Runtime type information utilities
+  module "utility" { header "utility" export * } // Various utility components
+  module "valarray" { header "valarray" export * } //  Class for representing and manipulating arrays of values
+  module "vector" { header "vector" export * } //  std::vector container
+}

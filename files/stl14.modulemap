@@ -1,0 +1,76 @@
+module stl {
+  module "algorithm" { header "algorithm" export * } // Algorithms that operate on containers
+  module "array" { header "array" export * } // (since C++11) std::array container
+  module "atomic" { header "atomic" export * } // (since C++11)  Atomic operations library
+  module "bitset" { header "bitset" export * } //  std::bitset class template
+  module "cassert" { header "cassert" export * } // Conditionally compiled macro that compares its argument to zero
+  module "cctype" { header "cctype" export * } //  functions to determine the type contained in character data
+  module "cerrno" { header "cerrno" export * } //  Macro containing the last error number
+  module "cfenv" { header "cfenv" export * } // (since C++11) Floating-point environment access functions
+  module "cfloat" { header "cfloat" export * } //  limits of float types
+  module "chrono" { header "chrono" export * } // (since C++11)  C++ time utilites
+  module "cinttypes" { header "cinttypes" export * } // (since C++11) formatting macros , intmax_t and uintmax_t math and conversions
+  module "climits" { header "climits" export * } // limits of integral types
+  module "clocale" { header "clocale" export * } // C localization utilities
+  module "cmath" { header "cmath" export * } // Common mathematics functions
+  module "codecvt" { header "codecvt" export * } // (since C++11) Unicode conversion facilities
+  module "complex" { header "complex" export * } // Complex number type
+  module "condition_variable" { header "condition_variable" export * } // (since C++11)  thread waiting conditions
+  module "csetjmp" { header "csetjmp" export * } // Macro (and function) that saves (and jumps) to an execution context
+  module "csignal" { header "csignal" export * } // Functions and macro constants for signal management
+  module "cstdarg" { header "cstdarg" export * } // Handling of variable length argument lists
+  module "cstddef" { header "cstddef" export * } // typedefs for types such as size_t, NULL and others
+  module "cstdint" { header "cstdint" export * } // (since C++11) fixed-size types and limits of other types
+  module "cstdio" { header "cstdio" export * } //  C-style input-output functions
+  module "cstdlib" { header "cstdlib" export * } // General purpose utilities: program control, dynamic memory allocation, random numbers, sort and search
+  module "cstring" { header "cstring" export * } // various narrow character string handling functions
+  module "ctime" { header "ctime" export * } // C-style time/date utilites
+  module "cuchar" { header "cuchar" export * } // (since C++11)  C-style Unicode character conversion functions
+  module "cwchar" { header "cwchar" export * } //  various wide and multibyte string handling functions
+  module "cwctype" { header "cwctype" export * } // functions for determining the type of wide character data
+  module "deque" { header "deque" export * } // std::deque container
+  module "exception" { header "exception" export * } // Exception handling utilities
+  module "forward_list" { header "forward_list" export * } // (since C++11)  std::forward_list container
+  module "fstream" { header "fstream" export * } // std::basic_fstream, std::basic_ifstream, std::basic_ofstream class templates and several typedefs
+  module "functional" { header "functional" export * } //  Function objects, designed for use with the standard algorithms
+  module "future" { header "future" export * } // (since C++11)  primitives for asynchronous computations
+  module "initializer_list" { header "initializer_list" export * } // (since C++11)  std::initializer_list class template
+  module "iomanip" { header "iomanip" export * } // Helper functions to control the format or input and output
+  module "iosfwd" { header "iosfwd" export * } //  forward declarations of all classes in the input/output library
+  module "ios" { header "ios" export * } // std::ios_base class, std::basic_ios class template and several typedefs
+  module "iostream" { header "iostream" export * } //  several standard stream objects
+  module "istream" { header "istream" export * } // std::basic_istream class template and several typedefs
+  module "iterator" { header "iterator" export * } //  Container iterators
+  module "limits" { header "limits" export * } //  standardized way to query properties of arithmetic types
+  module "list" { header "list" export * } //  std::list container
+  module "locale" { header "locale" export * } //  Localization utilities
+  module "map" { header "map" export * } // std::map and std::multimap associative containers
+  module "memory" { header "memory" export * } //  Higher level memory management utilities
+  module "mutex" { header "mutex" export * } // (since C++11) mutual exclusion primitives
+  module "new" { header "new" export * } // Low-level memory management utilities
+  module "numeric" { header "numeric" export * } // Numeric operations on values in containers
+  module "ostream" { header "ostream" export * } // std::basic_ostream, std::basic_iostream class templates and several typedefs
+  module "queue" { header "queue" export * } // std::queue and std::priority_queue container adaptors
+  module "random" { header "random" export * } // (since C++11)  Random number generators and distributions
+  module "ratio" { header "ratio" export * } // (since C++11) Compile-time rational arithmetic
+  module "regex" { header "regex" export * } // (since C++11) Classes, algorithms and iterators to support regular expression processing
+  module "scoped_allocator" { header "scoped_allocator" export * } // (since C++11)  Nested allocator class
+  module "set" { header "set" export * } // std::set and std::multiset associative containers
+  module "shared_mutex" { header "shared_mutex" export * } // (since C++14)  shared mutual exclusion primitives
+  module "sstream" { header "sstream" export * } // std::basic_stringstream, std::basic_istringstream, std::basic_ostringstream class templates and several typedefs
+  module "stack" { header "stack" export * } // std::stack container adaptor
+  module "stdexcept" { header "stdexcept" export * } // Standard exception objects
+  module "streambuf" { header "streambuf" export * } // std::basic_streambuf class template
+  module "string" { header "string" export * } //  std::basic_string class template
+  module "system_error" { header "system_error" export * } // (since C++11)  defines std::error_code, a platform-dependent error code
+  module "thread" { header "thread" export * } // (since C++11)  std::thread class and supporting functions
+  module "tuple" { header "tuple" export * } // (since C++11) std::tuple class template
+  module "typeindex" { header "typeindex" export * } // (since C++11) std::type_index
+  module "typeinfo" { header "typeinfo" export * } //  Runtime type information utilities
+  module "type_traits" { header "type_traits" export * } // (since C++11) Compile-time type information
+  module "unordered_map" { header "unordered_map" export * } // (since C++11) std::unordered_map and std::unordered_multimap unordered associative containers
+  module "unordered_set" { header "unordered_set" export * } // (since C++11) std::unordered_set and std::unordered_multiset unordered associative containers
+  module "utility" { header "utility" export * } // Various utility components
+  module "valarray" { header "valarray" export * } //  Class for representing and manipulating arrays of values
+  module "vector" { header "vector" export * } //  std::vector container
+}
