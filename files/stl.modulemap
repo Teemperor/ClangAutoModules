@@ -75,7 +75,7 @@ module stl {
   module "tuple" { header "tuple" export * } // (since C++11) std::tuple class template
   module "typeindex" { header "typeindex" export * } // (since C++11) std::type_index
   module "typeinfo" { header "typeinfo" export * } //  Runtime type information utilities
-  module "type_traits" { header "type_traits" export * } // (since C++11) Compile-time type information
+  //Causes cyclic dependency with Darwin module: module "type_traits" { header "type_traits" export * } // (since C++11) Compile-time type information
   module "unordered_map" { header "unordered_map" export * } // (since C++11) std::unordered_map and std::unordered_multimap unordered associative containers
   module "unordered_set" { header "unordered_set" export * } // (since C++11) std::unordered_set and std::unordered_multiset unordered associative containers
   module "utility" { header "utility" export * } // Various utility components
