@@ -48,6 +48,7 @@ function(ClangModules_MountModulemap)
   set(MODULEMAP_PLACEHOLDER "${ARG_MODULEMAP}")
   configure_file("${ARG_VFS}" "${OUTPUT_VFS}" @ONLY)
   
+  add_compile_options(-fmodule-map-file=${ARG_PATH}/module.modulemap)
   add_compile_options(-ivfsoverlay${OUTPUT_VFS})
 
 endfunction()
@@ -99,6 +100,6 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" ST
   
   set(ENV{LANG} ${LANG_BAK})
   
-  add_compile_options(-fmodules -fcxx-modules)
+  add_compile_options(-fmodules -fcxx-modules -fno-implicit-module-maps)
   add_compile_options(-fmodules-cache-path=${CMAKE_BINARY_DIR}/pcms)
 endif()
