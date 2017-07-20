@@ -27,7 +27,7 @@ module stl {
   module "cstdlib" { header "cstdlib" export * } // General purpose utilities: program control, dynamic memory allocation, random numbers, sort and search
   module "cstring" { header "cstring" export * } // various narrow character string handling functions
   module "ctime" { header "ctime" export * } // C-style time/date utilites
-  module "cuchar" { header "cuchar" export * } // (since C++11)  C-style Unicode character conversion functions
+  // Doesn't work on OS X: module "cuchar" { header "cuchar" export * } // (since C++11)  C-style Unicode character conversion functions
   module "cwchar" { header "cwchar" export * } //  various wide and multibyte string handling functions
   module "cwctype" { header "cwctype" export * } // functions for determining the type of wide character data
   module "deque" { header "deque" export * } // std::deque container
