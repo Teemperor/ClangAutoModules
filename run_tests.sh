@@ -50,12 +50,14 @@ function run_test {
   set +e
   cmake -DCMAKE_C_FLAGS="$FLAGS"  -DCMAKE_CXX_FLAGS="$CXX_FLAGS" .. > log.txt 2>&1 
   if [ $? -ne 0 ]; then
-    echo "cmake failed!"
+    echo "CMake failed!"
+    errors+=("$test_name -> CMake error")
     cat log.txt
   fi
   make VERBOSE=1 >> log.txt 2>&1
   if [ $? -ne 0 ]; then
     echo "make failed!"
+    errors+=("$test_name -> make error")
     cat log.txt
   fi
   
