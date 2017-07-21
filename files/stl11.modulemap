@@ -61,8 +61,6 @@ module stl {
   module "stdexcept" { header "stdexcept" export * } // Standard exception objects
   module "streambuf" { header "streambuf" export * } // std::basic_streambuf class template
   module "string" { header "string" export * } //  std::basic_string class template
-  // deprecated header
-  //module "strstream" { header "strstream" export * } // std::strstream, std::istrstream, std::ostrstream(deprecated)
   module "system_error" { header "system_error" export * } // (since C++11)  defines std::error_code, a platform-dependent error code
   module "thread" { header "thread" export * } // (since C++11)  std::thread class and supporting functions
   module "tuple" { header "tuple" export * } // (since C++11) std::tuple class template

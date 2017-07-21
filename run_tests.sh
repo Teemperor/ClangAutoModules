@@ -13,6 +13,7 @@ declare -a errors
 
 function run_test {
   set -e
+  start_dir="$(pwd)"
   test_dir="$1"
   build_dir="$2"
   source_dir="$3"
@@ -80,6 +81,7 @@ function run_test {
       fi
     done < ../NEEDS_PCMS
   fi
+  cd "$start_dir"
 }
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
