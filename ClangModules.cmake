@@ -84,7 +84,7 @@ function(ClangModules_MountModulemap)
     message(ERROR "Unparsed args: ${ARG_UNPARSED_ARGUMENTS}")
   endif()
 
-  get_filename_component(VFS_FILENAME "${ARG_VFS}" NAME)
+  get_filename_component(VFS_FILENAME "${ARG_MODULEMAP}" NAME)
   set(OUTPUT_VFS "${CMAKE_BINARY_DIR}/ClangModules_${VFS_FILENAME}")
 
   set(PATH_PLACEHOLDER "${ARG_PATH}")
@@ -169,7 +169,6 @@ function(ClangModules_SetupSTL)
       if(${line} MATCHES "^ ")
         string(STRIP "${line}" line)
         list(APPEND INCLUDE_LIST "${line}")
-        break()
       endif()
     endif()
     if(${line} MATCHES "<\\.\\.\\.>" )
@@ -178,46 +177,56 @@ function(ClangModules_SetupSTL)
   endforeach()
 
   foreach(INCLUDE_PATH ${INCLUDE_LIST})
-    if(NOT SUCCESS)
+    message(STATUS "Testing: ${INCLUDE_PATH}")
+    if(NOT STL_SUCCESS)
     ClangModules_MountModulemap(VFS "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl.yaml"
                                 PATH "${INCLUDE_PATH}"
                                 MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl17.modulemap"
                                 MODULES stl17
                                 CXX_FLAGS "${ARG_CXX_FLAGS}"
                                 NEW_FLAGS NEW_CXX_FLAGS
-                                RESULT SUCCESS)
+                                RESULT STL_SUCCESS)
     endif()
-    if(NOT SUCCESS)
+    if(NOT STL_SUCCESS)
     ClangModules_MountModulemap(VFS "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl.yaml"
                                 PATH "${INCLUDE_PATH}"
                                 MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl14.modulemap"
                                 MODULES stl14
                                 CXX_FLAGS "${ARG_CXX_FLAGS}"
                                 NEW_FLAGS NEW_CXX_FLAGS
-                                RESULT SUCCESS)
+                                RESULT STL_SUCCESS)
     endif()
-    if(NOT SUCCESS)
+    if(NOT STL_SUCCESS)
     ClangModules_MountModulemap(VFS "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl.yaml"
                                 PATH "${INCLUDE_PATH}"
                                 MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl11.modulemap"
                                 MODULES stl11
                                 CXX_FLAGS "${ARG_CXX_FLAGS}"
                                 NEW_FLAGS NEW_CXX_FLAGS
-                                RESULT SUCCESS)
+                                RESULT STL_SUCCESS)
     endif()
-    if(NOT SUCCESS)
+    if(NOT STL_SUCCESS)
     ClangModules_MountModulemap(VFS "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl.yaml"
                                 PATH "${INCLUDE_PATH}"
                                 MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl03.modulemap"
                                 MODULES stl03
                                 CXX_FLAGS "${ARG_CXX_FLAGS}"
                                 NEW_FLAGS NEW_CXX_FLAGS
-                                RESULT SUCCESS)
+                                RESULT STL_SUCCESS)
+    endif()
+    if(NOT SDL2_SUCCESS)
+    ClangModules_MountModulemap(VFS "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/sdl2.yaml"
+                                PATH "${INCLUDE_PATH}"
+                                MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/sdl2.modulemap"
+                                MODULES sdl2
+                                CXX_FLAGS "${ARG_CXX_FLAGS}"
+                                NEW_FLAGS NEW_SDL2_FLAGS
+                                RESULT SDL2_SUCCESS)
     endif()
   endforeach()
 
 
-  set(NEW_CXX_FLAGS "${NEW_CXX_FLAGS}" PARENT_SCOPE)
+  set(NEW_CXX_FLAGS "${NEW_CXX_FLAGS} ${NEW_SDL2_FLAGS}" PARENT_SCOPE)
 endfunction()
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "AppleClang")

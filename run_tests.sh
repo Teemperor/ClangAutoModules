@@ -76,6 +76,10 @@ function run_test {
         cd build
         echo "YAML:"
         cat ClangModules_*.yaml
+        echo "CMakeFiles/CMakeError.log"
+        cat CMakeFiles/CMakeError.log
+        echo "CMakeFiles/CMakeOutput.log"
+        cat CMakeFiles/CMakeOutput.log
       else
         echo "-- Found PCM for $p: $(find . -name "$p-*\\.pcm")"
       fi
