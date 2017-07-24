@@ -77,7 +77,7 @@ endfunction()
 
 function(ClangModules_MountModulemap)
   set(options)
-  set(oneValueArgs RESULT VFS PATH MODULEMAP CXX_FLAGS)
+  set(oneValueArgs RESULT VFS PATH NEW_FLAGS MODULEMAP CXX_FLAGS)
   set(multiValueArgs)
   cmake_parse_arguments(ARG "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN} )
   if (ARG_UNPARSED_ARGUMENTS)
@@ -121,7 +121,7 @@ function(ClangModules_MountModulemap)
     if(TestCompileModule_${ModuleName})
       file(GLOB_RECURSE PCMS "${tmp_cache_path}/stl*.pcm")
       if(PCMS)
-        set(NEW_CXX_FLAGS "${ARG_CXX_FLAGS} ${new_args}" PARENT_SCOPE)
+        set(${ARG_NEW_FLAGS} "${ARG_CXX_FLAGS} ${new_args}" PARENT_SCOPE)
         set(${ARG_RESULT} YES PARENT_SCOPE)
       else()
         message(STATUS "Clang ignored modulemap for ${ModuleName}. Skipping")
@@ -177,6 +177,7 @@ function(ClangModules_SetupSTL)
                                 PATH "${INCLUDE_PATH}"
                                 MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl14.modulemap"
                                 CXX_FLAGS "${ARG_CXX_FLAGS}"
+                                NEW_FLAGS NEW_CXX_FLAGS
                                 RESULT SUCCESS)
     endif()
     if(NOT SUCCESS)
@@ -184,6 +185,7 @@ function(ClangModules_SetupSTL)
                                 PATH "${INCLUDE_PATH}"
                                 MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl11.modulemap"
                                 CXX_FLAGS "${ARG_CXX_FLAGS}"
+                                NEW_FLAGS NEW_CXX_FLAGS
                                 RESULT SUCCESS)
     endif()
     if(NOT SUCCESS)
@@ -191,6 +193,7 @@ function(ClangModules_SetupSTL)
                                 PATH "${INCLUDE_PATH}"
                                 MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl03.modulemap"
                                 CXX_FLAGS "${ARG_CXX_FLAGS}"
+                                NEW_FLAGS NEW_CXX_FLAGS
                                 RESULT SUCCESS)
     endif()
   endforeach()
