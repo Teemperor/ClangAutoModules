@@ -3,7 +3,6 @@ project (stl-full)
 
 add_compile_options(-std=c++14)
 
-set(ClangModules_STD c++14)
 include(clang-modules/ClangModules.cmake)
 
 add_executable(stl-full main.cpp)
