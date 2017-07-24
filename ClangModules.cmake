@@ -77,7 +77,7 @@ endfunction()
 
 function(ClangModules_MountModulemap)
   set(options)
-  set(oneValueArgs RESULT VFS PATH NEW_FLAGS MODULEMAP CXX_FLAGS)
+  set(oneValueArgs RESULT VFS PATH NEW_FLAGS MODULEMAP MODULES CXX_FLAGS)
   set(multiValueArgs)
   cmake_parse_arguments(ARG "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN} )
   if (ARG_UNPARSED_ARGUMENTS)
@@ -119,8 +119,14 @@ function(ClangModules_MountModulemap)
     int main() {}
     " "TestCompileModule_${ModuleName}")
     if(TestCompileModule_${ModuleName})
-      file(GLOB_RECURSE PCMS "${tmp_cache_path}/stl*.pcm")
-      if(PCMS)
+      set(FOUND_PCMS TRUE)
+      foreach(Mod ${ARG_MODULES})
+        file(GLOB_RECURSE PCMS "${tmp_cache_path}/${Mod}*.pcm")
+        if(NOT PCMS)
+          set(FOUND_PCMS FALSE)
+        endif()
+      endforeach()
+      if(FOUND_PCMS)
         set(${ARG_NEW_FLAGS} "${ARG_CXX_FLAGS} ${new_args}" PARENT_SCOPE)
         set(${ARG_RESULT} YES PARENT_SCOPE)
       else()
@@ -175,7 +181,17 @@ function(ClangModules_SetupSTL)
     if(NOT SUCCESS)
     ClangModules_MountModulemap(VFS "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl.yaml"
                                 PATH "${INCLUDE_PATH}"
+                                MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl17.modulemap"
+                                MODULES stl17
+                                CXX_FLAGS "${ARG_CXX_FLAGS}"
+                                NEW_FLAGS NEW_CXX_FLAGS
+                                RESULT SUCCESS)
+    endif()
+    if(NOT SUCCESS)
+    ClangModules_MountModulemap(VFS "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl.yaml"
+                                PATH "${INCLUDE_PATH}"
                                 MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl14.modulemap"
+                                MODULES stl14
                                 CXX_FLAGS "${ARG_CXX_FLAGS}"
                                 NEW_FLAGS NEW_CXX_FLAGS
                                 RESULT SUCCESS)
@@ -184,6 +200,7 @@ function(ClangModules_SetupSTL)
     ClangModules_MountModulemap(VFS "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl.yaml"
                                 PATH "${INCLUDE_PATH}"
                                 MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl11.modulemap"
+                                MODULES stl11
                                 CXX_FLAGS "${ARG_CXX_FLAGS}"
                                 NEW_FLAGS NEW_CXX_FLAGS
                                 RESULT SUCCESS)
@@ -192,6 +209,7 @@ function(ClangModules_SetupSTL)
     ClangModules_MountModulemap(VFS "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl.yaml"
                                 PATH "${INCLUDE_PATH}"
                                 MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl03.modulemap"
+                                MODULES stl03
                                 CXX_FLAGS "${ARG_CXX_FLAGS}"
                                 NEW_FLAGS NEW_CXX_FLAGS
                                 RESULT SUCCESS)

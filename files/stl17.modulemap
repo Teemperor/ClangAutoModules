@@ -1,6 +1,6 @@
-module stl {
+module stl17 {
   module "algorithm" { header "algorithm" export * } // Algorithms that operate on containers
-  //module "any" { header "any" export * } // (since C++17) std::any class template
+  module "any" { header "any" export * } // (since C++17) std::any class template
   module "array" { header "array" export * } // (since C++11) std::array container
   module "atomic" { header "atomic" export * } // (since C++11)  Atomic operations library
   module "bitset" { header "bitset" export * } //  std::bitset class template
