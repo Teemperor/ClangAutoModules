@@ -146,7 +146,7 @@ function(ClangModules_MountModulemap)
   endif()
 endfunction()
 
-function(ClangModules_SetupSTL)
+function(ClangModules_SetupModulemaps)
   set(options)
   set(oneValueArgs CXX_FLAGS)
   set(multiValueArgs)
@@ -238,7 +238,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" ST
   set(LANG_BAK $ENV{LANG})
   set(ENV{LANG} C)
 
-  ClangModules_SetupSTL(CXX_FLAGS "${CXX_FLAGS}")
+  ClangModules_SetupModulemaps(CXX_FLAGS "${CXX_FLAGS}")
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${NEW_CXX_FLAGS} -fmodules-cache-path=${CMAKE_BINARY_DIR}/pcms")
 
   set(ENV{LANG} ${LANG_BAK})
