@@ -2,7 +2,7 @@
 
 A simple CMake script for automatically setting up Clang's C++ modules for the third party libraries your project uses.
 
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/Teemperor/ClangModulesCMake/blob/master/LICENSE.md)
 [![Build Status](https://travis-ci.org/Teemperor/ClangModulesCMake.svg?branch=master)](https://travis-ci.org/Teemperor/ClangModulesCMake)
 
 ## Setup
