@@ -293,19 +293,19 @@ endfunction()
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "AppleClang")
   message(STATUS "Configuring ClangModules")
 
-  set(vfs_file "${CMAKE_BINARY_DIR}/ClangModulesVFS.yaml")
-  file(WRITE ${vfs_file} "{ 'version': 0, 'roots': [\n")
+  set(ClangModules_vfs_file "${CMAKE_BINARY_DIR}/ClangModulesVFS.yaml")
+  file(WRITE ${ClangModules_vfs_file} "{ 'version': 0, 'roots': [\n")
   get_property(current_compile_options DIRECTORY PROPERTY COMPILE_OPTIONS)
-  set(CXX_FLAGS "${CMAKE_CXX_FLAGS} ${current_compile_options} -fmodules -fcxx-modules ")
-  set(CXX_FLAGS "${CXX_FLAGS} -fno-implicit-module-maps -ivfsoverlay${vfs_file}")
+  set(ClangModules_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${current_compile_options} -fmodules -fcxx-modules ")
+  set(ClangModules_CXX_FLAGS "${ClangModules_CXX_FLAGS} -fno-implicit-module-maps -ivfsoverlay${ClangModules_vfs_file}")
 
-  set(LANG_BAK $ENV{LANG})
+  set(ClangModules_LANG_BAK $ENV{LANG})
   set(ENV{LANG} C)
 
-  ClangModules_SetupModulemaps(CXX_FLAGS "${CXX_FLAGS}" VFS "${vfs_file}" NEW_FLAGS ClangModules_NewFlags)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CXX_FLAGS} ${ClangModules_NewFlags} -fmodules-cache-path=${CMAKE_BINARY_DIR}/pcms")
+  ClangModules_SetupModulemaps(CXX_FLAGS "${ClangModules_CXX_FLAGS}" VFS "${ClangModules_vfs_file}" NEW_FLAGS ClangModules_NewFlags)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ClangModules_CXX_FLAGS} ${ClangModules_NewFlags} -fmodules-cache-path=${CMAKE_BINARY_DIR}/pcms")
 
-  file(APPEND ${vfs_file} "]}\n")
-  set(ENV{LANG} ${LANG_BAK})
+  file(APPEND ${ClangModules_vfs_file} "]}\n")
+  set(ENV{LANG} ${ClangModules_LANG_BAK})
 
 endif()
