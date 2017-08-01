@@ -245,7 +245,7 @@ function(ClangModules_SetupModulemaps)
     if(NOT STL_SUCCESS)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
-                                MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl17.modulemap"
+                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/stl17.modulemap"
                                 MODULES stl17
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
                                 RESULT TMP_SUCCESS)
@@ -257,7 +257,7 @@ function(ClangModules_SetupModulemaps)
     if(NOT STL_SUCCESS)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
-                                MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl14.modulemap"
+                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/stl14.modulemap"
                                 MODULES stl14
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
                                 RESULT TMP_SUCCESS)
@@ -269,7 +269,7 @@ function(ClangModules_SetupModulemaps)
     if(NOT STL_SUCCESS)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
-                                MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl11.modulemap"
+                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/stl11.modulemap"
                                 MODULES stl11
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
                                 RESULT TMP_SUCCESS)
@@ -281,7 +281,7 @@ function(ClangModules_SetupModulemaps)
     if(NOT STL_SUCCESS)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
-                                MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/stl03.modulemap"
+                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/stl03.modulemap"
                                 MODULES stl03
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
                                 RESULT TMP_SUCCESS)
@@ -293,7 +293,7 @@ function(ClangModules_SetupModulemaps)
     if(NOT SDL2_SUCCESS)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
-                                MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/sdl2.modulemap"
+                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/sdl2.modulemap"
                                 MODULES sdl2
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
                                 RESULT TMP_SUCCESS)
@@ -305,7 +305,7 @@ function(ClangModules_SetupModulemaps)
     if(NOT LINUX_SUCCESS)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
-                                MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/linux.modulemap"
+                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/linux.modulemap"
                                 MODULES linux
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
                                 RESULT TMP_SUCCESS)
