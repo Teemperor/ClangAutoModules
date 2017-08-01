@@ -23,7 +23,7 @@ INCLUDE_DIRECTORIES(${SDL2_INCLUDE_DIRS} ${SDL2IMAGE_INCLUDE_DIRS})
 ##############
 ############## ClangModulesCMake
 ##############
-include(clang-modules/ClangModules.cmake) # Only this line is needs to be added!
+include(clang-modules/ClangModules.cmake) # Only this line needs to be added!
 ##############
 
 
@@ -38,7 +38,7 @@ We currently have support for:
 
 * STL for C++03, C++11, c++14
 * SDL2
-* tinyxml2
+* tinyxml and tinyxml2
 * [Feel free to request more!](https://github.com/Teemperor/ClangModulesCMake/issues/new)
 
 ## How does it work?
