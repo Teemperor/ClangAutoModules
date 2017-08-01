@@ -314,6 +314,18 @@ function(ClangModules_SetupModulemaps)
         set(LINUX_SUCCESS "YES")
       endif()
     endif()
+    if(NOT TINYXML_SUCCESS)
+    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
+                                PATH "${INCLUDE_PATH}"
+                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/tinyxml.modulemap"
+                                MODULES tinyxml
+                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
+                                RESULT TMP_SUCCESS)
+      if(TMP_SUCCESS)
+        set(SUCCESS "YES")
+        set(TINYXML_SUCCESS "YES")
+      endif()
+    endif()
     if(NOT TINYXML2_SUCCESS)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
