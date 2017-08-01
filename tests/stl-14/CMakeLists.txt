@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project (stl-full)
+project (stl14-full)
 
 add_compile_options(-std=c++14)
 
