@@ -303,6 +303,18 @@ function(ClangModules_SetupModulemaps)
         set(SDL2_SUCCESS "YES")
       endif()
     endif()
+    if(NOT LINUX_SUCCESS)
+    ClangModules_MountModulemap(TARGET_MODULEMAP "${final_modulemap_path}"
+                                PATH "${INCLUDE_PATH}"
+                                MODULEMAP "${CMAKE_CURRENT_SOURCE_DIR}/clang-modules/files/linux.modulemap"
+                                MODULES linux
+                                CXX_FLAGS "${final_test_flags}"
+                                RESULT TMP_SUCCESS)
+      if(TMP_SUCCESS)
+        set(SUCCESS "YES")
+        set(LINUX_SUCCESS "YES")
+      endif()
+    endif()
 
     if(SUCCESS)
       set(new_flags "${new_flags} ${test_new_flag}")
