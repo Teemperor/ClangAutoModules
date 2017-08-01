@@ -331,7 +331,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" ST
   set(ClangModules_VFS_FILE "${CMAKE_BINARY_DIR}/ClangModulesVFS.yaml")
   file(WRITE ${ClangModules_VFS_FILE} "{ 'version': 0, 'roots': [\n")
   get_property(ClangModules_CURRENT_COMPILE_OPTIONS DIRECTORY PROPERTY COMPILE_OPTIONS)
-  set(ClangModules_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ClangModules_CURRENT_COMPILE_OPTIONS} -fmodules -fcxx-modules ")
+  set(ClangModules_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ClangModules_CURRENT_COMPILE_OPTIONS} -fmodules -fcxx-modules -Xclang -fmodules-local-submodule-visibility ")
   set(ClangModules_CXX_FLAGS "${ClangModules_CXX_FLAGS} -fno-implicit-module-maps -ivfsoverlay${ClangModules_VFS_FILE}")
 
   set(ClangModules_LANG_BAK $ENV{LANG})
