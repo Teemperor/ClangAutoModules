@@ -1,6 +1,13 @@
 cmake_minimum_required(VERSION 3.1)
 
-
+## ClangModules_CheckHeaders(INC_DIR <path> HEADERS <header1> <headern> RESULT <output_variable>)
+##   `-INC_DIR - The directory to check for if the headers exist.
+##   `-HEADERS - List of relative path to header files that the function should check for.
+##   `-RESULT  - Set to YES if all headers exist, otherwise set ot NO (RETURN VAR).
+##
+## Check if all given headers exist in the given path.
+##
+## Example; ClangModules_CheckHeaders(INC_DIR /usr/include HEADERS stdio.h SDL2/SDL2.h RESULT headers_exist)
 function(ClangModules_CheckHeaders)
   set(options)
   set(oneValueArgs INC_DIR RESULT)
@@ -18,6 +25,13 @@ function(ClangModules_CheckHeaders)
   set(${ARG_RESULT} ${RESULT} PARENT_SCOPE)
 endfunction()
 
+## ClangModules_SplitByNewline(CONTENT <string> RESULT <output_variable>)
+##   `-CONTENT - The string that should be split.
+##   `-RESULT  - Set to the list of lines in CONTENT (RETURN_VAR).
+##
+## Splits a string into lines
+##
+## Example; ClangModules_SplitByNewline(INC_DIR "OneLine\nAnotherLine" RESULT headers_exist)
 function(ClangModules_SplitByNewline)
   set(options)
   set(oneValueArgs RESULT)
@@ -32,6 +46,15 @@ function(ClangModules_SplitByNewline)
   set(${ARG_RESULT} ${TMP_VAR} PARENT_SCOPE)
 endfunction()
 
+## ClangModules_GetHeadersFromModulemap(MODULEMAP <path> RESULT <output_variable>)
+##   `-MODULEMAP - Path to the modulemap that should be parsed.
+##   `-RESULT  - List of headers in the modulemap.
+##
+## Reads a modulemap and returns a list of headers this modulemap references.
+## Note that the parsing is really basic and for correct results each line should
+## only have one `header "XXX.h"` directive.
+##
+## Example; ClangModules_GetHeadersFromModulemap(MODULEMAP test/module.modulemap RESULT list_of_headers)
 function(ClangModules_GetHeadersFromModulemap)
   set(options)
   set(oneValueArgs RESULT MODULEMAP)
@@ -41,6 +64,7 @@ function(ClangModules_GetHeadersFromModulemap)
     message(ERROR "Unparsed args: ${ARG_UNPARSED_ARGUMENTS}")
   endif()
 
+  # TODO: Handle commented out lines?
   file(READ ${ARG_MODULEMAP} contents)
   ClangModules_SplitByNewline(CONTENT ${contents} RESULT lines)
   foreach(line ${lines})
