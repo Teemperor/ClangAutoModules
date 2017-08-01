@@ -41,18 +41,6 @@ module sdl2 {
   module "SDL_surface.h" { header "SDL2/SDL_surface.h" export * }
   module "SDL_system.h" { header "SDL2/SDL_system.h" export * }
   module "SDL_syswm.h" { header "SDL2/SDL_syswm.h" export * }
-  module "SDL_test_assert.h" { header "SDL2/SDL_test_assert.h" export * }
-  module "SDL_test_common.h" { header "SDL2/SDL_test_common.h" export * }
-  module "SDL_test_compare.h" { header "SDL2/SDL_test_compare.h" export * }
-  module "SDL_test_crc32.h" { header "SDL2/SDL_test_crc32.h" export * }
-  module "SDL_test_font.h" { header "SDL2/SDL_test_font.h" export * }
-  module "SDL_test_fuzzer.h" { header "SDL2/SDL_test_fuzzer.h" export * }
-  module "SDL_test_harness.h" { header "SDL2/SDL_test_harness.h" export * }
-  module "SDL_test.h" { header "SDL2/SDL_test.h" export * }
-  module "SDL_test_images.h" { header "SDL2/SDL_test_images.h" export * }
-  module "SDL_test_log.h" { header "SDL2/SDL_test_log.h" export * }
-  module "SDL_test_md5.h" { header "SDL2/SDL_test_md5.h" export * }
-  module "SDL_test_random.h" { header "SDL2/SDL_test_random.h" export * }
   module "SDL_thread.h" { header "SDL2/SDL_thread.h" export * }
   module "SDL_timer.h" { header "SDL2/SDL_timer.h" export * }
   module "SDL_touch.h" { header "SDL2/SDL_touch.h" export * }
