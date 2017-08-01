@@ -39,7 +39,7 @@ We currently have support for:
 * STL for C++03, C++11, c++14
 * SDL2
 * tinyxml2
-* Feel free to request more!
+* [Feel free to request more!](https://github.com/Teemperor/ClangModulesCMake/issues/new)
 
 ## How does it work?
 
