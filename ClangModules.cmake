@@ -339,6 +339,31 @@ function(ClangModules_SetupModulemaps)
       endif()
     endif()
 
+    if(NOT SFML_SUCCESS)
+    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
+                                PATH "${INCLUDE_PATH}"
+                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/sfml_newer.modulemap"
+                                MODULES sfml
+                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
+                                RESULT TMP_SUCCESS)
+      if(TMP_SUCCESS)
+        set(SUCCESS "YES")
+        set(SFML_SUCCESS "YES")
+      endif()
+    endif()
+    if(NOT SFML_SUCCESS)
+    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
+                                PATH "${INCLUDE_PATH}"
+                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/sfml.modulemap"
+                                MODULES sfml
+                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
+                                RESULT TMP_SUCCESS)
+      if(TMP_SUCCESS)
+        set(SUCCESS "YES")
+        set(SFML_SUCCESS "YES")
+      endif()
+    endif()
+
     if(SUCCESS)
       set(NEW_FLAGS "${NEW_FLAGS} ${TEST_NEW_FLAG}")
       execute_process(COMMAND ${CMAKE_COMMAND} -E copy "${ARG_VFS}.unfinished" "${ARG_VFS}")
