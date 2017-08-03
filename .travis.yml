@@ -11,7 +11,7 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-6', 'libsdl2-dev', 'libtinyxml2-dev', 'libtinyxml-dev']
+          packages: ['g++-6', 'libsdl2-dev', 'libtinyxml2-dev', 'libtinyxml-dev', 'libsfml-dev']
       env:
         - CXX_COMPILER=g++-6
         - COMPILER=gcc-6
@@ -23,7 +23,7 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-7', 'libsdl2-dev', 'libtinyxml2-dev', 'libtinyxml-dev']
+          packages: ['g++-7', 'libsdl2-dev', 'libtinyxml2-dev', 'libtinyxml-dev', 'libsfml-dev']
       env:
         - CXX_COMPILER=g++-7
         - COMPILER=gcc-7
@@ -35,7 +35,7 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-3.9']
-          packages: ['clang-3.9', 'g++-6', 'libsdl2-dev', 'libtinyxml2-dev', 'libtinyxml-dev']
+          packages: ['clang-3.9', 'g++-6', 'libsdl2-dev', 'libtinyxml2-dev', 'libtinyxml-dev', 'libsfml-dev']
       env:
         - CXX_COMPILER=clang++-3.9
         - COMPILER=clang-3.9
@@ -47,7 +47,7 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-4.0']
-          packages: ['clang-4.0', 'g++-6', 'libsdl2-dev', 'libtinyxml2-dev', 'libtinyxml-dev']
+          packages: ['clang-4.0', 'g++-6', 'libsdl2-dev', 'libtinyxml2-dev', 'libtinyxml-dev', 'libsfml-dev']
       env:
         - CXX_COMPILER=clang++-4.0
         - COMPILER=clang-4.0
