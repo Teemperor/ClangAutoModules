@@ -102,7 +102,7 @@ endfunction()
 function(ClangModules_MountModulemap)
   set(OPTIONS)
   set(ONE_VALUE_ARGS RESULT TARGET_MODULEMAP PATH MODULEMAP MODULES CXX_FLAGS)
-  set(MULTI_VALUE_ARGS)
+  set(MULTI_VALUE_ARGS INCLUDE_PATHS)
   cmake_parse_arguments(ARG "${OPTIONS}" "${ONE_VALUE_ARGS}" "${MULTI_VALUE_ARGS}" ${ARGN} )
   if (ARG_UNPARSED_ARGUMENTS)
     message(ERROR "Unparsed args: ${ARG_UNPARSED_ARGUMENTS}")
@@ -111,7 +111,7 @@ function(ClangModules_MountModulemap)
   ClangModules_CheckHeadersExist(MODULEMAP "${ARG_MODULEMAP}"
                                  PATH "${ARG_PATH}" 
                                  RESULT HEADERS_EXIST
-                                 MISSING_HEADERS MISSING_HEADERS)
+                                 MISSING_HEADERS MISSING)
 
   ClangModules_GetHeadersFromModulemap(RESULT HEADERS MODULEMAP ${ARG_MODULEMAP})
 
@@ -127,7 +127,13 @@ function(ClangModules_MountModulemap)
 
     get_filename_component(MODULE_NAME "${ARG_MODULEMAP}" NAME_WE)
     set(TMP_CACHE_PATH "${CMAKE_BINARY_DIR}/ClangModules_TmpPCMS_${MODULE_NAME}")
-    set(CMAKE_REQUIRED_FLAGS "${ARG_CXX_FLAGS} -fmodules-cache-path=${TMP_CACHE_PATH}")
+
+    set(INCLUDE_ARGS)
+    foreach(INC ${ARG_INCLUDE_PATHS})
+      set(INCLUDE_ARGS "${INCLUDE_ARGS} -I${INC}")
+    endforeach()
+
+    set(CMAKE_REQUIRED_FLAGS "${ARG_CXX_FLAGS} ${INCLUDE_ARGS} -fmodules-cache-path=${TMP_CACHE_PATH}")
     include(CheckCXXSourceCompiles)
 
     set(INCLUDE_LIST)
@@ -208,6 +214,11 @@ function(ClangModules_SetupModulemaps)
     endif()
   endforeach()
 
+  get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
+  foreach(dir ${dirs})
+    list(APPEND INCLUDE_LIST "${dir}")
+  endforeach()
+
   set(NEW_FLAGS "")
 
   set(MODULEMAP_ID 1)
@@ -245,6 +256,7 @@ function(ClangModules_SetupModulemaps)
     if(NOT STL_SUCCESS)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
+                                INCLUDE_PATHS "${INCLUDE_PATHS}"
                                 MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/stl17.modulemap"
                                 MODULES stl17
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
@@ -257,6 +269,7 @@ function(ClangModules_SetupModulemaps)
     if(NOT STL_SUCCESS)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
+                                INCLUDE_PATHS "${INCLUDE_LIST}"
                                 MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/stl14.modulemap"
                                 MODULES stl14
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
@@ -269,6 +282,7 @@ function(ClangModules_SetupModulemaps)
     if(NOT STL_SUCCESS)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
+                                INCLUDE_PATHS "${INCLUDE_LIST}"
                                 MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/stl11.modulemap"
                                 MODULES stl11
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
@@ -281,6 +295,7 @@ function(ClangModules_SetupModulemaps)
     if(NOT STL_SUCCESS)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
+                                INCLUDE_PATHS "${INCLUDE_LIST}"
                                 MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/stl03.modulemap"
                                 MODULES stl03
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
@@ -293,6 +308,7 @@ function(ClangModules_SetupModulemaps)
     if(NOT SDL2_SUCCESS)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
+                                INCLUDE_PATHS "${INCLUDE_LIST}"
                                 MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/sdl2.modulemap"
                                 MODULES sdl2
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
@@ -305,6 +321,7 @@ function(ClangModules_SetupModulemaps)
     if(NOT LINUX_SUCCESS)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
+                                INCLUDE_PATHS "${INCLUDE_LIST}"
                                 MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/linux.modulemap"
                                 MODULES linux
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
@@ -317,6 +334,7 @@ function(ClangModules_SetupModulemaps)
     if(NOT TINYXML_SUCCESS)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
+                                INCLUDE_PATHS "${INCLUDE_LIST}"
                                 MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/tinyxml.modulemap"
                                 MODULES tinyxml
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
@@ -329,6 +347,7 @@ function(ClangModules_SetupModulemaps)
     if(NOT TINYXML2_SUCCESS)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
+                                INCLUDE_PATHS "${INCLUDE_LIST}"
                                 MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/tinyxml2.modulemap"
                                 MODULES tinyxml2
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
@@ -336,6 +355,19 @@ function(ClangModules_SetupModulemaps)
       if(TMP_SUCCESS)
         set(SUCCESS "YES")
         set(TINYXML2_SUCCESS "YES")
+      endif()
+    endif()
+    if(NOT BULLET_SUCCESS)
+    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
+                                PATH "${INCLUDE_PATH}"
+                                INCLUDE_PATHS "${INCLUDE_LIST}"
+                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/bullet.modulemap"
+                                MODULES bullet
+                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
+                                RESULT TMP_SUCCESS)
+      if(TMP_SUCCESS)
+        set(SUCCESS "YES")
+        set(BULLET_SUCCESS "YES")
       endif()
     endif()
 
