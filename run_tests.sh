@@ -32,7 +32,6 @@ function run_test {
   mkdir clang-modules
   cd clang-modules
   cp    "$source_dir"/ClangModules.cmake .
-  cp -r "$source_dir"/files .
   
 
   # Build the project
@@ -89,6 +88,12 @@ function run_test {
 }
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+echo "Generating..."
+pwd_bak="$(pwd)"
+cd "$DIR"
+$DIR/gen.py
+cd "$pwd_bak"
 
 for test_dir in $DIR/tests/*
 do

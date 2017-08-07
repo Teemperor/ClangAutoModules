@@ -1,5 +1,11 @@
 cmake_minimum_required(VERSION 3.1)
 
+set(ClangModules_UNPACK_FOLDER "${CMAKE_BINARY_DIR}")
+
+function(ClangModules_UnpackFiles)
+##UNPACK_PLACEHOLDER
+endfunction()
+
 ## ClangModules_CheckHeaders(INC_DIR <path> HEADERS <header1> <headern> RESULT <output_variable>)
 ##   `-INC_DIR - The directory to check for if the headers exist.
 ##   `-HEADERS - List of relative path to header files that the function should check for.
@@ -13,6 +19,9 @@ function(ClangModules_CheckHeaders)
   set(ONE_VALUE_ARGS INC_DIR RESULT)
   set(MULTI_VALUE_ARGS HEADERS)
   cmake_parse_arguments(ARG "${OPTIONS}" "${ONE_VALUE_ARGS}" "${MULTI_VALUE_ARGS}" ${ARGN})
+  if (ARG_UNPARSED_ARGUMENTS)
+    message(ERROR "Unparsed args: ${ARG_UNPARSED_ARGUMENTS}")
+  endif()
 
   set(RESULT YES)
   foreach(HEADER ${ARG_HEADERS})
@@ -274,7 +283,7 @@ function(ClangModules_SetupModulemaps)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
                                 INCLUDE_PATHS "${INCLUDE_PATHS}"
-                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/stl17.modulemap"
+                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/stl17.modulemap"
                                 MODULES stl17
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
                                 RESULT TMP_SUCCESS)
@@ -287,7 +296,7 @@ function(ClangModules_SetupModulemaps)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
                                 INCLUDE_PATHS "${INCLUDE_LIST}"
-                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/stl14.modulemap"
+                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/stl14.modulemap"
                                 MODULES stl14
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
                                 RESULT TMP_SUCCESS)
@@ -300,7 +309,7 @@ function(ClangModules_SetupModulemaps)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
                                 INCLUDE_PATHS "${INCLUDE_LIST}"
-                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/stl11.modulemap"
+                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/stl11.modulemap"
                                 MODULES stl11
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
                                 RESULT TMP_SUCCESS)
@@ -313,7 +322,7 @@ function(ClangModules_SetupModulemaps)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
                                 INCLUDE_PATHS "${INCLUDE_LIST}"
-                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/stl03.modulemap"
+                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/stl03.modulemap"
                                 MODULES stl03
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
                                 RESULT TMP_SUCCESS)
@@ -326,7 +335,7 @@ function(ClangModules_SetupModulemaps)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
                                 INCLUDE_PATHS "${INCLUDE_LIST}"
-                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/sdl2.modulemap"
+                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/sdl2.modulemap"
                                 MODULES sdl2
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
                                 RESULT TMP_SUCCESS)
@@ -339,7 +348,7 @@ function(ClangModules_SetupModulemaps)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
                                 INCLUDE_PATHS "${INCLUDE_LIST}"
-                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/linux.modulemap"
+                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/linux.modulemap"
                                 MODULES linux
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
                                 RESULT TMP_SUCCESS)
@@ -352,7 +361,7 @@ function(ClangModules_SetupModulemaps)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
                                 INCLUDE_PATHS "${INCLUDE_LIST}"
-                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/tinyxml.modulemap"
+                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/tinyxml.modulemap"
                                 MODULES tinyxml
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
                                 RESULT TMP_SUCCESS)
@@ -365,7 +374,7 @@ function(ClangModules_SetupModulemaps)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
                                 INCLUDE_PATHS "${INCLUDE_LIST}"
-                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/tinyxml2.modulemap"
+                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/tinyxml2.modulemap"
                                 MODULES tinyxml2
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
                                 RESULT TMP_SUCCESS)
@@ -378,7 +387,7 @@ function(ClangModules_SetupModulemaps)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
                                 INCLUDE_PATHS "${INCLUDE_LIST}"
-                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/bullet.modulemap"
+                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/bullet.modulemap"
                                 MODULES bullet
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
                                 RESULT TMP_SUCCESS)
@@ -391,7 +400,7 @@ function(ClangModules_SetupModulemaps)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
                                 INCLUDE_PATHS "${INCLUDE_LIST}"
-                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/bullet_old.modulemap"
+                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/bullet_old.modulemap"
                                 MODULES bullet
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
                                 RESULT TMP_SUCCESS)
@@ -404,7 +413,7 @@ function(ClangModules_SetupModulemaps)
     if(NOT SFML_SUCCESS)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
-                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/sfml_newer.modulemap"
+                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/sfml_newer.modulemap"
                                 MODULES sfml
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
                                 RESULT TMP_SUCCESS)
@@ -416,7 +425,7 @@ function(ClangModules_SetupModulemaps)
     if(NOT SFML_SUCCESS)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
-                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/sfml.modulemap"
+                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/sfml.modulemap"
                                 MODULES sfml
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
                                 RESULT TMP_SUCCESS)
@@ -438,6 +447,7 @@ endfunction()
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "AppleClang")
   message(STATUS "Configuring ClangModules")
+  ClangModules_UnpackFiles()
 
   set(ClangModules_VFS_FILE "${CMAKE_BINARY_DIR}/ClangModulesVFS.yaml")
   file(WRITE ${ClangModules_VFS_FILE} "{ 'version': 0, 'roots': [\n")
