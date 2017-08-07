@@ -127,26 +127,40 @@ function(ClangModules_MountModulemap)
 
     get_filename_component(MODULE_NAME "${ARG_MODULEMAP}" NAME_WE)
     set(TMP_CACHE_PATH "${CMAKE_BINARY_DIR}/ClangModules_TmpPCMS_${MODULE_NAME}")
+    if(EXISTS TMP_CACHE_PATH)
+      file(REMOVE_RECURSE "${TMP_CACHE_PATH}")
+    endif()
 
     set(INCLUDE_ARGS)
     foreach(INC ${ARG_INCLUDE_PATHS})
       set(INCLUDE_ARGS "${INCLUDE_ARGS} -I${INC}")
     endforeach()
 
-    set(CMAKE_REQUIRED_FLAGS "${ARG_CXX_FLAGS} ${INCLUDE_ARGS} -fmodules-cache-path=${TMP_CACHE_PATH}")
-    include(CheckCXXSourceCompiles)
-
     set(INCLUDE_LIST)
     foreach(HEADER ${HEADERS})
       set(INCLUDE_LIST "${INCLUDE_LIST}\n#include <${HEADER}>")
     endforeach()
 
-    check_cxx_source_compiles(
+    set(TEST_COMPILE_FILE "${CMAKE_BINARY_DIR}/TestCompileModule_${MODULE_NAME}.cxx")
+    file(WRITE "${TEST_COMPILE_FILE}"
     "
     ${INCLUDE_LIST}
     int main() {}
-    " "TestCompileModule_${MODULE_NAME}")
-    if(TestCompileModule_${MODULE_NAME})
+    ")
+    set(COMPILE_ARGS ${CMAKE_CXX_COMPILER_ARG1}
+                      ${ARG_CXX_FLAGS} ${INCLUDE_ARGS} -fmodules-cache-path=${TMP_CACHE_PATH}
+                      -fsyntax-only ${TEST_COMPILE_FILE})
+    string(REPLACE " " ";" COMPILE_ARGS "${COMPILE_ARGS}")
+    execute_process(COMMAND "${CMAKE_CXX_COMPILER}" ${COMPILE_ARGS}
+                    TIMEOUT 30
+                    RESULT_VARIABLE TestCompileModule_${MODULE_NAME}
+                    OUTPUT_VARIABLE STDOUT
+                    ERROR_VARIABLE ERROUT)
+    #message(STATUS "STD: ${STDOUT}")
+    #message(STATUS "ERR: ${ERROUT}")
+    #message(STATUS "RES: ${TestCompileModule_${MODULE_NAME}}")
+    file(REMOVE "${TEST_COMPILE_FILE}")
+    if(TestCompileModule_${MODULE_NAME} STREQUAL "0")
       set(FOUND_PCMS TRUE)
       foreach(CXX_MODULE ${ARG_MODULES})
         file(GLOB_RECURSE PCMS "${TMP_CACHE_PATH}/${CXX_MODULE}*.pcm")
