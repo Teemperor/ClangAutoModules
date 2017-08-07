@@ -156,6 +156,7 @@ function(ClangModules_MountModulemap)
                     RESULT_VARIABLE TestCompileModule_${MODULE_NAME}
                     OUTPUT_VARIABLE STDOUT
                     ERROR_VARIABLE ERROUT)
+    message(STATUS "Try compiling ${MODULE_NAME}")
     #message(STATUS "STD: ${STDOUT}")
     #message(STATUS "ERR: ${ERROUT}")
     #message(STATUS "RES: ${TestCompileModule_${MODULE_NAME}}")
@@ -192,7 +193,9 @@ function(ClangModules_MountModulemap)
       endif()
     endif()
   else()
-    #message(STATUS "Couldn't find headers ${MISSING_HEADERS} in ${ARG_PATH}")
+    if(ClangModules_DEBUG)
+      message(STATUS "DEBUG: Couldn't find headers ${MISSING_HEADERS} in ${ARG_PATH} for ${MODULE_NAME}")
+    endif()
     set(TMP_RESULT NO)
   endif()
   set(${ARG_RESULT} ${TMP_RESULT} PARENT_SCOPE)
@@ -376,6 +379,19 @@ function(ClangModules_SetupModulemaps)
                                 PATH "${INCLUDE_PATH}"
                                 INCLUDE_PATHS "${INCLUDE_LIST}"
                                 MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/bullet.modulemap"
+                                MODULES bullet
+                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
+                                RESULT TMP_SUCCESS)
+      if(TMP_SUCCESS)
+        set(SUCCESS "YES")
+        set(BULLET_SUCCESS "YES")
+      endif()
+    endif()
+    if(NOT BULLET_SUCCESS)
+    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
+                                PATH "${INCLUDE_PATH}"
+                                INCLUDE_PATHS "${INCLUDE_LIST}"
+                                MODULEMAP "${CMAKE_CURRENT_LIST_DIR}/files/bullet_old.modulemap"
                                 MODULES bullet
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
                                 RESULT TMP_SUCCESS)
