@@ -242,7 +242,7 @@ function(ClangModules_SetupModulemaps)
 
   get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
   foreach(dir ${dirs})
-    list(APPEND INCLUDE_LIST "${dir}")
+    list(INSERT INCLUDE_LIST 0 "${dir}")
   endforeach()
 
   set(NEW_FLAGS "")
@@ -445,6 +445,18 @@ function(ClangModules_SetupModulemaps)
       if(TMP_SUCCESS)
         set(SUCCESS "YES")
         set(SFML_SUCCESS "YES")
+      endif()
+    endif()
+    if(NOT GTEST_SUCCESS)
+    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
+                                PATH "${INCLUDE_PATH}"
+                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/gtest.modulemap"
+                                MODULES gtest
+                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
+                                RESULT TMP_SUCCESS)
+      if(TMP_SUCCESS)
+        set(SUCCESS "YES")
+        set(GTEST_SUCCESS "YES")
       endif()
     endif()
 
