@@ -396,6 +396,19 @@ function(ClangModules_SetupModulemaps)
         set(BULLET_SUCCESS "YES")
       endif()
     endif()
+    if(NOT GLOG_SUCCESS)
+    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
+                                PATH "${INCLUDE_PATH}"
+                                INCLUDE_PATHS "${INCLUDE_LIST}"
+                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/glog.modulemap"
+                                MODULES glog
+                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
+                                RESULT TMP_SUCCESS)
+      if(TMP_SUCCESS)
+        set(SUCCESS "YES")
+        set(GLOG_SUCCESS "YES")
+      endif()
+    endif()
     if(NOT BULLET_SUCCESS)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
