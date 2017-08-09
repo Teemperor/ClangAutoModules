@@ -1,0 +1,1 @@
+module gtest { header "gtest/gtest.h" export * }
