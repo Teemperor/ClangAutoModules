@@ -77,7 +77,7 @@ function(ClangModules_GetHeadersFromModulemap)
   file(READ ${ARG_MODULEMAP} CONTENTS)
   ClangModules_SplitByNewline(CONTENT ${CONTENTS} RESULT LINES)
   foreach(LINE ${LINES})
-    string(REGEX REPLACE ".+header[ ]+\\\"([A-Za-z0-9./]+)\\\".+" "FOUND:\\1" HEADER_MATCH "${LINE}")
+    string(REGEX REPLACE ".+header[ ]+\\\"([_A-Za-z0-9./]+)\\\".+" "FOUND:\\1" HEADER_MATCH "${LINE}")
     if("${HEADER_MATCH}" MATCHES "^FOUND:")
       string(SUBSTRING "${HEADER_MATCH}" 6 -1 HEADER_MATCH)
       set(HEADERS "${HEADERS};${HEADER_MATCH}")
@@ -123,6 +123,10 @@ function(ClangModules_MountModulemap)
                                  MISSING_HEADERS MISSING)
 
   ClangModules_GetHeadersFromModulemap(RESULT HEADERS MODULEMAP ${ARG_MODULEMAP})
+
+  if(NOT HEADERS)
+    message(FATAL_ERROR "Couldn't parse headers from modulemap ${ARG_MODULEMAP} for modules ${ARG_MODULES}")
+  endif()
 
   if(HEADERS_EXIST)
     file(READ "${ARG_MODULEMAP}" MODULEMAP_CONTENTS)
@@ -329,6 +333,19 @@ function(ClangModules_SetupModulemaps)
       if(TMP_SUCCESS)
         set(SUCCESS "YES")
         set(STL_SUCCESS "YES")
+      endif()
+    endif()
+    if(NOT BOOST_SUCCESS)
+    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
+                                PATH "${INCLUDE_PATH}"
+                                INCLUDE_PATHS "${INCLUDE_LIST}"
+                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/boost_min.modulemap"
+                                MODULES boost
+                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
+                                RESULT TMP_SUCCESS)
+      if(TMP_SUCCESS)
+        set(SUCCESS "YES")
+        set(BOOST_SUCCESS "YES")
       endif()
     endif()
     if(NOT SDL2_SUCCESS)
