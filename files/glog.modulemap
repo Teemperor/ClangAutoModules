@@ -1,0 +1,3 @@
+module glog {
+  module logging { header "glog/logging.h" export * }
+}
