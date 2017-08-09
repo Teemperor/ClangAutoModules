@@ -1,0 +1,3 @@
+module boost {
+  module shared_ptr { header "boost/shared_ptr.hpp" export * }
+}
