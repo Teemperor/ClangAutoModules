@@ -170,9 +170,6 @@ function(ClangModules_MountModulemap)
                     OUTPUT_VARIABLE STDOUT
                     ERROR_VARIABLE ERROUT)
     message(STATUS "Try compiling ${MODULE_NAME}")
-    #message(STATUS "STD: ${STDOUT}")
-    #message(STATUS "ERR: ${ERROUT}")
-    #message(STATUS "RES: ${TestCompileModule_${MODULE_NAME}}")
     file(REMOVE "${TEST_COMPILE_FILE}")
     if(TestCompileModule_${MODULE_NAME} STREQUAL "0")
       set(FOUND_PCMS TRUE)
@@ -190,7 +187,12 @@ function(ClangModules_MountModulemap)
         set(TMP_RESULT NO)
       endif()
     else()
-      message(STATUS "Failed to compile '${TMP_CACHE_PATH}'")
+      if(ClangModules_DEBUG)
+        message(STATUS "STD: ${STDOUT}")
+        message(STATUS "ERR: ${ERROUT}")
+        message(STATUS "RES: ${TestCompileModule_${MODULE_NAME}}")
+      endif()
+      message(STATUS "Failed to compile module '${MODULE_NAME}'")
       set(TMP_RESULT NO)
     endif()
     if(EXISTS "${TMP_CACHE_PATH}")
@@ -439,6 +441,34 @@ function(ClangModules_SetupModulemaps)
         set(BULLET_SUCCESS "YES")
       endif()
     endif()
+
+    if(NOT EIGEN3_SUCCESS)
+    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
+                                PATH "${INCLUDE_PATH}"
+                                INCLUDE_PATHS "${INCLUDE_LIST}"
+                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/eigen3_big.modulemap"
+                                MODULES eigen3
+                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
+                                RESULT TMP_SUCCESS)
+      if(TMP_SUCCESS)
+        set(SUCCESS "YES")
+        set(EIGEN3_SUCCESS "YES")
+      endif()
+    endif()
+    if(NOT EIGEN3_SUCCESS)
+    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
+                                PATH "${INCLUDE_PATH}"
+                                INCLUDE_PATHS "${INCLUDE_LIST}"
+                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/eigen3_min.modulemap"
+                                MODULES eigen3
+                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
+                                RESULT TMP_SUCCESS)
+      if(TMP_SUCCESS)
+        set(SUCCESS "YES")
+        set(EIGEN3_SUCCESS "YES")
+      endif()
+    endif()
+
 
     if(NOT SFML_SUCCESS)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"

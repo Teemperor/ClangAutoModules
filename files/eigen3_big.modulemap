@@ -1,0 +1,33 @@
+module eigen3 {
+  module "Array" { header "Eigen/Array" export * }
+  module "Cholesky" { header "Eigen/Cholesky" export * }
+  module "CholmodSupport" { header "Eigen/CholmodSupport" export * }
+  module "Core" { header "Eigen/Core" export * }
+  module "Dense" { header "Eigen/Dense" export * }
+  module "Eigen" { header "Eigen/Eigen" export * }
+  module "Eigen2Support" { header "Eigen/Eigen2Support" export * }
+  module "Eigenvalues" { header "Eigen/Eigenvalues" export * }
+  module "Geometry" { header "Eigen/Geometry" export * }
+  module "Householder" { header "Eigen/Householder" export * }
+  module "IterativeLinearSolvers" { header "Eigen/IterativeLinearSolvers" export * }
+  module "Jacobi" { header "Eigen/Jacobi" export * }
+  module "LU" { header "Eigen/LU" export * }
+  module "LeastSquares" { header "Eigen/LeastSquares" export * }
+  module "MetisSupport" { header "Eigen/MetisSupport" export * }
+  module "OrderingMethods" { header "Eigen/OrderingMethods" export * }
+  module "PaStiXSupport" { header "Eigen/PaStiXSupport" export * }
+  module "PardisoSupport" { header "Eigen/PardisoSupport" export * }
+  module "QR" { header "Eigen/QR" export * }
+  module "SPQRSupport" { header "Eigen/SPQRSupport" export * }
+  module "SVD" { header "Eigen/SVD" export * }
+  module "Sparse" { header "Eigen/Sparse" export * }
+  module "SparseCholesky" { header "Eigen/SparseCholesky" export * }
+  module "SparseCore" { header "Eigen/SparseCore" export * }
+  module "SparseLU" { header "Eigen/SparseLU" export * }
+  module "SparseQR" { header "Eigen/SparseQR" export * }
+  module "StdDeque" { header "Eigen/StdDeque" export * }
+  module "StdList" { header "Eigen/StdList" export * }
+  module "StdVector" { header "Eigen/StdVector" export * }
+  module "SuperLUSupport" { header "Eigen/SuperLUSupport" export * }
+  module "UmfPackSupport" { header "Eigen/UmfPackSupport" export * }
+}
