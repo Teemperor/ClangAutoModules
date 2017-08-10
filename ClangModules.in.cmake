@@ -216,6 +216,35 @@ function(ClangModules_MountModulemap)
   set(${ARG_RESULT} ${TMP_RESULT} PARENT_SCOPE)
 endfunction()
 
+set(ClangModules_FINAL_MODULEMAP_PATH)
+set(ClangModules_INCLUDE_PATH)
+set(ClangModules_INCLUDE_LIST)
+set(ClangModules_FINAL_TEST_FLAGS)
+function(ClangModules_Intern_SetupModulemaps)
+  set(OPTIONS)
+  set(ONE_VALUE_ARGS MODULE RESULT)
+  set(MULTI_VALUE_ARGS MODULEMAP)
+  cmake_parse_arguments(ARG "${OPTIONS}" "${ONE_VALUE_ARGS}" "${MULTI_VALUE_ARGS}" ${ARGN} )
+  if (ARG_UNPARSED_ARGUMENTS)
+    message(ERROR "Unparsed args: ${ARG_UNPARSED_ARGUMENTS}")
+  endif()
+  if(NOT ARG_MODULEMAP)
+    set(ARG_MODULEMAP "${ARG_MODULE}")
+  endif()
+  ClangModules_MountModulemap(TARGET_MODULEMAP "${ClangModules_FINAL_MODULEMAP_PATH}"
+                              PATH "${ClangModules_INCLUDE_PATH}"
+                              INCLUDE_PATHS "${ClangModules_INCLUDE_LIST}"
+                              MODULEMAP "${ClangModules_UNPACK_FOLDER}/${ARG_MODULEMAP}.modulemap"
+                              MODULES ${ARG_MODULE}
+                              CXX_FLAGS "${ClangModules_FINAL_TEST_FLAGS}"
+                              RESULT TMP_SUCCESS)
+  if(TMP_SUCCESS)
+    set(SUCCESS "YES" PARENT_SCOPE)
+    set(${ARG_RESULT} "YES" PARENT_SCOPE)
+  endif()
+endfunction()
+
+
 function(ClangModules_SetupModulemaps)
   set(OPTIONS)
   set(ONE_VALUE_ARGS CXX_FLAGS VFS NEW_FLAGS)
@@ -299,10 +328,15 @@ function(ClangModules_SetupModulemaps)
     set(SUCCESS NO)
     set(TMP_SUCCESS NO)
 
+    set(ClangModules_FINAL_MODULEMAP_PATH "${FINAL_MODULEMAP_PATH}")
+    set(ClangModules_INCLUDE_PATH "${INCLUDE_PATH}")
+    set(ClangModules_INCLUDE_LIST "${INCLUDE_LIST}")
+    set(ClangModules_FINAL_TEST_FLAGS "${FINAL_TEST_FLAGS}")
+
     if(NOT STL_SUCCESS)
     ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
                                 PATH "${INCLUDE_PATH}"
-                                INCLUDE_PATHS "${INCLUDE_PATHS}"
+                                INCLUDE_PATHS "${INCLUDE_LIST}"
                                 MODULEMAP "${ClangModules_UNPACK_FOLDER}/stl17.modulemap"
                                 MODULES stl17
                                 CXX_FLAGS "${FINAL_TEST_FLAGS}"
@@ -313,212 +347,52 @@ function(ClangModules_SetupModulemaps)
       endif()
     endif()
     if(NOT STL_SUCCESS)
-    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
-                                PATH "${INCLUDE_PATH}"
-                                INCLUDE_PATHS "${INCLUDE_LIST}"
-                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/stl14.modulemap"
-                                MODULES stl14
-                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
-                                RESULT TMP_SUCCESS)
-      if(TMP_SUCCESS)
-        set(SUCCESS "YES")
-        set(STL_SUCCESS "YES")
-      endif()
+      ClangModules_Intern_SetupModulemaps(MODULE stl14         RESULT STL_SUCCESS)
     endif()
     if(NOT STL_SUCCESS)
-    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
-                                PATH "${INCLUDE_PATH}"
-                                INCLUDE_PATHS "${INCLUDE_LIST}"
-                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/stl11.modulemap"
-                                MODULES stl11
-                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
-                                RESULT TMP_SUCCESS)
-      if(TMP_SUCCESS)
-        set(SUCCESS "YES")
-        set(STL_SUCCESS "YES")
-      endif()
+      ClangModules_Intern_SetupModulemaps(MODULE stl11         RESULT STL_SUCCESS)
     endif()
     if(NOT STL_SUCCESS)
-    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
-                                PATH "${INCLUDE_PATH}"
-                                INCLUDE_PATHS "${INCLUDE_LIST}"
-                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/stl03.modulemap"
-                                MODULES stl03
-                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
-                                RESULT TMP_SUCCESS)
-      if(TMP_SUCCESS)
-        set(SUCCESS "YES")
-        set(STL_SUCCESS "YES")
-      endif()
+      ClangModules_Intern_SetupModulemaps(MODULE stl03         RESULT STL_SUCCESS)
     endif()
     if(NOT BOOST_SUCCESS)
-    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
-                                PATH "${INCLUDE_PATH}"
-                                INCLUDE_PATHS "${INCLUDE_LIST}"
-                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/boost_min.modulemap"
-                                MODULES boost
-                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
-                                RESULT TMP_SUCCESS)
-      if(TMP_SUCCESS)
-        set(SUCCESS "YES")
-        set(BOOST_SUCCESS "YES")
-      endif()
+      ClangModules_Intern_SetupModulemaps(MODULE boost         RESULT BOOST_SUCCESS      MODULEMAP boost_min)
     endif()
     if(NOT SDL2_SUCCESS)
-    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
-                                PATH "${INCLUDE_PATH}"
-                                INCLUDE_PATHS "${INCLUDE_LIST}"
-                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/sdl2.modulemap"
-                                MODULES sdl2
-                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
-                                RESULT TMP_SUCCESS)
-      if(TMP_SUCCESS)
-        set(SUCCESS "YES")
-        set(SDL2_SUCCESS "YES")
-      endif()
+      ClangModules_Intern_SetupModulemaps(MODULE sdl2          RESULT SDL2_SUCCESS)
     endif()
     if(NOT LINUX_SUCCESS)
-    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
-                                PATH "${INCLUDE_PATH}"
-                                INCLUDE_PATHS "${INCLUDE_LIST}"
-                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/linux.modulemap"
-                                MODULES linux
-                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
-                                RESULT TMP_SUCCESS)
-      if(TMP_SUCCESS)
-        set(SUCCESS "YES")
-        set(LINUX_SUCCESS "YES")
-      endif()
+      ClangModules_Intern_SetupModulemaps(MODULE linux         RESULT LINUX_SUCCESS)
     endif()
     if(NOT TINYXML_SUCCESS)
-    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
-                                PATH "${INCLUDE_PATH}"
-                                INCLUDE_PATHS "${INCLUDE_LIST}"
-                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/tinyxml.modulemap"
-                                MODULES tinyxml
-                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
-                                RESULT TMP_SUCCESS)
-      if(TMP_SUCCESS)
-        set(SUCCESS "YES")
-        set(TINYXML_SUCCESS "YES")
-      endif()
+      ClangModules_Intern_SetupModulemaps(MODULE tinyxml       RESULT TINYXML_SUCCESS)
     endif()
     if(NOT TINYXML2_SUCCESS)
-    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
-                                PATH "${INCLUDE_PATH}"
-                                INCLUDE_PATHS "${INCLUDE_LIST}"
-                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/tinyxml2.modulemap"
-                                MODULES tinyxml2
-                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
-                                RESULT TMP_SUCCESS)
-      if(TMP_SUCCESS)
-        set(SUCCESS "YES")
-        set(TINYXML2_SUCCESS "YES")
-      endif()
+      ClangModules_Intern_SetupModulemaps(MODULE tinyxml2      RESULT TINYXML2_SUCCESS)
     endif()
     if(NOT BULLET_SUCCESS)
-    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
-                                PATH "${INCLUDE_PATH}"
-                                INCLUDE_PATHS "${INCLUDE_LIST}"
-                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/bullet.modulemap"
-                                MODULES bullet
-                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
-                                RESULT TMP_SUCCESS)
-      if(TMP_SUCCESS)
-        set(SUCCESS "YES")
-        set(BULLET_SUCCESS "YES")
-      endif()
+      ClangModules_Intern_SetupModulemaps(MODULE bullet        RESULT BULLET_SUCCESS)
+    endif()
+    if(NOT BULLET_SUCCESS)
+      ClangModules_Intern_SetupModulemaps(MODULE bullet        RESULT BULLET_SUCCESS    MODULEMAP bullet_old)
     endif()
     if(NOT GLOG_SUCCESS)
-    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
-                                PATH "${INCLUDE_PATH}"
-                                INCLUDE_PATHS "${INCLUDE_LIST}"
-                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/glog.modulemap"
-                                MODULES glog
-                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
-                                RESULT TMP_SUCCESS)
-      if(TMP_SUCCESS)
-        set(SUCCESS "YES")
-        set(GLOG_SUCCESS "YES")
-      endif()
-    endif()
-    if(NOT BULLET_SUCCESS)
-    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
-                                PATH "${INCLUDE_PATH}"
-                                INCLUDE_PATHS "${INCLUDE_LIST}"
-                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/bullet_old.modulemap"
-                                MODULES bullet
-                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
-                                RESULT TMP_SUCCESS)
-      if(TMP_SUCCESS)
-        set(SUCCESS "YES")
-        set(BULLET_SUCCESS "YES")
-      endif()
-    endif()
-
-    if(NOT EIGEN3_SUCCESS)
-    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
-                                PATH "${INCLUDE_PATH}"
-                                INCLUDE_PATHS "${INCLUDE_LIST}"
-                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/eigen3_big.modulemap"
-                                MODULES eigen3
-                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
-                                RESULT TMP_SUCCESS)
-      if(TMP_SUCCESS)
-        set(SUCCESS "YES")
-        set(EIGEN3_SUCCESS "YES")
-      endif()
+      ClangModules_Intern_SetupModulemaps(MODULE glog          RESULT GLOG_SUCCESS)
     endif()
     if(NOT EIGEN3_SUCCESS)
-    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
-                                PATH "${INCLUDE_PATH}"
-                                INCLUDE_PATHS "${INCLUDE_LIST}"
-                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/eigen3_min.modulemap"
-                                MODULES eigen3
-                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
-                                RESULT TMP_SUCCESS)
-      if(TMP_SUCCESS)
-        set(SUCCESS "YES")
-        set(EIGEN3_SUCCESS "YES")
-      endif()
+      ClangModules_Intern_SetupModulemaps(MODULE eigen3        RESULT EIGEN3_SUCCESS    MODULEMAP eigen3_big)
     endif()
-
-
-    if(NOT SFML_SUCCESS)
-    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
-                                PATH "${INCLUDE_PATH}"
-                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/sfml_newer.modulemap"
-                                MODULES sfml
-                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
-                                RESULT TMP_SUCCESS)
-      if(TMP_SUCCESS)
-        set(SUCCESS "YES")
-        set(SFML_SUCCESS "YES")
-      endif()
+    if(NOT EIGEN3_SUCCESS)
+      ClangModules_Intern_SetupModulemaps(MODULE eigen3        RESULT EIGEN3_SUCCESS    MODULEMAP eigen3_min)
     endif()
     if(NOT SFML_SUCCESS)
-    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
-                                PATH "${INCLUDE_PATH}"
-                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/sfml.modulemap"
-                                MODULES sfml
-                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
-                                RESULT TMP_SUCCESS)
-      if(TMP_SUCCESS)
-        set(SUCCESS "YES")
-        set(SFML_SUCCESS "YES")
-      endif()
+      ClangModules_Intern_SetupModulemaps(MODULE sfml          RESULT SFML_SUCCESS      MODULEMAP sfml_newer)
+    endif()
+    if(NOT SFML_SUCCESS)
+      ClangModules_Intern_SetupModulemaps(MODULE sfml          RESULT SFML_SUCCESS)
     endif()
     if(NOT GTEST_SUCCESS)
-    ClangModules_MountModulemap(TARGET_MODULEMAP "${FINAL_MODULEMAP_PATH}"
-                                PATH "${INCLUDE_PATH}"
-                                MODULEMAP "${ClangModules_UNPACK_FOLDER}/gtest.modulemap"
-                                MODULES gtest
-                                CXX_FLAGS "${FINAL_TEST_FLAGS}"
-                                RESULT TMP_SUCCESS)
-      if(TMP_SUCCESS)
-        set(SUCCESS "YES")
-        set(GTEST_SUCCESS "YES")
-      endif()
+      ClangModules_Intern_SetupModulemaps(MODULE gtest         RESULT GTEST_SUCCESS)
     endif()
 
     if(SUCCESS)
