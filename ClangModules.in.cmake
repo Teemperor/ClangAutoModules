@@ -251,6 +251,20 @@ function(ClangModules_SetupModulemaps)
     list(INSERT INCLUDE_LIST 0 "${dir}")
   endforeach()
 
+  set(EXTRA_INC_DIRS_FLAGS "")
+
+  # FIXME: This needs testing...
+  # Create an empty dummy list to make the list(REVERSE ...) work
+  if(NOT ClangModules_EXTRA_INC_DIRS)
+    set(ClangModules_EXTRA_INC_DIRS "")
+  endif()
+  list(REVERSE ClangModules_EXTRA_INC_DIRS)
+  foreach(dir ${ClangModules_EXTRA_INC_DIRS})
+    list(INSERT INCLUDE_LIST 0 "${dir}")
+  set(EXTRA_INC_DIRS_FLAGS "-I${dir} ${EXTRA_INC_DIRS_FLAGS}")
+  endforeach()
+  list(REVERSE ClangModules_EXTRA_INC_DIRS)
+
   set(NEW_FLAGS "")
 
   set(MODULEMAP_ID 1)
