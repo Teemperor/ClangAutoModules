@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 export CC="$1"
 export CXX="$2"
 
@@ -10,7 +12,6 @@ if [ "$3" == "SKIP_CHECKS" ]; then
 fi
 
 function run_test {
-  set -e
   test_dir="$1"
   build_dir="$2"
 
@@ -44,15 +45,8 @@ function run_test {
     CXX_FLAGS="$CXX_FLAGS -Rmodule-build"
   fi
 
-  set +e
   cmake -DCMAKE_C_FLAGS="$FLAGS"  -DCMAKE_CXX_FLAGS="$CXX_FLAGS" ..
-  if [ $? -ne 0 ]; then
-    echo "CMake failed!"
-  fi
   make VERBOSE=1
-  if [ $? -ne 0 ]; then
-    echo "make failed!"
-  fi
   
   if [ "$skip_checks" == "NO" ] ; then
     while read p; do
