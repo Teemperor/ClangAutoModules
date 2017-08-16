@@ -11,17 +11,7 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-6',
-                     'libsdl2-dev',
-                     'libtinyxml2-dev',
-                     'libtinyxml-dev',
-                     'libsfml-dev',
-                     'libbullet-dev',
-                     'libboost-all-dev',
-                     'libgoogle-glog-dev',
-                     'libgtest-dev',
-                     'libeigen3-dev'
-                     ]
+          packages: ['g++-6']
       env:
         - CXX_COMPILER=g++-6
         - COMPILER=gcc-6
@@ -32,17 +22,7 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-7',
-                     'libsdl2-dev',
-                     'libtinyxml2-dev',
-                     'libtinyxml-dev',
-                     'libsfml-dev',
-                     'libbullet-dev',
-                     'libboost-all-dev',
-                     'libgoogle-glog-dev',
-                     'libgtest-dev',
-                     'libeigen3-dev'
-                     ]
+          packages: ['g++-7']
       env:
         - CXX_COMPILER=g++-7
         - COMPILER=gcc-7
@@ -54,17 +34,7 @@ matrix:
         apt:
           sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-3.9']
           packages: ['clang-3.9',
-                     'g++-6',
-                     'libsdl2-dev',
-                     'libtinyxml2-dev',
-                     'libtinyxml-dev',
-                     'libsfml-dev',
-                     'libboost-all-dev',
-                     'libbullet-dev',
-                     'libgoogle-glog-dev',
-                     'libgtest-dev',
-                     'libeigen3-dev'
-                     ]
+                     'g++-6']
       env:
         - CXX_COMPILER=clang++-3.9
         - COMPILER=clang-3.9
@@ -76,17 +46,7 @@ matrix:
         apt:
           sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-4.0']
           packages: ['clang-4.0',
-                     'g++-6',
-                     'libsdl2-dev',
-                     'libtinyxml2-dev',
-                     'libtinyxml-dev',
-                     'libsfml-dev',
-                     'libboost-all-dev',
-                     'libbullet-dev',
-                     'libgoogle-glog-dev',
-                     'libgtest-dev',
-                     'libeigen3-dev'
-                     ]
+                     'g++-6']
       env:
         - CXX_COMPILER=clang++-4.0
         - COMPILER=clang-4.0
@@ -122,8 +82,17 @@ matrix:
 
 addons:
   apt:
-    packages:
-      - tree
+    packages: [ 'tree',
+                'libsdl2-dev',
+                'libtinyxml2-dev',
+                'libtinyxml-dev',
+                'libsfml-dev',
+                'libboost-all-dev',
+                'libbullet-dev',
+                'libgoogle-glog-dev',
+                'libgtest-dev',
+                'libeigen3-dev'
+              ]
 
 script:
   - ./run_tests.sh $COMPILER $CXX_COMPILER -j4
