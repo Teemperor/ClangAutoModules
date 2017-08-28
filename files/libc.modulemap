@@ -1,0 +1,19 @@
+// It's not possible for now to modularize libc into a single
+// libc module because that causes cyclic dependencies with
+// the STL which overwrites some of the libc headers
+// (such as stdlib.h which this is in turn referncing libc again).
+module libc_ctype    [system] { header "ctype.h" export * }
+module libc_errno    [system] { header "errno.h" export * }
+module libc_fenv     [system] { header "fenv.h" export * }
+module libc_inttypes [system] { header "inttypes.h" export * }
+module libc_locale   [system] { header "locale.h" export * }
+module libc_math     [system] { header "math.h" export * }
+module libc_setjmp   [system] { header "setjmp.h" export * }
+module libc_signal   [system] { header "signal.h" export * }
+module libc_stdint   [system] { header "stdint.h" export * }
+module libc_stdio    [system] { header "stdio.h" export * }
+module libc_stdlib   [system] { header "stdlib.h" export * }
+module libc_string   [system] { header "string.h" export * }
+module libc_tgmath   [system] { header "tgmath.h" export * }
+module libc_time     [system] { header "time.h" export * }
+module libc_uchar    [system] { header "uchar.h" export * }

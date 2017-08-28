@@ -394,6 +394,13 @@ function(ClangModules_SetupModulemaps)
     if(NOT GTEST_SUCCESS)
       ClangModules_Intern_SetupModulemaps(MODULE gtest         RESULT GTEST_SUCCESS)
     endif()
+    if(NOT LIBC_SUCCESS)
+      ClangModules_Intern_SetupModulemaps(MODULE libc_stdio    RESULT LIBC_SUCCESS      MODULEMAP libc)
+    endif()
+    if(NOT LIBC_SUCCESS)
+      ClangModules_Intern_SetupModulemaps(MODULE libc_stdio    RESULT LIBC_SUCCESS      MODULEMAP libc_no_signal)
+    endif()
+
 
     if(SUCCESS)
       set(NEW_FLAGS "${NEW_FLAGS} ${TEST_NEW_FLAG}")
