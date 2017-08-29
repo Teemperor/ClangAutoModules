@@ -20,7 +20,8 @@ matrix:
                      'libboost-all-dev',
                      'libgoogle-glog-dev',
                      'libgtest-dev',
-                     'libeigen3-dev'
+                     'libeigen3-dev',
+                     'vc-dev'
                      ]
       env:
         - CXX_COMPILER=g++-6
@@ -41,7 +42,8 @@ matrix:
                      'libboost-all-dev',
                      'libgoogle-glog-dev',
                      'libgtest-dev',
-                     'libeigen3-dev'
+                     'libeigen3-dev',
+                     'vc-dev'
                      ]
       env:
         - CXX_COMPILER=g++-7
@@ -63,7 +65,8 @@ matrix:
                      'libbullet-dev',
                      'libgoogle-glog-dev',
                      'libgtest-dev',
-                     'libeigen3-dev'
+                     'libeigen3-dev',
+                     'vc-dev'
                      ]
       env:
         - CXX_COMPILER=clang++-3.9
@@ -85,7 +88,8 @@ matrix:
                      'libbullet-dev',
                      'libgoogle-glog-dev',
                      'libgtest-dev',
-                     'libeigen3-dev'
+                     'libeigen3-dev',
+                     'vc-dev'
                      ]
       env:
         - CXX_COMPILER=clang++-4.0
