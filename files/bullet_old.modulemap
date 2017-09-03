@@ -1,4 +1,4 @@
-module bullet {
+module bullet [system] {
   module "BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.h" { header "BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.h" export * }
   module "BulletCollision/BroadphaseCollision/btAxisSweep3.h" { header "BulletCollision/BroadphaseCollision/btAxisSweep3.h" export * }
   module "BulletCollision/BroadphaseCollision/btBroadphaseInterface.h" { header "BulletCollision/BroadphaseCollision/btBroadphaseInterface.h" export * }

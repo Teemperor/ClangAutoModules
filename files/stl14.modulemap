@@ -1,4 +1,4 @@
-module stl14 {
+module stl14 [system] {
   module "algorithm" { header "algorithm" export * } // Algorithms that operate on containers
   module "array" { header "array" export * } // (since C++11) std::array container
   module "atomic" { header "atomic" export * } // (since C++11)  Atomic operations library

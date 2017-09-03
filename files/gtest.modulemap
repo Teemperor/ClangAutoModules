@@ -1,1 +1,1 @@
-module gtest { header "gtest/gtest.h" export * }
+module gtest [system] { header "gtest/gtest.h" export * }

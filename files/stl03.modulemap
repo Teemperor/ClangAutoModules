@@ -1,4 +1,4 @@
-module stl03 {
+module stl03 [system] {
   module "algorithm" { header "algorithm" export * } // Algorithms that operate on containers
   module "bitset" { header "bitset" export * } //  std::bitset class template
   module "cassert" { header "cassert" export * } // Conditionally compiled macro that compares its argument to zero
