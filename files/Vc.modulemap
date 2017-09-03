@@ -1,0 +1,10 @@
+module Vc {
+  module Allocator { header "Vc/Allocator" export * }
+  module cpuid { header "Vc/cpuid.h" export * }
+  module IO { header "Vc/IO" export * }
+  module limits { header "Vc/limits" export * }
+  module Memory { header "Vc/Memory" export * }
+  module Utils { header "Vc/Utils" export * }
+  module Vc { header "Vc/Vc" export * }
+  export *
+}
