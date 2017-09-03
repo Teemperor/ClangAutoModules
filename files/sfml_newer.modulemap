@@ -1,4 +1,4 @@
-module sfml {
+module sfml [system] {
   module "SFML/Audio.hpp" { header "SFML/Audio.hpp" export * }
   module "SFML/Audio/Export.hpp" { header "SFML/Audio/Export.hpp" export * }
   module "SFML/Audio/Listener.hpp" { header "SFML/Audio/Listener.hpp" export * }

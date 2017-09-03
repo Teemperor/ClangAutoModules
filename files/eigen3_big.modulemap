@@ -1,4 +1,4 @@
-module eigen3 {
+module eigen3 [system] {
   module "Array" { header "Eigen/Array" export * }
   module "Cholesky" { header "Eigen/Cholesky" export * }
   module "CholmodSupport" { header "Eigen/CholmodSupport" export * }

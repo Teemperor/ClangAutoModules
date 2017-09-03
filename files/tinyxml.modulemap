@@ -1,1 +1,1 @@
-module tinyxml { header "tinyxml.h" export * }
+module tinyxml [system] { header "tinyxml.h" export * }

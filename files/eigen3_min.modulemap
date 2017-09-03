@@ -1,4 +1,4 @@
-module eigen3 {
+module eigen3 [system] {
   module "Cholesky" { header "Eigen/Cholesky" export * }
   module "Core" { header "Eigen/Core" export * }
   module "Dense" { header "Eigen/Dense" export * }
