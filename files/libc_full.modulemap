@@ -1,3 +1,5 @@
+// provides: libc
+// after: stl
 // It's not possible for now to modularize libc into a single
 // libc module because that causes cyclic dependencies with
 // the STL which overwrites some of the libc headers

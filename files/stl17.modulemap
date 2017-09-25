@@ -1,3 +1,4 @@
+// provides: stl
 module stl17 [system] {
   module "algorithm" { header "algorithm" export * } // Algorithms that operate on containers
   module "any" { header "any" export * } // (since C++17) std::any class template

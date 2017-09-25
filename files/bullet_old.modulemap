@@ -1,3 +1,5 @@
+// provides: bullet
+// after: bullet_new
 module bullet [system] {
   module "BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.h" { header "BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.h" export * }
   module "BulletCollision/BroadphaseCollision/btAxisSweep3.h" { header "BulletCollision/BroadphaseCollision/btAxisSweep3.h" export * }

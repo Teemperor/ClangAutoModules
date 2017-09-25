@@ -1,3 +1,5 @@
+// after: stl14
+// provides: stl
 module stl11 [system] {
   module "algorithm" { header "algorithm" export * } // Algorithms that operate on containers
   module "array" { header "array" export * } // (since C++11) std::array container
