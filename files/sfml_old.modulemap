@@ -1,3 +1,5 @@
+// provides: sfml
+// after: sfml_newer
 module sfml [system] {
   module "SFML/Audio.hpp" { header "SFML/Audio.hpp" export * }
   module "SFML/Audio/AlResource.hpp" { header "SFML/Audio/AlResource.hpp" export * }

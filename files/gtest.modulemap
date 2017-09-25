@@ -1,1 +1,2 @@
+// after: stl
 module gtest [system] { header "gtest/gtest.h" export * }

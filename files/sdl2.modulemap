@@ -1,3 +1,4 @@
+// after: stl
 module sdl2 [system] {
   module "SDL_assert.h" { header "SDL2/SDL_assert.h" export * }
   module "SDL_atomic.h" { header "SDL2/SDL_atomic.h" export * }

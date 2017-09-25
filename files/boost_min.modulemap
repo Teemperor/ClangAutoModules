@@ -1,3 +1,5 @@
+// provides: boost
+// after: stl
 module boost [system] {
   module shared_ptr { header "boost/shared_ptr.hpp" export * }
   module thread { header "boost/thread.hpp" export * }

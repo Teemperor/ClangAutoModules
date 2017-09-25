@@ -1,3 +1,4 @@
+// after: stl
 module glog [system] {
   module logging { header "glog/logging.h" export * }
 }

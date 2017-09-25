@@ -1,3 +1,4 @@
+// after: libc
 module linux [system] {
   module "uuid.h" { header "linux/uuid.h" export * }
 }

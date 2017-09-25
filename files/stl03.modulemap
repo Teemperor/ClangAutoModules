@@ -1,3 +1,5 @@
+// after: stl11
+// provides: stl
 module stl03 [system] {
   module "algorithm" { header "algorithm" export * } // Algorithms that operate on containers
   module "bitset" { header "bitset" export * } //  std::bitset class template
