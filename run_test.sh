@@ -45,8 +45,8 @@ function run_test {
     CXX_FLAGS="$CXX_FLAGS -Rmodule-build"
   fi
 
-  cmake -DCMAKE_C_FLAGS="$FLAGS"  -DCMAKE_CXX_FLAGS="$CXX_FLAGS" ..
-  make VERBOSE=1
+  cmake -DCMAKE_C_FLAGS="$FLAGS"  -DCMAKE_CXX_FLAGS="$CXX_FLAGS" -GNinja ..
+  ninja -v
   
   if [ "$skip_checks" == "NO" ] ; then
     while read p; do
