@@ -50,8 +50,10 @@ function run_test {
   
   if [ "$skip_checks" == "NO" ] ; then
     while read p; do
+      set +e
       # Verify that we used the right modules
       find ./pcms/ -name "$p-*\\.pcm" | grep -q .
+      set -e
 
       if [ $? -ne 0 ]; then
         echo "ERROR: can't find PCM for $p"
@@ -71,6 +73,34 @@ function run_test {
         echo "-- Found PCM for $p: $(find . -name "$p-*\\.pcm")"
       fi
     done < ../NEEDS_PCMS
+
+    if [ -f ../FORBIDDEN_PCMS ]; then
+      while read p; do
+        set +e
+        # Verify that we didn't build forbidden pcms
+        find ./pcms/ -name "$p-*\\.pcm" | grep -q .
+
+        if [ $? -eq 0 ]; then
+          set -e
+          echo "ERROR: built forbidden PCM for $p"
+          echo "PWD: $(pwd)"
+          cd ..
+          echo "TREE:"
+          tree
+          cd build
+          echo "YAML:"
+          cat ClangModules_*.yaml
+          echo "CMakeFiles/CMakeError.log"
+          cat CMakeFiles/CMakeError.log
+          echo "CMakeFiles/CMakeOutput.log"
+          cat CMakeFiles/CMakeOutput.log
+          exit 1
+        else
+          set -e
+          echo "-- Found no PCM matching forbidden PCM: $p"
+        fi
+      done < ../FORBIDDEN_PCMS
+    fi
   fi
 }
 

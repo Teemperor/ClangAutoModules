@@ -96,6 +96,13 @@ class Modulemap:
         return False
     return True
   
+  def matches(self, name):
+    if self.name == name:
+      return True
+    if self.provides and self.provides == name:
+      return True
+    return False
+
   def __repr__(self):
     return self.name + ".modulemap"
 
@@ -229,11 +236,12 @@ class VirtualFileSystem:
       self.update_yaml()
 
 class ClangModules:
-  def __init__(self, clang_invok, modulemap_dirs, extra_inc_dirs):
+  def __init__(self, clang_invok, modulemap_dirs, extra_inc_dirs, check_only):
     inc_args = ""
     for inc_dir in extra_inc_dirs:
       inc_args += " -I \"" + inc_dir + "\" "
     self.clang_invok = clang_invok + inc_args
+    self.check_only = check_only
     self.include_paths = self.calculate_include_paths()
     self.modulemap_dirs = modulemap_dirs
     self.mm_graph = None
@@ -251,6 +259,22 @@ class ClangModules:
       return InvokResult(exc.output.decode(out_encoding), 1)
     else:
       return InvokResult(output, 0)
+
+  def get_next_modulemap(self):
+    while True:
+      mm = self.mm_graph.get_next_modulemap()
+      
+      if mm is None:
+        return None
+      
+      if self.check_only:
+        for c in self.check_only:
+          if mm.matches(c):
+            return mm
+        m.mm_graph.mark_modulemap(mm, False)
+        continue
+
+      return mm
 
   def parse_modulemaps(self):
     modulemaps = []
@@ -298,6 +322,7 @@ def arg_parse_error(message):
 clang_invok = None
 parsing_invocation = False
 modulemap_dirs = []
+check_only = None
 output_dir = None
 parsed_arg = True
 extra_inc_dirs = []
@@ -318,6 +343,13 @@ for i in range(0, len(sys.argv)):
     if arg == "--invocation":
       parsing_invocation = True
       clang_invok = ""
+    elif arg == "--check-only":
+      if not next_arg:
+        arg_parse_error("No arg supplied for --check-only")
+      if check_only is None:
+        check_only = []
+      check_only += filter(None, next_arg.split(";"))
+      parsed_arg = True
     elif arg == "--modulemap-dir":
       if not next_arg:
         arg_parse_error("No arg supplied for --modulemap-dir")
@@ -357,13 +389,13 @@ pcm_tmp_dir = os.path.sep.join([output_dir, "ClangModulesPCMs"])
 
 test_cpp_file = os.path.sep.join([output_dir, "ClangModules.cpp"])
 
-m = ClangModules(clang_invok, modulemap_dirs, extra_inc_dirs)
+m = ClangModules(clang_invok, modulemap_dirs, extra_inc_dirs, check_only)
 #print(m.include_paths)
 
 clang_flags = " -fmodules -fcxx-modules -Xclang -fmodules-local-submodule-visibility -ivfsoverlay \"" + output_dir + "/ClangModulesVFS.yaml\" "
 
 while True:
-  mm = m.mm_graph.get_next_modulemap()
+  mm = m.get_next_modulemap()
   if mm is None:
     break
   success = False
@@ -377,7 +409,7 @@ while True:
     m.create_test_file(mm, test_cpp_file)
     shutil.rmtree(pcm_tmp_dir, True)
     invoke_result = m.invoke_clang("-fmodules-cache-path=" + pcm_tmp_dir + " -fsyntax-only -Rmodule-build " + 
-                                   clang_flags + test_cpp_file)
+                                  clang_flags + test_cpp_file)
     #print(m.mm_graph.providers)
     success = (invoke_result.exit_code == 0)
     if success:
