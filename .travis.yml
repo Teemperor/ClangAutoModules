@@ -12,6 +12,7 @@ matrix:
         apt:
           sources: ['ubuntu-toolchain-r-test']
           packages: ['g++-6',
+                     'ninja',
                      'libsdl2-dev',
                      'libtinyxml2-dev',
                      'libtinyxml-dev',
@@ -33,6 +34,7 @@ matrix:
         apt:
           sources: ['ubuntu-toolchain-r-test']
           packages: ['g++-7',
+                     'ninja',
                      'libsdl2-dev',
                      'libtinyxml2-dev',
                      'libtinyxml-dev',
@@ -55,6 +57,7 @@ matrix:
           sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-3.9']
           packages: ['clang-3.9',
                      'g++-6',
+                     'ninja',
                      'libsdl2-dev',
                      'libtinyxml2-dev',
                      'libtinyxml-dev',
@@ -77,6 +80,7 @@ matrix:
           sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-4.0']
           packages: ['clang-4.0',
                      'g++-6',
+                     'ninja',
                      'libsdl2-dev',
                      'libtinyxml2-dev',
                      'libtinyxml-dev',
@@ -118,12 +122,6 @@ matrix:
 #      env:
 #        - CXX_COMPILER=clang++
 #        - COMPILER=clang
-
-
-addons:
-  apt:
-    packages:
-      - tree
 
 script:
   - ./run_tests.sh $COMPILER $CXX_COMPILER -j4

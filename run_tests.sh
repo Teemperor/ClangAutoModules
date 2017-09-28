@@ -11,5 +11,5 @@ cd "$DIR"
 rm -rf build
 mkdir build
 cd build
-cmake ..
+cmake -GNinja ..
 ctest --output-on-failure $@
