@@ -21,6 +21,10 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" ST
     set(ClangModules_IncArg "${ClangModules_IncArg}:${inc}")
   endforeach()
 
+  if(NOT ClangModules_CheckOnlyFor)
+    set(ClangModules_CheckOnlyFor ";")
+  endif()
+
   if(NOT ClangModules_CustomModulemapFolders)
     set(ClangModules_CustomModulemapFolders ";")
   endif()
@@ -32,6 +36,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" ST
                  --modulemap-dir "${ClangModules_CustomModulemapFolders}"
                  --output-dir "${ClangModules_UNPACK_FOLDER}"
                  -I "${ClangModules_IncArg}"
+                 --check-only "${ClangModules_CheckOnlyFor}"
                  --invocation "${ClangModules_ClangInvocation}"
                  WORKING_DIRECTORY "${ClangModules_UNPACK_FOLDER}"
                  RESULT_VARIABLE ClangModules_py_exitcode
