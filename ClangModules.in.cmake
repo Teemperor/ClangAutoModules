@@ -36,28 +36,31 @@ if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" STR
   if(NOT ClangModules_CustomModulemapFolders)
     set(ClangModules_CustomModulemapFolders ";")
   endif()
+
+  if(NOT ClangModules_RequiredModules)
+    set(ClangModules_RequiredModules ";")
+  endif()
+
   set(ClangModules_ClangInvocation "${CMAKE_CXX_COMPILER} ${CMAKE_CXX_COMPILER_ARG1} ${CMAKE_CXX_FLAGS} ${ClangModules_CURRENT_COMPILE_OPTIONS}")
   message(STATUS "Using clang invocation: ${ClangModules_ClangInvocation}")
-  message(STATUS "Using clang invocation: ${ClangModules_IncArg}")
   execute_process(COMMAND ${PYTHON_EXECUTABLE}
                  "${ClangModules_UNPACK_FOLDER}/ClangModules.py"
                  --modulemap-dir "${ClangModules_UNPACK_FOLDER}"
                  --modulemap-dir "${ClangModules_CustomModulemapFolders}"
                  --output-dir "${ClangModules_UNPACK_FOLDER}"
                  -I "${ClangModules_IncArg}"
+                 --required-modules "${ClangModules_RequiredModules}"
                  --check-only "${ClangModules_CheckOnlyFor}"
                  --invocation "${ClangModules_ClangInvocation}"
                  WORKING_DIRECTORY "${ClangModules_UNPACK_FOLDER}"
                  RESULT_VARIABLE ClangModules_py_exitcode
                  OUTPUT_VARIABLE ClangModules_CXX_FLAGS
-                 #ERROR_VARIABLE ClangModules_py_stderr
                  OUTPUT_STRIP_TRAILING_WHITESPACE
-                 #ERROR_STRIP_TRAILING_WHITESPACE
                  )
                  
-  message(STATUS "Exit: ${ClangModules_py_exitcode}")
-  message(STATUS "std: ${ClangModules_CXX_FLAGS}")
-  #message(STATUS "err: ${ClangModules_py_stderr}")
+  if(NOT "${ClangModules_py_exitcode}" EQUAL 0)
+    message(FATAL_ERROR "ClangModules failed with exit code ${ClangModules_py_exitcode}!")
+  endif()
 
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ClangModules_CXX_FLAGS} -fmodules-cache-path=${CMAKE_BINARY_DIR}/pcms")
 endif()

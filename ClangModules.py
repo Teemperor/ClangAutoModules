@@ -10,7 +10,7 @@ import os
 
 
 def eprint(msg):
-    sys.stderr.write(msg + "\n")
+    sys.stderr.write(str(msg) + "\n")
     sys.stderr.flush()
 
 
@@ -149,7 +149,7 @@ class ModulemapGraph:
 
         for mm in self.modulemaps:
             assert mm.name not in self.providers, \
-                      "modulemap name shared name with provided: %s" % mm.name
+                "modulemap name shared name with provided: %s" % mm.name
 
     def is_provided(self, prov):
         assert prov in self.providers, "Unknown prov %s " % prov
@@ -160,6 +160,15 @@ class ModulemapGraph:
             if not self.handled[p.name]:
                 return False
         return True
+
+    def requirement_success(self, req):
+        if req in self.success:
+            return self.success[req]
+        assert req in self.providers, "Unknown req %s " % req
+        for p in self.providers[req]:
+            if self.success[p.name]:
+                return True
+        return False
 
     def requirement_done(self, req):
         if req in self.handled:
@@ -296,6 +305,9 @@ class ClangModules:
         else:
             return InvokResult(output, 0)
 
+    def requirement_success(self, prov):
+        return self.mm_graph.requirement_success(prov)
+
     def get_next_modulemap(self):
         while True:
             mm = self.mm_graph.get_next_modulemap()
@@ -363,6 +375,7 @@ clang_invok = None
 parsing_invocation = False
 modulemap_dirs = []
 check_only = None
+required_modules = None
 output_dir = None
 parsed_arg = True
 extra_inc_dirs = []
@@ -389,6 +402,13 @@ for i in range(0, len(sys.argv)):
             if check_only is None:
                 check_only = []
             check_only += filter(None, next_arg.split(";"))
+            parsed_arg = True
+        elif arg == "--required-modules":
+            if not next_arg:
+                arg_parse_error("No arg supplied for --required-modules")
+            if required_modules is None:
+                required_modules = []
+            required_modules += filter(None, next_arg.split(";"))
             parsed_arg = True
         elif arg == "--modulemap-dir":
             if not next_arg:
@@ -463,5 +483,11 @@ while True:
             eprint("error:" + invoke_result.output)
             vfs.revert()
     m.mm_graph.mark_modulemap(mm, success)
+
+if required_modules:
+    for mod in required_modules:
+        if not m.requirement_success(mod):
+            eprint("Missing module " + mod)
+            exit(2)
 
 print(clang_flags)
