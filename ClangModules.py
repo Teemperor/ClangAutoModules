@@ -321,7 +321,9 @@ for i in range(0, len(sys.argv)):
     elif arg == "--modulemap-dir":
       if not next_arg:
         arg_parse_error("No arg supplied for --modulemap-dir")
-      modulemap_dirs.append(next_arg)
+      for path in next_arg.split(";"):
+        if len(path) > 0:
+          modulemap_dirs.append(path)
       parsed_arg = True
     elif arg == "-I":
       if not next_arg:

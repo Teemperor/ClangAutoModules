@@ -21,11 +21,15 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" ST
     set(ClangModules_IncArg "${ClangModules_IncArg}:${inc}")
   endforeach()
 
+  if(NOT ClangModules_CustomModulemapFolders)
+    set(ClangModules_CustomModulemapFolders ";")
+  endif()
   set(ClangModules_ClangInvocation "${CMAKE_CXX_COMPILER} ${CMAKE_CXX_COMPILER_ARG1} ${CMAKE_CXX_FLAGS} ${ClangModules_CURRENT_COMPILE_OPTIONS}")
   message(STATUS "Using clang invocation: ${ClangModules_ClangInvocation}")
   message(STATUS "Using clang invocation: ${ClangModules_IncArg}")
   execute_process(COMMAND python "${ClangModules_UNPACK_FOLDER}/ClangModules.py"
                  --modulemap-dir "${ClangModules_UNPACK_FOLDER}"
+                 --modulemap-dir "${ClangModules_CustomModulemapFolders}"
                  --output-dir "${ClangModules_UNPACK_FOLDER}"
                  -I "${ClangModules_IncArg}"
                  --invocation "${ClangModules_ClangInvocation}"
