@@ -148,7 +148,8 @@ class ModulemapGraph:
                     self.providers[mm.provides] = [mm]
 
         for mm in self.modulemaps:
-            assert not mm.name in self.providers, "modulemap name shared name with provided: %s" % mm.name
+            assert mm.name not in self.providers, \
+                      "modulemap name shared name with provided: %s" % mm.name
 
     def is_provided(self, prov):
         assert prov in self.providers, "Unknown prov %s " % prov
@@ -234,7 +235,8 @@ class VirtualFileSystem:
 
     def make_cache_file(self, target_path):
         target_path = os.path.abspath(target_path)
-        return os.path.abspath(os.path.join(self.cache_path, target_path.replace("/", "_").replace(".", "_")))
+        target_path = target_path.replace("/", "_").replace(".", "_")
+        return os.path.abspath(os.path.join(self.cache_path, target_path))
 
     def append_file(self, source, target, append):
         open_mode = "w"
@@ -244,7 +246,8 @@ class VirtualFileSystem:
             with open(source, "r") as source_file:
                 target_file.write(source_file.read())
 
-    def mount_file(self, source_file, target_dir, file_name='module.modulemap'):
+    def mount_file(self, source_file, target_dir,
+                   file_name='module.modulemap'):
         cache_file = self.make_cache_file(target_dir)
         if not self.has_target_path(target_dir):
             try:
@@ -259,13 +262,15 @@ class VirtualFileSystem:
             new_entry["name"] = str(target_dir)
             new_entry["type"] = "directory"
             new_entry["contents"] = [
-                {'name': file_name, 'type': 'file', 'external-contents': str(cache_file)}]
+                {'name': file_name, 'type': 'file',
+                 'external-contents': str(cache_file)}]
             self.roots.append(new_entry)
             self.update_yaml()
 
 
 class ClangModules:
-    def __init__(self, clang_invok, modulemap_dirs, extra_inc_dirs, check_only):
+    def __init__(self, clang_invok, modulemap_dirs, extra_inc_dirs,
+                 check_only):
         inc_args = ""
         for inc_dir in extra_inc_dirs:
             inc_args += " -I \"" + inc_dir + "\" "
@@ -283,7 +288,8 @@ class ClangModules:
             out_encoding = 'utf-8'
         try:
             output = subprocess.check_output(
-                "LANG=C " + self.clang_invok + " " + suffix, stderr=subprocess.STDOUT, shell=True)
+                "LANG=C " + self.clang_invok + " " + suffix,
+                stderr=subprocess.STDOUT, shell=True)
             output = output.decode(out_encoding)
         except subprocess.CalledProcessError as exc:
             return InvokResult(exc.output.decode(out_encoding), 1)
@@ -427,7 +433,8 @@ test_cpp_file = os.path.sep.join([output_dir, "ClangModules.cpp"])
 m = ClangModules(clang_invok, modulemap_dirs, extra_inc_dirs, check_only)
 # print(m.include_paths)
 
-clang_flags = " -fmodules -fcxx-modules -Xclang -fmodules-local-submodule-visibility -ivfsoverlay \"" + \
+clang_flags = " -fmodules -fcxx-modules -Xclang " + \
+    "-fmodules-local-submodule-visibility -ivfsoverlay \"" + \
     output_dir + "/ClangModulesVFS.yaml\" "
 
 while True:
@@ -444,7 +451,8 @@ while True:
         vfs.mount_file(mm.mm_file, inc_path)
         m.create_test_file(mm, test_cpp_file)
         shutil.rmtree(pcm_tmp_dir, True)
-        invoke_result = m.invoke_clang("-fmodules-cache-path=" + pcm_tmp_dir + " -fsyntax-only -Rmodule-build " +
+        invoke_result = m.invoke_clang("-fmodules-cache-path=" + pcm_tmp_dir +
+                                       " -fsyntax-only -Rmodule-build " +
                                        clang_flags + test_cpp_file)
         # print(m.mm_graph.providers)
         success = (invoke_result.exit_code == 0)
