@@ -1,8 +1,16 @@
 
 
-if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "AppleClang")
+find_package(PythonInterp)
+if(NOT PYTHONINTERP_FOUND)
+  message(STATUS "No python interpreter found. Can't setup ClangModules without!")
+endif()
+
+if(PYTHONINTERP_FOUND)
+if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "AppleClang")
 
   cmake_minimum_required(VERSION 3.1)
+
+
 
   set(ClangModules_UNPACK_FOLDER "${CMAKE_BINARY_DIR}")
 
@@ -31,7 +39,8 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" ST
   set(ClangModules_ClangInvocation "${CMAKE_CXX_COMPILER} ${CMAKE_CXX_COMPILER_ARG1} ${CMAKE_CXX_FLAGS} ${ClangModules_CURRENT_COMPILE_OPTIONS}")
   message(STATUS "Using clang invocation: ${ClangModules_ClangInvocation}")
   message(STATUS "Using clang invocation: ${ClangModules_IncArg}")
-  execute_process(COMMAND python "${ClangModules_UNPACK_FOLDER}/ClangModules.py"
+  execute_process(COMMAND ${PYTHON_EXECUTABLE}
+                 "${ClangModules_UNPACK_FOLDER}/ClangModules.py"
                  --modulemap-dir "${ClangModules_UNPACK_FOLDER}"
                  --modulemap-dir "${ClangModules_CustomModulemapFolders}"
                  --output-dir "${ClangModules_UNPACK_FOLDER}"
@@ -51,4 +60,5 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" ST
   #message(STATUS "err: ${ClangModules_py_stderr}")
 
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ClangModules_CXX_FLAGS} -fmodules-cache-path=${CMAKE_BINARY_DIR}/pcms")
+endif()
 endif()
