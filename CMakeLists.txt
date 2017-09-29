@@ -17,10 +17,10 @@ foreach(t ${tests})
 
   if(EXISTS "${t}/EXPECTED_ERROR")
     add_test(NAME compile-expected-fail:${test_name}
-           COMMAND bash -x "${CMAKE_SOURCE_DIR}/run_test_neg.sh" "${CMAKE_SOURCE_DIR}/run_test.sh" "${CMAKE_C_COMPILER}" "${CMAKE_CXX_COMPILER}" ${SHOULD_CHECK} "${t}")
+           COMMAND bash -x "${CMAKE_SOURCE_DIR}/scripts/run_test_neg.sh" "${CMAKE_SOURCE_DIR}/scripts/run_test.sh" "${CMAKE_C_COMPILER}" "${CMAKE_CXX_COMPILER}" ${SHOULD_CHECK} "${t}")
   else()
     add_test(NAME compile:${test_name}
-           COMMAND bash -x "${CMAKE_SOURCE_DIR}/run_test.sh" "${CMAKE_C_COMPILER}" "${CMAKE_CXX_COMPILER}" ${SHOULD_CHECK} "${t}")
+           COMMAND bash -x "${CMAKE_SOURCE_DIR}/scripts/run_test.sh" "${CMAKE_C_COMPILER}" "${CMAKE_CXX_COMPILER}" ${SHOULD_CHECK} "${t}")
   endif()
 endforeach()
 
