@@ -7,7 +7,7 @@ shift
 shift
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cd "$DIR"
+cd "$DIR/.."
 
 echo "Checking for PEP-8"
 if ! [ -x "$(command -v flake8)" ]; then
