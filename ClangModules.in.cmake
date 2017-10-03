@@ -75,7 +75,7 @@ if(ClangModules_WithoutClang OR ClangModules_IsClang)
     message(FATAL_ERROR "ClangModules failed with exit code ${ClangModules_py_exitcode}!")
   endif()
 
-  if(ClangModules_IsClang)
+  if(ClangModules_IsClang AND NOT ClangModules_WithoutClang)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ClangModules_CXX_FLAGS} -fmodules-cache-path=${CMAKE_BINARY_DIR}/pcms")
   endif()
 endif()
