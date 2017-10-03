@@ -48,6 +48,10 @@ if(ClangModules_WithoutClang OR ClangModules_IsClang)
     set(ClangModules_RequiredModules ";")
   endif()
 
+  if(NOT ClangModules_OutputVFSFile)
+    set(ClangModules_OutputVFSFile "-")
+  endif()
+
   set(ClangModules_ClangInvocation "${CMAKE_CXX_COMPILER} ${CMAKE_CXX_COMPILER_ARG1} ${CMAKE_CXX_FLAGS} ${ClangModules_CURRENT_COMPILE_OPTIONS}")
   message(STATUS "Using clang invocation: ${ClangModules_ClangInvocation}")
   execute_process(COMMAND ${PYTHON_EXECUTABLE}
@@ -57,6 +61,7 @@ if(ClangModules_WithoutClang OR ClangModules_IsClang)
                  --output-dir "${ClangModules_UNPACK_FOLDER}"
                  -I "${ClangModules_IncArg}"
                  ${ClangModules_ClanglessArg}
+                 --vfs-output "${ClangModules_OutputVFSFile}"
                  --required-modules "${ClangModules_RequiredModules}"
                  --check-only "${ClangModules_CheckOnlyFor}"
                  --invocation "${ClangModules_ClangInvocation}"
