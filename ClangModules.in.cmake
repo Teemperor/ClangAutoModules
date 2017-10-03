@@ -5,12 +5,19 @@ if(NOT PYTHONINTERP_FOUND)
   message(STATUS "No python interpreter found. Can't setup ClangModules without!")
 endif()
 
-if(PYTHONINTERP_FOUND)
+if(ClangModules_WithoutClang)
+  set(ClangModules_ClanglessArg "--clangless")
+endif()
+
+set(ClangModules_IsClang NO)
 if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "AppleClang")
+  set(ClangModules_IsClang YES)
+endif()
+
+if(PYTHONINTERP_FOUND)
+if(ClangModules_WithoutClang OR ClangModules_IsClang)
 
   cmake_minimum_required(VERSION 3.1)
-
-
 
   set(ClangModules_UNPACK_FOLDER "${CMAKE_BINARY_DIR}")
 
@@ -49,6 +56,7 @@ if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" STR
                  --modulemap-dir "${ClangModules_CustomModulemapFolders}"
                  --output-dir "${ClangModules_UNPACK_FOLDER}"
                  -I "${ClangModules_IncArg}"
+                 ${ClangModules_ClanglessArg}
                  --required-modules "${ClangModules_RequiredModules}"
                  --check-only "${ClangModules_CheckOnlyFor}"
                  --invocation "${ClangModules_ClangInvocation}"
@@ -62,6 +70,8 @@ if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" STR
     message(FATAL_ERROR "ClangModules failed with exit code ${ClangModules_py_exitcode}!")
   endif()
 
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ClangModules_CXX_FLAGS} -fmodules-cache-path=${CMAKE_BINARY_DIR}/pcms")
+  if(ClangModules_IsClang)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ClangModules_CXX_FLAGS} -fmodules-cache-path=${CMAKE_BINARY_DIR}/pcms")
+  endif()
 endif()
 endif()

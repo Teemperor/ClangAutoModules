@@ -278,12 +278,13 @@ class VirtualFileSystem:
 
 
 class ClangModules:
-    def __init__(self, clang_invok, modulemap_dirs, extra_inc_dirs,
-                 check_only):
+    def __init__(self, clang_invok, clangless_mode, modulemap_dirs,
+                 extra_inc_dirs, check_only):
         inc_args = ""
         for inc_dir in extra_inc_dirs:
             inc_args += " -I \"" + inc_dir + "\" "
         self.clang_invok = clang_invok + inc_args
+        self.clangless_mode = clangless_mode
         self.check_only = check_only
         self.include_paths = self.calculate_include_paths()
         self.modulemap_dirs = modulemap_dirs
@@ -291,7 +292,9 @@ class ClangModules:
         self.pcm_tmp_dir = pcm_tmp_dir
         self.parse_modulemaps()
 
-    def invoke_clang(self, suffix):
+    def invoke_clang(self, suffix, force_with_clangless=False):
+        if self.clangless_mode and not force_with_clangless:
+            return InvokResult("", 0)
         out_encoding = sys.stdout.encoding
         if out_encoding is None:
             out_encoding = 'utf-8'
@@ -338,8 +341,10 @@ class ClangModules:
 
     def calculate_include_paths(self, make_abs=True):
         includes = []
-        output = self.invoke_clang("-xc++ -v -E /dev/null")
-        if output.exit_code != 0:
+        output = self.invoke_clang("-xc++ -v -E /dev/null", True)
+        # In clangless_mode we can fail when we have a non GCC compatible
+        # compiler that doesn't like our invocation above.
+        if output.exit_code != 0 and not self.clangless_mode:
             raise NameError(
                 'Clang failed with non-zero exit code: ' + str(output.output))
         output = output.output
@@ -379,6 +384,7 @@ required_modules = None
 output_dir = None
 parsed_arg = True
 extra_inc_dirs = []
+clangless_mode = False
 
 for i in range(0, len(sys.argv)):
     if parsed_arg:
@@ -410,6 +416,8 @@ for i in range(0, len(sys.argv)):
                 required_modules = []
             required_modules += filter(None, next_arg.split(";"))
             parsed_arg = True
+        elif arg == "--clangless":
+            clangless_mode = True
         elif arg == "--modulemap-dir":
             if not next_arg:
                 arg_parse_error("No arg supplied for --modulemap-dir")
@@ -450,7 +458,8 @@ pcm_tmp_dir = os.path.sep.join([output_dir, "ClangModulesPCMs"])
 
 test_cpp_file = os.path.sep.join([output_dir, "ClangModules.cpp"])
 
-m = ClangModules(clang_invok, modulemap_dirs, extra_inc_dirs, check_only)
+m = ClangModules(clang_invok, clangless_mode,
+                 modulemap_dirs, extra_inc_dirs, check_only)
 # print(m.include_paths)
 
 clang_flags = " -fmodules -fcxx-modules -Xclang " + \
@@ -490,4 +499,5 @@ if required_modules:
             eprint("Missing module " + mod)
             exit(2)
 
-print(clang_flags)
+if not clangless_mode:
+    print(clang_flags)
