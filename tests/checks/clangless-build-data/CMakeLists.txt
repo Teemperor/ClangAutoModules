@@ -8,3 +8,7 @@ include(ClangModules.cmake)
 
 add_executable(clangless-test main.cpp)
 TARGET_LINK_LIBRARIES(clangless-test glog)
+
+if ("${CMAKE_CXX_FLAGS}" MATCHES "-fmodules")
+  message(FATAL_ERROR "Shouldn't have set -fmodules in clangless mode!")
+endif()
