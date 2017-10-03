@@ -126,4 +126,4 @@ addons:
       - tree
 
 script:
-  - ./scripts/run_tests.sh $COMPILER $CXX_COMPILER -j4
+  - ./scripts/run_tests.sh $COMPILER $CXX_COMPILER -j12
