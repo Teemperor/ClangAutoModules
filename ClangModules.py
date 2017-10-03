@@ -385,6 +385,7 @@ output_dir = None
 parsed_arg = True
 extra_inc_dirs = []
 clangless_mode = False
+vfs_output = None
 
 for i in range(0, len(sys.argv)):
     if parsed_arg:
@@ -425,6 +426,12 @@ for i in range(0, len(sys.argv)):
                 if len(path) > 0:
                     modulemap_dirs.append(path)
             parsed_arg = True
+        elif arg == "--vfs-output":
+            if not next_arg:
+                arg_parse_error("No arg supplied for --vfs-output")
+            if next_arg != "-":
+                vfs_output = next_arg
+            parsed_arg = True
         elif arg == "-I":
             if not next_arg:
                 arg_parse_error("No arg supplied for -I")
@@ -452,7 +459,10 @@ if not output_dir:
 if not clang_invok:
     arg_parse_error("No clang invocation specified with --invocation [...]")
 
-vfs = VirtualFileSystem("ClangModulesVFS.yaml", output_dir)
+if not vfs_output:
+    vfs_output = os.path.sep.join([output_dir, "ClangModulesVFS.yaml"])
+
+vfs = VirtualFileSystem(vfs_output, output_dir)
 
 pcm_tmp_dir = os.path.sep.join([output_dir, "ClangModulesPCMs"])
 
@@ -463,8 +473,7 @@ m = ClangModules(clang_invok, clangless_mode,
 # print(m.include_paths)
 
 clang_flags = " -fmodules -fcxx-modules -Xclang " + \
-    "-fmodules-local-submodule-visibility -ivfsoverlay \"" + \
-    output_dir + "/ClangModulesVFS.yaml\" "
+    "-fmodules-local-submodule-visibility -ivfsoverlay \"" + vfs_output + "\" "
 
 while True:
     mm = m.get_next_modulemap()
