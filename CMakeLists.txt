@@ -3,6 +3,9 @@ cmake_minimum_required(VERSION 3.0)
 
 enable_testing()
 
+execute_process(COMMAND python "${CMAKE_CURRENT_SOURCE_DIR}/scripts/gen.py"
+                WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
+
 set(SHOULD_CHECK CHECK)
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
   set(SHOULD_CHECK SKIP_CHECKS)
@@ -32,15 +35,7 @@ foreach(c ${checks})
   get_filename_component(check_name "${c}" NAME_WE)
   set(check_data "${CMAKE_CURRENT_SOURCE_DIR}/tests/checks/${check_name}-data")
   set(check_dir "${CMAKE_BINARY_DIR}/${check_name}")
-  if(EXISTS "${check_data}")
-    add_test(NAME check:${check_name}
-            COMMAND ${CMAKE_COMMAND} -E remove_directory "${check_dir}"
-            COMMAND ${CMAKE_COMMAND} -E copy_directory "${check_data}" "${check_dir}"
-            COMMAND python "${c}" "${CMAKE_CURRENT_SOURCE_DIR}"
-            WORKING_DIRECTORY "${check_dir}")
-  else()
-    add_test(NAME check:${check_name}
-            COMMAND python "${c}" "${CMAKE_CURRENT_SOURCE_DIR}"
-            WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
-  endif()
+  add_test(NAME check:${check_name}
+        COMMAND python "${c}" "${CMAKE_CURRENT_SOURCE_DIR}" "${check_data}" "${check_dir}"
+        WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
 endforeach()
