@@ -720,48 +720,7 @@ module concept_check {
   module "concept_check" { header "concept_check.hpp" export * }
 }
 module config {
-  module "config__abi__borland_prefix" { header "config/abi/borland_prefix.hpp" export * }
-  module "config__abi__borland_suffix" { header "config/abi/borland_suffix.hpp" export * }
-  module "config__abi__msvc_prefix" { header "config/abi/msvc_prefix.hpp" export * }
-  module "config__auto_link" { header "config/auto_link.hpp" export * }
-  module "config__compiler__clang" { header "config/compiler/clang.hpp" export * }
-  module "config__compiler__codegear" { header "config/compiler/codegear.hpp" export * }
-  module "config__compiler__gcc" { header "config/compiler/gcc.hpp" export * }
-  module "config__compiler__gcc_xml" { header "config/compiler/gcc_xml.hpp" export * }
-  module "config__compiler__nvcc" { header "config/compiler/nvcc.hpp" export * }
-  module "config__compiler__pathscale" { header "config/compiler/pathscale.hpp" export * }
-  module "config__compiler__xlcpp" { header "config/compiler/xlcpp.hpp" export * }
   module "config" { header "config.hpp" export * }
-  module "config__no_tr1__cmath" { header "config/no_tr1/cmath.hpp" export * }
-  module "config__no_tr1__complex" { header "config/no_tr1/complex.hpp" export * }
-  module "config__no_tr1__functional" { header "config/no_tr1/functional.hpp" export * }
-  module "config__no_tr1__memory" { header "config/no_tr1/memory.hpp" export * }
-  module "config__no_tr1__utility" { header "config/no_tr1/utility.hpp" export * }
-  module "config__platform__aix" { header "config/platform/aix.hpp" export * }
-  module "config__platform__amigaos" { header "config/platform/amigaos.hpp" export * }
-  module "config__platform__beos" { header "config/platform/beos.hpp" export * }
-  module "config__platform__cloudabi" { header "config/platform/cloudabi.hpp" export * }
-  module "config__platform__cray" { header "config/platform/cray.hpp" export * }
-  module "config__platform__cygwin" { header "config/platform/cygwin.hpp" export * }
-  module "config__platform__haiku" { header "config/platform/haiku.hpp" export * }
-  module "config__platform__hpux" { header "config/platform/hpux.hpp" export * }
-  module "config__platform__irix" { header "config/platform/irix.hpp" export * }
-  module "config__platform__linux" { header "config/platform/linux.hpp" export * }
-  module "config__platform__macos" { header "config/platform/macos.hpp" export * }
-  module "config__platform__qnxnto" { header "config/platform/qnxnto.hpp" export * }
-  module "config__platform__solaris" { header "config/platform/solaris.hpp" export * }
-  module "config__platform__vms" { header "config/platform/vms.hpp" export * }
-  module "config__platform__win32" { header "config/platform/win32.hpp" export * }
-  module "config__posix_features" { header "config/posix_features.hpp" export * }
-  module "config__requires_threads" { header "config/requires_threads.hpp" export * }
-  module "config__select_compiler_config" { header "config/select_compiler_config.hpp" export * }
-  module "config__select_platform_config" { header "config/select_platform_config.hpp" export * }
-  module "config__select_stdlib_config" { header "config/select_stdlib_config.hpp" export * }
-  module "config__stdlib__libstdcpp3" { header "config/stdlib/libstdcpp3.hpp" export * }
-  module "config__stdlib__vacpp" { header "config/stdlib/vacpp.hpp" export * }
-  module "config__suffix" { header "config/suffix.hpp" export * }
-  module "config__user" { header "config/user.hpp" export * }
-  module "config__warning_disable" { header "config/warning_disable.hpp" export * }
 }
 module container {
   module "container__adaptive_pool" { header "container/adaptive_pool.hpp" export * }
