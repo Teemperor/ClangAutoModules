@@ -8,7 +8,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
   set(SHOULD_CHECK SKIP_CHECKS)
 endif()
 
-file(GLOB tests "${CMAKE_CURRENT_SOURCE_DIR}/tests/*")
+file(GLOB tests "${CMAKE_CURRENT_SOURCE_DIR}/tests/compilation/*")
 if(NOT tests)
   message(FATAL_ERROR "No tests found, this should never happen")
 endif()
@@ -24,13 +24,23 @@ foreach(t ${tests})
   endif()
 endforeach()
 
-file(GLOB checks "${CMAKE_CURRENT_SOURCE_DIR}/checks/*.py")
+file(GLOB checks "${CMAKE_CURRENT_SOURCE_DIR}/tests/checks/*.py")
 if(NOT checks)
   message(FATAL_ERROR "No checks found, this should never happen")
 endif()
 foreach(c ${checks})
   get_filename_component(check_name "${c}" NAME_WE)
-  add_test(NAME check:${check_name}
-           COMMAND python "${CMAKE_CURRENT_SOURCE_DIR}/checks/${check_name}.py"
-           WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
+  set(check_data "${CMAKE_CURRENT_SOURCE_DIR}/tests/checks/${check_name}-data")
+  set(check_dir "${CMAKE_BINARY_DIR}/${check_name}")
+  if(EXISTS "${check_data}")
+    add_test(NAME check:${check_name}
+            COMMAND ${CMAKE_COMMAND} -E remove_directory "${check_dir}"
+            COMMAND ${CMAKE_COMMAND} -E copy_directory "${check_data}" "${check_dir}"
+            COMMAND python "${c}" "${CMAKE_CURRENT_SOURCE_DIR}"
+            WORKING_DIRECTORY "${check_dir}")
+  else()
+    add_test(NAME check:${check_name}
+            COMMAND python "${c}" "${CMAKE_CURRENT_SOURCE_DIR}"
+            WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
+  endif()
 endforeach()
