@@ -52,6 +52,10 @@ if(ClangModules_WithoutClang OR ClangModules_IsClang)
     set(ClangModules_OutputVFSFile "-")
   endif()
 
+  if(NOT ClangModules_ModulesCache)
+    set(ClangModules_ModulesCache "${CMAKE_BINARY_DIR}/pcm")
+  endif()
+
   set(ClangModules_ClangInvocation "${CMAKE_CXX_COMPILER} ${CMAKE_CXX_COMPILER_ARG1} ${CMAKE_CXX_FLAGS} ${ClangModules_CURRENT_COMPILE_OPTIONS}")
   message(STATUS "Using clang invocation: ${ClangModules_ClangInvocation}")
   execute_process(COMMAND ${PYTHON_EXECUTABLE}
@@ -67,7 +71,7 @@ if(ClangModules_WithoutClang OR ClangModules_IsClang)
                  --invocation "${ClangModules_ClangInvocation}"
                  WORKING_DIRECTORY "${ClangModules_UNPACK_FOLDER}"
                  RESULT_VARIABLE ClangModules_py_exitcode
-                 OUTPUT_VARIABLE ClangModules_CXX_FLAGS
+                 OUTPUT_VARIABLE ClangModules_CXX_FLAGS_RAW
                  OUTPUT_STRIP_TRAILING_WHITESPACE
                  )
                  
@@ -75,8 +79,16 @@ if(ClangModules_WithoutClang OR ClangModules_IsClang)
     message(FATAL_ERROR "ClangModules failed with exit code ${ClangModules_py_exitcode}!")
   endif()
 
+  if(ClangModules_ExtraFlags)
+    set(ClangModules_CXX_FLAGS "${ClangModules_CXX_FLAGS_RAW} ${ClangModules_EXTRA_FLAGS} -fmodules-cache-path=${ClangModules_ModulesCache}")
+  else()
+    set(ClangModules_CXX_FLAGS "${ClangModules_CXX_FLAGS_RAW} -fmodules-cache-path=${ClangModules_ModulesCache}")
+  endif()
+  string(REPLACE "-fcxx-modules" "" ClangModules_C_FLAGS "${ClangModules_CXX_FLAGS}")
+
   if(ClangModules_IsClang AND NOT ClangModules_WithoutClang)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ClangModules_CXX_FLAGS} -fmodules-cache-path=${CMAKE_BINARY_DIR}/pcms")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${ClangModules_C_FLAGS}")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ClangModules_CXX_FLAGS}")
   endif()
 endif()
 endif()
