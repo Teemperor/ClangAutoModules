@@ -1,5 +1,8 @@
 language: cpp
 
+notifications:
+  email: false
+
 branches:
   only:
     - master
