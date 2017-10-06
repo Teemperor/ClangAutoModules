@@ -855,7 +855,6 @@ module convert {
   module "convert__parameters" { header "convert/parameters.hpp" export * }
 }
 module core {
-  module "core__addressof" { header "core/addressof.hpp" export * }
   module "core__checked_delete" { header "core/checked_delete.hpp" export * }
   module "core__demangle" { header "core/demangle.hpp" export * }
   module "core__enable_if" { header "core/enable_if.hpp" export * }
@@ -873,6 +872,7 @@ module core {
   module "core__typeinfo" { header "core/typeinfo.hpp" export * }
   module "core__underlying_type" { header "core/underlying_type.hpp" export * }
 }
+module "core__addressof" { header "core/addressof.hpp" export * }
 module coroutine2 {
   module "coroutine2__all" { header "coroutine2/all.hpp" export * }
   module "coroutine2__coroutine" { header "coroutine2/coroutine.hpp" export * }
@@ -8355,7 +8355,6 @@ module unordered_set {
   module "unordered_set" { header "unordered_set.hpp" export * }
 }
 module utility {
-  module "utility__addressof" { header "utility/addressof.hpp" export * }
   module "utility__base_from_member" { header "utility/base_from_member.hpp" export * }
   module "utility__binary" { header "utility/binary.hpp" export * }
   module "utility__compare_pointees" { header "utility/compare_pointees.hpp" export * }
@@ -8363,7 +8362,6 @@ module utility {
   module "utility__detail__in_place_factory_prefix" { header "utility/detail/in_place_factory_prefix.hpp" export * }
   module "utility__detail__in_place_factory_suffix" { header "utility/detail/in_place_factory_suffix.hpp" export * }
   module "utility__empty_deleter" { header "utility/empty_deleter.hpp" export * }
-  module "utility__enable_if" { header "utility/enable_if.hpp" export * }
   module "utility__explicit_operator_bool" { header "utility/explicit_operator_bool.hpp" export * }
   module "utility" { header "utility.hpp" export * }
   module "utility__identity_type" { header "utility/identity_type.hpp" export * }
@@ -8377,6 +8375,8 @@ module utility {
   module "utility__typed_in_place_factory" { header "utility/typed_in_place_factory.hpp" export * }
   module "utility__value_init" { header "utility/value_init.hpp" export * }
 }
+module "utility__addressof" { header "utility/addressof.hpp" export * }
+module "utility__enable_if" { header "utility/enable_if.hpp" export * }
 module uuid {
   module "uuid__detail__config" { header "uuid/detail/config.hpp" export * }
   module "uuid__name_generator" { header "uuid/name_generator.hpp" export * }
