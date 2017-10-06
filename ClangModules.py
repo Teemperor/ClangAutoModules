@@ -116,7 +116,6 @@ class Modulemap:
     def can_use_in_dir(self, path):
         for header in self.headers:
             if not os.path.isfile(os.path.sep.join([path, header])):
-                eprint("  Missing " + header)
                 return False
         return True
 
@@ -290,6 +289,7 @@ class ClangModules:
         self.modulemap_dirs = modulemap_dirs
         self.mm_graph = None
         self.pcm_tmp_dir = pcm_tmp_dir
+        self.longest_modulename = 1
         self.parse_modulemaps()
 
     def invoke_clang(self, suffix, force_with_clangless=False):
@@ -336,6 +336,8 @@ class ClangModules:
                 file_path = os.path.abspath(
                     os.path.sep.join([modulemap_dir, filename]))
                 mm = Modulemap(file_path)
+                if len(mm.name) > self.longest_modulename:
+                    self.longest_modulename = len(mm.name)
                 modulemaps.append(mm)
         self.mm_graph = ModulemapGraph(modulemaps)
 
@@ -480,12 +482,11 @@ while True:
     if mm is None:
         break
     success = False
-    eprint("Module  " + mm.name)
+    sys.stderr.write("   Module " + mm.name.ljust(m.longest_modulename + 1))
+    sys.stderr.flush()
     for inc_path in m.include_paths:
-        eprint(" Selecting " + inc_path)
         if not mm.can_use_in_dir(inc_path):
             continue
-        eprint(" Checking " + inc_path)
         vfs.mount_file(mm.mm_file, inc_path)
         m.create_test_file(mm, test_cpp_file)
         shutil.rmtree(pcm_tmp_dir, True)
@@ -495,17 +496,20 @@ while True:
         # print(m.mm_graph.providers)
         success = (invoke_result.exit_code == 0)
         if success:
-            eprint("works " + mm.name + " " + str(inc_path))
             break
         else:
-            eprint("error:" + invoke_result.output)
             vfs.revert()
+    if success:
+        sys.stderr.write(" ->   OK! [" + str(inc_path) + "]\n")
+    else:
+        sys.stderr.write(" -> FAIL!\n")
+    sys.stderr.flush()
     m.mm_graph.mark_modulemap(mm, success)
 
 if required_modules:
     for mod in required_modules:
         if not m.requirement_success(mod):
-            eprint("Missing module " + mod)
+            eprint("Missing required module " + mod)
             exit(2)
 
 if not clangless_mode:
