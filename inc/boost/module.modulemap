@@ -1031,7 +1031,6 @@ module detail {
   module "detail__iterator" { header "detail/iterator.hpp" export * }
   module "detail__lcast_precision" { header "detail/lcast_precision.hpp" export * }
   module "detail__lightweight_mutex" { header "detail/lightweight_mutex.hpp" export * }
-  module "detail__lightweight_test" { header "detail/lightweight_test.hpp" export * }
   module "detail__no_exceptions_support" { header "detail/no_exceptions_support.hpp" export * }
   module "detail__numeric_traits" { header "detail/numeric_traits.hpp" export * }
   module "detail__ob_compressed_pair" { header "detail/ob_compressed_pair.hpp" export * }
@@ -1043,8 +1042,9 @@ module detail {
   module "detail__templated_streams" { header "detail/templated_streams.hpp" export * }
   module "detail__winapi__config" { header "detail/winapi/config.hpp" export * }
   module "detail__winapi__detail__cast_ptr" { header "detail/winapi/detail/cast_ptr.hpp" export * }
-  module "detail__workaround" { header "detail/workaround.hpp" export * }
 }
+module "detail__workaround" { header "detail/workaround.hpp" export * }
+module "detail__lightweight_test" { header "detail/lightweight_test.hpp" export * }
 module dll {
   module "dll__alias" { header "dll/alias.hpp" export * }
   module "dll__detail__aggressive_ptr_cast" { header "dll/detail/aggressive_ptr_cast.hpp" export * }
