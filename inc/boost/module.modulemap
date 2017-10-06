@@ -1005,8 +1005,11 @@ module date_time {
   module "date_time__wrapping_int" { header "date_time/wrapping_int.hpp" export * }
   module "date_time__year_month_day" { header "date_time/year_month_day.hpp" export * }
 }
+
+// Causes cyclic dependency between range <-> detail
+module "detail__algorithm" { header "detail/algorithm.hpp" export * }
+
 module detail {
-  module "detail__algorithm" { header "detail/algorithm.hpp" export * }
   module "detail__allocator_utilities" { header "detail/allocator_utilities.hpp" export * }
   module "detail__atomic_count" { header "detail/atomic_count.hpp" export * }
   module "detail__atomic_redef_macros" { header "detail/atomic_redef_macros.hpp" export * }
