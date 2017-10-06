@@ -25,7 +25,7 @@ if(ClangModules_WithoutClang OR ClangModules_IsClang)
   ##UNPACK_PLACEHOLDER
   endfunction()
 
-  message(STATUS "Configuring ClangModules")
+  message(STATUS "Setting up ClangModules:")
   ClangModules_UnpackFiles()
   
   get_property(ClangModules_CURRENT_COMPILE_OPTIONS DIRECTORY PROPERTY COMPILE_OPTIONS)
@@ -57,7 +57,6 @@ if(ClangModules_WithoutClang OR ClangModules_IsClang)
   endif()
 
   set(ClangModules_ClangInvocation "${CMAKE_CXX_COMPILER} ${CMAKE_CXX_COMPILER_ARG1} ${CMAKE_CXX_FLAGS} ${ClangModules_CURRENT_COMPILE_OPTIONS}")
-  message(STATUS "Using clang invocation: ${ClangModules_ClangInvocation}")
   execute_process(COMMAND ${PYTHON_EXECUTABLE}
                  "${ClangModules_UNPACK_FOLDER}/ClangModules.py"
                  --modulemap-dir "${ClangModules_UNPACK_FOLDER}"
@@ -78,6 +77,7 @@ if(ClangModules_WithoutClang OR ClangModules_IsClang)
   if(NOT "${ClangModules_py_exitcode}" EQUAL 0)
     message(FATAL_ERROR "ClangModules failed with exit code ${ClangModules_py_exitcode}!")
   endif()
+  message(STATUS "Done setting up ClangModules!")
 
   if(ClangModules_ExtraFlags)
     set(ClangModules_CXX_FLAGS "${ClangModules_CXX_FLAGS_RAW} ${ClangModules_EXTRA_FLAGS} -fmodules-cache-path=${ClangModules_ModulesCache}")
