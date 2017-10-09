@@ -47,10 +47,13 @@ if os.path.isfile("HasClang"):
 
     ok_pat = re.compile(r"^   Module \S+ +->   OK! \S+$")
     fail_pat = re.compile(r"^   Module \S+ +-> FAIL!$")
+    skip_pat = re.compile(r"^   Module \S+ +-> SKIP!$")
     for o in modules_output:
         if ok_pat.match(o):
             pass
         elif fail_pat.match(o):
+            pass
+        elif skip_pat.match(o):
             pass
         else:
             exit("Couldn't recognize output '" + str(o) + "'")

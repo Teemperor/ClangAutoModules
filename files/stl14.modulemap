@@ -1,5 +1,6 @@
 // after: stl17
 // provides: stl
+// needed_flags: -std=c++14
 module stl14 [system] {
   module "algorithm" { header "algorithm" export * } // Algorithms that operate on containers
   module "array" { header "array" export * } // (since C++11) std::array container
