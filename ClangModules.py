@@ -36,6 +36,7 @@ def make_match_pattern(key):
 
 provides_line_pattern = make_match_pattern("provides")
 after_line_pattern = make_match_pattern("after")
+needed_flags_line_pattern = make_match_pattern("needed_flags")
 
 
 def parse_value_line(pattern, line):
@@ -91,6 +92,7 @@ class Modulemap:
     def __init__(self, mm_file):
         self.mm_file = mm_file
         self.depends_on = []
+        self.needed_flags = []
         self.provides = None
         self.headers = []
         with open(mm_file, "r") as f:
@@ -110,6 +112,10 @@ class Modulemap:
                     if len(new_provides.get_values()) != 1:
                         raise NotOneProvideError()
                     self.provides = new_provides.get_values()[0]
+                new_flags = parse_value_line(needed_flags_line_pattern, line)
+                if not new_flags.error:
+                    self.needed_flags.append(new_flags.get_values())
+
         file_name = os.path.basename(mm_file)
         self.name = os.path.splitext(file_name)[0]
 
@@ -118,6 +124,20 @@ class Modulemap:
             if not os.path.isfile(os.path.sep.join([path, header])):
                 return False
         return True
+
+    def accepts_invok(self, invok):
+        if len(self.needed_flags) == 0:
+            return True
+
+        for flags in self.needed_flags:
+            found_flags = True
+            for flag in flags:
+                if not (" " + flag + " ") in invok:
+                    found_flags = False
+                    break
+            if found_flags:
+                return True
+        return False
 
     def matches(self, name):
         if self.name == name:
@@ -318,11 +338,12 @@ class ClangModules:
             if mm is None:
                 return None
 
+            m.mm_graph.mark_modulemap(mm, False)
+
             if self.check_only:
                 for c in self.check_only:
                     if mm.matches(c):
                         return mm
-                m.mm_graph.mark_modulemap(mm, False)
                 continue
 
             return mm
@@ -484,6 +505,11 @@ while True:
     success = False
     sys.stderr.write("   Module " + mm.name.ljust(m.longest_modulename + 1))
     sys.stderr.flush()
+
+    if not mm.accepts_invok(clang_invok):
+        sys.stderr.write(" -> SKIP!\n")
+        continue
+
     for inc_path in m.include_paths:
         if not mm.can_use_in_dir(inc_path):
             continue
