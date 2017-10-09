@@ -495,61 +495,64 @@ def parse_args(args):
     return r
 
 
-args = parse_args(sys.argv)
+if __name__ == '__main__':
+    args = parse_args(sys.argv)
 
-vfs = VirtualFileSystem(args.vfs_output, args.output_dir)
+    vfs = VirtualFileSystem(args.vfs_output, args.output_dir)
 
-pcm_tmp_dir = os.path.sep.join([args.output_dir, "ClangModulesPCMs"])
+    pcm_tmp_dir = os.path.sep.join([args.output_dir, "ClangModulesPCMs"])
 
-test_cpp_file = os.path.sep.join([args.output_dir, "ClangModules.cpp"])
+    test_cpp_file = os.path.sep.join([args.output_dir, "ClangModules.cpp"])
 
-m = ClangModules(args.clang_invok, args.clangless_mode,
-                 args.modulemap_dirs, args.extra_inc_dirs, args.check_only)
-# print(m.include_paths)
+    m = ClangModules(args.clang_invok, args.clangless_mode,
+                     args.modulemap_dirs, args.extra_inc_dirs, args.check_only)
+    # print(m.include_paths)
 
-clang_flags = " -fmodules -fcxx-modules -Xclang " + \
-    "-fmodules-local-submodule-visibility -ivfsoverlay \"" + \
-    args.vfs_output + "\" "
+    clang_flags = " -fmodules -fcxx-modules -Xclang " + \
+        "-fmodules-local-submodule-visibility -ivfsoverlay \"" + \
+        args.vfs_output + "\" "
 
-while True:
-    mm = m.get_next_modulemap()
-    if mm is None:
-        break
-    success = False
-    sys.stderr.write("   Module " + mm.name.ljust(m.longest_modulename + 1))
-    sys.stderr.flush()
-
-    if not mm.accepts_invok(args.clang_invok):
-        sys.stderr.write(" -> SKIP!\n")
-        continue
-
-    for inc_path in m.include_paths:
-        if not mm.can_use_in_dir(inc_path):
-            continue
-        vfs.mount_file(mm.mm_file, inc_path)
-        m.create_test_file(mm, test_cpp_file)
-        shutil.rmtree(pcm_tmp_dir, True)
-        invoke_result = m.invoke_clang("-fmodules-cache-path=" + pcm_tmp_dir +
-                                       " -fsyntax-only -Rmodule-build " +
-                                       clang_flags + test_cpp_file)
-        # print(m.mm_graph.providers)
-        success = (invoke_result.exit_code == 0)
-        if success:
+    while True:
+        mm = m.get_next_modulemap()
+        if mm is None:
             break
+        success = False
+        justed_modulename = mm.name.ljust(m.longest_modulename + 1)
+        sys.stderr.write("   Module " + justed_modulename)
+        sys.stderr.flush()
+
+        if not mm.accepts_invok(args.clang_invok):
+            sys.stderr.write(" -> SKIP!\n")
+            continue
+
+        for inc_path in m.include_paths:
+            if not mm.can_use_in_dir(inc_path):
+                continue
+            vfs.mount_file(mm.mm_file, inc_path)
+            m.create_test_file(mm, test_cpp_file)
+            shutil.rmtree(pcm_tmp_dir, True)
+            invoke_result = m.invoke_clang("-fmodules-cache-path=" +
+                                           pcm_tmp_dir +
+                                           " -fsyntax-only -Rmodule-build " +
+                                           clang_flags + test_cpp_file)
+            # print(m.mm_graph.providers)
+            success = (invoke_result.exit_code == 0)
+            if success:
+                break
+            else:
+                vfs.revert()
+        if success:
+            sys.stderr.write(" ->   OK! [" + str(inc_path) + "]\n")
         else:
-            vfs.revert()
-    if success:
-        sys.stderr.write(" ->   OK! [" + str(inc_path) + "]\n")
-    else:
-        sys.stderr.write(" -> FAIL!\n")
-    sys.stderr.flush()
-    m.mm_graph.mark_modulemap(mm, success)
+            sys.stderr.write(" -> FAIL!\n")
+        sys.stderr.flush()
+        m.mm_graph.mark_modulemap(mm, success)
 
-if args.required_modules:
-    for mod in args.required_modules:
-        if not m.requirement_success(mod):
-            eprint("Missing required module " + mod)
-            exit(2)
+    if args.required_modules:
+        for mod in args.required_modules:
+            if not m.requirement_success(mod):
+                eprint("Missing required module " + mod)
+                exit(2)
 
-if not args.clangless_mode:
-    print(clang_flags)
+    if not args.clangless_mode:
+        print(clang_flags)
