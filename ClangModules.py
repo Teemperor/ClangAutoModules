@@ -398,105 +398,118 @@ def arg_parse_error(message):
     exit(3)
 
 
-# Argument parsing
-clang_invok = None
-parsing_invocation = False
-modulemap_dirs = []
-check_only = None
-required_modules = None
-output_dir = None
-parsed_arg = True
-extra_inc_dirs = []
-clangless_mode = False
-vfs_output = None
+class CLIArgs:
+    def __init__(self):
+        # Argument parsing
+        self.clang_invok = None
+        self.modulemap_dirs = []
+        self.check_only = None
+        self.required_modules = None
+        self.output_dir = None
+        self.extra_inc_dirs = []
+        self.clangless_mode = False
+        self.vfs_output = None
 
-for i in range(0, len(sys.argv)):
-    if parsed_arg:
-        parsed_arg = False
-        continue
-    arg = sys.argv[i]
-    if i + 1 < len(sys.argv):
-        next_arg = sys.argv[i + 1]
-    else:
-        next_arg = None
 
-    if parsing_invocation:
-        clang_invok += " " + arg + ""
-    else:
-        if arg == "--invocation":
-            parsing_invocation = True
-            clang_invok = ""
-        elif arg == "--check-only":
-            if not next_arg:
-                arg_parse_error("No arg supplied for --check-only")
-            if check_only is None:
-                check_only = []
-            check_only += filter(None, next_arg.split(";"))
-            parsed_arg = True
-        elif arg == "--required-modules":
-            if not next_arg:
-                arg_parse_error("No arg supplied for --required-modules")
-            if required_modules is None:
-                required_modules = []
-            required_modules += filter(None, next_arg.split(";"))
-            parsed_arg = True
-        elif arg == "--clangless":
-            clangless_mode = True
-        elif arg == "--modulemap-dir":
-            if not next_arg:
-                arg_parse_error("No arg supplied for --modulemap-dir")
-            for path in next_arg.split(";"):
-                if len(path) > 0:
-                    modulemap_dirs.append(path)
-            parsed_arg = True
-        elif arg == "--vfs-output":
-            if not next_arg:
-                arg_parse_error("No arg supplied for --vfs-output")
-            if next_arg != "-":
-                vfs_output = next_arg
-            parsed_arg = True
-        elif arg == "-I":
-            if not next_arg:
-                arg_parse_error("No arg supplied for -I")
-            for path in next_arg.split(":"):
-                if len(path) > 0:
-                    extra_inc_dirs.append(path)
-            parsed_arg = True
-        elif arg == "--output-dir":
-            if not next_arg:
-                arg_parse_error("No arg supplied for --output-dir")
-            if output_dir:
-                arg_parse_error(
-                    "specified multiple output dirs with --output-dir")
-            output_dir = next_arg
-            parsed_arg = True
+def parse_args(args):
+    r = CLIArgs()
+    parsed_arg = True
+    parsing_invocation = False
+
+    for i in range(0, len(args)):
+        if parsed_arg:
+            parsed_arg = False
+            continue
+        arg = args[i]
+        if i + 1 < len(args):
+            next_arg = args[i + 1]
         else:
-            arg_parse_error("Unknown arg: " + arg)
+            next_arg = None
 
-if len(modulemap_dirs) == 0:
-    arg_parse_error("Not modulemap directories specified with --modulemap-dir")
+        if parsing_invocation:
+            r.clang_invok += " " + arg + ""
+        else:
+            if arg == "--invocation":
+                parsing_invocation = True
+                r.clang_invok = ""
+            elif arg == "--check-only":
+                if not next_arg:
+                    arg_parse_error("No arg supplied for --check-only")
+                if r.check_only is None:
+                    r.check_only = []
+                r.check_only += filter(None, next_arg.split(";"))
+                parsed_arg = True
+            elif arg == "--required-modules":
+                if not next_arg:
+                    arg_parse_error("No arg supplied for --required-modules")
+                if r.required_modules is None:
+                    r.required_modules = []
+                r.required_modules += filter(None, next_arg.split(";"))
+                parsed_arg = True
+            elif arg == "--clangless":
+                r.clangless_mode = True
+            elif arg == "--modulemap-dir":
+                if not next_arg:
+                    arg_parse_error("No arg supplied for --modulemap-dir")
+                for path in next_arg.split(";"):
+                    if len(path) > 0:
+                        r.modulemap_dirs.append(path)
+                parsed_arg = True
+            elif arg == "--vfs-output":
+                if not next_arg:
+                    arg_parse_error("No arg supplied for --vfs-output")
+                if next_arg != "-":
+                    r.vfs_output = next_arg
+                parsed_arg = True
+            elif arg == "-I":
+                if not next_arg:
+                    arg_parse_error("No arg supplied for -I")
+                for path in next_arg.split(":"):
+                    if len(path) > 0:
+                        r.extra_inc_dirs.append(path)
+                parsed_arg = True
+            elif arg == "--output-dir":
+                if not next_arg:
+                    arg_parse_error("No arg supplied for --output-dir")
+                if r.output_dir:
+                    arg_parse_error(
+                        "specified multiple output dirs with --output-dir")
+                r.output_dir = next_arg
+                parsed_arg = True
+            else:
+                arg_parse_error("Unknown arg: " + arg)
 
-if not output_dir:
-    arg_parse_error("Not output_dir specified with --output-dir")
+    if len(r.modulemap_dirs) == 0:
+        arg_parse_error("Not modulemap directories specified with " +
+                        "--modulemap-dir")
 
-if not clang_invok:
-    arg_parse_error("No clang invocation specified with --invocation [...]")
+    if not r.output_dir:
+        arg_parse_error("Not output_dir specified with --output-dir")
 
-if not vfs_output:
-    vfs_output = os.path.sep.join([output_dir, "ClangModulesVFS.yaml"])
+    if not r.clang_invok:
+        arg_parse_error("No clang invocation specified with --invocation ...")
 
-vfs = VirtualFileSystem(vfs_output, output_dir)
+    if not r.vfs_output:
+        r.vfs_output = os.path.sep.join([r.output_dir, "ClangModulesVFS.yaml"])
 
-pcm_tmp_dir = os.path.sep.join([output_dir, "ClangModulesPCMs"])
+    return r
 
-test_cpp_file = os.path.sep.join([output_dir, "ClangModules.cpp"])
 
-m = ClangModules(clang_invok, clangless_mode,
-                 modulemap_dirs, extra_inc_dirs, check_only)
+args = parse_args(sys.argv)
+
+vfs = VirtualFileSystem(args.vfs_output, args.output_dir)
+
+pcm_tmp_dir = os.path.sep.join([args.output_dir, "ClangModulesPCMs"])
+
+test_cpp_file = os.path.sep.join([args.output_dir, "ClangModules.cpp"])
+
+m = ClangModules(args.clang_invok, args.clangless_mode,
+                 args.modulemap_dirs, args.extra_inc_dirs, args.check_only)
 # print(m.include_paths)
 
 clang_flags = " -fmodules -fcxx-modules -Xclang " + \
-    "-fmodules-local-submodule-visibility -ivfsoverlay \"" + vfs_output + "\" "
+    "-fmodules-local-submodule-visibility -ivfsoverlay \"" + \
+    args.vfs_output + "\" "
 
 while True:
     mm = m.get_next_modulemap()
@@ -506,7 +519,7 @@ while True:
     sys.stderr.write("   Module " + mm.name.ljust(m.longest_modulename + 1))
     sys.stderr.flush()
 
-    if not mm.accepts_invok(clang_invok):
+    if not mm.accepts_invok(args.clang_invok):
         sys.stderr.write(" -> SKIP!\n")
         continue
 
@@ -532,11 +545,11 @@ while True:
     sys.stderr.flush()
     m.mm_graph.mark_modulemap(mm, success)
 
-if required_modules:
-    for mod in required_modules:
+if args.required_modules:
+    for mod in args.required_modules:
         if not m.requirement_success(mod):
             eprint("Missing required module " + mod)
             exit(2)
 
-if not clangless_mode:
+if not args.clangless_mode:
     print(clang_flags)
