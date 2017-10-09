@@ -20,7 +20,7 @@ class InvokResult:
         self.exit_code = exit_code
 
 
-class ParseDepsResult:
+class ParseValuesResult:
     def __init__(self, after, error=False):
         self.after = after
         self.error = error
@@ -39,7 +39,7 @@ after_line_pattern = make_match_pattern("after")
 
 
 def parse_value_line(pattern, line):
-    depends_on = []
+    values = []
     if pattern.match(line):
         parts = line.split(":")
         assert len(parts) >= 2
@@ -48,14 +48,14 @@ def parse_value_line(pattern, line):
         for dep in deps_parts:
             stripped = dep.strip()
             if " " in stripped:
-                return ParseDepsResult(None, True)
+                return ParseValuesResult(None, True)
             if "\t" in stripped:
-                return ParseDepsResult(None, True)
+                return ParseValuesResult(None, True)
             else:
-                depends_on.append(stripped)
-        return ParseDepsResult(depends_on)
+                values.append(stripped)
+        return ParseValuesResult(values)
     else:
-        return ParseDepsResult(None, True)
+        return ParseValuesResult(None, True)
 
 
 assert parse_value_line(after_line_pattern, "// after").error
