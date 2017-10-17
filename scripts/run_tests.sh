@@ -19,6 +19,14 @@ if [ ! -f ClangModules.py ]; then
     exit 1
 fi
 flake8 ClangModules.py
+echo "ClangModules.py [OK]"
+
+if [ ! -f clang_modules ]; then
+    echo "clang_modules not found!"
+    exit 1
+fi
+flake8 clang_modules
+echo "clang_modules [OK]"
 
 rm -rf build
 mkdir build

@@ -1,0 +1,187 @@
+#!/usr/bin/env python
+
+import filelock
+import hashlib
+import os
+import sys
+import ClangModules
+import subprocess
+
+# Check if we are currently compiling C/C++ by checking the script name.
+is_cxx = False
+
+if __file__.endswith("clang_modules++"):
+    is_cxx = True
+
+if is_cxx:
+    current_binary = "clang++"
+else:
+    current_binary = "clang"
+
+possible_output_endings = (".o")
+possible_input_endings = (".cxx", ".c", ".cc", ".cpp")
+
+
+# Checks if the given file is an output that clang produces (e.g. an object
+# file).
+def is_output(f):
+    for ending in possible_output_endings:
+        if f.lower().endswith(ending):
+            return True
+    return False
+
+
+# Checks if the given file is an input that clang accepts (e.g. source code).
+def is_input(f):
+    for ending in possible_input_endings:
+        if f.lower().endswith(ending):
+            return True
+    return False
+
+
+# Returns the CMake build directory of the given file or None if the files is
+# not inside a CMake build directory.
+def get_cmake_dir(f):
+    dirname = os.path.abspath(os.path.dirname(f))
+    while True:
+        new_dirname = os.path.abspath(os.path.join(dirname, os.pardir))
+        if new_dirname == dirname:
+            return None
+        dirname = new_dirname
+        to_check = os.path.join(dirname, "CMakeCache.txt")
+        if os.path.isfile(to_check):
+            return dirname
+
+
+CMakeDir = None
+
+invok = []
+
+hash_content = ""
+
+hash_data = [current_binary]
+
+
+def add_to_hash(new_content):
+    global hash_data
+    hash_data.append(new_content)
+
+
+include_args = ["-I", "-internal-isystem", "-internal-externc-isystem"]
+
+is_cc1 = False
+has_cache_dir = False
+has_input = False
+
+
+def try_hash_arg(arg, next_arg):
+    # # At the moment we don't fix
+    # for inc in include_args:
+    #     if arg == inc:
+    #         add_to_hash(next_arg)
+    #     if arg.startswith(inc):
+    #         add_to_hash(arg[(len(inc)):])
+    if arg.startswith("-std="):
+        add_to_hash(arg)
+
+
+should_skip = False
+
+skip_next = False
+for i in range(1, len(sys.argv)):
+    if skip_next:
+        skip_next = False
+        continue
+    arg = sys.argv[i]
+    if i + 1 < len(sys.argv):
+        next_arg = sys.argv[i + 1]
+    else:
+        next_arg = None
+    if is_output(arg):
+
+        if "CMakeFiles/cmTC" in arg:
+            should_skip = True
+            break
+        CMakeDir = get_cmake_dir(arg)
+    else:
+        if is_input(arg):
+            has_input = True
+        if arg == "-c":
+            skip_next = True
+            has_input = True
+            continue
+        if arg == "-MF":
+            skip_next = True
+            continue
+        if arg == "-cc1":
+            is_cc1 = True
+        elif arg.startswith("-fmodules-cache-path="):
+            has_cache_dir = True
+        try_hash_arg(arg, next_arg)
+
+
+if CMakeDir is None:
+    should_skip = True
+if not has_input:
+    should_skip = True
+
+if should_skip:
+    exit(subprocess.call([current_binary] + sys.argv[1:]))
+
+hash_data = sorted(set(hash_data))
+
+for d in hash_data:
+    hash_content += chr(0) + d
+
+# Assumes the default UTF-8
+hash_object = hashlib.md5(hash_content.encode())
+hash_str = hash_object.hexdigest()[0:14]
+
+vfs_name = "ClangModulesVFS-" + hash_str + ".yml"
+
+vfs_out = os.path.join(CMakeDir, vfs_name)
+
+modulemap_dir = os.path.join(os.path.dirname(__file__), "files")
+
+args = ["--modulemap-dir", modulemap_dir,
+        "--vfs-output", vfs_out,
+        "--clangless",
+        "--file-prefix", hash_str,
+        "--output-dir", CMakeDir,
+        "--invocation", current_binary]
+args = args + invok
+
+final_args = sys.argv[1:] + ["-fmodules", "-ivfsoverlay", vfs_out]
+
+
+# Fake output because we don't want to output anything.
+class FakeOutput:
+    def write(self, s):
+        pass
+
+    def flush(self):
+        pass
+
+
+# Check if the output file is already there. If not, we have to regenerate
+# it.
+if not os.path.isfile(vfs_out):
+    # Properly lock on the VFS file to prevent multi process race conditions.
+    lock = filelock.FileLock(vfs_out + ".lock")
+    with lock:
+        # Check again now with the lock.
+        if not os.path.isfile(vfs_out):
+            # Genererate the VFS file with ClangAutoModules.
+            module_args = ClangModules.setup_modules(args, FakeOutput())
+
+# If we're not cc1 mode, we have to prepend Xclang for the next arg.
+if not is_cc1:
+    final_args.append("-Xclang")
+# Use local submodule visibility mode.
+final_args.append("-fmodules-local-submodule-visibility")
+# If the user doesn't use a cache-path, we add it for him/her.
+if not has_cache_dir:
+    final_args.append("-fmodules-cache-path=" + os.path.join(CMakeDir, "PCMs"))
+
+# Call clang with the original args + our custom args.
+exit(subprocess.call([current_binary] + final_args))
