@@ -1,3 +1,4 @@
 build
 *kate-swp
 ClangModules.cmake
+__pycache__

@@ -234,8 +234,9 @@ class FileBak:
 
 
 class VirtualFileSystem:
-    def __init__(self, yaml_file, cache_path):
+    def __init__(self, yaml_file, cache_path, file_prefix):
         self.yaml_file = yaml_file
+        self.file_prefix = file_prefix
         self.yaml = {'version': 0, 'roots': []}
         self.roots = self.yaml["roots"]
         self.file_bak = None
@@ -264,6 +265,7 @@ class VirtualFileSystem:
     def make_cache_file(self, target_path):
         target_path = os.path.abspath(target_path)
         target_path = target_path.replace("/", "_").replace(".", "_")
+        target_path = self.file_prefix + "-" + target_path
         return os.path.abspath(os.path.join(self.cache_path, target_path))
 
     def append_file(self, source, target, append):
@@ -410,11 +412,12 @@ class CLIArgs:
         self.clangless_mode = False
         self.vfs_output = None
         self.clang_flags = None
+        self.file_prefix = ""
 
 
 def parse_args(args):
     r = CLIArgs()
-    parsed_arg = True
+    parsed_arg = False
     parsing_invocation = False
 
     for i in range(0, len(args)):
@@ -462,6 +465,12 @@ def parse_args(args):
                 if next_arg != "-":
                     r.vfs_output = next_arg
                 parsed_arg = True
+            elif arg == "--file-prefix":
+                if not next_arg:
+                    arg_parse_error("No arg supplied for --file-prefix")
+                if next_arg != "-":
+                    r.file_prefix = next_arg
+                parsed_arg = True
             elif arg == "-I":
                 if not next_arg:
                     arg_parse_error("No arg supplied for -I")
@@ -499,7 +508,7 @@ def parse_args(args):
 def setup_modules(args, report_stream):
     args = parse_args(args)
 
-    vfs = VirtualFileSystem(args.vfs_output, args.output_dir)
+    vfs = VirtualFileSystem(args.vfs_output, args.output_dir, args.file_prefix)
 
     pcm_tmp_dir = os.path.sep.join([args.output_dir, "ClangModulesPCMs"])
 
@@ -537,7 +546,6 @@ def setup_modules(args, report_stream):
                                            pcm_tmp_dir +
                                            " -fsyntax-only -Rmodule-build " +
                                            args.clang_flags + test_cpp_file)
-            # print(m.mm_graph.providers)
             success = (invoke_result.exit_code == 0)
             if success:
                 break
@@ -560,6 +568,6 @@ def setup_modules(args, report_stream):
 
 
 if __name__ == '__main__':
-    args = setup_modules(sys.argv, sys.stderr)
+    args = setup_modules(sys.argv[1:], sys.stderr)
     if not args.clangless_mode:
         print(args.clang_flags)
