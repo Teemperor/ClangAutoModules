@@ -7,21 +7,23 @@ Automatically brings clang modules to your system libraries in your CMake projec
 
 ## Setup
 
-There are three different ways to use ClangAutoModules:
+There are two different ways to use ClangAutoModules:
 
-1. Embed the standalone script it in your CMake project
+1. Embed the standalone script it in your CMake project:
 
 ```CMake
-
+include(clang-modules/ClangModules.cmake)
 ```
 
-2. Use is externally to compile a CMake project:
+[More information](docs/CMakeScript.md)
+
+2. Use is to externally configure a CMake project:
 
 ```bash
 CC=path/to/clang_modules CXX=path/to/clang_modules++ cmake ...
 ```
 
-3. Use the python backend directly in your own custom build system.
+[More information](docs/ExternalConfig.md)
 
 ## Supported libraries
 
