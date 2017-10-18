@@ -145,7 +145,6 @@ modulemap_dir = os.path.join(os.path.dirname(__file__), "files")
 
 args = ["--modulemap-dir", modulemap_dir,
         "--vfs-output", vfs_out,
-        "--clangless",
         "--file-prefix", hash_str,
         "--output-dir", CMakeDir,
         "--invocation", current_binary]
