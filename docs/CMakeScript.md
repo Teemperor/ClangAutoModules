@@ -1,7 +1,24 @@
 # Using it in your CMake script
 
 ClangAutoModules comes with a standalone CMake script that wraps
-all necessary code for setting up
+all necessary code and files for setting up system modules. As it's standalone,
+it can just be downloaded via CMake and then directly executed by `include`ing
+it in the CMakeLists.txt.
+
+```CMake
+file(DOWNLOAD "https://github.com/Teemperor/ClangAutoModules/releases/download/0.2/ClangModules.cmake"
+     "${CMAKE_BINARY_DIR}/ClangModules.cmake"
+     EXPECTED_HASH SHA256=1a905f62fc9c31ea62f67e70f0e9f17442f9e3c36b4757adc4e3d71d9a39314e)
+
+include(${CMAKE_BINARY_DIR}/ClangModules.cmake)
+```
+
+## How it works.
+
+The included script queries the current configured include directories of this
+CMake project and then starts looking for modules in those paths. This also
+means that the script should be called at a point where all relevant system
+include paths have been set up.
 
 ## Extra parameters
 

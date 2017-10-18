@@ -12,7 +12,11 @@ There are two different ways to use ClangAutoModules:
 1. Embed the standalone script it in your CMake project:
 
 ```CMake
-include(clang-modules/ClangModules.cmake)
+file(DOWNLOAD "https://github.com/Teemperor/ClangAutoModules/releases/download/0.2/ClangModules.cmake"
+     "${CMAKE_BINARY_DIR}/ClangModules.cmake"
+     EXPECTED_HASH SHA256=1a905f62fc9c31ea62f67e70f0e9f17442f9e3c36b4757adc4e3d71d9a39314e)
+
+include(${CMAKE_BINARY_DIR}/ClangModules.cmake)
 ```
 
 [More information](docs/CMakeScript.md)
