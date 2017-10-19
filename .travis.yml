@@ -1,129 +1,38 @@
-language: cpp
+sudo: required
 
 branches:
   only:
     - master
 
-matrix:
-  include:
-    - os: linux
-      compiler: gcc
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-6',
-                     'libsdl2-dev',
-                     'libtinyxml2-dev',
-                     'libtinyxml-dev',
-                     'libsfml-dev',
-                     'libbullet-dev',
-                     'libboost-all-dev',
-                     'libgoogle-glog-dev',
-                     'libgtest-dev',
-                     'libeigen3-dev'
-                     ]
-      env:
-        - CXX_COMPILER=g++-6
-        - COMPILER=gcc-6
+language: c++
 
-    - os: linux
-      dist: trusty
-      compiler: gcc
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-7',
-                     'libsdl2-dev',
-                     'libtinyxml2-dev',
-                     'libtinyxml-dev',
-                     'libsfml-dev',
-                     'libbullet-dev',
-                     'libboost-all-dev',
-                     'libgoogle-glog-dev',
-                     'libgtest-dev',
-                     'libeigen3-dev'
-                     ]
-      env:
-        - CXX_COMPILER=g++-7
-        - COMPILER=gcc-7
+compiler:
+  - gcc
+  - clang
 
-    - os: linux
-      dist: trusty
-      compiler: clang
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-3.9']
-          packages: ['clang-3.9',
-                     'g++-6',
-                     'libsdl2-dev',
-                     'libtinyxml2-dev',
-                     'libtinyxml-dev',
-                     'libsfml-dev',
-                     'libboost-all-dev',
-                     'libbullet-dev',
-                     'libgoogle-glog-dev',
-                     'libgtest-dev',
-                     'libeigen3-dev'
-                     ]
-      env:
-        - CXX_COMPILER=clang++-3.9
-        - COMPILER=clang-3.9
+notifications:
+  email: false
 
-    - os: linux
-      dist: trusty
-      compiler: clang
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-4.0']
-          packages: ['clang-4.0',
-                     'g++-6',
-                     'libsdl2-dev',
-                     'libtinyxml2-dev',
-                     'libtinyxml-dev',
-                     'libsfml-dev',
-                     'libboost-all-dev',
-                     'libbullet-dev',
-                     'libgoogle-glog-dev',
-                     'libgtest-dev',
-                     'libeigen3-dev'
-                     ]
-      env:
-        - CXX_COMPILER=clang++-4.0
-        - COMPILER=clang-4.0
-
-#    - os: osx
-#      osx_image: xcode6.4
-#      compiler: clang
-#      env:
-#        - CXX_COMPILER=clang++
-#        - COMPILER=clang
-
-#    - os: osx
-#      osx_image: xcode7.3
-#      compiler: clang
-#      env:
-#        - CXX_COMPILER=clang++
-#        - COMPILER=clang
-
-#    - os: osx
-#      osx_image: xcode8.3
-#      compiler: clang
-#      env:
-#        - CXX_COMPILER=clang++
-#        - COMPILER=clang
-
-#    - os: osx
-#      osx_image: xcode9
-#      compiler: clang
-#      env:
-#        - CXX_COMPILER=clang++
-#        - COMPILER=clang
-
-
-addons:
-  apt:
-    packages:
-      - tree
+arch:
+  packages:
+    - cmake
+    - python-pip
+    - strace
+    - flake8
+    - clang
+    - gcc
+    - sdl2
+    - tinyxml
+    - tinyxml2
+    - sfml
+    - bullet
+    - boost
+    - google-glog
+    - gtest
+    - eigen3
+  script:
+    - sudo chmod 777 -R /dev/shm/
+    - ./scripts/run_tests.sh $CC $CXX -j4
 
 script:
-  - ./scripts/run_tests.sh $COMPILER $CXX_COMPILER -j4
+  - "curl -s https://raw.githubusercontent.com/mikkeloscar/arch-travis/master/arch-travis.sh | bash"
