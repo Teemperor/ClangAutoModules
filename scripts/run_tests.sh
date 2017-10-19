@@ -11,7 +11,7 @@ cd "$DIR/.."
 
 echo "Checking for PEP-8"
 if ! [ -x "$(command -v flake8)" ]; then
-  pip install --user flake8
+  sudo pip install flake8
 fi
 echo "Running flake8..."
 if [ ! -f ClangModules.py ]; then
