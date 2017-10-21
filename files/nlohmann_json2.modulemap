@@ -1,0 +1,1 @@
+module nlohmann_json [system] { header "nlohmann/json.hpp" export * }

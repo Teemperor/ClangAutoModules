@@ -30,6 +30,7 @@ arch:
     - google-glog
     - gtest
     - eigen3
+    - nlohmann-json
   script:
     - sudo chmod 777 -R /dev/shm/
     - ./scripts/run_tests.sh $CC $CXX -j4

@@ -52,7 +52,7 @@ function run_test {
     while read p; do
       set +e
       # Verify that we used the right modules
-      find ./pcms/ -name "$p-*\\.pcm" | grep -q .
+      find ./pcm/ -name "$p-*\\.pcm" | grep -q .
       set -e
 
       if [ $? -ne 0 ]; then
@@ -78,7 +78,7 @@ function run_test {
       while read p; do
         set +e
         # Verify that we didn't build forbidden pcms
-        find ./pcms/ -name "$p-*\\.pcm" | grep -q .
+        find ./pcm/ -name "$p-*\\.pcm" | grep -q .
 
         if [ $? -eq 0 ]; then
           set -e
