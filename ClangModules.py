@@ -265,7 +265,8 @@ class VirtualFileSystem:
     def make_cache_file(self, target_path):
         target_path = os.path.abspath(target_path)
         target_path = target_path.replace("/", "_").replace(".", "_")
-        target_path = self.file_prefix + "-" + target_path
+        if len(self.file_prefix):
+            target_path = self.file_prefix + "-" + target_path
         return os.path.abspath(os.path.join(self.cache_path, target_path))
 
     def append_file(self, source, target, append):
