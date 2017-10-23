@@ -6,6 +6,13 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -fmodules -fcxx-modules -Xclang -fmodules-local-submodule-visibility -fmodules-cache-path=pcms -Rmodule-build")
   # no autopr warning
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-declarations")
+
+  file(DOWNLOAD "https://github.com/Teemperor/ClangAutoModules/releases/download/0.2/ClangModules.cmake"
+       "${CMAKE_BINARY_DIR}/ClangModules.cmake"
+       EXPECTED_HASH SHA256=1a905f62fc9c31ea62f67e70f0e9f17442f9e3c36b4757adc4e3d71d9a39314e)
+  set(ClangModules_CheckOnlyFor stl14 libc sys_types_only)
+  include(${CMAKE_BINARY_DIR}/ClangModules.cmake)
+
 elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
   # TODO
 endif()
