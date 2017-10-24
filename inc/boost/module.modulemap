@@ -620,15 +620,14 @@ module bind {
   module "bind__placeholders" { header "bind/placeholders.hpp" export * }
   module "bind__protect" { header "bind/protect.hpp" export * }
   module "bind__storage" { header "bind/storage.hpp" export * }
+
+  module "mem_fn" { header "mem_fn.hpp" export * }
 }
 module blank_fwd {
   module "blank_fwd" { header "blank_fwd.hpp" export * }
 }
 module blank {
   module "blank" { header "blank.hpp" export * }
-}
-module call_traits {
-  module "call_traits" { header "call_traits.hpp" export * }
 }
 module cast {
   module "cast" { header "cast.hpp" export * }
@@ -699,9 +698,6 @@ module compute {
   module "compute__type_traits__type_definition" { header "compute/type_traits/type_definition.hpp" export * }
   module "compute__utility__source" { header "compute/utility/source.hpp" export * }
   module "compute__version" { header "compute/version.hpp" export * }
-}
-module concept_archetype {
-  module "concept_archetype" { header "concept_archetype.hpp" export * }
 }
 module concept {
   module "concept__assert" { header "concept/assert.hpp" export * }
@@ -1009,40 +1005,6 @@ module date_time {
 // Causes cyclic dependency between range <-> detail
 module "detail__algorithm" { header "detail/algorithm.hpp" export * }
 
-module detail {
-  module "detail__allocator_utilities" { header "detail/allocator_utilities.hpp" export * }
-  module "detail__atomic_count" { header "detail/atomic_count.hpp" export * }
-  module "detail__atomic_redef_macros" { header "detail/atomic_redef_macros.hpp" export * }
-  module "detail__atomic_undef_macros" { header "detail/atomic_undef_macros.hpp" export * }
-  module "detail__binary_search" { header "detail/binary_search.hpp" export * }
-  module "detail__bitmask" { header "detail/bitmask.hpp" export * }
-  module "detail__call_traits" { header "detail/call_traits.hpp" export * }
-  module "detail__catch_exceptions" { header "detail/catch_exceptions.hpp" export * }
-  module "detail__compressed_pair" { header "detail/compressed_pair.hpp" export * }
-  module "detail__container_fwd" { header "detail/container_fwd.hpp" export * }
-  module "detail__endian" { header "detail/endian.hpp" export * }
-  module "detail__fenv" { header "detail/fenv.hpp" export * }
-  module "detail__has_default_constructor" { header "detail/has_default_constructor.hpp" export * }
-  module "detail__identifier" { header "detail/identifier.hpp" export * }
-  module "detail__indirect_traits" { header "detail/indirect_traits.hpp" export * }
-  module "detail__is_incrementable" { header "detail/is_incrementable.hpp" export * }
-  module "detail__is_sorted" { header "detail/is_sorted.hpp" export * }
-  module "detail__is_xxx" { header "detail/is_xxx.hpp" export * }
-  module "detail__iterator" { header "detail/iterator.hpp" export * }
-  module "detail__lcast_precision" { header "detail/lcast_precision.hpp" export * }
-  module "detail__lightweight_mutex" { header "detail/lightweight_mutex.hpp" export * }
-  module "detail__no_exceptions_support" { header "detail/no_exceptions_support.hpp" export * }
-  module "detail__numeric_traits" { header "detail/numeric_traits.hpp" export * }
-  module "detail__ob_compressed_pair" { header "detail/ob_compressed_pair.hpp" export * }
-  module "detail__quick_allocator" { header "detail/quick_allocator.hpp" export * }
-  module "detail__reference_content" { header "detail/reference_content.hpp" export * }
-  module "detail__scoped_enum_emulation" { header "detail/scoped_enum_emulation.hpp" export * }
-  module "detail__select_type" { header "detail/select_type.hpp" export * }
-  module "detail__sp_typeinfo" { header "detail/sp_typeinfo.hpp" export * }
-  module "detail__templated_streams" { header "detail/templated_streams.hpp" export * }
-  module "detail__winapi__config" { header "detail/winapi/config.hpp" export * }
-  module "detail__winapi__detail__cast_ptr" { header "detail/winapi/detail/cast_ptr.hpp" export * }
-}
 module "detail__workaround" { header "detail/workaround.hpp" export * }
 module "detail__lightweight_test" { header "detail/lightweight_test.hpp" export * }
 module dll {
@@ -1063,9 +1025,6 @@ module dynamic_bitset {
 module dynamic_bitset_fwd {
   module "dynamic_bitset_fwd" { header "dynamic_bitset_fwd.hpp" export * }
 }
-module enable_shared_from_this {
-  module "enable_shared_from_this" { header "enable_shared_from_this.hpp" export * }
-}
 module endian {
   module "endian__arithmetic" { header "endian/arithmetic.hpp" export * }
   module "endian__buffers" { header "endian/buffers.hpp" export * }
@@ -1077,9 +1036,6 @@ module endian {
   module "endian__detail__intrinsic" { header "endian/detail/intrinsic.hpp" export * }
   module "endian__detail__lightweight_test" { header "endian/detail/lightweight_test.hpp" export * }
   module "endian__std_pair" { header "endian/std_pair.hpp" export * }
-}
-module exception_ptr {
-  module "exception_ptr" { header "exception_ptr.hpp" export * }
 }
 module fiber {
   module "fiber__algo__algorithm" { header "fiber/algo/algorithm.hpp" export * }
@@ -1251,12 +1207,12 @@ module function_types {
   module "function_types__detail__classifier" { header "function_types/detail/classifier.hpp" export * }
   module "function_types__detail__class_transform" { header "function_types/detail/class_transform.hpp" export * }
   module "function_types__detail__cv_traits" { header "function_types/detail/cv_traits.hpp" export * }
-  module "function_types__detail__encoding__aliases_def" { header "function_types/detail/encoding/aliases_def.hpp" export * }
-  module "function_types__detail__encoding__aliases_undef" { header "function_types/detail/encoding/aliases_undef.hpp" export * }
-  module "function_types__detail__encoding__def" { header "function_types/detail/encoding/def.hpp" export * }
-  module "function_types__detail__encoding__undef" { header "function_types/detail/encoding/undef.hpp" export * }
-  module "function_types__detail__pp_arity_loop" { header "function_types/detail/pp_arity_loop.hpp" export * }
-  module "function_types__detail__pp_variate_loop__preprocessed" { header "function_types/detail/pp_variate_loop/preprocessed.hpp" export * }
+  // is textually included: module "function_types__detail__encoding__aliases_def" { header "function_types/detail/encoding/aliases_def.hpp" export * }
+  // is textually included: module "function_types__detail__encoding__aliases_undef" { header "function_types/detail/encoding/aliases_undef.hpp" export * }
+  // is textually included: module "function_types__detail__encoding__def" { header "function_types/detail/encoding/def.hpp" export * }
+  // is textually included:  module "function_types__detail__encoding__undef" { header "function_types/detail/encoding/undef.hpp" export * }
+  // is textually included: module "function_types__detail__pp_arity_loop" { header "function_types/detail/pp_arity_loop.hpp" export * }
+  // is textually included: module "function_types__detail__pp_variate_loop__preprocessed" { header "function_types/detail/pp_variate_loop/preprocessed.hpp" export * }
   module "function_types__detail__retag_default_cc" { header "function_types/detail/retag_default_cc.hpp" export * }
   module "function_types__detail__synthesize" { header "function_types/detail/synthesize.hpp" export * }
   module "function_types__detail__to_sequence" { header "function_types/detail/to_sequence.hpp" export * }
@@ -1278,6 +1234,7 @@ module function_types {
   module "function_types__property_tags" { header "function_types/property_tags.hpp" export * }
   module "function_types__result_type" { header "function_types/result_type.hpp" export * }
 }
+/*
 module fusion {
   module "fusion__adapted__adt__adapt_adt" { header "fusion/adapted/adt/adapt_adt.hpp" export * }
   module "fusion__adapted__adt__adapt_adt_named" { header "fusion/adapted/adt/adapt_adt_named.hpp" export * }
@@ -1964,7 +1921,7 @@ module fusion {
   module "fusion__view__zip_view__zip_view" { header "fusion/view/zip_view/zip_view.hpp" export * }
   module "fusion__view__zip_view__zip_view_iterator_fwd" { header "fusion/view/zip_view/zip_view_iterator_fwd.hpp" export * }
   module "fusion__view__zip_view__zip_view_iterator" { header "fusion/view/zip_view/zip_view_iterator.hpp" export * }
-}
+} */
 module generator_iterator {
   module "generator_iterator" { header "generator_iterator.hpp" export * }
 }
@@ -3187,9 +3144,6 @@ module icl {
 module implicit_cast {
   module "implicit_cast" { header "implicit_cast.hpp" export * }
 }
-module indirect_reference {
-  module "indirect_reference" { header "indirect_reference.hpp" export * }
-}
 module integer {
   module "integer__common_factor_ct" { header "integer/common_factor_ct.hpp" export * }
   module "integer__common_factor" { header "integer/common_factor.hpp" export * }
@@ -3449,9 +3403,6 @@ module intrusive {
   module "intrusive__unordered_set_hook" { header "intrusive/unordered_set_hook.hpp" export * }
   module "intrusive__unordered_set" { header "intrusive/unordered_set.hpp" export * }
 }
-module intrusive_ptr {
-  module "intrusive_ptr" { header "intrusive_ptr.hpp" export * }
-}
 module io {
   module "io__detail__quoted_manip" { header "io/detail/quoted_manip.hpp" export * }
   module "io__ios_state" { header "io/ios_state.hpp" export * }
@@ -3607,6 +3558,17 @@ module iterator {
   module "iterator__reverse_iterator" { header "iterator/reverse_iterator.hpp" export * }
   module "iterator__transform_iterator" { header "iterator/transform_iterator.hpp" export * }
   module "iterator__zip_iterator" { header "iterator/zip_iterator.hpp" export * }
+
+module concept_archetype {
+  module "concept_archetype" { header "concept_archetype.hpp" export * }
+}
+
+module indirect_reference {
+  module "indirect_reference" { header "indirect_reference.hpp" export * }
+}
+module pointee {
+  module "pointee" { header "pointee.hpp" export * }
+}
 }
 module lambda {
   module "lambda__algorithm" { header "lambda/algorithm.hpp" export * }
@@ -3936,9 +3898,6 @@ module logic {
 module make_default {
   module "make_default" { header "make_default.hpp" export * }
 }
-module make_shared {
-  module "make_shared" { header "make_shared.hpp" export * }
-}
 module make_unique {
   module "make_unique" { header "make_unique.hpp" export * }
 }
@@ -4114,9 +4073,6 @@ module math {
 }
 module math_fwd {
   module "math_fwd" { header "math_fwd.hpp" export * }
-}
-module mem_fn {
-  module "mem_fn" { header "mem_fn.hpp" export * }
 }
 module memory_order {
   module "memory_order" { header "memory_order.hpp" export * }
@@ -4394,41 +4350,6 @@ module metaparse {
   module "metaparse__v1__util__is_whitespace" { header "metaparse/v1/util/is_whitespace.hpp" export * }
   module "metaparse__version" { header "metaparse/version.hpp" export * }
 }
-module move {
-  module "move__adl_move_swap" { header "move/adl_move_swap.hpp" export * }
-  module "move__algo__adaptive_merge" { header "move/algo/adaptive_merge.hpp" export * }
-  module "move__algo__adaptive_sort" { header "move/algo/adaptive_sort.hpp" export * }
-  module "move__algo__detail__adaptive_sort_merge" { header "move/algo/detail/adaptive_sort_merge.hpp" export * }
-  module "move__algo__detail__insertion_sort" { header "move/algo/detail/insertion_sort.hpp" export * }
-  module "move__algo__detail__merge" { header "move/algo/detail/merge.hpp" export * }
-  module "move__algo__detail__merge_sort" { header "move/algo/detail/merge_sort.hpp" export * }
-  module "move__algo__move" { header "move/algo/move.hpp" export * }
-  module "move__algorithm" { header "move/algorithm.hpp" export * }
-  module "move__core" { header "move/core.hpp" export * }
-  module "move__default_delete" { header "move/default_delete.hpp" export * }
-  module "move__detail__config_begin" { header "move/detail/config_begin.hpp" export * }
-  module "move__detail__config_end" { header "move/detail/config_end.hpp" export * }
-  module "move__detail__destruct_n" { header "move/detail/destruct_n.hpp" export * }
-  module "move__detail__fwd_macros" { header "move/detail/fwd_macros.hpp" export * }
-  module "move__detail__iterator_traits" { header "move/detail/iterator_traits.hpp" export * }
-  module "move__detail__meta_utils_core" { header "move/detail/meta_utils_core.hpp" export * }
-  module "move__detail__meta_utils" { header "move/detail/meta_utils.hpp" export * }
-  module "move__detail__move_helpers" { header "move/detail/move_helpers.hpp" export * }
-  module "move__detail__placement_new" { header "move/detail/placement_new.hpp" export * }
-  module "move__detail__reverse_iterator" { header "move/detail/reverse_iterator.hpp" export * }
-  module "move__detail__std_ns_begin" { header "move/detail/std_ns_begin.hpp" export * }
-  module "move__detail__std_ns_end" { header "move/detail/std_ns_end.hpp" export * }
-  module "move__detail__type_traits" { header "move/detail/type_traits.hpp" export * }
-  module "move__detail__unique_ptr_meta_utils" { header "move/detail/unique_ptr_meta_utils.hpp" export * }
-  module "move__detail__workaround" { header "move/detail/workaround.hpp" export * }
-  module "move__iterator" { header "move/iterator.hpp" export * }
-  module "move__make_unique" { header "move/make_unique.hpp" export * }
-  module "move__move" { header "move/move.hpp" export * }
-  module "move__traits" { header "move/traits.hpp" export * }
-  module "move__unique_ptr" { header "move/unique_ptr.hpp" export * }
-  module "move__utility_core" { header "move/utility_core.hpp" export * }
-  module "move__utility" { header "move/utility.hpp" export * }
-}
 module mpi {
   module "mpi__detail__computation_tree" { header "mpi/detail/computation_tree.hpp" export * }
   module "mpi__detail__forward_skeleton_oarchive" { header "mpi/detail/forward_skeleton_oarchive.hpp" export * }
@@ -4645,7 +4566,7 @@ module mpl {
   module "mpl__find" { header "mpl/find.hpp" export * }
   module "mpl__find_if" { header "mpl/find_if.hpp" export * }
   module "mpl__fold" { header "mpl/fold.hpp" export * }
-  module "mpl__for_each" { header "mpl/for_each.hpp" export * }
+  // cyclic dependency utility <-> mpl module "mpl__for_each" { header "mpl/for_each.hpp" export * }
   module "mpl__front_fwd" { header "mpl/front_fwd.hpp" export * }
   module "mpl__front" { header "mpl/front.hpp" export * }
   module "mpl__front_inserter" { header "mpl/front_inserter.hpp" export * }
@@ -5453,9 +5374,6 @@ module phoenix {
   module "phoenix__support__vector" { header "phoenix/support/vector.hpp" export * }
   module "phoenix__version" { header "phoenix/version.hpp" export * }
 }
-module pointee {
-  module "pointee" { header "pointee.hpp" export * }
-}
 module pointer_cast {
   module "pointer_cast" { header "pointer_cast.hpp" export * }
 }
@@ -5504,6 +5422,7 @@ module pool {
   module "pool__simple_segregated_storage" { header "pool/simple_segregated_storage.hpp" export * }
   module "pool__singleton_pool" { header "pool/singleton_pool.hpp" export * }
 }
+/*
 module preprocessor {
   module "preprocessor__arithmetic__add" { header "preprocessor/arithmetic/add.hpp" export * }
   module "preprocessor__arithmetic__dec" { header "preprocessor/arithmetic/dec.hpp" export * }
@@ -5743,7 +5662,7 @@ module preprocessor {
   module "preprocessor__variadic__to_tuple" { header "preprocessor/variadic/to_tuple.hpp" export * }
   module "preprocessor__while" { header "preprocessor/while.hpp" export * }
   module "preprocessor__wstringize" { header "preprocessor/wstringize.hpp" export * }
-}
+} */
 module process {
   module "process__detail__async_handler" { header "process/detail/async_handler.hpp" export * }
   module "process__detail__child_decl" { header "process/detail/child_decl.hpp" export * }
@@ -6335,12 +6254,6 @@ module regex {
 module regex_fwd {
   module "regex_fwd" { header "regex_fwd.hpp" export * }
 }
-module scoped_array {
-  module "scoped_array" { header "scoped_array.hpp" export * }
-}
-module scoped_ptr {
-  module "scoped_ptr" { header "scoped_ptr.hpp" export * }
-}
 module scope_exit {
   module "scope_exit" { header "scope_exit.hpp" export * }
 }
@@ -6426,9 +6339,6 @@ module serialization {
   module "serialization__weak_ptr" { header "serialization/weak_ptr.hpp" export * }
   module "serialization__wrapper" { header "serialization/wrapper.hpp" export * }
 }
-module shared_array {
-  module "shared_array" { header "shared_array.hpp" export * }
-}
 module shared_container_iterator {
   module "shared_container_iterator" { header "shared_container_iterator.hpp" export * }
 }
@@ -6436,6 +6346,130 @@ module shared_container_iterator {
 // Common util
 // These modules form a cycle, so we have to merge them into one module.
 module utils {
+
+module move {
+  module "move__adl_move_swap" { header "move/adl_move_swap.hpp" export * }
+  module "move__algo__adaptive_merge" { header "move/algo/adaptive_merge.hpp" export * }
+  module "move__algo__adaptive_sort" { header "move/algo/adaptive_sort.hpp" export * }
+  module "move__algo__detail__adaptive_sort_merge" { header "move/algo/detail/adaptive_sort_merge.hpp" export * }
+  module "move__algo__detail__insertion_sort" { header "move/algo/detail/insertion_sort.hpp" export * }
+  module "move__algo__detail__merge" { header "move/algo/detail/merge.hpp" export * }
+  module "move__algo__detail__merge_sort" { header "move/algo/detail/merge_sort.hpp" export * }
+  module "move__algo__move" { header "move/algo/move.hpp" export * }
+  module "move__algorithm" { header "move/algorithm.hpp" export * }
+  module "move__core" { header "move/core.hpp" export * }
+  module "move__default_delete" { header "move/default_delete.hpp" export * }
+  module "move__detail__config_begin" { header "move/detail/config_begin.hpp" export * }
+  module "move__detail__config_end" { header "move/detail/config_end.hpp" export * }
+  module "move__detail__destruct_n" { header "move/detail/destruct_n.hpp" export * }
+  module "move__detail__fwd_macros" { header "move/detail/fwd_macros.hpp" export * }
+  module "move__detail__iterator_traits" { header "move/detail/iterator_traits.hpp" export * }
+  module "move__detail__meta_utils_core" { header "move/detail/meta_utils_core.hpp" export * }
+  module "move__detail__meta_utils" { header "move/detail/meta_utils.hpp" export * }
+  module "move__detail__move_helpers" { header "move/detail/move_helpers.hpp" export * }
+  module "move__detail__placement_new" { header "move/detail/placement_new.hpp" export * }
+  module "move__detail__reverse_iterator" { header "move/detail/reverse_iterator.hpp" export * }
+  module "move__detail__std_ns_begin" { header "move/detail/std_ns_begin.hpp" export * }
+  module "move__detail__std_ns_end" { header "move/detail/std_ns_end.hpp" export * }
+  module "move__detail__type_traits" { header "move/detail/type_traits.hpp" export * }
+  module "move__detail__unique_ptr_meta_utils" { header "move/detail/unique_ptr_meta_utils.hpp" export * }
+  module "move__detail__workaround" { header "move/detail/workaround.hpp" export * }
+  module "move__iterator" { header "move/iterator.hpp" export * }
+  module "move__make_unique" { header "move/make_unique.hpp" export * }
+  module "move__move" { header "move/move.hpp" export * }
+  module "move__traits" { header "move/traits.hpp" export * }
+  module "move__unique_ptr" { header "move/unique_ptr.hpp" export * }
+  module "move__utility_core" { header "move/utility_core.hpp" export * }
+  module "move__utility" { header "move/utility.hpp" export * }
+}
+module make_shared {
+  module "make_shared" { header "make_shared.hpp" export * }
+}
+module enable_shared_from_this {
+  module "enable_shared_from_this" { header "enable_shared_from_this.hpp" export * }
+}
+module shared_array {
+  module "shared_array" { header "shared_array.hpp" export * }
+}
+module intrusive_ptr {
+  module "intrusive_ptr" { header "intrusive_ptr.hpp" export * }
+}
+module scoped_array {
+  module "scoped_array" { header "scoped_array.hpp" export * }
+}
+module scoped_ptr {
+  module "scoped_ptr" { header "scoped_ptr.hpp" export * }
+}
+module weak_ptr {
+  module "weak_ptr" { header "weak_ptr.hpp" export * }
+}
+module exception_ptr {
+  module "exception_ptr" { header "exception_ptr.hpp" export * }
+}
+module tuple {
+  module "tuple__tuple_comparison" { header "tuple/tuple_comparison.hpp" export * }
+  module "tuple__tuple" { header "tuple/tuple.hpp" export * }
+  module "tuple__tuple_io" { header "tuple/tuple_io.hpp" export * }
+}
+
+module utility {
+  module "utility__base_from_member" { header "utility/base_from_member.hpp" export * }
+  module "utility__binary" { header "utility/binary.hpp" export * }
+  module "utility__compare_pointees" { header "utility/compare_pointees.hpp" export * }
+  module "utility__declval" { header "utility/declval.hpp" export * }
+  module "utility__detail__in_place_factory_prefix" { header "utility/detail/in_place_factory_prefix.hpp" export * }
+  module "utility__detail__in_place_factory_suffix" { header "utility/detail/in_place_factory_suffix.hpp" export * }
+  module "utility__empty_deleter" { header "utility/empty_deleter.hpp" export * }
+  module "utility__explicit_operator_bool" { header "utility/explicit_operator_bool.hpp" export * }
+  module "utility" { header "utility.hpp" export * }
+  module "utility__identity_type" { header "utility/identity_type.hpp" export * }
+  // FIXME: Imports itself...? module "utility__in_place_factory" { header "utility/in_place_factory.hpp" export * }
+  module "utility__result_of" { header "utility/result_of.hpp" export * }
+  module "utility__string_ref_fwd" { header "utility/string_ref_fwd.hpp" export * }
+  module "utility__string_ref" { header "utility/string_ref.hpp" export * }
+  module "utility__string_view_fwd" { header "utility/string_view_fwd.hpp" export * }
+  module "utility__string_view" { header "utility/string_view.hpp" export * }
+  module "utility__swap" { header "utility/swap.hpp" export * }
+  // FIXME: Imports itself...?  module "utility__typed_in_place_factory" { header "utility/typed_in_place_factory.hpp" export * }
+  module "utility__value_init" { header "utility/value_init.hpp" export * }
+}
+module call_traits {
+  module "call_traits" { header "call_traits.hpp" export * }
+}
+module detail {
+  module "detail__allocator_utilities" { header "detail/allocator_utilities.hpp" export * }
+  module "detail__atomic_count" { header "detail/atomic_count.hpp" export * }
+  module "detail__atomic_redef_macros" { header "detail/atomic_redef_macros.hpp" export * }
+  module "detail__atomic_undef_macros" { header "detail/atomic_undef_macros.hpp" export * }
+  module "detail__binary_search" { header "detail/binary_search.hpp" export * }
+  module "detail__bitmask" { header "detail/bitmask.hpp" export * }
+  module "detail__call_traits" { header "detail/call_traits.hpp" export * }
+  module "detail__catch_exceptions" { header "detail/catch_exceptions.hpp" export * }
+  module "detail__compressed_pair" { header "detail/compressed_pair.hpp" export * }
+  module "detail__container_fwd" { header "detail/container_fwd.hpp" export * }
+  module "detail__endian" { header "detail/endian.hpp" export * }
+  module "detail__fenv" { header "detail/fenv.hpp" export * }
+  module "detail__has_default_constructor" { header "detail/has_default_constructor.hpp" export * }
+  module "detail__identifier" { header "detail/identifier.hpp" export * }
+  module "detail__indirect_traits" { header "detail/indirect_traits.hpp" export * }
+  module "detail__is_incrementable" { header "detail/is_incrementable.hpp" export * }
+  module "detail__is_sorted" { header "detail/is_sorted.hpp" export * }
+  module "detail__is_xxx" { header "detail/is_xxx.hpp" export * }
+  module "detail__iterator" { header "detail/iterator.hpp" export * }
+  module "detail__lcast_precision" { header "detail/lcast_precision.hpp" export * }
+  module "detail__lightweight_mutex" { header "detail/lightweight_mutex.hpp" export * }
+  module "detail__no_exceptions_support" { header "detail/no_exceptions_support.hpp" export * }
+  module "detail__numeric_traits" { header "detail/numeric_traits.hpp" export * }
+  module "detail__ob_compressed_pair" { header "detail/ob_compressed_pair.hpp" export * }
+  module "detail__quick_allocator" { header "detail/quick_allocator.hpp" export * }
+  module "detail__reference_content" { header "detail/reference_content.hpp" export * }
+  module "detail__scoped_enum_emulation" { header "detail/scoped_enum_emulation.hpp" export * }
+  module "detail__select_type" { header "detail/select_type.hpp" export * }
+  module "detail__sp_typeinfo" { header "detail/sp_typeinfo.hpp" export * }
+  module "detail__templated_streams" { header "detail/templated_streams.hpp" export * }
+  module "detail__winapi__config" { header "detail/winapi/config.hpp" export * }
+  module "detail__winapi__detail__cast_ptr" { header "detail/winapi/detail/cast_ptr.hpp" export * }
+}
 module throw_exception {
   module "throw_exception" { header "throw_exception.hpp" export * }
 }
@@ -7748,11 +7782,6 @@ module tti {
   module "tti__member_type" { header "tti/member_type.hpp" export * }
   module "tti__tti" { header "tti/tti.hpp" export * }
 }
-module tuple {
-  module "tuple__tuple_comparison" { header "tuple/tuple_comparison.hpp" export * }
-  module "tuple__tuple" { header "tuple/tuple.hpp" export * }
-  module "tuple__tuple_io" { header "tuple/tuple_io.hpp" export * }
-}
 module type_erasure {
   module "type_erasure__any_cast" { header "type_erasure/any_cast.hpp" export * }
   module "type_erasure__any" { header "type_erasure/any.hpp" export * }
@@ -8362,27 +8391,6 @@ module unordered_map {
 module unordered_set {
   module "unordered_set" { header "unordered_set.hpp" export * }
 }
-module utility {
-  module "utility__base_from_member" { header "utility/base_from_member.hpp" export * }
-  module "utility__binary" { header "utility/binary.hpp" export * }
-  module "utility__compare_pointees" { header "utility/compare_pointees.hpp" export * }
-  module "utility__declval" { header "utility/declval.hpp" export * }
-  module "utility__detail__in_place_factory_prefix" { header "utility/detail/in_place_factory_prefix.hpp" export * }
-  module "utility__detail__in_place_factory_suffix" { header "utility/detail/in_place_factory_suffix.hpp" export * }
-  module "utility__empty_deleter" { header "utility/empty_deleter.hpp" export * }
-  module "utility__explicit_operator_bool" { header "utility/explicit_operator_bool.hpp" export * }
-  module "utility" { header "utility.hpp" export * }
-  module "utility__identity_type" { header "utility/identity_type.hpp" export * }
-  // FIXME: Imports itself...? module "utility__in_place_factory" { header "utility/in_place_factory.hpp" export * }
-  module "utility__result_of" { header "utility/result_of.hpp" export * }
-  module "utility__string_ref_fwd" { header "utility/string_ref_fwd.hpp" export * }
-  module "utility__string_ref" { header "utility/string_ref.hpp" export * }
-  module "utility__string_view_fwd" { header "utility/string_view_fwd.hpp" export * }
-  module "utility__string_view" { header "utility/string_view.hpp" export * }
-  module "utility__swap" { header "utility/swap.hpp" export * }
-  module "utility__typed_in_place_factory" { header "utility/typed_in_place_factory.hpp" export * }
-  module "utility__value_init" { header "utility/value_init.hpp" export * }
-}
 module "utility__addressof" { header "utility/addressof.hpp" export * }
 module "utility__enable_if" { header "utility/enable_if.hpp" export * }
 module uuid {
@@ -8636,9 +8644,6 @@ module wave {
   module "wave__wave_config_constant" { header "wave/wave_config_constant.hpp" export * }
   module "wave__wave_config" { header "wave/wave_config.hpp" export * }
   module "wave__wave_version" { header "wave/wave_version.hpp" export * }
-}
-module weak_ptr {
-  module "weak_ptr" { header "weak_ptr.hpp" export * }
 }
 module xpressive {
   module "xpressive__basic_regex" { header "xpressive/basic_regex.hpp" export * }
