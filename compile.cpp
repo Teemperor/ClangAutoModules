@@ -1,3 +1,5 @@
+#include <boost/functional/factory.hpp>
+
 #include <boost/aligned_storage.hpp>
 #include <boost/align.hpp>
 #include <boost/any.hpp>
@@ -132,3 +134,4 @@
 #include <boost/visit_each.hpp>
 //#include <boost/wave.hpp>
 #include <boost/weak_ptr.hpp>
+

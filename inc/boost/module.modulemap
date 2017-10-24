@@ -1157,7 +1157,7 @@ module format {
   module "format__parsing" { header "format/parsing.hpp" export * }
 }
 module functional {
-  module "functional__factory" { header "functional/factory.hpp" export * }
+  //Imports itself non-modular: module "functional__factory" { header "functional/factory.hpp" export * }
   module "functional__forward_adapter" { header "functional/forward_adapter.hpp" export * }
   module "functional__hash__detail__float_functions" { header "functional/hash/detail/float_functions.hpp" export * }
   module "functional__hash__detail__hash_float" { header "functional/hash/detail/hash_float.hpp" export * }
