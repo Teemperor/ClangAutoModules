@@ -204,6 +204,89 @@ module boost_aligned_storage {
 module boost_any {
   module "any" { header "any.hpp" export * }
 }
+module boost_archive_serialization {
+module boost_serialization {
+  module "serialization__access" { header "serialization/access.hpp" export * }
+  module "serialization__archive_input_unordered_map" { header "serialization/archive_input_unordered_map.hpp" export * }
+  module "serialization__archive_input_unordered_set" { header "serialization/archive_input_unordered_set.hpp" export * }
+  module "serialization__array" { header "serialization/array.hpp" export * }
+  module "serialization__array_optimization" { header "serialization/array_optimization.hpp" export * }
+  module "serialization__array_wrapper" { header "serialization/array_wrapper.hpp" export * }
+  module "serialization__assume_abstract" { header "serialization/assume_abstract.hpp" export * }
+  module "serialization__base_object" { header "serialization/base_object.hpp" export * }
+  module "serialization__binary_object" { header "serialization/binary_object.hpp" export * }
+  module "serialization__bitset" { header "serialization/bitset.hpp" export * }
+  module "serialization__boost_array" { header "serialization/boost_array.hpp" export * }
+  module "serialization__boost_unordered_map" { header "serialization/boost_unordered_map.hpp" export * }
+  module "serialization__boost_unordered_set" { header "serialization/boost_unordered_set.hpp" export * }
+  module "serialization__collection_size_type" { header "serialization/collection_size_type.hpp" export * }
+  module "serialization__collections_load_imp" { header "serialization/collections_load_imp.hpp" export * }
+  module "serialization__collections_save_imp" { header "serialization/collections_save_imp.hpp" export * }
+  module "serialization__collection_traits" { header "serialization/collection_traits.hpp" export * }
+  module "serialization__complex" { header "serialization/complex.hpp" export * }
+  module "serialization__config" { header "serialization/config.hpp" export * }
+  module "serialization__deque" { header "serialization/deque.hpp" export * }
+  module "serialization__detail__get_data" { header "serialization/detail/get_data.hpp" export * }
+  module "serialization__detail__is_default_constructible" { header "serialization/detail/is_default_constructible.hpp" export * }
+  module "serialization__detail__shared_ptr_nmt_132" { header "serialization/detail/shared_ptr_nmt_132.hpp" export * }
+  module "serialization__detail__stack_constructor" { header "serialization/detail/stack_constructor.hpp" export * }
+  module "serialization__ephemeral" { header "serialization/ephemeral.hpp" export * }
+  module "serialization__export" { header "serialization/export.hpp" export * }
+  module "serialization__extended_type_info" { header "serialization/extended_type_info.hpp" export * }
+  module "serialization__extended_type_info_no_rtti" { header "serialization/extended_type_info_no_rtti.hpp" export * }
+  module "serialization__extended_type_info_typeid" { header "serialization/extended_type_info_typeid.hpp" export * }
+  module "serialization__factory" { header "serialization/factory.hpp" export * }
+  module "serialization__force_include" { header "serialization/force_include.hpp" export * }
+  module "serialization__forward_list" { header "serialization/forward_list.hpp" export * }
+  module "serialization__hash_collections_load_imp" { header "serialization/hash_collections_load_imp.hpp" export * }
+  module "serialization__hash_collections_save_imp" { header "serialization/hash_collections_save_imp.hpp" export * }
+  module "serialization__is_bitwise_serializable" { header "serialization/is_bitwise_serializable.hpp" export * }
+  module "serialization__item_version_type" { header "serialization/item_version_type.hpp" export * }
+  module "serialization__level_enum" { header "serialization/level_enum.hpp" export * }
+  module "serialization__level" { header "serialization/level.hpp" export * }
+  module "serialization__list" { header "serialization/list.hpp" export * }
+  module "serialization__map" { header "serialization/map.hpp" export * }
+  module "serialization__nvp" { header "serialization/nvp.hpp" export * }
+  module "serialization__optional" { header "serialization/optional.hpp" export * }
+  module "serialization__priority_queue" { header "serialization/priority_queue.hpp" export * }
+  module "serialization__queue" { header "serialization/queue.hpp" export * }
+  module "serialization__scoped_ptr" { header "serialization/scoped_ptr.hpp" export * }
+  module "serialization__serialization" { header "serialization/serialization.hpp" export * }
+  module "serialization__set" { header "serialization/set.hpp" export * }
+  module "serialization__shared_ptr_132" { header "serialization/shared_ptr_132.hpp" export * }
+  module "serialization__shared_ptr_helper" { header "serialization/shared_ptr_helper.hpp" export * }
+  module "serialization__shared_ptr" { header "serialization/shared_ptr.hpp" export * }
+  module "serialization__singleton" { header "serialization/singleton.hpp" export * }
+  module "serialization__slist" { header "serialization/slist.hpp" export * }
+  module "serialization__smart_cast" { header "serialization/smart_cast.hpp" export * }
+  module "serialization__split_free" { header "serialization/split_free.hpp" export * }
+  module "serialization__split_member" { header "serialization/split_member.hpp" export * }
+  module "serialization__stack" { header "serialization/stack.hpp" export * }
+  module "serialization__state_saver" { header "serialization/state_saver.hpp" export * }
+  module "serialization__static_warning" { header "serialization/static_warning.hpp" export * }
+  module "serialization__string" { header "serialization/string.hpp" export * }
+  module "serialization__strong_typedef" { header "serialization/strong_typedef.hpp" export * }
+  module "serialization__throw_exception" { header "serialization/throw_exception.hpp" export * }
+  module "serialization__tracking_enum" { header "serialization/tracking_enum.hpp" export * }
+  module "serialization__tracking" { header "serialization/tracking.hpp" export * }
+  module "serialization__traits" { header "serialization/traits.hpp" export * }
+  module "serialization__type_info_implementation" { header "serialization/type_info_implementation.hpp" export * }
+  module "serialization__unique_ptr" { header "serialization/unique_ptr.hpp" export * }
+  module "serialization__unordered_collections_load_imp" { header "serialization/unordered_collections_load_imp.hpp" export * }
+  module "serialization__unordered_collections_save_imp" { header "serialization/unordered_collections_save_imp.hpp" export * }
+  module "serialization__unordered_map" { header "serialization/unordered_map.hpp" export * }
+  module "serialization__unordered_set" { header "serialization/unordered_set.hpp" export * }
+  module "serialization__utility" { header "serialization/utility.hpp" export * }
+  module "serialization__valarray" { header "serialization/valarray.hpp" export * }
+  module "serialization__variant" { header "serialization/variant.hpp" export * }
+  module "serialization__vector_135" { header "serialization/vector_135.hpp" export * }
+  module "serialization__vector" { header "serialization/vector.hpp" export * }
+  module "serialization__version" { header "serialization/version.hpp" export * }
+  module "serialization__void_cast_fwd" { header "serialization/void_cast_fwd.hpp" export * }
+  module "serialization__void_cast" { header "serialization/void_cast.hpp" export * }
+  module "serialization__weak_ptr" { header "serialization/weak_ptr.hpp" export * }
+  module "serialization__wrapper" { header "serialization/wrapper.hpp" export * }
+}
 module boost_archive {
   module "archive__archive_exception" { header "archive/archive_exception.hpp" export * }
   module "archive__basic_archive" { header "archive/basic_archive.hpp" export * }
@@ -272,6 +355,7 @@ module boost_archive {
   module "archive__xml_archive_exception" { header "archive/xml_archive_exception.hpp" export * }
   module "archive__xml_oarchive" { header "archive/xml_oarchive.hpp" export * }
   module "archive__xml_woarchive" { header "archive/xml_woarchive.hpp" export * }
+}
 }
 module boost_array {
   module "array" { header "array.hpp" export * }
@@ -6254,88 +6338,6 @@ module boost_regex {
 }
 module boost_scope_exit {
   module "scope_exit" { header "scope_exit.hpp" export * }
-}
-module boost_serialization {
-  module "serialization__access" { header "serialization/access.hpp" export * }
-  module "serialization__archive_input_unordered_map" { header "serialization/archive_input_unordered_map.hpp" export * }
-  module "serialization__archive_input_unordered_set" { header "serialization/archive_input_unordered_set.hpp" export * }
-  module "serialization__array" { header "serialization/array.hpp" export * }
-  module "serialization__array_optimization" { header "serialization/array_optimization.hpp" export * }
-  module "serialization__array_wrapper" { header "serialization/array_wrapper.hpp" export * }
-  module "serialization__assume_abstract" { header "serialization/assume_abstract.hpp" export * }
-  module "serialization__base_object" { header "serialization/base_object.hpp" export * }
-  module "serialization__binary_object" { header "serialization/binary_object.hpp" export * }
-  module "serialization__bitset" { header "serialization/bitset.hpp" export * }
-  module "serialization__boost_array" { header "serialization/boost_array.hpp" export * }
-  module "serialization__boost_unordered_map" { header "serialization/boost_unordered_map.hpp" export * }
-  module "serialization__boost_unordered_set" { header "serialization/boost_unordered_set.hpp" export * }
-  module "serialization__collection_size_type" { header "serialization/collection_size_type.hpp" export * }
-  module "serialization__collections_load_imp" { header "serialization/collections_load_imp.hpp" export * }
-  module "serialization__collections_save_imp" { header "serialization/collections_save_imp.hpp" export * }
-  module "serialization__collection_traits" { header "serialization/collection_traits.hpp" export * }
-  module "serialization__complex" { header "serialization/complex.hpp" export * }
-  module "serialization__config" { header "serialization/config.hpp" export * }
-  module "serialization__deque" { header "serialization/deque.hpp" export * }
-  module "serialization__detail__get_data" { header "serialization/detail/get_data.hpp" export * }
-  module "serialization__detail__is_default_constructible" { header "serialization/detail/is_default_constructible.hpp" export * }
-  module "serialization__detail__shared_ptr_nmt_132" { header "serialization/detail/shared_ptr_nmt_132.hpp" export * }
-  module "serialization__detail__stack_constructor" { header "serialization/detail/stack_constructor.hpp" export * }
-  module "serialization__ephemeral" { header "serialization/ephemeral.hpp" export * }
-  module "serialization__export" { header "serialization/export.hpp" export * }
-  module "serialization__extended_type_info" { header "serialization/extended_type_info.hpp" export * }
-  module "serialization__extended_type_info_no_rtti" { header "serialization/extended_type_info_no_rtti.hpp" export * }
-  module "serialization__extended_type_info_typeid" { header "serialization/extended_type_info_typeid.hpp" export * }
-  module "serialization__factory" { header "serialization/factory.hpp" export * }
-  module "serialization__force_include" { header "serialization/force_include.hpp" export * }
-  module "serialization__forward_list" { header "serialization/forward_list.hpp" export * }
-  module "serialization__hash_collections_load_imp" { header "serialization/hash_collections_load_imp.hpp" export * }
-  module "serialization__hash_collections_save_imp" { header "serialization/hash_collections_save_imp.hpp" export * }
-  module "serialization__is_bitwise_serializable" { header "serialization/is_bitwise_serializable.hpp" export * }
-  module "serialization__item_version_type" { header "serialization/item_version_type.hpp" export * }
-  module "serialization__level_enum" { header "serialization/level_enum.hpp" export * }
-  module "serialization__level" { header "serialization/level.hpp" export * }
-  module "serialization__list" { header "serialization/list.hpp" export * }
-  module "serialization__map" { header "serialization/map.hpp" export * }
-  module "serialization__nvp" { header "serialization/nvp.hpp" export * }
-  module "serialization__optional" { header "serialization/optional.hpp" export * }
-  module "serialization__priority_queue" { header "serialization/priority_queue.hpp" export * }
-  module "serialization__queue" { header "serialization/queue.hpp" export * }
-  module "serialization__scoped_ptr" { header "serialization/scoped_ptr.hpp" export * }
-  module "serialization__serialization" { header "serialization/serialization.hpp" export * }
-  module "serialization__set" { header "serialization/set.hpp" export * }
-  module "serialization__shared_ptr_132" { header "serialization/shared_ptr_132.hpp" export * }
-  module "serialization__shared_ptr_helper" { header "serialization/shared_ptr_helper.hpp" export * }
-  module "serialization__shared_ptr" { header "serialization/shared_ptr.hpp" export * }
-  module "serialization__singleton" { header "serialization/singleton.hpp" export * }
-  module "serialization__slist" { header "serialization/slist.hpp" export * }
-  module "serialization__smart_cast" { header "serialization/smart_cast.hpp" export * }
-  module "serialization__split_free" { header "serialization/split_free.hpp" export * }
-  module "serialization__split_member" { header "serialization/split_member.hpp" export * }
-  module "serialization__stack" { header "serialization/stack.hpp" export * }
-  module "serialization__state_saver" { header "serialization/state_saver.hpp" export * }
-  module "serialization__static_warning" { header "serialization/static_warning.hpp" export * }
-  module "serialization__string" { header "serialization/string.hpp" export * }
-  module "serialization__strong_typedef" { header "serialization/strong_typedef.hpp" export * }
-  module "serialization__throw_exception" { header "serialization/throw_exception.hpp" export * }
-  module "serialization__tracking_enum" { header "serialization/tracking_enum.hpp" export * }
-  module "serialization__tracking" { header "serialization/tracking.hpp" export * }
-  module "serialization__traits" { header "serialization/traits.hpp" export * }
-  module "serialization__type_info_implementation" { header "serialization/type_info_implementation.hpp" export * }
-  module "serialization__unique_ptr" { header "serialization/unique_ptr.hpp" export * }
-  module "serialization__unordered_collections_load_imp" { header "serialization/unordered_collections_load_imp.hpp" export * }
-  module "serialization__unordered_collections_save_imp" { header "serialization/unordered_collections_save_imp.hpp" export * }
-  module "serialization__unordered_map" { header "serialization/unordered_map.hpp" export * }
-  module "serialization__unordered_set" { header "serialization/unordered_set.hpp" export * }
-  module "serialization__utility" { header "serialization/utility.hpp" export * }
-  module "serialization__valarray" { header "serialization/valarray.hpp" export * }
-  module "serialization__variant" { header "serialization/variant.hpp" export * }
-  module "serialization__vector_135" { header "serialization/vector_135.hpp" export * }
-  module "serialization__vector" { header "serialization/vector.hpp" export * }
-  module "serialization__version" { header "serialization/version.hpp" export * }
-  module "serialization__void_cast_fwd" { header "serialization/void_cast_fwd.hpp" export * }
-  module "serialization__void_cast" { header "serialization/void_cast.hpp" export * }
-  module "serialization__weak_ptr" { header "serialization/weak_ptr.hpp" export * }
-  module "serialization__wrapper" { header "serialization/wrapper.hpp" export * }
 }
 module boost_shared_container_iterator {
   module "shared_container_iterator" { header "shared_container_iterator.hpp" export * }
