@@ -1157,8 +1157,8 @@ module boost_format {
   module "format__parsing" { header "format/parsing.hpp" export * }
 }
 module boost_functional {
-  //Imports itself non-modular: module "functional__factory" { header "functional/factory.hpp" export * }
-  //Imports itself non-modular: module "functional__forward_adapter" { header "functional/forward_adapter.hpp" export * }
+  //FIXME: Imports itself non-modular: module "functional__factory" { header "functional/factory.hpp" export * }
+  //FIXME: Imports itself non-modular: module "functional__forward_adapter" { header "functional/forward_adapter.hpp" export * }
   module "functional__hash__detail__float_functions" { header "functional/hash/detail/float_functions.hpp" export * }
   module "functional__hash__detail__hash_float" { header "functional/hash/detail/hash_float.hpp" export * }
   module "functional__hash__detail__limits" { header "functional/hash/detail/limits.hpp" export * }
@@ -1168,7 +1168,7 @@ module boost_functional {
   module "functional__hash__hash" { header "functional/hash/hash.hpp" export * }
   module "functional__hash" { header "functional/hash.hpp" export * }
   module "functional" { header "functional.hpp" export * }
-  module "functional__lightweight_forward_adapter" { header "functional/lightweight_forward_adapter.hpp" export * }
+  //FIXME: Imports itself non-modular: module "functional__lightweight_forward_adapter" { header "functional/lightweight_forward_adapter.hpp" export * }
   module "functional__overloaded_function__config" { header "functional/overloaded_function/config.hpp" export * }
   module "functional__overloaded_function__detail__base" { header "functional/overloaded_function/detail/base.hpp" export * }
   module "functional__overloaded_function__detail__function_type" { header "functional/overloaded_function/detail/function_type.hpp" export * }
