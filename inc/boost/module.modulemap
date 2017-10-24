@@ -8373,7 +8373,7 @@ module utility {
   module "utility__explicit_operator_bool" { header "utility/explicit_operator_bool.hpp" export * }
   module "utility" { header "utility.hpp" export * }
   module "utility__identity_type" { header "utility/identity_type.hpp" export * }
-  module "utility__in_place_factory" { header "utility/in_place_factory.hpp" export * }
+  // FIXME: Imports itself...? module "utility__in_place_factory" { header "utility/in_place_factory.hpp" export * }
   module "utility__result_of" { header "utility/result_of.hpp" export * }
   module "utility__string_ref_fwd" { header "utility/string_ref_fwd.hpp" export * }
   module "utility__string_ref" { header "utility/string_ref.hpp" export * }
