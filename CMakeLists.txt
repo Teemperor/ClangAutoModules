@@ -7,7 +7,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" AND use_modules)
   # using Clang
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fmodules -fcxx-modules -Xclang -fmodules-local-submodule-visibility -fmodules-cache-path=pcms -Rmodule-build")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fmodules -fcxx-modules -Xclang -fdisable-module-hash -Xclang -fmodules-local-submodule-visibility -fmodules-cache-path=pcms -Rmodule-build")
   # no autopr warning
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-declarations")
 

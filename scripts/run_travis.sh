@@ -11,4 +11,16 @@ cd ..
 mkdir build
 cd build
 cmake -Duse_modules=$3 ..
-make
+if [[ "$3" == "On" ]]; then
+  echo "Building with modules on"
+  set +e
+  make
+  set -e
+  find . -name "boost_*.pcm" | xargs -L1 basename | rev | cut -c 5- | rev > found_pcms
+  echo "Found PCMS:"
+  cat found_pcms
+  python "$DIR/check_pcms.py" "$DIR/../working_pcms" found_pcms
+else
+  echo "Building with modules off"
+  make
+fi
