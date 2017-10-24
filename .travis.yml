@@ -17,8 +17,21 @@ matrix:
           sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-5.0']
           packages: ['clang-5.0', 'g++-6']
       env:
+        - MODULES=On
+        - CXX_COMPILER=clang++-5.0
+        - COMPILER=clang-5.0
+
+    - os: linux
+      dist: trusty
+      compiler: clang
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-5.0']
+          packages: ['clang-5.0', 'g++-6']
+      env:
+        - MODULES=Off
         - CXX_COMPILER=clang++-5.0
         - COMPILER=clang-5.0
 
 script:
-  - ./scripts/run_travis.sh $COMPILER $CXX_COMPILER
+  - ./scripts/run_travis.sh $COMPILER $CXX_COMPILER $MODULES

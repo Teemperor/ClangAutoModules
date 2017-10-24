@@ -10,5 +10,5 @@ cd "$DIR"
 cd ..
 mkdir build
 cd build
-cmake ..
+cmake -Duse_modules=$3 ..
 make

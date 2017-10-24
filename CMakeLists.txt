@@ -1,9 +1,13 @@
 project(boost-compile)
 cmake_minimum_required(VERSION 3.0)
 
-if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+option(use_modules "Build with C++ modules" On)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
+
+if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" AND use_modules)
   # using Clang
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -fmodules -fcxx-modules -Xclang -fmodules-local-submodule-visibility -fmodules-cache-path=pcms -Rmodule-build")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fmodules -fcxx-modules -Xclang -fmodules-local-submodule-visibility -fmodules-cache-path=pcms -Rmodule-build")
   # no autopr warning
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-declarations")
 
@@ -15,6 +19,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
 
 elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
   # TODO
+  message(FATAL_ERROR "Can't build with gcc, we want to test clang")
 endif()
 
 
