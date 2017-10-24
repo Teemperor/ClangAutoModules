@@ -6250,8 +6250,6 @@ module regex {
   module "regex__v4__regex_traits" { header "regex/v4/regex_traits.hpp" export * }
   module "regex__v4__regex_workaround" { header "regex/v4/regex_workaround.hpp" export * }
   module "regex__v4__syntax_type" { header "regex/v4/syntax_type.hpp" export * }
-}
-module regex_fwd {
   module "regex_fwd" { header "regex_fwd.hpp" export * }
 }
 module scope_exit {
