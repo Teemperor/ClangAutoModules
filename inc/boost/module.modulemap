@@ -1078,36 +1078,6 @@ module endian {
   module "endian__detail__lightweight_test" { header "endian/detail/lightweight_test.hpp" export * }
   module "endian__std_pair" { header "endian/std_pair.hpp" export * }
 }
-module exception {
-  module "exception__all" { header "exception/all.hpp" export * }
-  module "exception__current_exception_cast" { header "exception/current_exception_cast.hpp" export * }
-  module "exception__detail__clone_current_exception" { header "exception/detail/clone_current_exception.hpp" export * }
-  module "exception__detail__error_info_impl" { header "exception/detail/error_info_impl.hpp" export * }
-  module "exception__detail__exception_ptr" { header "exception/detail/exception_ptr.hpp" export * }
-  module "exception__detail__is_output_streamable" { header "exception/detail/is_output_streamable.hpp" export * }
-  module "exception__detail__object_hex_dump" { header "exception/detail/object_hex_dump.hpp" export * }
-  module "exception__detail__shared_ptr" { header "exception/detail/shared_ptr.hpp" export * }
-  module "exception__detail__type_info" { header "exception/detail/type_info.hpp" export * }
-  module "exception__diagnostic_information" { header "exception/diagnostic_information.hpp" export * }
-  module "exception__enable_current_exception" { header "exception/enable_current_exception.hpp" export * }
-  module "exception__enable_error_info" { header "exception/enable_error_info.hpp" export * }
-  module "exception__errinfo_api_function" { header "exception/errinfo_api_function.hpp" export * }
-  module "exception__errinfo_at_line" { header "exception/errinfo_at_line.hpp" export * }
-  module "exception__errinfo_errno" { header "exception/errinfo_errno.hpp" export * }
-  module "exception__errinfo_file_handle" { header "exception/errinfo_file_handle.hpp" export * }
-  module "exception__errinfo_file_name" { header "exception/errinfo_file_name.hpp" export * }
-  module "exception__errinfo_file_open_mode" { header "exception/errinfo_file_open_mode.hpp" export * }
-  module "exception__errinfo_nested_exception" { header "exception/errinfo_nested_exception.hpp" export * }
-  module "exception__errinfo_type_info_name" { header "exception/errinfo_type_info_name.hpp" export * }
-  module "exception__error_info" { header "exception/error_info.hpp" export * }
-  module "exception__exception" { header "exception/exception.hpp" export * }
-  module "exception__get_error_info" { header "exception/get_error_info.hpp" export * }
-  module "exception__info" { header "exception/info.hpp" export * }
-  module "exception__info_tuple" { header "exception/info_tuple.hpp" export * }
-  module "exception__N3757" { header "exception/N3757.hpp" export * }
-  module "exception__to_string" { header "exception/to_string.hpp" export * }
-  module "exception__to_string_stub" { header "exception/to_string_stub.hpp" export * }
-}
 module exception_ptr {
   module "exception_ptr" { header "exception_ptr.hpp" export * }
 }
@@ -6462,63 +6432,47 @@ module shared_array {
 module shared_container_iterator {
   module "shared_container_iterator" { header "shared_container_iterator.hpp" export * }
 }
+
+// Common util
+// These modules form a cycle, so we have to merge them into one module.
+module utils {
+module throw_exception {
+  module "throw_exception" { header "throw_exception.hpp" export * }
+}
 module shared_ptr {
   module "shared_ptr" { header "shared_ptr.hpp" export * }
 }
-module signals2 {
-  module "signals2__connection" { header "signals2/connection.hpp" export * }
-  module "signals2__deconstruct" { header "signals2/deconstruct.hpp" export * }
-  module "signals2__deconstruct_ptr" { header "signals2/deconstruct_ptr.hpp" export * }
-  module "signals2__detail__auto_buffer" { header "signals2/detail/auto_buffer.hpp" export * }
-  module "signals2__detail__foreign_ptr" { header "signals2/detail/foreign_ptr.hpp" export * }
-  module "signals2__detail__lwm_nop" { header "signals2/detail/lwm_nop.hpp" export * }
-  module "signals2__detail__lwm_pthreads" { header "signals2/detail/lwm_pthreads.hpp" export * }
-  module "signals2__detail__null_output_iterator" { header "signals2/detail/null_output_iterator.hpp" export * }
-  module "signals2__detail__replace_slot_function" { header "signals2/detail/replace_slot_function.hpp" export * }
-  module "signals2__detail__result_type_wrapper" { header "signals2/detail/result_type_wrapper.hpp" export * }
-  module "signals2__detail__signals_common" { header "signals2/detail/signals_common.hpp" export * }
-  module "signals2__detail__signals_common_macros" { header "signals2/detail/signals_common_macros.hpp" export * }
-  module "signals2__detail__slot_call_iterator" { header "signals2/detail/slot_call_iterator.hpp" export * }
-  module "signals2__detail__slot_groups" { header "signals2/detail/slot_groups.hpp" export * }
-  module "signals2__detail__tracked_objects_visitor" { header "signals2/detail/tracked_objects_visitor.hpp" export * }
-  module "signals2__detail__unique_lock" { header "signals2/detail/unique_lock.hpp" export * }
-  module "signals2__detail__variadic_arg_type" { header "signals2/detail/variadic_arg_type.hpp" export * }
-  module "signals2__dummy_mutex" { header "signals2/dummy_mutex.hpp" export * }
-  module "signals2__expired_slot" { header "signals2/expired_slot.hpp" export * }
-  module "signals2" { header "signals2.hpp" export * }
-  module "signals2__last_value" { header "signals2/last_value.hpp" export * }
-  module "signals2__mutex" { header "signals2/mutex.hpp" export * }
-  module "signals2__optional_last_value" { header "signals2/optional_last_value.hpp" export * }
-  module "signals2__postconstructible" { header "signals2/postconstructible.hpp" export * }
-  module "signals2__shared_connection_block" { header "signals2/shared_connection_block.hpp" export * }
-  module "signals2__signal_base" { header "signals2/signal_base.hpp" export * }
-  module "signals2__signal" { header "signals2/signal.hpp" export * }
-  module "signals2__signal_type" { header "signals2/signal_type.hpp" export * }
-  module "signals2__slot_base" { header "signals2/slot_base.hpp" export * }
-  module "signals2__slot" { header "signals2/slot.hpp" export * }
-  module "signals2__trackable" { header "signals2/trackable.hpp" export * }
+module exception {
+  module "exception__all" { header "exception/all.hpp" export * }
+  module "exception__current_exception_cast" { header "exception/current_exception_cast.hpp" export * }
+  module "exception__detail__clone_current_exception" { header "exception/detail/clone_current_exception.hpp" export * }
+  module "exception__detail__error_info_impl" { header "exception/detail/error_info_impl.hpp" export * }
+  module "exception__detail__exception_ptr" { header "exception/detail/exception_ptr.hpp" export * }
+  module "exception__detail__is_output_streamable" { header "exception/detail/is_output_streamable.hpp" export * }
+  module "exception__detail__object_hex_dump" { header "exception/detail/object_hex_dump.hpp" export * }
+  module "exception__detail__shared_ptr" { header "exception/detail/shared_ptr.hpp" export * }
+  module "exception__detail__type_info" { header "exception/detail/type_info.hpp" export * }
+  module "exception__diagnostic_information" { header "exception/diagnostic_information.hpp" export * }
+  module "exception__enable_current_exception" { header "exception/enable_current_exception.hpp" export * }
+  module "exception__enable_error_info" { header "exception/enable_error_info.hpp" export * }
+  module "exception__errinfo_api_function" { header "exception/errinfo_api_function.hpp" export * }
+  module "exception__errinfo_at_line" { header "exception/errinfo_at_line.hpp" export * }
+  module "exception__errinfo_errno" { header "exception/errinfo_errno.hpp" export * }
+  module "exception__errinfo_file_handle" { header "exception/errinfo_file_handle.hpp" export * }
+  module "exception__errinfo_file_name" { header "exception/errinfo_file_name.hpp" export * }
+  module "exception__errinfo_file_open_mode" { header "exception/errinfo_file_open_mode.hpp" export * }
+  module "exception__errinfo_nested_exception" { header "exception/errinfo_nested_exception.hpp" export * }
+  module "exception__errinfo_type_info_name" { header "exception/errinfo_type_info_name.hpp" export * }
+  module "exception__error_info" { header "exception/error_info.hpp" export * }
+  module "exception__exception" { header "exception/exception.hpp" export * }
+  module "exception__get_error_info" { header "exception/get_error_info.hpp" export * }
+  module "exception__info" { header "exception/info.hpp" export * }
+  module "exception__info_tuple" { header "exception/info_tuple.hpp" export * }
+  module "exception__N3757" { header "exception/N3757.hpp" export * }
+  module "exception__to_string" { header "exception/to_string.hpp" export * }
+  module "exception__to_string_stub" { header "exception/to_string_stub.hpp" export * }
 }
-module signals {
-  module "signals__connection" { header "signals/connection.hpp" export * }
-  module "signals__detail__config" { header "signals/detail/config.hpp" export * }
-  module "signals__detail__named_slot_map" { header "signals/detail/named_slot_map.hpp" export * }
-  module "signals__detail__signal_base" { header "signals/detail/signal_base.hpp" export * }
-  module "signals__detail__signals_common" { header "signals/detail/signals_common.hpp" export * }
-  module "signals__detail__slot_call_iterator" { header "signals/detail/slot_call_iterator.hpp" export * }
-  module "signals__signal0" { header "signals/signal0.hpp" export * }
-  module "signals__signal10" { header "signals/signal10.hpp" export * }
-  module "signals__signal1" { header "signals/signal1.hpp" export * }
-  module "signals__signal2" { header "signals/signal2.hpp" export * }
-  module "signals__signal3" { header "signals/signal3.hpp" export * }
-  module "signals__signal4" { header "signals/signal4.hpp" export * }
-  module "signals__signal5" { header "signals/signal5.hpp" export * }
-  module "signals__signal6" { header "signals/signal6.hpp" export * }
-  module "signals__signal7" { header "signals/signal7.hpp" export * }
-  module "signals__signal8" { header "signals/signal8.hpp" export * }
-  module "signals__signal9" { header "signals/signal9.hpp" export * }
-  module "signals__slot" { header "signals/slot.hpp" export * }
-  module "signals__trackable" { header "signals/trackable.hpp" export * }
-}
+
 module smart_ptr {
   module "smart_ptr__allocate_shared_array" { header "smart_ptr/allocate_shared_array.hpp" export * }
   module "smart_ptr__bad_weak_ptr" { header "smart_ptr/bad_weak_ptr.hpp" export * }
@@ -6576,6 +6530,63 @@ module smart_ptr {
   module "smart_ptr__shared_array" { header "smart_ptr/shared_array.hpp" export * }
   module "smart_ptr__shared_ptr" { header "smart_ptr/shared_ptr.hpp" export * }
   module "smart_ptr__weak_ptr" { header "smart_ptr/weak_ptr.hpp" export * }
+}
+}
+
+
+module signals2 {
+  module "signals2__connection" { header "signals2/connection.hpp" export * }
+  module "signals2__deconstruct" { header "signals2/deconstruct.hpp" export * }
+  module "signals2__deconstruct_ptr" { header "signals2/deconstruct_ptr.hpp" export * }
+  module "signals2__detail__auto_buffer" { header "signals2/detail/auto_buffer.hpp" export * }
+  module "signals2__detail__foreign_ptr" { header "signals2/detail/foreign_ptr.hpp" export * }
+  module "signals2__detail__lwm_nop" { header "signals2/detail/lwm_nop.hpp" export * }
+  module "signals2__detail__lwm_pthreads" { header "signals2/detail/lwm_pthreads.hpp" export * }
+  module "signals2__detail__null_output_iterator" { header "signals2/detail/null_output_iterator.hpp" export * }
+  module "signals2__detail__replace_slot_function" { header "signals2/detail/replace_slot_function.hpp" export * }
+  module "signals2__detail__result_type_wrapper" { header "signals2/detail/result_type_wrapper.hpp" export * }
+  module "signals2__detail__signals_common" { header "signals2/detail/signals_common.hpp" export * }
+  module "signals2__detail__signals_common_macros" { header "signals2/detail/signals_common_macros.hpp" export * }
+  module "signals2__detail__slot_call_iterator" { header "signals2/detail/slot_call_iterator.hpp" export * }
+  module "signals2__detail__slot_groups" { header "signals2/detail/slot_groups.hpp" export * }
+  module "signals2__detail__tracked_objects_visitor" { header "signals2/detail/tracked_objects_visitor.hpp" export * }
+  module "signals2__detail__unique_lock" { header "signals2/detail/unique_lock.hpp" export * }
+  module "signals2__detail__variadic_arg_type" { header "signals2/detail/variadic_arg_type.hpp" export * }
+  module "signals2__dummy_mutex" { header "signals2/dummy_mutex.hpp" export * }
+  module "signals2__expired_slot" { header "signals2/expired_slot.hpp" export * }
+  module "signals2" { header "signals2.hpp" export * }
+  module "signals2__last_value" { header "signals2/last_value.hpp" export * }
+  module "signals2__mutex" { header "signals2/mutex.hpp" export * }
+  module "signals2__optional_last_value" { header "signals2/optional_last_value.hpp" export * }
+  module "signals2__postconstructible" { header "signals2/postconstructible.hpp" export * }
+  module "signals2__shared_connection_block" { header "signals2/shared_connection_block.hpp" export * }
+  module "signals2__signal_base" { header "signals2/signal_base.hpp" export * }
+  module "signals2__signal" { header "signals2/signal.hpp" export * }
+  module "signals2__signal_type" { header "signals2/signal_type.hpp" export * }
+  module "signals2__slot_base" { header "signals2/slot_base.hpp" export * }
+  module "signals2__slot" { header "signals2/slot.hpp" export * }
+  module "signals2__trackable" { header "signals2/trackable.hpp" export * }
+}
+module signals {
+  module "signals__connection" { header "signals/connection.hpp" export * }
+  module "signals__detail__config" { header "signals/detail/config.hpp" export * }
+  module "signals__detail__named_slot_map" { header "signals/detail/named_slot_map.hpp" export * }
+  module "signals__detail__signal_base" { header "signals/detail/signal_base.hpp" export * }
+  module "signals__detail__signals_common" { header "signals/detail/signals_common.hpp" export * }
+  module "signals__detail__slot_call_iterator" { header "signals/detail/slot_call_iterator.hpp" export * }
+  module "signals__signal0" { header "signals/signal0.hpp" export * }
+  module "signals__signal10" { header "signals/signal10.hpp" export * }
+  module "signals__signal1" { header "signals/signal1.hpp" export * }
+  module "signals__signal2" { header "signals/signal2.hpp" export * }
+  module "signals__signal3" { header "signals/signal3.hpp" export * }
+  module "signals__signal4" { header "signals/signal4.hpp" export * }
+  module "signals__signal5" { header "signals/signal5.hpp" export * }
+  module "signals__signal6" { header "signals/signal6.hpp" export * }
+  module "signals__signal7" { header "signals/signal7.hpp" export * }
+  module "signals__signal8" { header "signals/signal8.hpp" export * }
+  module "signals__signal9" { header "signals/signal9.hpp" export * }
+  module "signals__slot" { header "signals/slot.hpp" export * }
+  module "signals__trackable" { header "signals/trackable.hpp" export * }
 }
 module sort {
   module "sort__sort" { header "sort/sort.hpp" export * }
@@ -7663,9 +7674,6 @@ module thread {
   module "thread__win32__mfc_thread_init" { header "thread/win32/mfc_thread_init.hpp" export * }
   module "thread__with_lock_guard" { header "thread/with_lock_guard.hpp" export * }
   module "thread__xtime" { header "thread/xtime.hpp" export * }
-}
-module throw_exception {
-  module "throw_exception" { header "throw_exception.hpp" export * }
 }
 module timer {
   module "timer__config" { header "timer/config.hpp" export * }
