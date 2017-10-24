@@ -1,4 +1,6 @@
+// Test that textual headers still work
 #include <boost/functional/factory.hpp>
+#include <boost/functional/forward_adapter.hpp>
 
 #include <boost/aligned_storage.hpp>
 #include <boost/align.hpp>
