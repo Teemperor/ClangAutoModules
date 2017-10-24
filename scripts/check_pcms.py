@@ -12,7 +12,7 @@ if len(missing_pcms):
     print("Missing PCMS:")
     print("--START OF LIST--")
     for pcm in missing_pcms:
-      print(pcm)
+      print(pcm.strip())
     print("---END OF LIST---")
     exit(1)
 else:
@@ -21,5 +21,5 @@ else:
         print("New working PCMS, add them to " + sys.argv[1] + " please:")
         print("--START OF LIST--")
         for pcm in new_pcms:
-            print(pcm)
+            print(pcm.strip())
         print("---END OF LIST---")

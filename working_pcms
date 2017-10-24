@@ -90,3 +90,13 @@ boost_generator_iterator
 boost_core
 boost_function_equal
 boost_concept_check
+boost_functional
+boost_circular_buffer
+boost_container
+boost_regex
+boost_unordered_map
+boost_unordered
+boost_cregex
+boost_multi_array
+boost_unordered_set
+boost_intrusive
