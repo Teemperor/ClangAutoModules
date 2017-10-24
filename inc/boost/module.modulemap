@@ -6243,7 +6243,7 @@ module regex {
   module "regex__v4__fileiter" { header "regex/v4/fileiter.hpp" export * }
   module "regex__v4__iterator_category" { header "regex/v4/iterator_category.hpp" export * }
   module "regex__v4__match_flags" { header "regex/v4/match_flags.hpp" export * }
-  module "regex__v4__primary_transform" { header "regex/v4/primary_transform.hpp" export * }
+  // misses include to get BOOST_REGEX_DETAIL_NS: module "regex__v4__primary_transform" { header "regex/v4/primary_transform.hpp" export * }
   module "regex__v4__regex_fwd" { header "regex/v4/regex_fwd.hpp" export * }
   module "regex__v4__regex" { header "regex/v4/regex.hpp" export * }
   module "regex__v4__regex_raw_buffer" { header "regex/v4/regex_raw_buffer.hpp" export * }
