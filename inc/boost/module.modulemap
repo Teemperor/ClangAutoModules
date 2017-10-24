@@ -1170,10 +1170,10 @@ module boost_functional {
   module "functional" { header "functional.hpp" export * }
   //FIXME: Imports itself non-modular: module "functional__lightweight_forward_adapter" { header "functional/lightweight_forward_adapter.hpp" export * }
   module "functional__overloaded_function__config" { header "functional/overloaded_function/config.hpp" export * }
-  module "functional__overloaded_function__detail__base" { header "functional/overloaded_function/detail/base.hpp" export * }
+  //FIXME: Imports itself non-modular: module "functional__overloaded_function__detail__base" { header "functional/overloaded_function/detail/base.hpp" export * }
   module "functional__overloaded_function__detail__function_type" { header "functional/overloaded_function/detail/function_type.hpp" export * }
   module "functional__overloaded_function" { header "functional/overloaded_function.hpp" export * }
-  module "functional__value_factory" { header "functional/value_factory.hpp" export * }
+  //FIXME: Imports itself non-modular: module "functional__value_factory" { header "functional/value_factory.hpp" export * }
 }
 module boost_function {
   module "function__detail__prologue" { header "function/detail/prologue.hpp" export * }
