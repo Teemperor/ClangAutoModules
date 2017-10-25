@@ -427,15 +427,35 @@ module boost_atomic {
   module "atomic__detail__ops_cas_based" { header "atomic/detail/ops_cas_based.hpp" export * }
   module "atomic__detail__ops_emulated" { header "atomic/detail/ops_emulated.hpp" export * }
   module "atomic__detail__ops_extending_cas_based" { header "atomic/detail/ops_extending_cas_based.hpp" export * }
-  module "atomic__detail__ops_gcc_alpha" { header "atomic/detail/ops_gcc_alpha.hpp" export * }
-  module "atomic__detail__ops_gcc_arm" { header "atomic/detail/ops_gcc_arm.hpp" export * }
-  module "atomic__detail__ops_gcc_atomic" { header "atomic/detail/ops_gcc_atomic.hpp" export * }
-  module "atomic__detail__ops_gcc_sparc" { header "atomic/detail/ops_gcc_sparc.hpp" export * }
-  module "atomic__detail__ops_gcc_sync" { header "atomic/detail/ops_gcc_sync.hpp" export * }
-  module "atomic__detail__ops_gcc_x86_dcas" { header "atomic/detail/ops_gcc_x86_dcas.hpp" export * }
-  module "atomic__detail__ops_gcc_x86" { header "atomic/detail/ops_gcc_x86.hpp" export * }
-  module "atomic__detail__ops_linux_arm" { header "atomic/detail/ops_linux_arm.hpp" export * }
-  module "atomic__detail__ops_msvc_common" { header "atomic/detail/ops_msvc_common.hpp" export * }
+
+  /*
+  /home/teemperor/boost-compile/inc/boost/atomic/detail/ops_gcc_atomic.hpp:17:10: remark: finished building module 'boost_memory_order' [-Rmodule-build]
+While building module 'boost_asio' imported from /home/teemperor/boost-compile/inc/boost/asio.hpp:20:
+While building module 'boost_date_time' imported from /home/teemperor/boost-compile/inc/boost/asio/time_traits.hpp:23:
+While building module 'boost_algorithm' imported from /home/teemperor/boost-compile/inc/boost/date_time/date_facet.hpp:17:
+While building module 'wrapper' imported from /home/teemperor/boost-compile/inc/boost/algorithm/clamp.hpp:26:
+While building module 'boost_spirit' imported from /home/teemperor/boost-compile/inc/boost/archive/impl/basic_xml_grammar.hpp:53:
+While building module 'boost_thread' imported from /home/teemperor/boost-compile/inc/boost/spirit/home/classic/core/non_terminal/impl/static.hpp:18:
+While building module 'boost_atomic' imported from /home/teemperor/boost-compile/inc/boost/thread/pthread/once_atomic.hpp:20:
+In file included from <module-includes>:27:
+/home/teemperor/boost-compile/inc/boost/atomic/detail/ops_gcc_alpha.hpp:351:8: error: explicit specialization of 'boost::atomics::detail::operations<1, false>' after instantiation
+struct operations< 1u, false > :
+       ^~~~~~~~~~~~~~~~~~~~~~~
+/home/teemperor/boost-compile/inc/boost/atomic/detail/atomic_flag.hpp:43:13: note: implicit instantiation first required here
+    typedef operations::storage_type storage_type;
+            ^
+
+  */
+  // Removed to fix above error:
+  // module "atomic__detail__ops_gcc_alpha" { header "atomic/detail/ops_gcc_alpha.hpp" export * }
+  // module "atomic__detail__ops_gcc_arm" { header "atomic/detail/ops_gcc_arm.hpp" export * }
+  // module "atomic__detail__ops_gcc_atomic" { header "atomic/detail/ops_gcc_atomic.hpp" export * }
+  // module "atomic__detail__ops_gcc_sparc" { header "atomic/detail/ops_gcc_sparc.hpp" export * }
+  // module "atomic__detail__ops_gcc_sync" { header "atomic/detail/ops_gcc_sync.hpp" export * }
+  // module "atomic__detail__ops_gcc_x86_dcas" { header "atomic/detail/ops_gcc_x86_dcas.hpp" export * }
+  // module "atomic__detail__ops_gcc_x86" { header "atomic/detail/ops_gcc_x86.hpp" export * }
+  // module "atomic__detail__ops_linux_arm" { header "atomic/detail/ops_linux_arm.hpp" export * }
+  // module "atomic__detail__ops_msvc_common" { header "atomic/detail/ops_msvc_common.hpp" export * }
   module "atomic__detail__pause" { header "atomic/detail/pause.hpp" export * }
   module "atomic__detail__platform" { header "atomic/detail/platform.hpp" export * }
   module "atomic__detail__storage_type" { header "atomic/detail/storage_type.hpp" export * }
