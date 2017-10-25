@@ -1067,9 +1067,6 @@ module boost_flyweight {
 module boost_foreach_fwd {
   module "foreach_fwd" { header "foreach_fwd.hpp" export * }
 }
-module boost_foreach {
-  module "foreach" { header "foreach.hpp" export * }
-}
 module boost_format {
   module "format__alt_sstream" { header "format/alt_sstream.hpp" export * }
   module "format__detail__compat_workarounds" { header "format/detail/compat_workarounds.hpp" export * }
@@ -5430,6 +5427,9 @@ module boost_random {
   module "random__xor_combine" { header "random/xor_combine.hpp" export * }
 }
 module wrapper {
+module boost_foreach {
+  module "foreach" { header "foreach.hpp" export * }
+}
 module boost_proto {
   module "proto__args" { header "proto/args.hpp" export * }
   module "proto__context__callable" { header "proto/context/callable.hpp" export * }
