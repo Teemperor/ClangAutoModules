@@ -20,6 +20,7 @@ if [[ "$3" == "On" ]]; then
   echo "Found PCMS:"
   cat found_pcms
   python "$DIR/check_pcms.py" "$DIR/../working_pcms" found_pcms
+  python "$DIR/size_check_pcms.py"
 else
   echo "Building with modules off"
   make

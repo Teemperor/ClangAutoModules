@@ -10,6 +10,8 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" AND use_modules)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fmodules -fcxx-modules -Xclang -fdisable-module-hash -Xclang -fmodules-local-submodule-visibility -fmodules-cache-path=pcms -Rmodule-build")
   # no autopr warning
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-declarations")
+  # embed all headers to stress size limit
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Xclang -fmodules-embed-all-files")
 
   file(DOWNLOAD "https://github.com/Teemperor/ClangAutoModules/releases/download/0.2/ClangModules.cmake"
        "${CMAKE_BINARY_DIR}/ClangModules.cmake"
