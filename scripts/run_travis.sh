@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm -rf build
+
 export CC=$1
 export CXX=$2
 
