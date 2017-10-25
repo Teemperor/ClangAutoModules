@@ -8,6 +8,14 @@ found_pcms = set(open(sys.argv[2]).readlines())
 
 missing_pcms = working_pcms.difference(found_pcms)
 new_pcms = found_pcms.difference(working_pcms)
+
+if len(new_pcms):
+    print("New working PCMS, add them to " + sys.argv[1] + " please:")
+    print("--START OF LIST--")
+    for pcm in new_pcms:
+        print(pcm.strip())
+    print("---END OF LIST---")
+
 if len(missing_pcms):
     print("Missing PCMS:")
     print("--START OF LIST--")
@@ -17,9 +25,3 @@ if len(missing_pcms):
     exit(1)
 else:
     print("Found all PCMS!")
-    if len(new_pcms):
-        print("New working PCMS, add them to " + sys.argv[1] + " please:")
-        print("--START OF LIST--")
-        for pcm in new_pcms:
-            print(pcm.strip())
-        print("---END OF LIST---")
