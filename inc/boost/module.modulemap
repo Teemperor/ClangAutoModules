@@ -8425,7 +8425,7 @@ module boost_variant {
   module "variant__detail__multivisitors_cpp11_based" { header "variant/detail/multivisitors_cpp11_based.hpp" export * }
   module "variant__detail__multivisitors_preprocessor_based" { header "variant/detail/multivisitors_preprocessor_based.hpp" export * }
   module "variant__detail__substitute_fwd" { header "variant/detail/substitute_fwd.hpp" export * }
-  module "variant__detail__substitute" { header "variant/detail/substitute.hpp" export * }
+  //FIXME: Self-imports itself: module "variant__detail__substitute" { header "variant/detail/substitute.hpp" export * }
   module "variant__detail__variant_io" { header "variant/detail/variant_io.hpp" export * }
   module "variant__detail__visitation_impl" { header "variant/detail/visitation_impl.hpp" export * }
   module "variant__get" { header "variant/get.hpp" export * }
