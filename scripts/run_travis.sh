@@ -16,7 +16,7 @@ cmake -Duse_modules=$3 ..
 if [[ "$3" == "On" ]]; then
   echo "Building with modules on"
   set +e
-  make
+  make -k
   set -e
   find . -name "boost_*.pcm" | xargs -L1 basename | rev | cut -c 5- | rev > found_pcms
   echo "Found PCMS:"
