@@ -228,7 +228,6 @@ module boost_serialization {
   module "serialization__deque" { header "serialization/deque.hpp" export * }
   module "serialization__detail__get_data" { header "serialization/detail/get_data.hpp" export * }
   module "serialization__detail__is_default_constructible" { header "serialization/detail/is_default_constructible.hpp" export * }
-  module "serialization__detail__shared_ptr_nmt_132" { header "serialization/detail/shared_ptr_nmt_132.hpp" export * }
   module "serialization__detail__stack_constructor" { header "serialization/detail/stack_constructor.hpp" export * }
   module "serialization__ephemeral" { header "serialization/ephemeral.hpp" export * }
   module "serialization__export" { header "serialization/export.hpp" export * }
@@ -253,7 +252,6 @@ module boost_serialization {
   module "serialization__scoped_ptr" { header "serialization/scoped_ptr.hpp" export * }
   module "serialization__serialization" { header "serialization/serialization.hpp" export * }
   module "serialization__set" { header "serialization/set.hpp" export * }
-  module "serialization__shared_ptr_132" { header "serialization/shared_ptr_132.hpp" export * }
   module "serialization__shared_ptr_helper" { header "serialization/shared_ptr_helper.hpp" export * }
   module "serialization__shared_ptr" { header "serialization/shared_ptr.hpp" export * }
   module "serialization__singleton" { header "serialization/singleton.hpp" export * }
