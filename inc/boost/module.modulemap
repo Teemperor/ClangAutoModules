@@ -8329,7 +8329,15 @@ module boost_type_traits {
   module "type_traits__detail__bool_trait_def" { header "type_traits/detail/bool_trait_def.hpp" export * }
   module "type_traits__detail__bool_trait_undef" { header "type_traits/detail/bool_trait_undef.hpp" export * }
   module "type_traits__detail__common_arithmetic_type" { header "type_traits/detail/common_arithmetic_type.hpp" export * }
-  module "type_traits__detail__common_type_impl" { header "type_traits/detail/common_type_impl.hpp" export * }
+  // Breaks lookup somehow:
+  /*
+  In module 'boost_type_traits' imported from /home/teemperor/boost-compile/inc/boost/thread/detail/move.hpp:13:
+/home/teemperor/boost-compile/inc/boost/type_traits/common_type.hpp:133:79: error: missing '#include "boost/type_traits/detail/common_type_impl.hpp"'; definition of 'common_type_impl<T, T>'
+      must be imported from module 'boost_type_traits.type_traits__detail__common_type_impl' before it is required
+template<class T1, class T2> struct common_type_decay_helper<T1, T2, T1, T2>: common_type_impl<T1, T2>
+                                                                              ^
+  */
+  // module "type_traits__detail__common_type_impl" { header "type_traits/detail/common_type_impl.hpp" export * }
   module "type_traits__detail__composite_member_pointer_type" { header "type_traits/detail/composite_member_pointer_type.hpp" export * }
   module "type_traits__detail__composite_pointer_type" { header "type_traits/detail/composite_pointer_type.hpp" export * }
   module "type_traits__detail__config" { header "type_traits/detail/config.hpp" export * }
