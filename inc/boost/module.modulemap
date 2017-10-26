@@ -5255,7 +5255,11 @@ module boost_date_time {
   module "date_time__date_facet" { header "date_time/date_facet.hpp" export * }
   module "date_time__date_format_simple" { header "date_time/date_format_simple.hpp" export * }
   module "date_time__date_formatting" { header "date_time/date_formatting.hpp" export * }
-  module "date_time__date_formatting_limited" { header "date_time/date_formatting_limited.hpp" export * }
+  // We don't need limited headers in clang:
+  // module "date_time__date_formatting_limited" { header "date_time/date_formatting_limited.hpp" export * }
+  // module "date_time__gregorian__formatters_limited" { header "date_time/gregorian/formatters_limited.hpp" export * }
+  // module "date_time__posix_time__time_formatters_limited" { header "date_time/posix_time/time_formatters_limited.hpp" export * }
+
   module "date_time__date_formatting_locales" { header "date_time/date_formatting_locales.hpp" export * }
   module "date_time__date_generator_formatter" { header "date_time/date_generator_formatter.hpp" export * }
   module "date_time__date_generator_parser" { header "date_time/date_generator_parser.hpp" export * }
@@ -5268,7 +5272,6 @@ module boost_date_time {
   module "date_time__gregorian_calendar" { header "date_time/gregorian_calendar.hpp" export * }
   module "date_time__gregorian__conversion" { header "date_time/gregorian/conversion.hpp" export * }
   module "date_time__gregorian__formatters" { header "date_time/gregorian/formatters.hpp" export * }
-  module "date_time__gregorian__formatters_limited" { header "date_time/gregorian/formatters_limited.hpp" export * }
   module "date_time__gregorian__greg_calendar" { header "date_time/gregorian/greg_calendar.hpp" export * }
   module "date_time__gregorian__greg_date" { header "date_time/gregorian/greg_date.hpp" export * }
   module "date_time__gregorian__greg_day" { header "date_time/gregorian/greg_day.hpp" export * }
@@ -5311,7 +5314,6 @@ module boost_date_time {
   module "date_time__posix_time__posix_time_types" { header "date_time/posix_time/posix_time_types.hpp" export * }
   module "date_time__posix_time__ptime" { header "date_time/posix_time/ptime.hpp" export * }
   module "date_time__posix_time__time_formatters" { header "date_time/posix_time/time_formatters.hpp" export * }
-  module "date_time__posix_time__time_formatters_limited" { header "date_time/posix_time/time_formatters_limited.hpp" export * }
   module "date_time__posix_time__time_parsers" { header "date_time/posix_time/time_parsers.hpp" export * }
   module "date_time__posix_time__time_period" { header "date_time/posix_time/time_period.hpp" export * }
   module "date_time__posix_time__time_serialize" { header "date_time/posix_time/time_serialize.hpp" export * }
