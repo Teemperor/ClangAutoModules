@@ -6166,7 +6166,24 @@ module boost_date_time {
     module "spirit__home__classic__tree__parse_tree_utils" { header "spirit/home/classic/tree/parse_tree_utils.hpp" export * }
     module "spirit__home__classic__tree__typeof" { header "spirit/home/classic/tree/typeof.hpp" export * }
     module "spirit__home__classic__utility__chset" { header "spirit/home/classic/utility/chset.hpp" export * }
-    module "spirit__home__classic__utility__chset_operators" { header "spirit/home/classic/utility/chset_operators.hpp" export * }
+    // Doesn't work to have this as a module:
+    /*
+    In file included from <module-includes>:956:
+In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/classic/utility/chset.hpp:186:
+In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/classic/utility/impl/chset.ipp:15:
+In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/classic/utility/chset.hpp:187:
+In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/classic/utility/chset_operators.hpp:14:
+In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/classic/utility/chset.hpp:187:
+In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/classic/utility/chset_operators.hpp:402:
+/home/teemperor/boost-compile/inc/boost/spirit/home/classic/utility/impl/chset_operators.ipp:26:8: error: missing '#include "boost/spirit/home/classic/utility/chset.hpp"'; declaration of
+      'chset' must be imported from module 'boost_modules_wrapper.boost_spirit.spirit__home__classic__utility__chset' before it is required
+inline chset<CharT>
+       ^
+/home/teemperor/boost-compile/inc/boost/spirit/home/classic/utility/chset.hpp:40:7: note: previous declaration is here
+class chset: public char_parser<chset<CharT> > {
+      ^
+*/
+    // module "spirit__home__classic__utility__chset_operators" { header "spirit/home/classic/utility/chset_operators.hpp" export * }
     module "spirit__home__classic__utility__confix_fwd" { header "spirit/home/classic/utility/confix_fwd.hpp" export * }
     module "spirit__home__classic__utility__confix" { header "spirit/home/classic/utility/confix.hpp" export * }
     module "spirit__home__classic__utility__distinct" { header "spirit/home/classic/utility/distinct.hpp" export * }
