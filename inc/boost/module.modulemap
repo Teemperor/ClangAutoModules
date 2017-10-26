@@ -7302,7 +7302,19 @@ namespace boost { namespace spirit { namespace detail
     module "archive__detail__polymorphic_oarchive_route" { header "archive/detail/polymorphic_oarchive_route.hpp" export * }
     module "archive__detail__register_archive" { header "archive/detail/register_archive.hpp" export * }
     module "archive__detail__utf8_codecvt_facet" { header "archive/detail/utf8_codecvt_facet.hpp" export * }
-    module "archive__dinkumware" { header "archive/dinkumware.hpp" export * }
+    // Breaks compilation:
+    /*
+    While building module 'boost_modules_wrapper' imported from /home/teemperor/boost-compile/inc/boost/asio/time_traits.hpp:23:
+In file included from <module-includes>:2031:
+/home/teemperor/boost-compile/inc/boost/archive/dinkumware.hpp:133:7: error: explicit specialization of 'std::back_insert_iterator<std::__cxx11::basic_string<char> >' after instantiation
+class back_insert_iterator<basic_string<char> > : public
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/teemperor/boost-compile/inc/boost/spirit/home/support/utf8.hpp:33:21: note: implicit instantiation first required here
+        insert_iter out_iter(result);
+                    ^
+
+    */
+    //module "archive__dinkumware" { header "archive/dinkumware.hpp" export * }
     module "archive__impl__basic_xml_grammar" { header "archive/impl/basic_xml_grammar.hpp" export * }
     module "archive__iterators__base64_exception" { header "archive/iterators/base64_exception.hpp" export * }
     module "archive__iterators__base64_from_binary" { header "archive/iterators/base64_from_binary.hpp" export * }
