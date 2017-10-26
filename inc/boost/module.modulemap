@@ -7188,7 +7188,6 @@ namespace boost { namespace spirit { namespace detail
     module "variant__variant_fwd" { header "variant/variant_fwd.hpp" export * }
     module "variant__variant" { header "variant/variant.hpp" export * }
   }
-  module boost_archive_serialization {
   module boost_serialization {
     module "serialization__access" { header "serialization/access.hpp" export * }
     module "serialization__archive_input_unordered_map" { header "serialization/archive_input_unordered_map.hpp" export * }
@@ -7349,7 +7348,6 @@ class back_insert_iterator<basic_string<char> > : public
     module "archive__xml_archive_exception" { header "archive/xml_archive_exception.hpp" export * }
     module "archive__xml_oarchive" { header "archive/xml_oarchive.hpp" export * }
     module "archive__xml_woarchive" { header "archive/xml_woarchive.hpp" export * }
-  }
   }
   module boost_numeric {
     module "numeric__conversion__bounds" { header "numeric/conversion/bounds.hpp" export * }
