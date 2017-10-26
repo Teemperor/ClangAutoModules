@@ -5937,10 +5937,13 @@ module boost_modules_wrapper {
     module "phoenix__stl__container__detail__container" { header "phoenix/stl/container/detail/container.hpp" export * }
     module "phoenix__stl__container" { header "phoenix/stl/container.hpp" export * }
     module "phoenix__stl" { header "phoenix/stl.hpp" export * }
+    //preprocessor magic
+    /*
     module "phoenix__support__detail__iterate_define" { header "phoenix/support/detail/iterate_define.hpp" export * }
     module "phoenix__support__detail__iterate_undef" { header "phoenix/support/detail/iterate_undef.hpp" export * }
     module "phoenix__support__iterate" { header "phoenix/support/iterate.hpp" export * }
     module "phoenix__support__preprocessor__round" { header "phoenix/support/preprocessor/round.hpp" export * }
+    */
     module "phoenix__support__vector" { header "phoenix/support/vector.hpp" export * }
     module "phoenix__version" { header "phoenix/version.hpp" export * }
   }
