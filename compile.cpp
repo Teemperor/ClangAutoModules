@@ -10,7 +10,6 @@
 #include <boost/assert.hpp>
 #include <boost/assign.hpp>
 #include <boost/atomic.hpp>
-#include <boost/bimap.hpp>
 #include <boost/bind.hpp>
 #include <boost/blank_fwd.hpp>
 #include <boost/blank.hpp>
@@ -42,7 +41,6 @@
 #include <boost/enable_shared_from_this.hpp>
 #include <boost/exception_ptr.hpp>
 #include <boost/filesystem.hpp>
-#include <boost/flyweight.hpp>
 #include <boost/foreach_fwd.hpp>
 #include <boost/foreach.hpp>
 //#include <boost/format.hpp>
@@ -78,8 +76,6 @@
 #include <boost/metaparse.hpp>
 //#include <boost/mpi.hpp>
 #include <boost/multi_array.hpp>
-#include <boost/multi_index_container_fwd.hpp>
-#include <boost/multi_index_container.hpp>
 #include <boost/next_prior.hpp>
 #include <boost/noncopyable.hpp>
 #include <boost/nondet_random.hpp>
@@ -114,7 +110,6 @@
 #include <boost/shared_array.hpp>
 #include <boost/shared_container_iterator.hpp>
 #include <boost/shared_ptr.hpp>
-#include <boost/signals2.hpp>
 #include <boost/smart_ptr.hpp>
 #include <boost/spirit/include/classic.hpp>
 #include <boost/static_assert.hpp>
@@ -137,3 +132,10 @@
 //#include <boost/wave.hpp>
 #include <boost/weak_ptr.hpp>
 
+// postponed to the end:
+
+#include <boost/bimap.hpp>
+#include <boost/flyweight.hpp>
+#include <boost/multi_index_container_fwd.hpp>
+#include <boost/multi_index_container.hpp>
+#include <boost/signals2.hpp>
