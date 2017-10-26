@@ -6215,8 +6215,22 @@ class chset: public char_parser<chset<CharT> > {
     module "spirit__home__karma__binary__padding" { header "spirit/home/karma/binary/padding.hpp" export * }
     module "spirit__home__karma__char__char_class" { header "spirit/home/karma/char/char_class.hpp" export * }
     module "spirit__home__karma__char__char_generator" { header "spirit/home/karma/char/char_generator.hpp" export * }
-    module "spirit__home__karma__char__char" { header "spirit/home/karma/char/char.hpp" export * }
-    module "spirit__home__karma__char" { header "spirit/home/karma/char.hpp" export * }
+    /* FIXME: Breaks compilation:
+    While building module 'boost_modules_wrapper' imported from /home/teemperor/boost-compile/inc/boost/asio/time_traits.hpp:23:
+In file included from <module-includes>:972:
+In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/karma/action/action.hpp:22:
+/home/teemperor/boost-compile/inc/boost/spirit/home/karma/meta_compiler.hpp:75:37: error: missing '#include "boost/spirit/home/karma/char/char.hpp"'; definition of
+      'make_primitive<char, Modifiers>' must be imported from module 'boost_modules_wrapper.boost_spirit.spirit__home__karma__char__char' before it is required
+            typedef typename karma::make_primitive<
+                                    ^
+/home/teemperor/boost-compile/inc/boost/spirit/home/support/make_component.hpp:72:30: note: in instantiation of template class 'boost::spirit::make_component<boost::spirit::karma::domain,
+      boost::proto::tagns_::tag::terminal, void>::result<boost::spirit::make_component<karma::domain, proto::tag::terminal> (boost::fusion::cons<char, boost::fusion::nil_>,
+      boost::spirit::unused_type)>' requested here
+            make_component_::template
+                             ^
+    */
+    //module "spirit__home__karma__char__char" { header "spirit/home/karma/char/char.hpp" export * }
+    //module "spirit__home__karma__char" { header "spirit/home/karma/char.hpp" export * }
     module "spirit__home__karma__delimit_flag" { header "spirit/home/karma/delimit_flag.hpp" export * }
     module "spirit__home__karma__delimit_out" { header "spirit/home/karma/delimit_out.hpp" export * }
     module "spirit__home__karma__detail__alternative_function" { header "spirit/home/karma/detail/alternative_function.hpp" export * }
