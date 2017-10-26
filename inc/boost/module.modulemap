@@ -7639,7 +7639,20 @@ class back_insert_iterator<basic_string<char> > : public
     module "range__counting_range" { header "range/counting_range.hpp" export * }
     module "range__detail__any_iterator_buffer" { header "range/detail/any_iterator_buffer.hpp" export * }
     module "range__detail__any_iterator" { header "range/detail/any_iterator.hpp" export * }
-    module "range__detail__begin" { header "range/detail/begin.hpp" export * }
+    // Breaks compilation:
+    /*
+    While building module 'boost_asio' imported from /home/teemperor/boost-compile/inc/boost/asio.hpp:20:
+While building module 'boost_modules_wrapper' imported from /home/teemperor/boost-compile/inc/boost/asio/time_traits.hpp:23:
+In file included from <module-includes>:2348:
+/home/teemperor/boost-compile/inc/boost/range/detail/begin.hpp:25:16: error: redefinition of 'range_begin' as different kind of symbol
+        struct range_begin;
+               ^
+/home/teemperor/boost-compile/inc/boost/range/begin.hpp:40:5: note: previous definition is here
+    range_begin( C& c )
+    ^
+
+    */
+    //module "range__detail__begin" { header "range/detail/begin.hpp" export * }
     module "range__detail__collection_traits_detail" { header "range/detail/collection_traits_detail.hpp" export * }
     module "range__detail__collection_traits" { header "range/detail/collection_traits.hpp" export * }
     module "range__detail__combine_no_rvalue" { header "range/detail/combine_no_rvalue.hpp" export * }
