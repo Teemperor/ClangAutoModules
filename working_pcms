@@ -109,3 +109,4 @@ boost_program_options
 boost_atomic
 boost_interprocess
 boost_asio
+boost_test
