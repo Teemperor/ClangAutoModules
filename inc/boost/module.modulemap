@@ -5170,6 +5170,79 @@ module boost_random {
 // This modules form a cycle, so we want to create a wrapper module for them
 module boost_modules_wrapper {
 
+module boost_thread {
+  module "thread__caller_context" { header "thread/caller_context.hpp" export * }
+  module "thread__csbl__deque" { header "thread/csbl/deque.hpp" export * }
+  module "thread__csbl__devector" { header "thread/csbl/devector.hpp" export * }
+  module "thread__csbl__functional" { header "thread/csbl/functional.hpp" export * }
+  module "thread__csbl__list" { header "thread/csbl/list.hpp" export * }
+  module "thread__csbl__memory__allocator_arg" { header "thread/csbl/memory/allocator_arg.hpp" export * }
+  module "thread__csbl__memory__allocator_traits" { header "thread/csbl/memory/allocator_traits.hpp" export * }
+  module "thread__csbl__memory__config" { header "thread/csbl/memory/config.hpp" export * }
+  module "thread__csbl__memory__default_delete" { header "thread/csbl/memory/default_delete.hpp" export * }
+  module "thread__csbl__memory" { header "thread/csbl/memory.hpp" export * }
+  module "thread__csbl__memory__pointer_traits" { header "thread/csbl/memory/pointer_traits.hpp" export * }
+  module "thread__csbl__memory__scoped_allocator" { header "thread/csbl/memory/scoped_allocator.hpp" export * }
+  module "thread__csbl__memory__shared_ptr" { header "thread/csbl/memory/shared_ptr.hpp" export * }
+  module "thread__csbl__memory__unique_ptr" { header "thread/csbl/memory/unique_ptr.hpp" export * }
+  module "thread__csbl__queue" { header "thread/csbl/queue.hpp" export * }
+  module "thread__csbl__tuple" { header "thread/csbl/tuple.hpp" export * }
+  module "thread__csbl__vector" { header "thread/csbl/vector.hpp" export * }
+  module "thread__cv_status" { header "thread/cv_status.hpp" export * }
+  module "thread__detail__config" { header "thread/detail/config.hpp" export * }
+  module "thread__detail__delete" { header "thread/detail/delete.hpp" export * }
+  module "thread__detail__force_cast" { header "thread/detail/force_cast.hpp" export * }
+  module "thread__detail__invoke" { header "thread/detail/invoke.hpp" export * }
+  module "thread__detail__invoker" { header "thread/detail/invoker.hpp" export * }
+  module "thread__detail__is_convertible" { header "thread/detail/is_convertible.hpp" export * }
+  module "thread__detail__lockable_wrapper" { header "thread/detail/lockable_wrapper.hpp" export * }
+  module "thread__detail__log" { header "thread/detail/log.hpp" export * }
+  module "thread__detail__make_tuple_indices" { header "thread/detail/make_tuple_indices.hpp" export * }
+  module "thread__detail__memory" { header "thread/detail/memory.hpp" export * }
+  module "thread__detail__move" { header "thread/detail/move.hpp" export * }
+  module "thread__detail__nullary_function" { header "thread/detail/nullary_function.hpp" export * }
+  module "thread__detail__platform" { header "thread/detail/platform.hpp" export * }
+  module "thread__detail__singleton" { header "thread/detail/singleton.hpp" export * }
+  module "thread__detail__thread_heap_alloc" { header "thread/detail/thread_heap_alloc.hpp" export * }
+  module "thread__detail__thread_interruption" { header "thread/detail/thread_interruption.hpp" export * }
+  module "thread__detail__tss_hooks" { header "thread/detail/tss_hooks.hpp" export * }
+  module "thread__detail__variadic_footer" { header "thread/detail/variadic_footer.hpp" export * }
+  module "thread__detail__variadic_header" { header "thread/detail/variadic_header.hpp" export * }
+  module "thread__exceptional_ptr" { header "thread/exceptional_ptr.hpp" export * }
+  module "thread__executor" { header "thread/executor.hpp" export * }
+  module "thread__executors__executor_adaptor" { header "thread/executors/executor_adaptor.hpp" export * }
+  module "thread__executors__executor" { header "thread/executors/executor.hpp" export * }
+  module "thread__executors__generic_executor_ref" { header "thread/executors/generic_executor_ref.hpp" export * }
+  module "thread__executors__work" { header "thread/executors/work.hpp" export * }
+  module "thread__experimental__config__inline_namespace" { header "thread/experimental/config/inline_namespace.hpp" export * }
+  module "thread__experimental__exception_list" { header "thread/experimental/exception_list.hpp" export * }
+  module "thread__experimental__parallel__v1__exception_list" { header "thread/experimental/parallel/v1/exception_list.hpp" export * }
+  module "thread__experimental__parallel__v1__inline_namespace" { header "thread/experimental/parallel/v1/inline_namespace.hpp" export * }
+  module "thread__experimental__parallel__v2__inline_namespace" { header "thread/experimental/parallel/v2/inline_namespace.hpp" export * }
+  module "thread__futures__future_status" { header "thread/futures/future_status.hpp" export * }
+  module "thread__futures__is_future_type" { header "thread/futures/is_future_type.hpp" export * }
+  module "thread__futures__launch" { header "thread/futures/launch.hpp" export * }
+  module "thread__futures__wait_for_all" { header "thread/futures/wait_for_all.hpp" export * }
+  module "thread__is_locked_by_this_thread" { header "thread/is_locked_by_this_thread.hpp" export * }
+  module "thread__lockable_traits" { header "thread/lockable_traits.hpp" export * }
+  module "thread__lock_guard" { header "thread/lock_guard.hpp" export * }
+  module "thread__lock_options" { header "thread/lock_options.hpp" export * }
+  module "thread__lock_traits" { header "thread/lock_traits.hpp" export * }
+  module "thread__once" { header "thread/once.hpp" export * }
+  module "thread__ostream_buffer" { header "thread/ostream_buffer.hpp" export * }
+  module "thread__pthread__once_atomic" { header "thread/pthread/once_atomic.hpp" export * }
+  module "thread__pthread__once" { header "thread/pthread/once.hpp" export * }
+  module "thread__pthread__pthread_mutex_scoped_lock" { header "thread/pthread/pthread_mutex_scoped_lock.hpp" export * }
+  module "thread__pthread__thread_heap_alloc" { header "thread/pthread/thread_heap_alloc.hpp" export * }
+  module "thread__pthread__timespec" { header "thread/pthread/timespec.hpp" export * }
+  module "thread__reverse_lock" { header "thread/reverse_lock.hpp" export * }
+  module "thread__shared_lock_guard" { header "thread/shared_lock_guard.hpp" export * }
+  module "thread__thread_time" { header "thread/thread_time.hpp" export * }
+  module "thread__tss" { header "thread/tss.hpp" export * }
+  module "thread__win32__mfc_thread_init" { header "thread/win32/mfc_thread_init.hpp" export * }
+  module "thread__with_lock_guard" { header "thread/with_lock_guard.hpp" export * }
+  module "thread__xtime" { header "thread/xtime.hpp" export * }
+}
 module boost_algorithm {
   module "algorithm__algorithm" { header "algorithm/algorithm.hpp" export * }
   module "algorithm__clamp" { header "algorithm/clamp.hpp" export * }
@@ -8033,79 +8106,6 @@ module boost_test {
   module "test__utils__string_cast" { header "test/utils/string_cast.hpp" export * }
   module "test__utils__trivial_singleton" { header "test/utils/trivial_singleton.hpp" export * }
   module "test__utils__wrap_stringstream" { header "test/utils/wrap_stringstream.hpp" export * }
-}
-module boost_thread {
-  module "thread__caller_context" { header "thread/caller_context.hpp" export * }
-  module "thread__csbl__deque" { header "thread/csbl/deque.hpp" export * }
-  module "thread__csbl__devector" { header "thread/csbl/devector.hpp" export * }
-  module "thread__csbl__functional" { header "thread/csbl/functional.hpp" export * }
-  module "thread__csbl__list" { header "thread/csbl/list.hpp" export * }
-  module "thread__csbl__memory__allocator_arg" { header "thread/csbl/memory/allocator_arg.hpp" export * }
-  module "thread__csbl__memory__allocator_traits" { header "thread/csbl/memory/allocator_traits.hpp" export * }
-  module "thread__csbl__memory__config" { header "thread/csbl/memory/config.hpp" export * }
-  module "thread__csbl__memory__default_delete" { header "thread/csbl/memory/default_delete.hpp" export * }
-  module "thread__csbl__memory" { header "thread/csbl/memory.hpp" export * }
-  module "thread__csbl__memory__pointer_traits" { header "thread/csbl/memory/pointer_traits.hpp" export * }
-  module "thread__csbl__memory__scoped_allocator" { header "thread/csbl/memory/scoped_allocator.hpp" export * }
-  module "thread__csbl__memory__shared_ptr" { header "thread/csbl/memory/shared_ptr.hpp" export * }
-  module "thread__csbl__memory__unique_ptr" { header "thread/csbl/memory/unique_ptr.hpp" export * }
-  module "thread__csbl__queue" { header "thread/csbl/queue.hpp" export * }
-  module "thread__csbl__tuple" { header "thread/csbl/tuple.hpp" export * }
-  module "thread__csbl__vector" { header "thread/csbl/vector.hpp" export * }
-  module "thread__cv_status" { header "thread/cv_status.hpp" export * }
-  module "thread__detail__config" { header "thread/detail/config.hpp" export * }
-  module "thread__detail__delete" { header "thread/detail/delete.hpp" export * }
-  module "thread__detail__force_cast" { header "thread/detail/force_cast.hpp" export * }
-  module "thread__detail__invoke" { header "thread/detail/invoke.hpp" export * }
-  module "thread__detail__invoker" { header "thread/detail/invoker.hpp" export * }
-  module "thread__detail__is_convertible" { header "thread/detail/is_convertible.hpp" export * }
-  module "thread__detail__lockable_wrapper" { header "thread/detail/lockable_wrapper.hpp" export * }
-  module "thread__detail__log" { header "thread/detail/log.hpp" export * }
-  module "thread__detail__make_tuple_indices" { header "thread/detail/make_tuple_indices.hpp" export * }
-  module "thread__detail__memory" { header "thread/detail/memory.hpp" export * }
-  module "thread__detail__move" { header "thread/detail/move.hpp" export * }
-  module "thread__detail__nullary_function" { header "thread/detail/nullary_function.hpp" export * }
-  module "thread__detail__platform" { header "thread/detail/platform.hpp" export * }
-  module "thread__detail__singleton" { header "thread/detail/singleton.hpp" export * }
-  module "thread__detail__thread_heap_alloc" { header "thread/detail/thread_heap_alloc.hpp" export * }
-  module "thread__detail__thread_interruption" { header "thread/detail/thread_interruption.hpp" export * }
-  module "thread__detail__tss_hooks" { header "thread/detail/tss_hooks.hpp" export * }
-  module "thread__detail__variadic_footer" { header "thread/detail/variadic_footer.hpp" export * }
-  module "thread__detail__variadic_header" { header "thread/detail/variadic_header.hpp" export * }
-  module "thread__exceptional_ptr" { header "thread/exceptional_ptr.hpp" export * }
-  module "thread__executor" { header "thread/executor.hpp" export * }
-  module "thread__executors__executor_adaptor" { header "thread/executors/executor_adaptor.hpp" export * }
-  module "thread__executors__executor" { header "thread/executors/executor.hpp" export * }
-  module "thread__executors__generic_executor_ref" { header "thread/executors/generic_executor_ref.hpp" export * }
-  module "thread__executors__work" { header "thread/executors/work.hpp" export * }
-  module "thread__experimental__config__inline_namespace" { header "thread/experimental/config/inline_namespace.hpp" export * }
-  module "thread__experimental__exception_list" { header "thread/experimental/exception_list.hpp" export * }
-  module "thread__experimental__parallel__v1__exception_list" { header "thread/experimental/parallel/v1/exception_list.hpp" export * }
-  module "thread__experimental__parallel__v1__inline_namespace" { header "thread/experimental/parallel/v1/inline_namespace.hpp" export * }
-  module "thread__experimental__parallel__v2__inline_namespace" { header "thread/experimental/parallel/v2/inline_namespace.hpp" export * }
-  module "thread__futures__future_status" { header "thread/futures/future_status.hpp" export * }
-  module "thread__futures__is_future_type" { header "thread/futures/is_future_type.hpp" export * }
-  module "thread__futures__launch" { header "thread/futures/launch.hpp" export * }
-  module "thread__futures__wait_for_all" { header "thread/futures/wait_for_all.hpp" export * }
-  module "thread__is_locked_by_this_thread" { header "thread/is_locked_by_this_thread.hpp" export * }
-  module "thread__lockable_traits" { header "thread/lockable_traits.hpp" export * }
-  module "thread__lock_guard" { header "thread/lock_guard.hpp" export * }
-  module "thread__lock_options" { header "thread/lock_options.hpp" export * }
-  module "thread__lock_traits" { header "thread/lock_traits.hpp" export * }
-  module "thread__once" { header "thread/once.hpp" export * }
-  module "thread__ostream_buffer" { header "thread/ostream_buffer.hpp" export * }
-  module "thread__pthread__once_atomic" { header "thread/pthread/once_atomic.hpp" export * }
-  module "thread__pthread__once" { header "thread/pthread/once.hpp" export * }
-  module "thread__pthread__pthread_mutex_scoped_lock" { header "thread/pthread/pthread_mutex_scoped_lock.hpp" export * }
-  module "thread__pthread__thread_heap_alloc" { header "thread/pthread/thread_heap_alloc.hpp" export * }
-  module "thread__pthread__timespec" { header "thread/pthread/timespec.hpp" export * }
-  module "thread__reverse_lock" { header "thread/reverse_lock.hpp" export * }
-  module "thread__shared_lock_guard" { header "thread/shared_lock_guard.hpp" export * }
-  module "thread__thread_time" { header "thread/thread_time.hpp" export * }
-  module "thread__tss" { header "thread/tss.hpp" export * }
-  module "thread__win32__mfc_thread_init" { header "thread/win32/mfc_thread_init.hpp" export * }
-  module "thread__with_lock_guard" { header "thread/with_lock_guard.hpp" export * }
-  module "thread__xtime" { header "thread/xtime.hpp" export * }
 }
 module boost_timer {
   module "timer__config" { header "timer/config.hpp" export * }
