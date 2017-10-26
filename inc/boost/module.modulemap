@@ -200,7 +200,8 @@ module boost_asio {
   module "asio__detail__pipe_select_interrupter" { header "asio/detail/pipe_select_interrupter.hpp" export * }
   module "asio__detail__posix_signal_blocker" { header "asio/detail/posix_signal_blocker.hpp" export * }
   module "asio__detail__posix_static_mutex" { header "asio/detail/posix_static_mutex.hpp" export * }
-  module "asio__detail__push_options" { header "asio/detail/push_options.hpp" export * }
+  // Can't push options inside a module, so pop_options would be broke if this is a module.
+  //module "asio__detail__push_options" { header "asio/detail/push_options.hpp" export * }
   module "asio__detail__reactor_fwd" { header "asio/detail/reactor_fwd.hpp" export * }
   module "asio__detail__regex_fwd" { header "asio/detail/regex_fwd.hpp" export * }
   module "asio__detail__scoped_lock" { header "asio/detail/scoped_lock.hpp" export * }
