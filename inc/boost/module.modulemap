@@ -5866,8 +5866,17 @@ module boost_modules_wrapper {
     module "phoenix__function__adapt_function" { header "phoenix/function/adapt_function.hpp" export * }
     module "phoenix__function__function" { header "phoenix/function/function.hpp" export * }
     module "phoenix__function" { header "phoenix/function.hpp" export * }
-    module "phoenix__function__lazy_operator" { header "phoenix/function/lazy_operator.hpp" export * }
-    module "phoenix__function__lazy_prelude" { header "phoenix/function/lazy_prelude.hpp" export * }
+    // Redefine 'equal', so we shouldn't precompile them:
+    /*
+    /home/travis/build/Teemperor/boost-compile/inc/boost/phoenix/support/detail/iterate.hpp:75:1: fatal error: import of module 'boost_modules_wrapper.boost_phoenix.phoenix__support__detail__iterate_undef' appears within namespace 'boost::phoenix::result_of'
+#include <boost/phoenix/support/detail/iterate_undef.hpp>
+^
+/home/travis/build/Teemperor/boost-compile/inc/boost/phoenix/operator/member.hpp:62:5: note: namespace 'boost::phoenix::result_of' begins here
+    namespace result_of
+    ^
+    */
+    //module "phoenix__function__lazy_operator" { header "phoenix/function/lazy_operator.hpp" export * }
+    //module "phoenix__function__lazy_prelude" { header "phoenix/function/lazy_prelude.hpp" export * }
     module "phoenix__fusion__at" { header "phoenix/fusion/at.hpp" export * }
     module "phoenix__fusion" { header "phoenix/fusion.hpp" export * }
     module "phoenix" { header "phoenix.hpp" export * }
