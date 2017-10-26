@@ -6461,7 +6461,22 @@ class chset: public char_parser<chset<CharT> > {
     module "spirit__home__support__common_terminals" { header "spirit/home/support/common_terminals.hpp" export * }
     module "spirit__home__support__container" { header "spirit/home/support/container.hpp" export * }
     module "spirit__home__support__context" { header "spirit/home/support/context.hpp" export * }
-    module "spirit__home__support__detail__as_variant" { header "spirit/home/support/detail/as_variant.hpp" export * }
+    // Breaks compilation:
+    /*
+    In file included from <module-includes>:972:
+In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/karma/action/action.hpp:13:
+In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/karma/detail/attributes.hpp:12:
+In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/support/attributes.hpp:20:
+In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/support/detail/as_variant.hpp:67:
+/home/teemperor/boost-compile/inc/boost/preprocessor/iteration/detail/iter/forward1.hpp:52:1: error: redundant #include of module
+      'boost_modules_wrapper.boost_spirit.spirit__home__support__detail__as_variant' appears within namespace 'boost::spirit::detail' [-Wmodules-import-nested-redundant]
+#        include BOOST_PP_FILENAME_1
+^
+/home/teemperor/boost-compile/inc/boost/spirit/home/support/detail/as_variant.hpp:29:38: note: namespace 'boost::spirit::detail' begins here
+namespace boost { namespace spirit { namespace detail
+                                     ^
+*/
+    //module "spirit__home__support__detail__as_variant" { header "spirit/home/support/detail/as_variant.hpp" export * }
     module "spirit__home__support__detail__endian__cover_operators" { header "spirit/home/support/detail/endian/cover_operators.hpp" export * }
     module "spirit__home__support__detail__endian__endian" { header "spirit/home/support/detail/endian/endian.hpp" export * }
     module "spirit__home__support__detail__endian" { header "spirit/home/support/detail/endian.hpp" export * }
