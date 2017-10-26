@@ -79,79 +79,6 @@ module boost_accumulators {
   module "accumulators__statistics__weighted_variance" { header "accumulators/statistics/weighted_variance.hpp" export * }
   module "accumulators__statistics__with_error" { header "accumulators/statistics/with_error.hpp" export * }
 }
-module boost_algorithm {
-  module "algorithm__algorithm" { header "algorithm/algorithm.hpp" export * }
-  module "algorithm__clamp" { header "algorithm/clamp.hpp" export * }
-  module "algorithm__cxx11__all_of" { header "algorithm/cxx11/all_of.hpp" export * }
-  module "algorithm__cxx11__any_of" { header "algorithm/cxx11/any_of.hpp" export * }
-  module "algorithm__cxx11__copy_if" { header "algorithm/cxx11/copy_if.hpp" export * }
-  module "algorithm__cxx11__copy_n" { header "algorithm/cxx11/copy_n.hpp" export * }
-  module "algorithm__cxx11__find_if_not" { header "algorithm/cxx11/find_if_not.hpp" export * }
-  module "algorithm__cxx11__iota" { header "algorithm/cxx11/iota.hpp" export * }
-  module "algorithm__cxx11__is_partitioned" { header "algorithm/cxx11/is_partitioned.hpp" export * }
-  module "algorithm__cxx11__is_permutation" { header "algorithm/cxx11/is_permutation.hpp" export * }
-  module "algorithm__cxx11__is_sorted" { header "algorithm/cxx11/is_sorted.hpp" export * }
-  module "algorithm__cxx11__none_of" { header "algorithm/cxx11/none_of.hpp" export * }
-  module "algorithm__cxx11__one_of" { header "algorithm/cxx11/one_of.hpp" export * }
-  module "algorithm__cxx11__partition_copy" { header "algorithm/cxx11/partition_copy.hpp" export * }
-  module "algorithm__cxx11__partition_point" { header "algorithm/cxx11/partition_point.hpp" export * }
-  module "algorithm__cxx14__equal" { header "algorithm/cxx14/equal.hpp" export * }
-  module "algorithm__cxx14__is_permutation" { header "algorithm/cxx14/is_permutation.hpp" export * }
-  module "algorithm__cxx14__mismatch" { header "algorithm/cxx14/mismatch.hpp" export * }
-  module "algorithm__gather" { header "algorithm/gather.hpp" export * }
-  module "algorithm__hex" { header "algorithm/hex.hpp" export * }
-  module "algorithm__is_palindrome" { header "algorithm/is_palindrome.hpp" export * }
-  module "algorithm__minmax_element" { header "algorithm/minmax_element.hpp" export * }
-  module "algorithm__minmax" { header "algorithm/minmax.hpp" export * }
-  module "algorithm__searching__boyer_moore_horspool" { header "algorithm/searching/boyer_moore_horspool.hpp" export * }
-  module "algorithm__searching__boyer_moore" { header "algorithm/searching/boyer_moore.hpp" export * }
-  module "algorithm__searching__detail__bm_traits" { header "algorithm/searching/detail/bm_traits.hpp" export * }
-  module "algorithm__searching__detail__debugging" { header "algorithm/searching/detail/debugging.hpp" export * }
-  module "algorithm__searching__knuth_morris_pratt" { header "algorithm/searching/knuth_morris_pratt.hpp" export * }
-  module "algorithm__sort_subrange" { header "algorithm/sort_subrange.hpp" export * }
-  module "algorithm__string__case_conv" { header "algorithm/string/case_conv.hpp" export * }
-  module "algorithm__string__classification" { header "algorithm/string/classification.hpp" export * }
-  module "algorithm__string__compare" { header "algorithm/string/compare.hpp" export * }
-  module "algorithm__string__concept" { header "algorithm/string/concept.hpp" export * }
-  module "algorithm__string__config" { header "algorithm/string/config.hpp" export * }
-  module "algorithm__string__constants" { header "algorithm/string/constants.hpp" export * }
-  module "algorithm__string__detail__finder" { header "algorithm/string/detail/finder.hpp" export * }
-  module "algorithm__string__detail__finder_regex" { header "algorithm/string/detail/finder_regex.hpp" export * }
-  module "algorithm__string__detail__find_format" { header "algorithm/string/detail/find_format.hpp" export * }
-  module "algorithm__string__detail__find_format_store" { header "algorithm/string/detail/find_format_store.hpp" export * }
-  module "algorithm__string__detail__find_iterator" { header "algorithm/string/detail/find_iterator.hpp" export * }
-  module "algorithm__string__detail__formatter" { header "algorithm/string/detail/formatter.hpp" export * }
-  module "algorithm__string__detail__formatter_regex" { header "algorithm/string/detail/formatter_regex.hpp" export * }
-  module "algorithm__string__detail__predicate" { header "algorithm/string/detail/predicate.hpp" export * }
-  module "algorithm__string__detail__replace_storage" { header "algorithm/string/detail/replace_storage.hpp" export * }
-  module "algorithm__string__detail__sequence" { header "algorithm/string/detail/sequence.hpp" export * }
-  module "algorithm__string__detail__trim" { header "algorithm/string/detail/trim.hpp" export * }
-  module "algorithm__string__detail__util" { header "algorithm/string/detail/util.hpp" export * }
-  module "algorithm__string__erase" { header "algorithm/string/erase.hpp" export * }
-  module "algorithm__string__finder" { header "algorithm/string/finder.hpp" export * }
-  module "algorithm__string__find_format" { header "algorithm/string/find_format.hpp" export * }
-  module "algorithm__string__find" { header "algorithm/string/find.hpp" export * }
-  module "algorithm__string__find_iterator" { header "algorithm/string/find_iterator.hpp" export * }
-  module "algorithm__string__formatter" { header "algorithm/string/formatter.hpp" export * }
-  module "algorithm__string" { header "algorithm/string.hpp" export * }
-  module "algorithm__string__iter_find" { header "algorithm/string/iter_find.hpp" export * }
-  module "algorithm__string__join" { header "algorithm/string/join.hpp" export * }
-  module "algorithm__string__predicate_facade" { header "algorithm/string/predicate_facade.hpp" export * }
-  module "algorithm__string__predicate" { header "algorithm/string/predicate.hpp" export * }
-  module "algorithm__string__regex_find_format" { header "algorithm/string/regex_find_format.hpp" export * }
-  module "algorithm__string_regex" { header "algorithm/string_regex.hpp" export * }
-  module "algorithm__string__regex" { header "algorithm/string/regex.hpp" export * }
-  module "algorithm__string__replace" { header "algorithm/string/replace.hpp" export * }
-  module "algorithm__string__sequence_traits" { header "algorithm/string/sequence_traits.hpp" export * }
-  module "algorithm__string__split" { header "algorithm/string/split.hpp" export * }
-  module "algorithm__string__std_containers_traits" { header "algorithm/string/std_containers_traits.hpp" export * }
-  module "algorithm__string__std__list_traits" { header "algorithm/string/std/list_traits.hpp" export * }
-  module "algorithm__string__std__slist_traits" { header "algorithm/string/std/slist_traits.hpp" export * }
-  module "algorithm__string__std__string_traits" { header "algorithm/string/std/string_traits.hpp" export * }
-  module "algorithm__string__trim_all" { header "algorithm/string/trim_all.hpp" export * }
-  module "algorithm__string__trim" { header "algorithm/string/trim.hpp" export * }
-  module "algorithm__string__yes_no_type" { header "algorithm/string/yes_no_type.hpp" export * }
-}
 module boost_align {
   module "align__align_down" { header "align/align_down.hpp" export * }
   module "align__aligned_allocator_adaptor_forward" { header "align/aligned_allocator_adaptor_forward.hpp" export * }
@@ -273,7 +200,8 @@ module boost_asio {
   module "asio__detail__pipe_select_interrupter" { header "asio/detail/pipe_select_interrupter.hpp" export * }
   module "asio__detail__posix_signal_blocker" { header "asio/detail/posix_signal_blocker.hpp" export * }
   module "asio__detail__posix_static_mutex" { header "asio/detail/posix_static_mutex.hpp" export * }
-  module "asio__detail__push_options" { header "asio/detail/push_options.hpp" export * }
+  // Can't push options inside a module, so pop_options would be broke if this is a module.
+  //module "asio__detail__push_options" { header "asio/detail/push_options.hpp" export * }
   module "asio__detail__reactor_fwd" { header "asio/detail/reactor_fwd.hpp" export * }
   module "asio__detail__regex_fwd" { header "asio/detail/regex_fwd.hpp" export * }
   module "asio__detail__scoped_lock" { header "asio/detail/scoped_lock.hpp" export * }
@@ -427,15 +355,35 @@ module boost_atomic {
   module "atomic__detail__ops_cas_based" { header "atomic/detail/ops_cas_based.hpp" export * }
   module "atomic__detail__ops_emulated" { header "atomic/detail/ops_emulated.hpp" export * }
   module "atomic__detail__ops_extending_cas_based" { header "atomic/detail/ops_extending_cas_based.hpp" export * }
-  module "atomic__detail__ops_gcc_alpha" { header "atomic/detail/ops_gcc_alpha.hpp" export * }
-  module "atomic__detail__ops_gcc_arm" { header "atomic/detail/ops_gcc_arm.hpp" export * }
-  module "atomic__detail__ops_gcc_atomic" { header "atomic/detail/ops_gcc_atomic.hpp" export * }
-  module "atomic__detail__ops_gcc_sparc" { header "atomic/detail/ops_gcc_sparc.hpp" export * }
-  module "atomic__detail__ops_gcc_sync" { header "atomic/detail/ops_gcc_sync.hpp" export * }
-  module "atomic__detail__ops_gcc_x86_dcas" { header "atomic/detail/ops_gcc_x86_dcas.hpp" export * }
-  module "atomic__detail__ops_gcc_x86" { header "atomic/detail/ops_gcc_x86.hpp" export * }
-  module "atomic__detail__ops_linux_arm" { header "atomic/detail/ops_linux_arm.hpp" export * }
-  module "atomic__detail__ops_msvc_common" { header "atomic/detail/ops_msvc_common.hpp" export * }
+
+  /*
+  /home/teemperor/boost-compile/inc/boost/atomic/detail/ops_gcc_atomic.hpp:17:10: remark: finished building module 'boost_memory_order' [-Rmodule-build]
+While building module 'boost_asio' imported from /home/teemperor/boost-compile/inc/boost/asio.hpp:20:
+While building module 'boost_date_time' imported from /home/teemperor/boost-compile/inc/boost/asio/time_traits.hpp:23:
+While building module 'boost_algorithm' imported from /home/teemperor/boost-compile/inc/boost/date_time/date_facet.hpp:17:
+While building module 'wrapper' imported from /home/teemperor/boost-compile/inc/boost/algorithm/clamp.hpp:26:
+While building module 'boost_spirit' imported from /home/teemperor/boost-compile/inc/boost/archive/impl/basic_xml_grammar.hpp:53:
+While building module 'boost_thread' imported from /home/teemperor/boost-compile/inc/boost/spirit/home/classic/core/non_terminal/impl/static.hpp:18:
+While building module 'boost_atomic' imported from /home/teemperor/boost-compile/inc/boost/thread/pthread/once_atomic.hpp:20:
+In file included from <module-includes>:27:
+/home/teemperor/boost-compile/inc/boost/atomic/detail/ops_gcc_alpha.hpp:351:8: error: explicit specialization of 'boost::atomics::detail::operations<1, false>' after instantiation
+struct operations< 1u, false > :
+       ^~~~~~~~~~~~~~~~~~~~~~~
+/home/teemperor/boost-compile/inc/boost/atomic/detail/atomic_flag.hpp:43:13: note: implicit instantiation first required here
+    typedef operations::storage_type storage_type;
+            ^
+
+  */
+  // Removed to fix above error:
+  // module "atomic__detail__ops_gcc_alpha" { header "atomic/detail/ops_gcc_alpha.hpp" export * }
+  // module "atomic__detail__ops_gcc_arm" { header "atomic/detail/ops_gcc_arm.hpp" export * }
+  // module "atomic__detail__ops_gcc_atomic" { header "atomic/detail/ops_gcc_atomic.hpp" export * }
+  // module "atomic__detail__ops_gcc_sparc" { header "atomic/detail/ops_gcc_sparc.hpp" export * }
+  // module "atomic__detail__ops_gcc_sync" { header "atomic/detail/ops_gcc_sync.hpp" export * }
+  // module "atomic__detail__ops_gcc_x86_dcas" { header "atomic/detail/ops_gcc_x86_dcas.hpp" export * }
+  // module "atomic__detail__ops_gcc_x86" { header "atomic/detail/ops_gcc_x86.hpp" export * }
+  // module "atomic__detail__ops_linux_arm" { header "atomic/detail/ops_linux_arm.hpp" export * }
+  // module "atomic__detail__ops_msvc_common" { header "atomic/detail/ops_msvc_common.hpp" export * }
   module "atomic__detail__pause" { header "atomic/detail/pause.hpp" export * }
   module "atomic__detail__platform" { header "atomic/detail/platform.hpp" export * }
   module "atomic__detail__storage_type" { header "atomic/detail/storage_type.hpp" export * }
@@ -838,96 +786,6 @@ module boost_current_function {
 }
 module boost_cxx11_char_types {
   module "cxx11_char_types" { header "cxx11_char_types.hpp" export * }
-}
-module boost_date_time {
-  module "date_time__adjust_functors" { header "date_time/adjust_functors.hpp" export * }
-  module "date_time__c_local_time_adjustor" { header "date_time/c_local_time_adjustor.hpp" export * }
-  module "date_time__compiler_config" { header "date_time/compiler_config.hpp" export * }
-  module "date_time__constrained_value" { header "date_time/constrained_value.hpp" export * }
-  module "date_time__c_time" { header "date_time/c_time.hpp" export * }
-  module "date_time__date_clock_device" { header "date_time/date_clock_device.hpp" export * }
-  module "date_time__date_defs" { header "date_time/date_defs.hpp" export * }
-  module "date_time__date_duration_types" { header "date_time/date_duration_types.hpp" export * }
-  module "date_time__date_facet" { header "date_time/date_facet.hpp" export * }
-  module "date_time__date_format_simple" { header "date_time/date_format_simple.hpp" export * }
-  module "date_time__date_formatting" { header "date_time/date_formatting.hpp" export * }
-  module "date_time__date_formatting_limited" { header "date_time/date_formatting_limited.hpp" export * }
-  module "date_time__date_formatting_locales" { header "date_time/date_formatting_locales.hpp" export * }
-  module "date_time__date_generator_formatter" { header "date_time/date_generator_formatter.hpp" export * }
-  module "date_time__date_generator_parser" { header "date_time/date_generator_parser.hpp" export * }
-  module "date_time__date_generators" { header "date_time/date_generators.hpp" export * }
-  module "date_time__date" { header "date_time/date.hpp" export * }
-  module "date_time__date_iterator" { header "date_time/date_iterator.hpp" export * }
-  module "date_time__date_names_put" { header "date_time/date_names_put.hpp" export * }
-  module "date_time__filetime_functions" { header "date_time/filetime_functions.hpp" export * }
-  module "date_time__format_date_parser" { header "date_time/format_date_parser.hpp" export * }
-  module "date_time__gregorian_calendar" { header "date_time/gregorian_calendar.hpp" export * }
-  module "date_time__gregorian__conversion" { header "date_time/gregorian/conversion.hpp" export * }
-  module "date_time__gregorian__formatters" { header "date_time/gregorian/formatters.hpp" export * }
-  module "date_time__gregorian__formatters_limited" { header "date_time/gregorian/formatters_limited.hpp" export * }
-  module "date_time__gregorian__greg_calendar" { header "date_time/gregorian/greg_calendar.hpp" export * }
-  module "date_time__gregorian__greg_date" { header "date_time/gregorian/greg_date.hpp" export * }
-  module "date_time__gregorian__greg_day" { header "date_time/gregorian/greg_day.hpp" export * }
-  module "date_time__gregorian__greg_day_of_year" { header "date_time/gregorian/greg_day_of_year.hpp" export * }
-  module "date_time__gregorian__greg_duration_types" { header "date_time/gregorian/greg_duration_types.hpp" export * }
-  module "date_time__gregorian__greg_facet" { header "date_time/gregorian/greg_facet.hpp" export * }
-  module "date_time__gregorian__greg_month" { header "date_time/gregorian/greg_month.hpp" export * }
-  module "date_time__gregorian__gregorian" { header "date_time/gregorian/gregorian.hpp" export * }
-  module "date_time__gregorian__gregorian_io" { header "date_time/gregorian/gregorian_io.hpp" export * }
-  module "date_time__gregorian__gregorian_types" { header "date_time/gregorian/gregorian_types.hpp" export * }
-  module "date_time__gregorian__greg_serialize" { header "date_time/gregorian/greg_serialize.hpp" export * }
-  module "date_time__gregorian__greg_weekday" { header "date_time/gregorian/greg_weekday.hpp" export * }
-  module "date_time__gregorian__greg_year" { header "date_time/gregorian/greg_year.hpp" export * }
-  module "date_time__gregorian__greg_ymd" { header "date_time/gregorian/greg_ymd.hpp" export * }
-  module "date_time__gregorian__parsers" { header "date_time/gregorian/parsers.hpp" export * }
-  module "date_time" { header "date_time.hpp" export * }
-  module "date_time__int_adapter" { header "date_time/int_adapter.hpp" export * }
-  module "date_time__iso_format" { header "date_time/iso_format.hpp" export * }
-  module "date_time__locale_config" { header "date_time/locale_config.hpp" export * }
-  module "date_time__local_time__conversion" { header "date_time/local_time/conversion.hpp" export * }
-  module "date_time__local_time__custom_time_zone" { header "date_time/local_time/custom_time_zone.hpp" export * }
-  module "date_time__local_time__date_duration_operators" { header "date_time/local_time/date_duration_operators.hpp" export * }
-  module "date_time__local_time__dst_transition_day_rules" { header "date_time/local_time/dst_transition_day_rules.hpp" export * }
-  module "date_time__local_time__local_date_time" { header "date_time/local_time/local_date_time.hpp" export * }
-  module "date_time__local_time__local_time" { header "date_time/local_time/local_time.hpp" export * }
-  module "date_time__local_time__local_time_types" { header "date_time/local_time/local_time_types.hpp" export * }
-  module "date_time__local_time__posix_time_zone" { header "date_time/local_time/posix_time_zone.hpp" export * }
-  module "date_time__local_time__tz_database" { header "date_time/local_time/tz_database.hpp" export * }
-  module "date_time__microsec_time_clock" { header "date_time/microsec_time_clock.hpp" export * }
-  module "date_time__parse_format_base" { header "date_time/parse_format_base.hpp" export * }
-  module "date_time__period" { header "date_time/period.hpp" export * }
-  module "date_time__posix_time__conversion" { header "date_time/posix_time/conversion.hpp" export * }
-  module "date_time__posix_time__date_duration_operators" { header "date_time/posix_time/date_duration_operators.hpp" export * }
-  module "date_time__posix_time__posix_time_config" { header "date_time/posix_time/posix_time_config.hpp" export * }
-  module "date_time__posix_time__posix_time_duration" { header "date_time/posix_time/posix_time_duration.hpp" export * }
-  module "date_time__posix_time__posix_time" { header "date_time/posix_time/posix_time.hpp" export * }
-  module "date_time__posix_time__posix_time_io" { header "date_time/posix_time/posix_time_io.hpp" export * }
-  module "date_time__posix_time__posix_time_legacy_io" { header "date_time/posix_time/posix_time_legacy_io.hpp" export * }
-  module "date_time__posix_time__posix_time_system" { header "date_time/posix_time/posix_time_system.hpp" export * }
-  module "date_time__posix_time__posix_time_types" { header "date_time/posix_time/posix_time_types.hpp" export * }
-  module "date_time__posix_time__ptime" { header "date_time/posix_time/ptime.hpp" export * }
-  module "date_time__posix_time__time_formatters" { header "date_time/posix_time/time_formatters.hpp" export * }
-  module "date_time__posix_time__time_formatters_limited" { header "date_time/posix_time/time_formatters_limited.hpp" export * }
-  module "date_time__posix_time__time_parsers" { header "date_time/posix_time/time_parsers.hpp" export * }
-  module "date_time__posix_time__time_period" { header "date_time/posix_time/time_period.hpp" export * }
-  module "date_time__posix_time__time_serialize" { header "date_time/posix_time/time_serialize.hpp" export * }
-  module "date_time__special_defs" { header "date_time/special_defs.hpp" export * }
-  module "date_time__special_values_formatter" { header "date_time/special_values_formatter.hpp" export * }
-  module "date_time__special_values_parser" { header "date_time/special_values_parser.hpp" export * }
-  module "date_time__string_convert" { header "date_time/string_convert.hpp" export * }
-  module "date_time__string_parse_tree" { header "date_time/string_parse_tree.hpp" export * }
-  module "date_time__time_clock" { header "date_time/time_clock.hpp" export * }
-  module "date_time__time_defs" { header "date_time/time_defs.hpp" export * }
-  module "date_time__time_duration" { header "date_time/time_duration.hpp" export * }
-  module "date_time__time_facet" { header "date_time/time_facet.hpp" export * }
-  module "date_time__time_formatting_streams" { header "date_time/time_formatting_streams.hpp" export * }
-  module "date_time__time" { header "date_time/time.hpp" export * }
-  module "date_time__time_iterator" { header "date_time/time_iterator.hpp" export * }
-  module "date_time__time_resolution_traits" { header "date_time/time_resolution_traits.hpp" export * }
-  module "date_time__time_zone_base" { header "date_time/time_zone_base.hpp" export * }
-  module "date_time__time_zone_names" { header "date_time/time_zone_names.hpp" export * }
-  module "date_time__wrapping_int" { header "date_time/wrapping_int.hpp" export * }
-  module "date_time__year_month_day" { header "date_time/year_month_day.hpp" export * }
 }
 
 // Causes cyclic dependency between range <-> detail
@@ -5314,6 +5172,245 @@ module boost_qvm {
 }
 // This modules form a cycle, so we want to create a wrapper module for them
 module boost_modules_wrapper {
+
+module boost_thread {
+  module "thread__caller_context" { header "thread/caller_context.hpp" export * }
+  module "thread__csbl__deque" { header "thread/csbl/deque.hpp" export * }
+  module "thread__csbl__devector" { header "thread/csbl/devector.hpp" export * }
+  module "thread__csbl__functional" { header "thread/csbl/functional.hpp" export * }
+  module "thread__csbl__list" { header "thread/csbl/list.hpp" export * }
+  module "thread__csbl__memory__allocator_arg" { header "thread/csbl/memory/allocator_arg.hpp" export * }
+  module "thread__csbl__memory__allocator_traits" { header "thread/csbl/memory/allocator_traits.hpp" export * }
+  module "thread__csbl__memory__config" { header "thread/csbl/memory/config.hpp" export * }
+  module "thread__csbl__memory__default_delete" { header "thread/csbl/memory/default_delete.hpp" export * }
+  module "thread__csbl__memory" { header "thread/csbl/memory.hpp" export * }
+  module "thread__csbl__memory__pointer_traits" { header "thread/csbl/memory/pointer_traits.hpp" export * }
+  module "thread__csbl__memory__scoped_allocator" { header "thread/csbl/memory/scoped_allocator.hpp" export * }
+  module "thread__csbl__memory__shared_ptr" { header "thread/csbl/memory/shared_ptr.hpp" export * }
+  module "thread__csbl__memory__unique_ptr" { header "thread/csbl/memory/unique_ptr.hpp" export * }
+  module "thread__csbl__queue" { header "thread/csbl/queue.hpp" export * }
+  module "thread__csbl__tuple" { header "thread/csbl/tuple.hpp" export * }
+  module "thread__csbl__vector" { header "thread/csbl/vector.hpp" export * }
+  module "thread__cv_status" { header "thread/cv_status.hpp" export * }
+  module "thread__detail__config" { header "thread/detail/config.hpp" export * }
+  module "thread__detail__delete" { header "thread/detail/delete.hpp" export * }
+  module "thread__detail__force_cast" { header "thread/detail/force_cast.hpp" export * }
+  module "thread__detail__invoke" { header "thread/detail/invoke.hpp" export * }
+  module "thread__detail__invoker" { header "thread/detail/invoker.hpp" export * }
+  module "thread__detail__is_convertible" { header "thread/detail/is_convertible.hpp" export * }
+  module "thread__detail__lockable_wrapper" { header "thread/detail/lockable_wrapper.hpp" export * }
+  module "thread__detail__log" { header "thread/detail/log.hpp" export * }
+  module "thread__detail__make_tuple_indices" { header "thread/detail/make_tuple_indices.hpp" export * }
+  module "thread__detail__memory" { header "thread/detail/memory.hpp" export * }
+  module "thread__detail__move" { header "thread/detail/move.hpp" export * }
+  module "thread__detail__nullary_function" { header "thread/detail/nullary_function.hpp" export * }
+  module "thread__detail__platform" { header "thread/detail/platform.hpp" export * }
+  module "thread__detail__singleton" { header "thread/detail/singleton.hpp" export * }
+  module "thread__detail__thread_heap_alloc" { header "thread/detail/thread_heap_alloc.hpp" export * }
+  module "thread__detail__thread_interruption" { header "thread/detail/thread_interruption.hpp" export * }
+  module "thread__detail__tss_hooks" { header "thread/detail/tss_hooks.hpp" export * }
+  module "thread__detail__variadic_footer" { header "thread/detail/variadic_footer.hpp" export * }
+  module "thread__detail__variadic_header" { header "thread/detail/variadic_header.hpp" export * }
+  module "thread__exceptional_ptr" { header "thread/exceptional_ptr.hpp" export * }
+  module "thread__executor" { header "thread/executor.hpp" export * }
+  module "thread__executors__executor_adaptor" { header "thread/executors/executor_adaptor.hpp" export * }
+  module "thread__executors__executor" { header "thread/executors/executor.hpp" export * }
+  module "thread__executors__generic_executor_ref" { header "thread/executors/generic_executor_ref.hpp" export * }
+  module "thread__executors__work" { header "thread/executors/work.hpp" export * }
+  module "thread__experimental__config__inline_namespace" { header "thread/experimental/config/inline_namespace.hpp" export * }
+  module "thread__experimental__exception_list" { header "thread/experimental/exception_list.hpp" export * }
+  module "thread__experimental__parallel__v1__exception_list" { header "thread/experimental/parallel/v1/exception_list.hpp" export * }
+  module "thread__experimental__parallel__v1__inline_namespace" { header "thread/experimental/parallel/v1/inline_namespace.hpp" export * }
+  module "thread__experimental__parallel__v2__inline_namespace" { header "thread/experimental/parallel/v2/inline_namespace.hpp" export * }
+  module "thread__futures__future_status" { header "thread/futures/future_status.hpp" export * }
+  module "thread__futures__is_future_type" { header "thread/futures/is_future_type.hpp" export * }
+  module "thread__futures__launch" { header "thread/futures/launch.hpp" export * }
+  module "thread__futures__wait_for_all" { header "thread/futures/wait_for_all.hpp" export * }
+  module "thread__is_locked_by_this_thread" { header "thread/is_locked_by_this_thread.hpp" export * }
+  module "thread__lockable_traits" { header "thread/lockable_traits.hpp" export * }
+  module "thread__lock_guard" { header "thread/lock_guard.hpp" export * }
+  module "thread__lock_options" { header "thread/lock_options.hpp" export * }
+  module "thread__lock_traits" { header "thread/lock_traits.hpp" export * }
+  module "thread__once" { header "thread/once.hpp" export * }
+  module "thread__ostream_buffer" { header "thread/ostream_buffer.hpp" export * }
+  module "thread__pthread__once_atomic" { header "thread/pthread/once_atomic.hpp" export * }
+  module "thread__pthread__once" { header "thread/pthread/once.hpp" export * }
+  module "thread__pthread__pthread_mutex_scoped_lock" { header "thread/pthread/pthread_mutex_scoped_lock.hpp" export * }
+  module "thread__pthread__thread_heap_alloc" { header "thread/pthread/thread_heap_alloc.hpp" export * }
+  module "thread__pthread__timespec" { header "thread/pthread/timespec.hpp" export * }
+  module "thread__reverse_lock" { header "thread/reverse_lock.hpp" export * }
+  module "thread__shared_lock_guard" { header "thread/shared_lock_guard.hpp" export * }
+  module "thread__thread_time" { header "thread/thread_time.hpp" export * }
+  module "thread__tss" { header "thread/tss.hpp" export * }
+  module "thread__win32__mfc_thread_init" { header "thread/win32/mfc_thread_init.hpp" export * }
+  module "thread__with_lock_guard" { header "thread/with_lock_guard.hpp" export * }
+  module "thread__xtime" { header "thread/xtime.hpp" export * }
+}
+module boost_algorithm {
+  module "algorithm__algorithm" { header "algorithm/algorithm.hpp" export * }
+  module "algorithm__clamp" { header "algorithm/clamp.hpp" export * }
+  module "algorithm__cxx11__all_of" { header "algorithm/cxx11/all_of.hpp" export * }
+  module "algorithm__cxx11__any_of" { header "algorithm/cxx11/any_of.hpp" export * }
+  module "algorithm__cxx11__copy_if" { header "algorithm/cxx11/copy_if.hpp" export * }
+  module "algorithm__cxx11__copy_n" { header "algorithm/cxx11/copy_n.hpp" export * }
+  module "algorithm__cxx11__find_if_not" { header "algorithm/cxx11/find_if_not.hpp" export * }
+  module "algorithm__cxx11__iota" { header "algorithm/cxx11/iota.hpp" export * }
+  module "algorithm__cxx11__is_partitioned" { header "algorithm/cxx11/is_partitioned.hpp" export * }
+  module "algorithm__cxx11__is_permutation" { header "algorithm/cxx11/is_permutation.hpp" export * }
+  module "algorithm__cxx11__is_sorted" { header "algorithm/cxx11/is_sorted.hpp" export * }
+  module "algorithm__cxx11__none_of" { header "algorithm/cxx11/none_of.hpp" export * }
+  module "algorithm__cxx11__one_of" { header "algorithm/cxx11/one_of.hpp" export * }
+  module "algorithm__cxx11__partition_copy" { header "algorithm/cxx11/partition_copy.hpp" export * }
+  module "algorithm__cxx11__partition_point" { header "algorithm/cxx11/partition_point.hpp" export * }
+  module "algorithm__cxx14__equal" { header "algorithm/cxx14/equal.hpp" export * }
+  module "algorithm__cxx14__is_permutation" { header "algorithm/cxx14/is_permutation.hpp" export * }
+  module "algorithm__cxx14__mismatch" { header "algorithm/cxx14/mismatch.hpp" export * }
+  module "algorithm__gather" { header "algorithm/gather.hpp" export * }
+  module "algorithm__hex" { header "algorithm/hex.hpp" export * }
+  module "algorithm__is_palindrome" { header "algorithm/is_palindrome.hpp" export * }
+  module "algorithm__minmax_element" { header "algorithm/minmax_element.hpp" export * }
+  module "algorithm__minmax" { header "algorithm/minmax.hpp" export * }
+  module "algorithm__searching__boyer_moore_horspool" { header "algorithm/searching/boyer_moore_horspool.hpp" export * }
+  module "algorithm__searching__boyer_moore" { header "algorithm/searching/boyer_moore.hpp" export * }
+  module "algorithm__searching__detail__bm_traits" { header "algorithm/searching/detail/bm_traits.hpp" export * }
+  module "algorithm__searching__detail__debugging" { header "algorithm/searching/detail/debugging.hpp" export * }
+  module "algorithm__searching__knuth_morris_pratt" { header "algorithm/searching/knuth_morris_pratt.hpp" export * }
+  module "algorithm__sort_subrange" { header "algorithm/sort_subrange.hpp" export * }
+  module "algorithm__string__case_conv" { header "algorithm/string/case_conv.hpp" export * }
+  module "algorithm__string__classification" { header "algorithm/string/classification.hpp" export * }
+  module "algorithm__string__compare" { header "algorithm/string/compare.hpp" export * }
+  module "algorithm__string__concept" { header "algorithm/string/concept.hpp" export * }
+  module "algorithm__string__config" { header "algorithm/string/config.hpp" export * }
+  module "algorithm__string__constants" { header "algorithm/string/constants.hpp" export * }
+  module "algorithm__string__detail__finder" { header "algorithm/string/detail/finder.hpp" export * }
+  module "algorithm__string__detail__finder_regex" { header "algorithm/string/detail/finder_regex.hpp" export * }
+  module "algorithm__string__detail__find_format" { header "algorithm/string/detail/find_format.hpp" export * }
+  module "algorithm__string__detail__find_format_store" { header "algorithm/string/detail/find_format_store.hpp" export * }
+  module "algorithm__string__detail__find_iterator" { header "algorithm/string/detail/find_iterator.hpp" export * }
+  module "algorithm__string__detail__formatter" { header "algorithm/string/detail/formatter.hpp" export * }
+  module "algorithm__string__detail__formatter_regex" { header "algorithm/string/detail/formatter_regex.hpp" export * }
+  module "algorithm__string__detail__predicate" { header "algorithm/string/detail/predicate.hpp" export * }
+  module "algorithm__string__detail__replace_storage" { header "algorithm/string/detail/replace_storage.hpp" export * }
+  module "algorithm__string__detail__sequence" { header "algorithm/string/detail/sequence.hpp" export * }
+  module "algorithm__string__detail__trim" { header "algorithm/string/detail/trim.hpp" export * }
+  module "algorithm__string__detail__util" { header "algorithm/string/detail/util.hpp" export * }
+  module "algorithm__string__erase" { header "algorithm/string/erase.hpp" export * }
+  module "algorithm__string__finder" { header "algorithm/string/finder.hpp" export * }
+  module "algorithm__string__find_format" { header "algorithm/string/find_format.hpp" export * }
+  module "algorithm__string__find" { header "algorithm/string/find.hpp" export * }
+  module "algorithm__string__find_iterator" { header "algorithm/string/find_iterator.hpp" export * }
+  module "algorithm__string__formatter" { header "algorithm/string/formatter.hpp" export * }
+  module "algorithm__string" { header "algorithm/string.hpp" export * }
+  module "algorithm__string__iter_find" { header "algorithm/string/iter_find.hpp" export * }
+  module "algorithm__string__join" { header "algorithm/string/join.hpp" export * }
+  module "algorithm__string__predicate_facade" { header "algorithm/string/predicate_facade.hpp" export * }
+  module "algorithm__string__predicate" { header "algorithm/string/predicate.hpp" export * }
+  module "algorithm__string__regex_find_format" { header "algorithm/string/regex_find_format.hpp" export * }
+  module "algorithm__string_regex" { header "algorithm/string_regex.hpp" export * }
+  module "algorithm__string__regex" { header "algorithm/string/regex.hpp" export * }
+  module "algorithm__string__replace" { header "algorithm/string/replace.hpp" export * }
+  module "algorithm__string__sequence_traits" { header "algorithm/string/sequence_traits.hpp" export * }
+  module "algorithm__string__split" { header "algorithm/string/split.hpp" export * }
+  module "algorithm__string__std_containers_traits" { header "algorithm/string/std_containers_traits.hpp" export * }
+  module "algorithm__string__std__list_traits" { header "algorithm/string/std/list_traits.hpp" export * }
+  module "algorithm__string__std__slist_traits" { header "algorithm/string/std/slist_traits.hpp" export * }
+  module "algorithm__string__std__string_traits" { header "algorithm/string/std/string_traits.hpp" export * }
+  module "algorithm__string__trim_all" { header "algorithm/string/trim_all.hpp" export * }
+  module "algorithm__string__trim" { header "algorithm/string/trim.hpp" export * }
+  module "algorithm__string__yes_no_type" { header "algorithm/string/yes_no_type.hpp" export * }
+}
+module boost_date_time {
+  module "date_time__adjust_functors" { header "date_time/adjust_functors.hpp" export * }
+  module "date_time__c_local_time_adjustor" { header "date_time/c_local_time_adjustor.hpp" export * }
+  module "date_time__compiler_config" { header "date_time/compiler_config.hpp" export * }
+  module "date_time__constrained_value" { header "date_time/constrained_value.hpp" export * }
+  module "date_time__c_time" { header "date_time/c_time.hpp" export * }
+  module "date_time__date_clock_device" { header "date_time/date_clock_device.hpp" export * }
+  module "date_time__date_defs" { header "date_time/date_defs.hpp" export * }
+  module "date_time__date_duration_types" { header "date_time/date_duration_types.hpp" export * }
+  module "date_time__date_facet" { header "date_time/date_facet.hpp" export * }
+  module "date_time__date_format_simple" { header "date_time/date_format_simple.hpp" export * }
+  module "date_time__date_formatting" { header "date_time/date_formatting.hpp" export * }
+  // We don't need limited headers in clang:
+  // module "date_time__date_formatting_limited" { header "date_time/date_formatting_limited.hpp" export * }
+  // module "date_time__gregorian__formatters_limited" { header "date_time/gregorian/formatters_limited.hpp" export * }
+  // module "date_time__posix_time__time_formatters_limited" { header "date_time/posix_time/time_formatters_limited.hpp" export * }
+
+  module "date_time__date_formatting_locales" { header "date_time/date_formatting_locales.hpp" export * }
+  module "date_time__date_generator_formatter" { header "date_time/date_generator_formatter.hpp" export * }
+  module "date_time__date_generator_parser" { header "date_time/date_generator_parser.hpp" export * }
+  module "date_time__date_generators" { header "date_time/date_generators.hpp" export * }
+  module "date_time__date" { header "date_time/date.hpp" export * }
+  module "date_time__date_iterator" { header "date_time/date_iterator.hpp" export * }
+  module "date_time__date_names_put" { header "date_time/date_names_put.hpp" export * }
+  module "date_time__filetime_functions" { header "date_time/filetime_functions.hpp" export * }
+  module "date_time__format_date_parser" { header "date_time/format_date_parser.hpp" export * }
+  module "date_time__gregorian_calendar" { header "date_time/gregorian_calendar.hpp" export * }
+  module "date_time__gregorian__conversion" { header "date_time/gregorian/conversion.hpp" export * }
+  module "date_time__gregorian__formatters" { header "date_time/gregorian/formatters.hpp" export * }
+  module "date_time__gregorian__greg_calendar" { header "date_time/gregorian/greg_calendar.hpp" export * }
+  module "date_time__gregorian__greg_date" { header "date_time/gregorian/greg_date.hpp" export * }
+  module "date_time__gregorian__greg_day" { header "date_time/gregorian/greg_day.hpp" export * }
+  module "date_time__gregorian__greg_day_of_year" { header "date_time/gregorian/greg_day_of_year.hpp" export * }
+  module "date_time__gregorian__greg_duration_types" { header "date_time/gregorian/greg_duration_types.hpp" export * }
+  module "date_time__gregorian__greg_facet" { header "date_time/gregorian/greg_facet.hpp" export * }
+  module "date_time__gregorian__greg_month" { header "date_time/gregorian/greg_month.hpp" export * }
+  module "date_time__gregorian__gregorian" { header "date_time/gregorian/gregorian.hpp" export * }
+  module "date_time__gregorian__gregorian_io" { header "date_time/gregorian/gregorian_io.hpp" export * }
+  module "date_time__gregorian__gregorian_types" { header "date_time/gregorian/gregorian_types.hpp" export * }
+  module "date_time__gregorian__greg_serialize" { header "date_time/gregorian/greg_serialize.hpp" export * }
+  module "date_time__gregorian__greg_weekday" { header "date_time/gregorian/greg_weekday.hpp" export * }
+  module "date_time__gregorian__greg_year" { header "date_time/gregorian/greg_year.hpp" export * }
+  module "date_time__gregorian__greg_ymd" { header "date_time/gregorian/greg_ymd.hpp" export * }
+  module "date_time__gregorian__parsers" { header "date_time/gregorian/parsers.hpp" export * }
+  module "date_time" { header "date_time.hpp" export * }
+  module "date_time__int_adapter" { header "date_time/int_adapter.hpp" export * }
+  module "date_time__iso_format" { header "date_time/iso_format.hpp" export * }
+  module "date_time__locale_config" { header "date_time/locale_config.hpp" export * }
+  module "date_time__local_time__conversion" { header "date_time/local_time/conversion.hpp" export * }
+  module "date_time__local_time__custom_time_zone" { header "date_time/local_time/custom_time_zone.hpp" export * }
+  module "date_time__local_time__date_duration_operators" { header "date_time/local_time/date_duration_operators.hpp" export * }
+  module "date_time__local_time__dst_transition_day_rules" { header "date_time/local_time/dst_transition_day_rules.hpp" export * }
+  module "date_time__local_time__local_date_time" { header "date_time/local_time/local_date_time.hpp" export * }
+  module "date_time__local_time__local_time" { header "date_time/local_time/local_time.hpp" export * }
+  module "date_time__local_time__local_time_types" { header "date_time/local_time/local_time_types.hpp" export * }
+  module "date_time__local_time__posix_time_zone" { header "date_time/local_time/posix_time_zone.hpp" export * }
+  module "date_time__local_time__tz_database" { header "date_time/local_time/tz_database.hpp" export * }
+  module "date_time__microsec_time_clock" { header "date_time/microsec_time_clock.hpp" export * }
+  module "date_time__parse_format_base" { header "date_time/parse_format_base.hpp" export * }
+  module "date_time__period" { header "date_time/period.hpp" export * }
+  module "date_time__posix_time__conversion" { header "date_time/posix_time/conversion.hpp" export * }
+  module "date_time__posix_time__date_duration_operators" { header "date_time/posix_time/date_duration_operators.hpp" export * }
+  module "date_time__posix_time__posix_time_config" { header "date_time/posix_time/posix_time_config.hpp" export * }
+  module "date_time__posix_time__posix_time_duration" { header "date_time/posix_time/posix_time_duration.hpp" export * }
+  module "date_time__posix_time__posix_time" { header "date_time/posix_time/posix_time.hpp" export * }
+  module "date_time__posix_time__posix_time_io" { header "date_time/posix_time/posix_time_io.hpp" export * }
+  module "date_time__posix_time__posix_time_legacy_io" { header "date_time/posix_time/posix_time_legacy_io.hpp" export * }
+  module "date_time__posix_time__posix_time_system" { header "date_time/posix_time/posix_time_system.hpp" export * }
+  module "date_time__posix_time__posix_time_types" { header "date_time/posix_time/posix_time_types.hpp" export * }
+  module "date_time__posix_time__ptime" { header "date_time/posix_time/ptime.hpp" export * }
+  module "date_time__posix_time__time_formatters" { header "date_time/posix_time/time_formatters.hpp" export * }
+  module "date_time__posix_time__time_parsers" { header "date_time/posix_time/time_parsers.hpp" export * }
+  module "date_time__posix_time__time_period" { header "date_time/posix_time/time_period.hpp" export * }
+  module "date_time__posix_time__time_serialize" { header "date_time/posix_time/time_serialize.hpp" export * }
+  module "date_time__special_defs" { header "date_time/special_defs.hpp" export * }
+  module "date_time__special_values_formatter" { header "date_time/special_values_formatter.hpp" export * }
+  module "date_time__special_values_parser" { header "date_time/special_values_parser.hpp" export * }
+  module "date_time__string_convert" { header "date_time/string_convert.hpp" export * }
+  module "date_time__string_parse_tree" { header "date_time/string_parse_tree.hpp" export * }
+  module "date_time__time_clock" { header "date_time/time_clock.hpp" export * }
+  module "date_time__time_defs" { header "date_time/time_defs.hpp" export * }
+  module "date_time__time_duration" { header "date_time/time_duration.hpp" export * }
+  module "date_time__time_facet" { header "date_time/time_facet.hpp" export * }
+  module "date_time__time_formatting_streams" { header "date_time/time_formatting_streams.hpp" export * }
+  module "date_time__time" { header "date_time/time.hpp" export * }
+  module "date_time__time_iterator" { header "date_time/time_iterator.hpp" export * }
+  module "date_time__time_resolution_traits" { header "date_time/time_resolution_traits.hpp" export * }
+  module "date_time__time_zone_base" { header "date_time/time_zone_base.hpp" export * }
+  module "date_time__time_zone_names" { header "date_time/time_zone_names.hpp" export * }
+  module "date_time__wrapping_int" { header "date_time/wrapping_int.hpp" export * }
+  module "date_time__year_month_day" { header "date_time/year_month_day.hpp" export * }
+}
   module boost_units {
     module "units__absolute" { header "units/absolute.hpp" export * }
     module "units__base_dimension" { header "units/base_dimension.hpp" export * }
@@ -5868,8 +5965,17 @@ module boost_modules_wrapper {
     module "phoenix__function__adapt_function" { header "phoenix/function/adapt_function.hpp" export * }
     module "phoenix__function__function" { header "phoenix/function/function.hpp" export * }
     module "phoenix__function" { header "phoenix/function.hpp" export * }
-    module "phoenix__function__lazy_operator" { header "phoenix/function/lazy_operator.hpp" export * }
-    module "phoenix__function__lazy_prelude" { header "phoenix/function/lazy_prelude.hpp" export * }
+    // Redefine 'equal', so we shouldn't precompile them:
+    /*
+    /home/travis/build/Teemperor/boost-compile/inc/boost/phoenix/support/detail/iterate.hpp:75:1: fatal error: import of module 'boost_modules_wrapper.boost_phoenix.phoenix__support__detail__iterate_undef' appears within namespace 'boost::phoenix::result_of'
+#include <boost/phoenix/support/detail/iterate_undef.hpp>
+^
+/home/travis/build/Teemperor/boost-compile/inc/boost/phoenix/operator/member.hpp:62:5: note: namespace 'boost::phoenix::result_of' begins here
+    namespace result_of
+    ^
+    */
+    //module "phoenix__function__lazy_operator" { header "phoenix/function/lazy_operator.hpp" export * }
+    //module "phoenix__function__lazy_prelude" { header "phoenix/function/lazy_prelude.hpp" export * }
     module "phoenix__fusion__at" { header "phoenix/fusion/at.hpp" export * }
     module "phoenix__fusion" { header "phoenix/fusion.hpp" export * }
     module "phoenix" { header "phoenix.hpp" export * }
@@ -6063,7 +6169,24 @@ module boost_modules_wrapper {
     module "spirit__home__classic__tree__parse_tree_utils" { header "spirit/home/classic/tree/parse_tree_utils.hpp" export * }
     module "spirit__home__classic__tree__typeof" { header "spirit/home/classic/tree/typeof.hpp" export * }
     module "spirit__home__classic__utility__chset" { header "spirit/home/classic/utility/chset.hpp" export * }
-    module "spirit__home__classic__utility__chset_operators" { header "spirit/home/classic/utility/chset_operators.hpp" export * }
+    // Doesn't work to have this as a module:
+    /*
+    In file included from <module-includes>:956:
+In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/classic/utility/chset.hpp:186:
+In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/classic/utility/impl/chset.ipp:15:
+In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/classic/utility/chset.hpp:187:
+In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/classic/utility/chset_operators.hpp:14:
+In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/classic/utility/chset.hpp:187:
+In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/classic/utility/chset_operators.hpp:402:
+/home/teemperor/boost-compile/inc/boost/spirit/home/classic/utility/impl/chset_operators.ipp:26:8: error: missing '#include "boost/spirit/home/classic/utility/chset.hpp"'; declaration of
+      'chset' must be imported from module 'boost_modules_wrapper.boost_spirit.spirit__home__classic__utility__chset' before it is required
+inline chset<CharT>
+       ^
+/home/teemperor/boost-compile/inc/boost/spirit/home/classic/utility/chset.hpp:40:7: note: previous declaration is here
+class chset: public char_parser<chset<CharT> > {
+      ^
+*/
+    // module "spirit__home__classic__utility__chset_operators" { header "spirit/home/classic/utility/chset_operators.hpp" export * }
     module "spirit__home__classic__utility__confix_fwd" { header "spirit/home/classic/utility/confix_fwd.hpp" export * }
     module "spirit__home__classic__utility__confix" { header "spirit/home/classic/utility/confix.hpp" export * }
     module "spirit__home__classic__utility__distinct" { header "spirit/home/classic/utility/distinct.hpp" export * }
@@ -6095,8 +6218,22 @@ module boost_modules_wrapper {
     module "spirit__home__karma__binary__padding" { header "spirit/home/karma/binary/padding.hpp" export * }
     module "spirit__home__karma__char__char_class" { header "spirit/home/karma/char/char_class.hpp" export * }
     module "spirit__home__karma__char__char_generator" { header "spirit/home/karma/char/char_generator.hpp" export * }
-    module "spirit__home__karma__char__char" { header "spirit/home/karma/char/char.hpp" export * }
-    module "spirit__home__karma__char" { header "spirit/home/karma/char.hpp" export * }
+    /* FIXME: Breaks compilation:
+    While building module 'boost_modules_wrapper' imported from /home/teemperor/boost-compile/inc/boost/asio/time_traits.hpp:23:
+In file included from <module-includes>:972:
+In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/karma/action/action.hpp:22:
+/home/teemperor/boost-compile/inc/boost/spirit/home/karma/meta_compiler.hpp:75:37: error: missing '#include "boost/spirit/home/karma/char/char.hpp"'; definition of
+      'make_primitive<char, Modifiers>' must be imported from module 'boost_modules_wrapper.boost_spirit.spirit__home__karma__char__char' before it is required
+            typedef typename karma::make_primitive<
+                                    ^
+/home/teemperor/boost-compile/inc/boost/spirit/home/support/make_component.hpp:72:30: note: in instantiation of template class 'boost::spirit::make_component<boost::spirit::karma::domain,
+      boost::proto::tagns_::tag::terminal, void>::result<boost::spirit::make_component<karma::domain, proto::tag::terminal> (boost::fusion::cons<char, boost::fusion::nil_>,
+      boost::spirit::unused_type)>' requested here
+            make_component_::template
+                             ^
+    */
+    //module "spirit__home__karma__char__char" { header "spirit/home/karma/char/char.hpp" export * }
+    //module "spirit__home__karma__char" { header "spirit/home/karma/char.hpp" export * }
     module "spirit__home__karma__delimit_flag" { header "spirit/home/karma/delimit_flag.hpp" export * }
     module "spirit__home__karma__delimit_out" { header "spirit/home/karma/delimit_out.hpp" export * }
     module "spirit__home__karma__detail__alternative_function" { header "spirit/home/karma/detail/alternative_function.hpp" export * }
@@ -6341,7 +6478,22 @@ module boost_modules_wrapper {
     module "spirit__home__support__common_terminals" { header "spirit/home/support/common_terminals.hpp" export * }
     module "spirit__home__support__container" { header "spirit/home/support/container.hpp" export * }
     module "spirit__home__support__context" { header "spirit/home/support/context.hpp" export * }
-    module "spirit__home__support__detail__as_variant" { header "spirit/home/support/detail/as_variant.hpp" export * }
+    // Breaks compilation:
+    /*
+    In file included from <module-includes>:972:
+In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/karma/action/action.hpp:13:
+In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/karma/detail/attributes.hpp:12:
+In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/support/attributes.hpp:20:
+In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/support/detail/as_variant.hpp:67:
+/home/teemperor/boost-compile/inc/boost/preprocessor/iteration/detail/iter/forward1.hpp:52:1: error: redundant #include of module
+      'boost_modules_wrapper.boost_spirit.spirit__home__support__detail__as_variant' appears within namespace 'boost::spirit::detail' [-Wmodules-import-nested-redundant]
+#        include BOOST_PP_FILENAME_1
+^
+/home/teemperor/boost-compile/inc/boost/spirit/home/support/detail/as_variant.hpp:29:38: note: namespace 'boost::spirit::detail' begins here
+namespace boost { namespace spirit { namespace detail
+                                     ^
+*/
+    //module "spirit__home__support__detail__as_variant" { header "spirit/home/support/detail/as_variant.hpp" export * }
     module "spirit__home__support__detail__endian__cover_operators" { header "spirit/home/support/detail/endian/cover_operators.hpp" export * }
     module "spirit__home__support__detail__endian__endian" { header "spirit/home/support/detail/endian/endian.hpp" export * }
     module "spirit__home__support__detail__endian" { header "spirit/home/support/detail/endian.hpp" export * }
@@ -6846,6 +6998,7 @@ module boost_modules_wrapper {
     module "math__complex__details" { header "math/complex/details.hpp" export * }
     module "math__complex__fabs" { header "math/complex/fabs.hpp" export * }
     module "math__complex" { header "math/complex.hpp" export * }
+    module "test_unchecked_fac" { header "math/special_functions/detail/unchecked_factorial.hpp" export * }
     module "math__concepts__real_concept" { header "math/concepts/real_concept.hpp" export * }
     module "math__concepts__real_type_concept" { header "math/concepts/real_type_concept.hpp" export * }
     module "math__concepts__std_real_concept" { header "math/concepts/std_real_concept.hpp" export * }
@@ -7152,7 +7305,19 @@ module boost_modules_wrapper {
     module "archive__detail__polymorphic_oarchive_route" { header "archive/detail/polymorphic_oarchive_route.hpp" export * }
     module "archive__detail__register_archive" { header "archive/detail/register_archive.hpp" export * }
     module "archive__detail__utf8_codecvt_facet" { header "archive/detail/utf8_codecvt_facet.hpp" export * }
-    module "archive__dinkumware" { header "archive/dinkumware.hpp" export * }
+    // Breaks compilation:
+    /*
+    While building module 'boost_modules_wrapper' imported from /home/teemperor/boost-compile/inc/boost/asio/time_traits.hpp:23:
+In file included from <module-includes>:2031:
+/home/teemperor/boost-compile/inc/boost/archive/dinkumware.hpp:133:7: error: explicit specialization of 'std::back_insert_iterator<std::__cxx11::basic_string<char> >' after instantiation
+class back_insert_iterator<basic_string<char> > : public
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/teemperor/boost-compile/inc/boost/spirit/home/support/utf8.hpp:33:21: note: implicit instantiation first required here
+        insert_iter out_iter(result);
+                    ^
+
+    */
+    //module "archive__dinkumware" { header "archive/dinkumware.hpp" export * }
     module "archive__impl__basic_xml_grammar" { header "archive/impl/basic_xml_grammar.hpp" export * }
     module "archive__iterators__base64_exception" { header "archive/iterators/base64_exception.hpp" export * }
     module "archive__iterators__base64_from_binary" { header "archive/iterators/base64_from_binary.hpp" export * }
@@ -7241,7 +7406,8 @@ module boost_modules_wrapper {
     module "numeric__odeint__algebra__range_algebra" { header "numeric/odeint/algebra/range_algebra.hpp" export * }
     module "numeric__odeint__algebra__vector_space_algebra" { header "numeric/odeint/algebra/vector_space_algebra.hpp" export * }
     module "numeric__odeint__config" { header "numeric/odeint/config.hpp" export * }
-    module "numeric__odeint__external__gsl__gsl_wrapper" { header "numeric/odeint/external/gsl/gsl_wrapper.hpp" export * }
+    // Unused header that requires gsl/gsl_vector.h to be compiled.
+    //module "numeric__odeint__external__gsl__gsl_wrapper" { header "numeric/odeint/external/gsl/gsl_wrapper.hpp" export * }
     module "numeric__odeint__external__openmp__openmp_nested_algebra" { header "numeric/odeint/external/openmp/openmp_nested_algebra.hpp" export * }
     module "numeric__odeint__external__openmp__openmp_range_algebra" { header "numeric/odeint/external/openmp/openmp_range_algebra.hpp" export * }
     module "numeric__odeint" { header "numeric/odeint.hpp" export * }
@@ -7477,7 +7643,20 @@ module boost_modules_wrapper {
     module "range__counting_range" { header "range/counting_range.hpp" export * }
     module "range__detail__any_iterator_buffer" { header "range/detail/any_iterator_buffer.hpp" export * }
     module "range__detail__any_iterator" { header "range/detail/any_iterator.hpp" export * }
-    module "range__detail__begin" { header "range/detail/begin.hpp" export * }
+    // Breaks compilation:
+    /*
+    While building module 'boost_asio' imported from /home/teemperor/boost-compile/inc/boost/asio.hpp:20:
+While building module 'boost_modules_wrapper' imported from /home/teemperor/boost-compile/inc/boost/asio/time_traits.hpp:23:
+In file included from <module-includes>:2348:
+/home/teemperor/boost-compile/inc/boost/range/detail/begin.hpp:25:16: error: redefinition of 'range_begin' as different kind of symbol
+        struct range_begin;
+               ^
+/home/teemperor/boost-compile/inc/boost/range/begin.hpp:40:5: note: previous definition is here
+    range_begin( C& c )
+    ^
+
+    */
+    //module "range__detail__begin" { header "range/detail/begin.hpp" export * }
     module "range__detail__collection_traits_detail" { header "range/detail/collection_traits_detail.hpp" export * }
     module "range__detail__collection_traits" { header "range/detail/collection_traits.hpp" export * }
     module "range__detail__combine_no_rvalue" { header "range/detail/combine_no_rvalue.hpp" export * }
@@ -8004,79 +8183,6 @@ module boost_test {
   module "test__utils__trivial_singleton" { header "test/utils/trivial_singleton.hpp" export * }
   module "test__utils__wrap_stringstream" { header "test/utils/wrap_stringstream.hpp" export * }
 }
-module boost_thread {
-  module "thread__caller_context" { header "thread/caller_context.hpp" export * }
-  module "thread__csbl__deque" { header "thread/csbl/deque.hpp" export * }
-  module "thread__csbl__devector" { header "thread/csbl/devector.hpp" export * }
-  module "thread__csbl__functional" { header "thread/csbl/functional.hpp" export * }
-  module "thread__csbl__list" { header "thread/csbl/list.hpp" export * }
-  module "thread__csbl__memory__allocator_arg" { header "thread/csbl/memory/allocator_arg.hpp" export * }
-  module "thread__csbl__memory__allocator_traits" { header "thread/csbl/memory/allocator_traits.hpp" export * }
-  module "thread__csbl__memory__config" { header "thread/csbl/memory/config.hpp" export * }
-  module "thread__csbl__memory__default_delete" { header "thread/csbl/memory/default_delete.hpp" export * }
-  module "thread__csbl__memory" { header "thread/csbl/memory.hpp" export * }
-  module "thread__csbl__memory__pointer_traits" { header "thread/csbl/memory/pointer_traits.hpp" export * }
-  module "thread__csbl__memory__scoped_allocator" { header "thread/csbl/memory/scoped_allocator.hpp" export * }
-  module "thread__csbl__memory__shared_ptr" { header "thread/csbl/memory/shared_ptr.hpp" export * }
-  module "thread__csbl__memory__unique_ptr" { header "thread/csbl/memory/unique_ptr.hpp" export * }
-  module "thread__csbl__queue" { header "thread/csbl/queue.hpp" export * }
-  module "thread__csbl__tuple" { header "thread/csbl/tuple.hpp" export * }
-  module "thread__csbl__vector" { header "thread/csbl/vector.hpp" export * }
-  module "thread__cv_status" { header "thread/cv_status.hpp" export * }
-  module "thread__detail__config" { header "thread/detail/config.hpp" export * }
-  module "thread__detail__delete" { header "thread/detail/delete.hpp" export * }
-  module "thread__detail__force_cast" { header "thread/detail/force_cast.hpp" export * }
-  module "thread__detail__invoke" { header "thread/detail/invoke.hpp" export * }
-  module "thread__detail__invoker" { header "thread/detail/invoker.hpp" export * }
-  module "thread__detail__is_convertible" { header "thread/detail/is_convertible.hpp" export * }
-  module "thread__detail__lockable_wrapper" { header "thread/detail/lockable_wrapper.hpp" export * }
-  module "thread__detail__log" { header "thread/detail/log.hpp" export * }
-  module "thread__detail__make_tuple_indices" { header "thread/detail/make_tuple_indices.hpp" export * }
-  module "thread__detail__memory" { header "thread/detail/memory.hpp" export * }
-  module "thread__detail__move" { header "thread/detail/move.hpp" export * }
-  module "thread__detail__nullary_function" { header "thread/detail/nullary_function.hpp" export * }
-  module "thread__detail__platform" { header "thread/detail/platform.hpp" export * }
-  module "thread__detail__singleton" { header "thread/detail/singleton.hpp" export * }
-  module "thread__detail__thread_heap_alloc" { header "thread/detail/thread_heap_alloc.hpp" export * }
-  module "thread__detail__thread_interruption" { header "thread/detail/thread_interruption.hpp" export * }
-  module "thread__detail__tss_hooks" { header "thread/detail/tss_hooks.hpp" export * }
-  module "thread__detail__variadic_footer" { header "thread/detail/variadic_footer.hpp" export * }
-  module "thread__detail__variadic_header" { header "thread/detail/variadic_header.hpp" export * }
-  module "thread__exceptional_ptr" { header "thread/exceptional_ptr.hpp" export * }
-  module "thread__executor" { header "thread/executor.hpp" export * }
-  module "thread__executors__executor_adaptor" { header "thread/executors/executor_adaptor.hpp" export * }
-  module "thread__executors__executor" { header "thread/executors/executor.hpp" export * }
-  module "thread__executors__generic_executor_ref" { header "thread/executors/generic_executor_ref.hpp" export * }
-  module "thread__executors__work" { header "thread/executors/work.hpp" export * }
-  module "thread__experimental__config__inline_namespace" { header "thread/experimental/config/inline_namespace.hpp" export * }
-  module "thread__experimental__exception_list" { header "thread/experimental/exception_list.hpp" export * }
-  module "thread__experimental__parallel__v1__exception_list" { header "thread/experimental/parallel/v1/exception_list.hpp" export * }
-  module "thread__experimental__parallel__v1__inline_namespace" { header "thread/experimental/parallel/v1/inline_namespace.hpp" export * }
-  module "thread__experimental__parallel__v2__inline_namespace" { header "thread/experimental/parallel/v2/inline_namespace.hpp" export * }
-  module "thread__futures__future_status" { header "thread/futures/future_status.hpp" export * }
-  module "thread__futures__is_future_type" { header "thread/futures/is_future_type.hpp" export * }
-  module "thread__futures__launch" { header "thread/futures/launch.hpp" export * }
-  module "thread__futures__wait_for_all" { header "thread/futures/wait_for_all.hpp" export * }
-  module "thread__is_locked_by_this_thread" { header "thread/is_locked_by_this_thread.hpp" export * }
-  module "thread__lockable_traits" { header "thread/lockable_traits.hpp" export * }
-  module "thread__lock_guard" { header "thread/lock_guard.hpp" export * }
-  module "thread__lock_options" { header "thread/lock_options.hpp" export * }
-  module "thread__lock_traits" { header "thread/lock_traits.hpp" export * }
-  module "thread__once" { header "thread/once.hpp" export * }
-  module "thread__ostream_buffer" { header "thread/ostream_buffer.hpp" export * }
-  module "thread__pthread__once_atomic" { header "thread/pthread/once_atomic.hpp" export * }
-  module "thread__pthread__once" { header "thread/pthread/once.hpp" export * }
-  module "thread__pthread__pthread_mutex_scoped_lock" { header "thread/pthread/pthread_mutex_scoped_lock.hpp" export * }
-  module "thread__pthread__thread_heap_alloc" { header "thread/pthread/thread_heap_alloc.hpp" export * }
-  module "thread__pthread__timespec" { header "thread/pthread/timespec.hpp" export * }
-  module "thread__reverse_lock" { header "thread/reverse_lock.hpp" export * }
-  module "thread__shared_lock_guard" { header "thread/shared_lock_guard.hpp" export * }
-  module "thread__thread_time" { header "thread/thread_time.hpp" export * }
-  module "thread__tss" { header "thread/tss.hpp" export * }
-  module "thread__win32__mfc_thread_init" { header "thread/win32/mfc_thread_init.hpp" export * }
-  module "thread__with_lock_guard" { header "thread/with_lock_guard.hpp" export * }
-  module "thread__xtime" { header "thread/xtime.hpp" export * }
-}
 module boost_timer {
   module "timer__config" { header "timer/config.hpp" export * }
   module "timer" { header "timer.hpp" export * }
@@ -8282,7 +8388,15 @@ module boost_type_traits {
   module "type_traits__detail__bool_trait_def" { header "type_traits/detail/bool_trait_def.hpp" export * }
   module "type_traits__detail__bool_trait_undef" { header "type_traits/detail/bool_trait_undef.hpp" export * }
   module "type_traits__detail__common_arithmetic_type" { header "type_traits/detail/common_arithmetic_type.hpp" export * }
-  module "type_traits__detail__common_type_impl" { header "type_traits/detail/common_type_impl.hpp" export * }
+  // Breaks lookup somehow:
+  /*
+  In module 'boost_type_traits' imported from /home/teemperor/boost-compile/inc/boost/thread/detail/move.hpp:13:
+/home/teemperor/boost-compile/inc/boost/type_traits/common_type.hpp:133:79: error: missing '#include "boost/type_traits/detail/common_type_impl.hpp"'; definition of 'common_type_impl<T, T>'
+      must be imported from module 'boost_type_traits.type_traits__detail__common_type_impl' before it is required
+template<class T1, class T2> struct common_type_decay_helper<T1, T2, T1, T2>: common_type_impl<T1, T2>
+                                                                              ^
+  */
+  // module "type_traits__detail__common_type_impl" { header "type_traits/detail/common_type_impl.hpp" export * }
   module "type_traits__detail__composite_member_pointer_type" { header "type_traits/detail/composite_member_pointer_type.hpp" export * }
   module "type_traits__detail__composite_pointer_type" { header "type_traits/detail/composite_pointer_type.hpp" export * }
   module "type_traits__detail__config" { header "type_traits/detail/config.hpp" export * }

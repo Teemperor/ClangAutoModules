@@ -100,3 +100,12 @@ boost_cregex
 boost_multi_array
 boost_unordered_set
 boost_intrusive
+boost_modules_wrapper
+boost_detail__algorithm
+boost_assign
+boost_ptr_container
+boost_cstdfloat
+boost_program_options
+boost_atomic
+boost_interprocess
+boost_asio
