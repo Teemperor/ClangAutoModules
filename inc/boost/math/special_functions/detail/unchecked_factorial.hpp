@@ -23,6 +23,7 @@
 #endif
 #include <boost/config/no_tr1/cmath.hpp>
 #include <boost/math/special_functions/math_fwd.hpp>
+#include <boost/math/tools/convert_from_string.hpp>
 
 namespace boost { namespace math
 {

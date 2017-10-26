@@ -6995,6 +6995,7 @@ namespace boost { namespace spirit { namespace detail
     module "math__complex__details" { header "math/complex/details.hpp" export * }
     module "math__complex__fabs" { header "math/complex/fabs.hpp" export * }
     module "math__complex" { header "math/complex.hpp" export * }
+    module "test_unchecked_fac" { header "math/special_functions/detail/unchecked_factorial.hpp" export * }
     module "math__concepts__real_concept" { header "math/concepts/real_concept.hpp" export * }
     module "math__concepts__real_type_concept" { header "math/concepts/real_type_concept.hpp" export * }
     module "math__concepts__std_real_concept" { header "math/concepts/std_real_concept.hpp" export * }
