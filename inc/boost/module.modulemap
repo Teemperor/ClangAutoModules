@@ -7403,7 +7403,8 @@ class back_insert_iterator<basic_string<char> > : public
     module "numeric__odeint__algebra__range_algebra" { header "numeric/odeint/algebra/range_algebra.hpp" export * }
     module "numeric__odeint__algebra__vector_space_algebra" { header "numeric/odeint/algebra/vector_space_algebra.hpp" export * }
     module "numeric__odeint__config" { header "numeric/odeint/config.hpp" export * }
-    module "numeric__odeint__external__gsl__gsl_wrapper" { header "numeric/odeint/external/gsl/gsl_wrapper.hpp" export * }
+    // Unused header that requires gsl/gsl_vector.h to be compiled.
+    //module "numeric__odeint__external__gsl__gsl_wrapper" { header "numeric/odeint/external/gsl/gsl_wrapper.hpp" export * }
     module "numeric__odeint__external__openmp__openmp_nested_algebra" { header "numeric/odeint/external/openmp/openmp_nested_algebra.hpp" export * }
     module "numeric__odeint__external__openmp__openmp_range_algebra" { header "numeric/odeint/external/openmp/openmp_range_algebra.hpp" export * }
     module "numeric__odeint" { header "numeric/odeint.hpp" export * }
