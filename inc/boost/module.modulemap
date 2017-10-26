@@ -2385,7 +2385,79 @@ module boost_gil {
   module "gil__utilities" { header "gil/utilities.hpp" export * }
   module "gil__virtual_locator" { header "gil/virtual_locator.hpp" export * }
 }
-module boost_graph_pending_wrapper {
+module boost_graph_pending_random_wrapper {
+  module boost_random {
+    module "random__additive_combine" { header "random/additive_combine.hpp" export * }
+    module "random__bernoulli_distribution" { header "random/bernoulli_distribution.hpp" export * }
+    module "random__beta_distribution" { header "random/beta_distribution.hpp" export * }
+    module "random__binomial_distribution" { header "random/binomial_distribution.hpp" export * }
+    module "random__cauchy_distribution" { header "random/cauchy_distribution.hpp" export * }
+    module "random__chi_squared_distribution" { header "random/chi_squared_distribution.hpp" export * }
+    module "random__detail__auto_link" { header "random/detail/auto_link.hpp" export * }
+    module "random__detail__config" { header "random/detail/config.hpp" export * }
+    module "random__detail__const_mod" { header "random/detail/const_mod.hpp" export * }
+    module "random__detail__disable_warnings" { header "random/detail/disable_warnings.hpp" export * }
+    module "random__detail__enable_warnings" { header "random/detail/enable_warnings.hpp" export * }
+    module "random__detail__generator_bits" { header "random/detail/generator_bits.hpp" export * }
+    module "random__detail__generator_seed_seq" { header "random/detail/generator_seed_seq.hpp" export * }
+    module "random__detail__integer_log2" { header "random/detail/integer_log2.hpp" export * }
+    module "random__detail__int_float_pair" { header "random/detail/int_float_pair.hpp" export * }
+    module "random__detail__iterator_mixin" { header "random/detail/iterator_mixin.hpp" export * }
+    module "random__detail__large_arithmetic" { header "random/detail/large_arithmetic.hpp" export * }
+    module "random__detail__operators" { header "random/detail/operators.hpp" export * }
+    module "random__detail__polynomial" { header "random/detail/polynomial.hpp" export * }
+    module "random__detail__ptr_helper" { header "random/detail/ptr_helper.hpp" export * }
+    module "random__detail__seed" { header "random/detail/seed.hpp" export * }
+    module "random__detail__seed_impl" { header "random/detail/seed_impl.hpp" export * }
+    module "random__detail__signed_unsigned_tools" { header "random/detail/signed_unsigned_tools.hpp" export * }
+    module "random__detail__uniform_int_float" { header "random/detail/uniform_int_float.hpp" export * }
+    module "random__detail__vector_io" { header "random/detail/vector_io.hpp" export * }
+    module "random__discard_block" { header "random/discard_block.hpp" export * }
+    module "random__discrete_distribution" { header "random/discrete_distribution.hpp" export * }
+    module "random__exponential_distribution" { header "random/exponential_distribution.hpp" export * }
+    module "random__extreme_value_distribution" { header "random/extreme_value_distribution.hpp" export * }
+    module "random__fisher_f_distribution" { header "random/fisher_f_distribution.hpp" export * }
+    module "random__gamma_distribution" { header "random/gamma_distribution.hpp" export * }
+    module "random__generate_canonical" { header "random/generate_canonical.hpp" export * }
+    module "random__geometric_distribution" { header "random/geometric_distribution.hpp" export * }
+    module "random" { header "random.hpp" export * }
+    module "random__hyperexponential_distribution" { header "random/hyperexponential_distribution.hpp" export * }
+    module "random__independent_bits" { header "random/independent_bits.hpp" export * }
+    module "random__inversive_congruential" { header "random/inversive_congruential.hpp" export * }
+    module "random__lagged_fibonacci" { header "random/lagged_fibonacci.hpp" export * }
+    module "random__laplace_distribution" { header "random/laplace_distribution.hpp" export * }
+    module "random__linear_congruential" { header "random/linear_congruential.hpp" export * }
+    module "random__linear_feedback_shift" { header "random/linear_feedback_shift.hpp" export * }
+    module "random__lognormal_distribution" { header "random/lognormal_distribution.hpp" export * }
+    module "random__mersenne_twister" { header "random/mersenne_twister.hpp" export * }
+    module "random__negative_binomial_distribution" { header "random/negative_binomial_distribution.hpp" export * }
+    module "random__non_central_chi_squared_distribution" { header "random/non_central_chi_squared_distribution.hpp" export * }
+    module "random__normal_distribution" { header "random/normal_distribution.hpp" export * }
+    module "random__piecewise_constant_distribution" { header "random/piecewise_constant_distribution.hpp" export * }
+    module "random__piecewise_linear_distribution" { header "random/piecewise_linear_distribution.hpp" export * }
+    module "random__poisson_distribution" { header "random/poisson_distribution.hpp" export * }
+    module "random__random_device" { header "random/random_device.hpp" export * }
+    module "random__random_number_generator" { header "random/random_number_generator.hpp" export * }
+    module "random__ranlux" { header "random/ranlux.hpp" export * }
+    module "random__seed_seq" { header "random/seed_seq.hpp" export * }
+    module "random__shuffle_order" { header "random/shuffle_order.hpp" export * }
+    module "random__shuffle_output" { header "random/shuffle_output.hpp" export * }
+    module "random__student_t_distribution" { header "random/student_t_distribution.hpp" export * }
+    module "random__subtract_with_carry" { header "random/subtract_with_carry.hpp" export * }
+    module "random__taus88" { header "random/taus88.hpp" export * }
+    module "random__traits" { header "random/traits.hpp" export * }
+    module "random__triangle_distribution" { header "random/triangle_distribution.hpp" export * }
+    module "random__uniform_01" { header "random/uniform_01.hpp" export * }
+    module "random__uniform_int_distribution" { header "random/uniform_int_distribution.hpp" export * }
+    module "random__uniform_int" { header "random/uniform_int.hpp" export * }
+    module "random__uniform_on_sphere" { header "random/uniform_on_sphere.hpp" export * }
+    module "random__uniform_real_distribution" { header "random/uniform_real_distribution.hpp" export * }
+    module "random__uniform_real" { header "random/uniform_real.hpp" export * }
+    module "random__uniform_smallint" { header "random/uniform_smallint.hpp" export * }
+    module "random__variate_generator" { header "random/variate_generator.hpp" export * }
+    module "random__weibull_distribution" { header "random/weibull_distribution.hpp" export * }
+    module "random__xor_combine" { header "random/xor_combine.hpp" export * }
+  }
   module boost_pending {
     module "pending__bucket_sorter" { header "pending/bucket_sorter.hpp" export * }
     module "pending__container_traits" { header "pending/container_traits.hpp" export * }
@@ -5239,78 +5311,6 @@ module boost_qvm {
   module "qvm__vec_traits_array" { header "qvm/vec_traits_array.hpp" export * }
   module "qvm__vec_traits_defaults" { header "qvm/vec_traits_defaults.hpp" export * }
   module "qvm__vec_traits" { header "qvm/vec_traits.hpp" export * }
-}
-module boost_random {
-  module "random__additive_combine" { header "random/additive_combine.hpp" export * }
-  module "random__bernoulli_distribution" { header "random/bernoulli_distribution.hpp" export * }
-  module "random__beta_distribution" { header "random/beta_distribution.hpp" export * }
-  module "random__binomial_distribution" { header "random/binomial_distribution.hpp" export * }
-  module "random__cauchy_distribution" { header "random/cauchy_distribution.hpp" export * }
-  module "random__chi_squared_distribution" { header "random/chi_squared_distribution.hpp" export * }
-  module "random__detail__auto_link" { header "random/detail/auto_link.hpp" export * }
-  module "random__detail__config" { header "random/detail/config.hpp" export * }
-  module "random__detail__const_mod" { header "random/detail/const_mod.hpp" export * }
-  module "random__detail__disable_warnings" { header "random/detail/disable_warnings.hpp" export * }
-  module "random__detail__enable_warnings" { header "random/detail/enable_warnings.hpp" export * }
-  module "random__detail__generator_bits" { header "random/detail/generator_bits.hpp" export * }
-  module "random__detail__generator_seed_seq" { header "random/detail/generator_seed_seq.hpp" export * }
-  module "random__detail__integer_log2" { header "random/detail/integer_log2.hpp" export * }
-  module "random__detail__int_float_pair" { header "random/detail/int_float_pair.hpp" export * }
-  module "random__detail__iterator_mixin" { header "random/detail/iterator_mixin.hpp" export * }
-  module "random__detail__large_arithmetic" { header "random/detail/large_arithmetic.hpp" export * }
-  module "random__detail__operators" { header "random/detail/operators.hpp" export * }
-  module "random__detail__polynomial" { header "random/detail/polynomial.hpp" export * }
-  module "random__detail__ptr_helper" { header "random/detail/ptr_helper.hpp" export * }
-  module "random__detail__seed" { header "random/detail/seed.hpp" export * }
-  module "random__detail__seed_impl" { header "random/detail/seed_impl.hpp" export * }
-  module "random__detail__signed_unsigned_tools" { header "random/detail/signed_unsigned_tools.hpp" export * }
-  module "random__detail__uniform_int_float" { header "random/detail/uniform_int_float.hpp" export * }
-  module "random__detail__vector_io" { header "random/detail/vector_io.hpp" export * }
-  module "random__discard_block" { header "random/discard_block.hpp" export * }
-  module "random__discrete_distribution" { header "random/discrete_distribution.hpp" export * }
-  module "random__exponential_distribution" { header "random/exponential_distribution.hpp" export * }
-  module "random__extreme_value_distribution" { header "random/extreme_value_distribution.hpp" export * }
-  module "random__fisher_f_distribution" { header "random/fisher_f_distribution.hpp" export * }
-  module "random__gamma_distribution" { header "random/gamma_distribution.hpp" export * }
-  module "random__generate_canonical" { header "random/generate_canonical.hpp" export * }
-  module "random__geometric_distribution" { header "random/geometric_distribution.hpp" export * }
-  module "random" { header "random.hpp" export * }
-  module "random__hyperexponential_distribution" { header "random/hyperexponential_distribution.hpp" export * }
-  module "random__independent_bits" { header "random/independent_bits.hpp" export * }
-  module "random__inversive_congruential" { header "random/inversive_congruential.hpp" export * }
-  module "random__lagged_fibonacci" { header "random/lagged_fibonacci.hpp" export * }
-  module "random__laplace_distribution" { header "random/laplace_distribution.hpp" export * }
-  module "random__linear_congruential" { header "random/linear_congruential.hpp" export * }
-  module "random__linear_feedback_shift" { header "random/linear_feedback_shift.hpp" export * }
-  module "random__lognormal_distribution" { header "random/lognormal_distribution.hpp" export * }
-  module "random__mersenne_twister" { header "random/mersenne_twister.hpp" export * }
-  module "random__negative_binomial_distribution" { header "random/negative_binomial_distribution.hpp" export * }
-  module "random__non_central_chi_squared_distribution" { header "random/non_central_chi_squared_distribution.hpp" export * }
-  module "random__normal_distribution" { header "random/normal_distribution.hpp" export * }
-  module "random__piecewise_constant_distribution" { header "random/piecewise_constant_distribution.hpp" export * }
-  module "random__piecewise_linear_distribution" { header "random/piecewise_linear_distribution.hpp" export * }
-  module "random__poisson_distribution" { header "random/poisson_distribution.hpp" export * }
-  module "random__random_device" { header "random/random_device.hpp" export * }
-  module "random__random_number_generator" { header "random/random_number_generator.hpp" export * }
-  module "random__ranlux" { header "random/ranlux.hpp" export * }
-  module "random__seed_seq" { header "random/seed_seq.hpp" export * }
-  module "random__shuffle_order" { header "random/shuffle_order.hpp" export * }
-  module "random__shuffle_output" { header "random/shuffle_output.hpp" export * }
-  module "random__student_t_distribution" { header "random/student_t_distribution.hpp" export * }
-  module "random__subtract_with_carry" { header "random/subtract_with_carry.hpp" export * }
-  module "random__taus88" { header "random/taus88.hpp" export * }
-  module "random__traits" { header "random/traits.hpp" export * }
-  module "random__triangle_distribution" { header "random/triangle_distribution.hpp" export * }
-  module "random__uniform_01" { header "random/uniform_01.hpp" export * }
-  module "random__uniform_int_distribution" { header "random/uniform_int_distribution.hpp" export * }
-  module "random__uniform_int" { header "random/uniform_int.hpp" export * }
-  module "random__uniform_on_sphere" { header "random/uniform_on_sphere.hpp" export * }
-  module "random__uniform_real_distribution" { header "random/uniform_real_distribution.hpp" export * }
-  module "random__uniform_real" { header "random/uniform_real.hpp" export * }
-  module "random__uniform_smallint" { header "random/uniform_smallint.hpp" export * }
-  module "random__variate_generator" { header "random/variate_generator.hpp" export * }
-  module "random__weibull_distribution" { header "random/weibull_distribution.hpp" export * }
-  module "random__xor_combine" { header "random/xor_combine.hpp" export * }
 }
 // This modules form a cycle, so we want to create a wrapper module for them
 module boost_modules_wrapper {
