@@ -10,8 +10,6 @@
 #ifndef BOOST_GRAPH_ITERATION_MACROS_HPP
 #define BOOST_GRAPH_ITERATION_MACROS_HPP
 
-#include <utility>
-
 #define BGL_CAT(x,y) x ## y
 #define BGL_RANGE(linenum) BGL_CAT(bgl_range_,linenum)
 #define BGL_FIRST(linenum) (BGL_RANGE(linenum).first)
