@@ -581,7 +581,14 @@ module boost_concept {
   module "concept__detail__borland" { header "concept/detail/borland.hpp" export * }
   module "concept__detail__concept_def" { header "concept/detail/concept_def.hpp" export * }
   module "concept__detail__concept_undef" { header "concept/detail/concept_undef.hpp" export * }
-  module "concept__detail__general" { header "concept/detail/general.hpp" export * }
+/* Textual header:
+    /home/travis/build/Teemperor/boost-compile/inc/boost/property_map/property_map.hpp:60:17: error:
+          declaration of 'if_' must be imported from module 'boost_mpl.mpl__bind'
+          before it is required
+        boost::mpl::if_<is_property_map<PA>,
+
+*/
+  //module "concept__detail__general" { header "concept/detail/general.hpp" export * }
   module "concept__detail__has_constraints" { header "concept/detail/has_constraints.hpp" export * }
   module "concept__requires" { header "concept/requires.hpp" export * }
   module "concept__usage" { header "concept/usage.hpp" export * }
