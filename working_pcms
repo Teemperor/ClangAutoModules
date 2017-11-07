@@ -38,7 +38,6 @@ boost_hana
 boost_align
 boost_type_index
 boost_function_types
-boost_config
 boost_any
 boost_pointer_to_other
 boost_compressed_pair
@@ -111,3 +110,9 @@ boost_interprocess
 boost_asio
 boost_test
 boost_property_map
+boost_property_tree
+boost_multi_index_wrapper
+boost_signals2
+boost_bimap
+boost_flyweight
+boost_multi_index_container

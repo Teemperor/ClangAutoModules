@@ -598,9 +598,20 @@ module boost_concept_check {
   module "concept_check__general" { header "concept_check/general.hpp" export * }
   module "concept_check" { header "concept_check.hpp" export * }
 }
+/*
+FIXME: This SHOULD be textual, but people really like to include it form inside
+classes etc. because it's only macros in here. We should fix all of those things
+in the source, but for now we just make this textual.
+See for example this error:
+/home/travis/build/Teemperor/boost-compile/inc/boost/multi_index/detail/ignore_wstrict_aliasing.hpp:9:1: error:
+      redundant #include of module 'boost_config.config' appears within
+      'index_node_base<Value, Allocator>' [-Wmodules-import-nested-redundant]
+#include <boost/config.hpp>
+^
 module boost_config {
   module "config" { header "config.hpp" export * }
 }
+*/
 module boost_container {
   module "container__adaptive_pool" { header "container/adaptive_pool.hpp" export * }
   module "container__allocator" { header "container/allocator.hpp" export * }
