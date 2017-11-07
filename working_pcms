@@ -116,3 +116,4 @@ boost_signals2
 boost_bimap
 boost_flyweight
 boost_multi_index_container
+boost_xpressive
