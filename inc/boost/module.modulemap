@@ -2426,8 +2426,16 @@ module boost_graph_pending_random_wrapper {
     module "graph__is_kuratowski_subgraph" { header "graph/is_kuratowski_subgraph.hpp" export * }
     module "graph__isomorphism" { header "graph/isomorphism.hpp" export * }
     module "graph__is_straight_line_drawing" { header "graph/is_straight_line_drawing.hpp" export * }
-    module "graph__iteration_macros" { header "graph/iteration_macros.hpp" export * }
-    module "graph__iteration_macros_undef" { header "graph/iteration_macros_undef.hpp" export * }
+/* This is a textual header.
+/home/travis/build/Teemperor/boost-compile/inc/boost/graph/graph_utility.hpp:439:3: fatal error: 
+      import of module
+      'boost_graph_pending_random_wrapper.boost_graph.graph__iteration_macros'
+      appears within namespace 'boost'
+  #include <boost/graph/iteration_macros.hpp>
+  ^
+*/
+//    module "graph__iteration_macros" { header "graph/iteration_macros.hpp" export * }
+//    module "graph__iteration_macros_undef" { header "graph/iteration_macros_undef.hpp" export * }
     module "graph__johnson_all_pairs_shortest" { header "graph/johnson_all_pairs_shortest.hpp" export * }
     module "graph__kamada_kawai_spring_layout" { header "graph/kamada_kawai_spring_layout.hpp" export * }
     module "graph__king_ordering" { header "graph/king_ordering.hpp" export * }
