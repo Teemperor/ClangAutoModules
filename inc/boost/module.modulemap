@@ -8877,7 +8877,20 @@ module boost_xpressive {
   module "xpressive__detail__utility__algorithm" { header "xpressive/detail/utility/algorithm.hpp" export * }
   module "xpressive__detail__utility__any" { header "xpressive/detail/utility/any.hpp" export * }
   module "xpressive__detail__utility__boyer_moore" { header "xpressive/detail/utility/boyer_moore.hpp" export * }
-  module "xpressive__detail__utility__chset__basic_chset" { header "xpressive/detail/utility/chset/basic_chset.hpp" export * }
+/* Textual hedaer that goes togeter with it's .ipp clone. Fixes:
+In file included from /home/travis/build/Teemperor/boost-compile/inc/boost/xpressive/detail/utility/hash_peek_bitset.hpp:21:
+/home/travis/build/Teemperor/boost-compile/inc/boost/xpressive/detail/utility/chset/basic_chset.ipp:204:8: error: 
+      no template named 'basic_chset_8bit'; did you mean 'basic_chset'?
+inline basic_chset_8bit<Char>::basic_chset_8bit()
+       ^~~~~~~~~~~~~~~~
+       basic_chset
+/home/travis/build/Teemperor/boost-compile/inc/boost/xpressive/detail/utility/chset/basic_chset.hpp:27:8: note: 
+      'basic_chset' declared here
+struct basic_chset
+       ^
+While building module 'bo
+*/
+  //module "xpressive__detail__utility__chset__basic_chset" { header "xpressive/detail/utility/chset/basic_chset.hpp" export * }
   module "xpressive__detail__utility__chset__chset" { header "xpressive/detail/utility/chset/chset.hpp" export * }
   module "xpressive__detail__utility__chset__range_run" { header "xpressive/detail/utility/chset/range_run.hpp" export * }
   module "xpressive__detail__utility__cons" { header "xpressive/detail/utility/cons.hpp" export * }
