@@ -2,3 +2,6 @@ build
 *-swp
 *~
 *.cycle.html
+*.gch
+*.gch*
+*.user
