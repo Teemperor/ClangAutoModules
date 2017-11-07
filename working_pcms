@@ -110,3 +110,4 @@ boost_atomic
 boost_interprocess
 boost_asio
 boost_test
+boost_property_map
