@@ -16,7 +16,7 @@ cmake -Duse_modules=$3 ..
 if [[ "$3" == "On" ]]; then
   echo "Building with modules on"
   set +e
-  make -k
+  make -k VERBOSE=1
   set -e
   find . -name "boost_*.pcm" | xargs -L1 basename | rev | cut -c 5- | rev > found_pcms
   echo "Found PCMS:"
@@ -25,5 +25,5 @@ if [[ "$3" == "On" ]]; then
   python "$DIR/size_check_pcms.py"
 else
   echo "Building with modules off"
-  make
+  make VERBOSE=1
 fi
