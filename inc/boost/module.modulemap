@@ -2393,7 +2393,7 @@ module boost_graph_pending_random_wrapper {
     module "graph__detail__incremental_components" { header "graph/detail/incremental_components.hpp" export * }
     module "graph__detail__indexed_properties" { header "graph/detail/indexed_properties.hpp" export * }
     module "graph__detail__is_distributed_selector" { header "graph/detail/is_distributed_selector.hpp" export * }
-    module "graph__detail__read_graphviz_spirit" { header "graph/detail/read_graphviz_spirit.hpp" export * }
+    //module "graph__detail__read_graphviz_spirit" { header "graph/detail/read_graphviz_spirit.hpp" export * }
     module "graph__detail__set_adaptor" { header "graph/detail/set_adaptor.hpp" export * }
     module "graph__detail__sparse_ordering" { header "graph/detail/sparse_ordering.hpp" export * }
     module "graph__dijkstra_shortest_paths" { header "graph/dijkstra_shortest_paths.hpp" export * }
