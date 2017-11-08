@@ -8232,11 +8232,16 @@ module boost_test {
   module "test__utils__trivial_singleton" { header "test/utils/trivial_singleton.hpp" export * }
   module "test__utils__wrap_stringstream" { header "test/utils/wrap_stringstream.hpp" export * }
 }
-module boost_timer {
+// So those two modules both define boost::timer as either a namespace or a class
+// and it even breaks normal compilation to include them. Let's just seperate
+// them and no one shall include them ever at the same time.
+module boost_timer2 {
   module "timer__config" { header "timer/config.hpp" export * }
-  module "timer" { header "timer.hpp" export * }
   module "timer__timer" { header "timer/timer.hpp" export * }
+  conflict boost_timer, "redefines boost::timer namespace as a class"
 }
+module boost_timer { header "timer.hpp" export * }
+
 module boost_token_iterator {
   module "token_iterator" { header "token_iterator.hpp" export * }
 }
