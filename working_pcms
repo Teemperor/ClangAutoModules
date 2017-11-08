@@ -117,3 +117,8 @@ boost_bimap
 boost_flyweight
 boost_multi_index_container
 boost_xpressive
+boost_tr1
+boost_nondet_random
+boost_uuid
+boost_graph_pending_random_wrapper
+boost_dynamic_bitset
