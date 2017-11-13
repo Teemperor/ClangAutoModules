@@ -5139,7 +5139,17 @@ namespace boost { namespace python { namespace detail {
   module "python__detail__string_literal" { header "python/detail/string_literal.hpp" export * }
   module "python__detail__translate_exception" { header "python/detail/translate_exception.hpp" export * }
   module "python__detail__type_list" { header "python/detail/type_list.hpp" export * }
-  module "python__detail__type_list_impl" { header "python/detail/type_list_impl.hpp" export * }
+  // ifdef
+  /*
+While building module 'boost_python' imported from /home/travis/build/Teemperor/boost-compile/inc/boost/python/detail/prefix.hpp:14:
+In file included from <module-includes>:29:
+In file included from /home/travis/build/Teemperor/boost-compile/inc/boost/python/detail/type_list.hpp:33:
+/home/travis/build/Teemperor/boost-compile/inc/boost/python/detail/type_list_impl.hpp:21:11: error: 
+      C++ requires a type specifier for all declarations
+template <BOOST_PP_ENUM_PARAMS_WITH_A_DEFAULT(BOOST_PYTHON_LIST_SIZE, cl...
+          ^
+  */
+  // module "python__detail__type_list_impl" { header "python/detail/type_list_impl.hpp" export * }
   module "python__detail__value_arg" { header "python/detail/value_arg.hpp" export * }
   module "python__detail__value_is_shared_ptr" { header "python/detail/value_is_shared_ptr.hpp" export * }
   module "python__detail__value_is_xxx" { header "python/detail/value_is_xxx.hpp" export * }
