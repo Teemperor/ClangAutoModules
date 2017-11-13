@@ -5097,6 +5097,15 @@ module boost_ptr_container {
   module "ptr_container__serialize_ptr_vector" { header "ptr_container/serialize_ptr_vector.hpp" export * }
 }
 module boost_python {
+  module class { header "python/class.hpp" export * }
+  module def { header "python/def.hpp" export * }
+  module extract { header "python/extract.hpp" export * }
+  module python { header "python.hpp" export * }
+  module init { header "python/init.hpp" export * }
+  module list { header "python/list.hpp" export * }
+  module "module.hpp" { header "python/module.hpp" export * }
+  module vector_indexing_suite { header "python/suite/indexing/vector_indexing_suite.hpp" export * }
+
   module "python__converter__context_result_converter" { header "python/converter/context_result_converter.hpp" export * }
   module "python__detail__aix_init_module" { header "python/detail/aix_init_module.hpp" export * }
   module "python__detail__config" { header "python/detail/config.hpp" export * }
