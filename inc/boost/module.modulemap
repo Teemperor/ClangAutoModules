@@ -579,8 +579,8 @@ module boost_concept {
   module "concept__assert" { header "concept/assert.hpp" export * }
   module "concept__detail__backward_compatibility" { header "concept/detail/backward_compatibility.hpp" export * }
   module "concept__detail__borland" { header "concept/detail/borland.hpp" export * }
-  module "concept__detail__concept_def" { header "concept/detail/concept_def.hpp" export * }
-  module "concept__detail__concept_undef" { header "concept/detail/concept_undef.hpp" export * }
+  //module "concept__detail__concept_def" { header "concept/detail/concept_def.hpp" export * }
+  //module "concept__detail__concept_undef" { header "concept/detail/concept_undef.hpp" export * }
 /* Textual header:
     /home/travis/build/Teemperor/boost-compile/inc/boost/property_map/property_map.hpp:60:17: error:
           declaration of 'if_' must be imported from module 'boost_mpl.mpl__bind'
@@ -6051,8 +6051,8 @@ module boost_date_time {
     module "phoenix__operator__arithmetic" { header "phoenix/operator/arithmetic.hpp" export * }
     module "phoenix__operator__bitwise" { header "phoenix/operator/bitwise.hpp" export * }
     module "phoenix__operator__comparison" { header "phoenix/operator/comparison.hpp" export * }
-    module "phoenix__operator__detail__define_operator" { header "phoenix/operator/detail/define_operator.hpp" export * }
-    module "phoenix__operator__detail__undef_operator" { header "phoenix/operator/detail/undef_operator.hpp" export * }
+    //module "phoenix__operator__detail__define_operator" { header "phoenix/operator/detail/define_operator.hpp" export * }
+    //module "phoenix__operator__detail__undef_operator" { header "phoenix/operator/detail/undef_operator.hpp" export * }
     module "phoenix__operator" { header "phoenix/operator.hpp" export * }
     module "phoenix__operator__if_else" { header "phoenix/operator/if_else.hpp" export * }
     module "phoenix__operator__io" { header "phoenix/operator/io.hpp" export * }
@@ -7915,8 +7915,9 @@ module boost_call_traits {
 module boost_detail {
   module "detail__allocator_utilities" { header "detail/allocator_utilities.hpp" export * }
   module "detail__atomic_count" { header "detail/atomic_count.hpp" export * }
-  module "detail__atomic_redef_macros" { header "detail/atomic_redef_macros.hpp" export * }
-  module "detail__atomic_undef_macros" { header "detail/atomic_undef_macros.hpp" export * }
+  // textual
+  //module "detail__atomic_redef_macros" { header "detail/atomic_redef_macros.hpp" export * }
+  //module "detail__atomic_undef_macros" { header "detail/atomic_undef_macros.hpp" export * }
   module "detail__binary_search" { header "detail/binary_search.hpp" export * }
   module "detail__bitmask" { header "detail/bitmask.hpp" export * }
   module "detail__call_traits" { header "detail/call_traits.hpp" export * }
@@ -8449,8 +8450,8 @@ module boost_type_traits {
   module "type_traits__cv_traits" { header "type_traits/cv_traits.hpp" export * }
   module "type_traits__decay" { header "type_traits/decay.hpp" export * }
   module "type_traits__declval" { header "type_traits/declval.hpp" export * }
-  module "type_traits__detail__bool_trait_def" { header "type_traits/detail/bool_trait_def.hpp" export * }
-  module "type_traits__detail__bool_trait_undef" { header "type_traits/detail/bool_trait_undef.hpp" export * }
+  //module "type_traits__detail__bool_trait_def" { header "type_traits/detail/bool_trait_def.hpp" export * }
+  //module "type_traits__detail__bool_trait_undef" { header "type_traits/detail/bool_trait_undef.hpp" export * }
   module "type_traits__detail__common_arithmetic_type" { header "type_traits/detail/common_arithmetic_type.hpp" export * }
   // Breaks lookup somehow:
   /*
