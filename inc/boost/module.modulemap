@@ -203,7 +203,17 @@ module boost_asio {
   // Can't push options inside a module, so pop_options would be broke if this is a module.
   //module "asio__detail__push_options" { header "asio/detail/push_options.hpp" export * }
   module "asio__detail__reactor_fwd" { header "asio/detail/reactor_fwd.hpp" export * }
-  module "asio__detail__regex_fwd" { header "asio/detail/regex_fwd.hpp" export * }
+/* This regex_fwd.hpp was doing ifdef thing
+In file included from /home/travis/build/Teemperor/boost-compile/compile.cpp:9:
+In file included from /home/travis/build/Teemperor/boost-compile/inc/boost/asio.hpp:91:
+/home/travis/build/Teemperor/boost-compile/inc/boost/asio/read_until.hpp:304:62: error: 
+      missing '#include "boost/regex/v4/regex_fwd.hpp"'; declaration of 'regex'
+      must be imported from module 'boost_regex.regex__v4__regex_fwd' before it
+      is required
+    boost::asio::basic_streambuf<Allocator>& b, const boost::regex& expr);
+                                                             ^
+*/
+  // module "asio__detail__regex_fwd" { header "asio/detail/regex_fwd.hpp" export * }
   module "asio__detail__scoped_lock" { header "asio/detail/scoped_lock.hpp" export * }
   module "asio__detail__scoped_ptr" { header "asio/detail/scoped_ptr.hpp" export * }
   module "asio__detail__select_reactor" { header "asio/detail/select_reactor.hpp" export * }
