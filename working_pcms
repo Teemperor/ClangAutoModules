@@ -125,3 +125,4 @@ boost_dynamic_bitset
 boost_progress
 boost_timer
 boost_python
+boost_statechart
