@@ -135,6 +135,7 @@ module boost_array {
   module "array" { header "array.hpp" export * }
 }
 module boost_asio {
+  module "asio" { header "asio.hpp" export * }
   module "asio__async_result" { header "asio/async_result.hpp" export * }
   module "asio__basic_streambuf_fwd" { header "asio/basic_streambuf_fwd.hpp" export * }
   module "asio__basic_streambuf" { header "asio/basic_streambuf.hpp" export * }
