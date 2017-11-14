@@ -5163,7 +5163,16 @@ module boost_python {
   module "python_return_value_policy.hpp" { header "python/return_value_policy.hpp" export * }
   module "python_scope.hpp" { header "python/scope.hpp" export * }
   module "python_self.hpp" { header "python/self.hpp" export * }
-  module "python_signature.hpp" { header "python/signature.hpp" export * }
+  /*
+  In file included from /home/travis/build/Teemperor/boost-compile/inc/boost/python/signature.hpp:213:
+  /home/travis/build/Teemperor/boost-compile/inc/boost/preprocessor/iteration/detail/iter/forward2.hpp:55:1: error:
+        redundant #include of module 'boost_python.python_signature.hpp' appears
+        within namespace 'boost::python::detail'
+        [-Wmodules-import-nested-redundant]
+  #        include BOOST_PP_FILENAME_2
+  ^
+  */
+  //module "python_signature.hpp" { header "python/signature.hpp" export * }
   module "python_slice.hpp" { header "python/slice.hpp" export * }
   module "python_slice_nil.hpp" { header "python/slice_nil.hpp" export * }
   module "python_ssize_t.hpp" { header "python/ssize_t.hpp" export * }
