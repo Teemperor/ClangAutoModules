@@ -5104,8 +5104,27 @@ module boost_python {
   module "python_bases.hpp" { header "python/bases.hpp" export * }
   module "python_base_type_traits.hpp" { header "python/base_type_traits.hpp" export * }
   module "python_borrowed.hpp" { header "python/borrowed.hpp" export * }
-  module "python_call.hpp" { header "python/call.hpp" export * }
-  module "python_call_method.hpp" { header "python/call_method.hpp" export * }
+  /*
+  n file included from /home/travis/build/Teemperor/boost-compile/inc/boost/python/args.hpp:25:
+  In file included from /home/travis/build/Teemperor/boost-compile/inc/boost/python/object_core.hpp:14:
+  In file included from /home/travis/build/Teemperor/boost-compile/inc/boost/python/call.hpp:33:
+  /home/travis/build/Teemperor/boost-compile/inc/boost/preprocessor/iteration/detail/iter/forward1.hpp:87:1: error:
+        redundant #include of module 'boost_python.python_call.hpp' appears within
+        namespace 'boost::python' [-Wmodules-import-nested-redundant]
+  #        include BOOST_PP_FILENAME_1
+  ^
+  */
+  //module "python_call.hpp" { header "python/call.hpp" export * }
+  /*
+  In file included from <module-includes>:9:
+  In file included from /home/travis/build/Teemperor/boost-compile/inc/boost/python/call_method.hpp:32:
+  /home/travis/build/Teemperor/boost-compile/inc/boost/preprocessor/iteration/detail/iter/forward1.hpp:47:1: error:
+        redundant #include of module 'boost_python.python_call_method.hpp' appears
+        within namespace 'boost::python' [-Wmodules-import-nested-redundant]
+  #        include BOOST_PP_FILENAME_1
+  ^
+  */
+  //module "python_call_method.hpp" { header "python/call_method.hpp" export * }
   module "python_cast.hpp" { header "python/cast.hpp" export * }
   module "python_class_fwd.hpp" { header "python/class_fwd.hpp" export * }
   module "python_class.hpp" { header "python/class.hpp" export * }
