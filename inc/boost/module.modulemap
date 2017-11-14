@@ -8260,7 +8260,15 @@ module boost_statechart {
   module "statechart__deferral" { header "statechart/deferral.hpp" export * }
   module "statechart__detail__avoid_unused_warning" { header "statechart/detail/avoid_unused_warning.hpp" export * }
   module "statechart__detail__constructor" { header "statechart/detail/constructor.hpp" export * }
-  module "statechart__detail__counted_base" { header "statechart/detail/counted_base.hpp" export * }
+  // Textual header, needs BOOST_ASSERT
+  /*
+  In file included from <module-includes>:6:
+  /home/travis/build/Teemperor/boost-compile/inc/boost/statechart/detail/counted_base.hpp:79:7: error:
+        use of undeclared identifier 'BOOST_ASSERT'
+        BOOST_ASSERT( base_type::count_ > 0 );
+        ^
+  */
+  //module "statechart__detail__counted_base" { header "statechart/detail/counted_base.hpp" export * }
   module "statechart__detail__leaf_state" { header "statechart/detail/leaf_state.hpp" export * }
   module "statechart__detail__memory" { header "statechart/detail/memory.hpp" export * }
   module "statechart__detail__node_state" { header "statechart/detail/node_state.hpp" export * }
