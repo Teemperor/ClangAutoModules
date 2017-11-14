@@ -124,3 +124,4 @@ boost_graph_pending_random_wrapper
 boost_dynamic_bitset
 boost_progress
 boost_timer
+boost_python
