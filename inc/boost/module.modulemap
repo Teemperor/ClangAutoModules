@@ -5239,7 +5239,29 @@ module boost_python {
   module "python__detail__mpl_lambda" { header "python/detail/mpl_lambda.hpp" export * }
   module "python__detail__msvc_typeinfo" { header "python/detail/msvc_typeinfo.hpp" export * }
   module "python__detail__not_specified" { header "python/detail/not_specified.hpp" export * }
-  module "python__detail__operator_id" { header "python/detail/operator_id.hpp" export * }
+  // Textual header, needs to get PY_VERSION_HEX value from including header.
+/*
+In file included from /home/travis/build/Teemperor/boost-compile/inc/boost/python/numpy.hpp:10:
+In file included from /home/travis/build/Teemperor/boost-compile/inc/boost/python/numpy/dtype.hpp:15:
+In file included from /home/travis/build/Teemperor/boost-compile/inc/boost/python.hpp:50:
+/home/travis/build/Teemperor/boost-compile/inc/boost/python/operators.hpp:216:5: error: 
+      use of undeclared identifier 'op_truediv'
+    BOOST_PYTHON_BINARY_OPERATOR(truediv, rtruediv, /)
+    ^
+/home/travis/build/Teemperor/boost-compile/inc/boost/python/operators.hpp:200:57: note: 
+      expanded from macro 'BOOST_PYTHON_BINARY_OPERATOR'
+# define BOOST_PYTHON_BINARY_OPERATOR(id, rid, op)      \
+                                                        ^
+/home/travis/build/Teemperor/boost-compile/inc/boost/python/operators.hpp:168:21: note: 
+      expanded from macro '\
+BOOST_PYTHON_BINARY_OPERATION'
+  struct operator_l<op_##id>                                \
+                    ^
+<scratch space>:371:1: note: expanded from here
+op_truediv
+^
+*/
+  //module "python__detail__operator_id" { header "python/detail/operator_id.hpp" export * }
   module "python__detail__overloads_fwd" { header "python/detail/overloads_fwd.hpp" export * }
   module "python__detail__preprocessor" { header "python/detail/preprocessor.hpp" export * }
   module "python__detail__raw_pyobject" { header "python/detail/raw_pyobject.hpp" export * }
