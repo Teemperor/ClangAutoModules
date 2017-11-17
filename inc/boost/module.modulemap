@@ -526,6 +526,7 @@ module boost_checked_delete {
   module "checked_delete" { header "checked_delete.hpp" export * }
 }
 module boost_chrono {
+  module "chrono" { header "chrono.hpp" export * }
   module "chrono__ceil" { header "chrono/ceil.hpp" export * }
   module "chrono__clock_string" { header "chrono/clock_string.hpp" export * }
   module "chrono__config" { header "chrono/config.hpp" export * }
