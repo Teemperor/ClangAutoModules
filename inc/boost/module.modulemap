@@ -5392,6 +5392,7 @@ module boost_qvm {
 module boost_modules_wrapper {
 
 module boost_thread {
+  module "thread" { header "thread.hpp" export * }
   module "thread__caller_context" { header "thread/caller_context.hpp" export * }
   module "thread__csbl__deque" { header "thread/csbl/deque.hpp" export * }
   module "thread__csbl__devector" { header "thread/csbl/devector.hpp" export * }
