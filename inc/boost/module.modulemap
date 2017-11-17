@@ -3394,6 +3394,7 @@ module boost_limits {
   module "limits" { header "limits.hpp" export * }
 }
 module boost_locale {
+  module "locale" { header "locale.hpp" export * }
   module "locale__boundary__facets" { header "locale/boundary/facets.hpp" export * }
   module "locale__boundary" { header "locale/boundary.hpp" export * }
   module "locale__boundary__index" { header "locale/boundary/index.hpp" export * }
