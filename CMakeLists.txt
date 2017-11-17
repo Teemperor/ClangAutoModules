@@ -3,15 +3,26 @@ cmake_minimum_required(VERSION 3.0)
 
 option(use_modules "Build with C++ modules" On)
 
+if(use_modules MATCHES print)
+  set(textual_check On)
+  set(use_modules On)
+endif()
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" AND use_modules)
   # using Clang
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fmodules -fcxx-modules -Xclang -fdisable-module-hash -Xclang -fmodules-local-submodule-visibility -fmodules-cache-path=pcms -Rmodule-build")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fmodules -fcxx-modules -Xclang -fdisable-module-hash -Xclang -fmodules-local-submodule-visibility -fmodules-cache-path=pcms")
   # no autopr warning
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-declarations")
   # embed all headers to stress size limit
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Xclang -fmodules-embed-all-files")
+
+  if (textual_check)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -H -Wno-everything")
+  else()
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Rmodule-build")
+  endif()
 
   file(DOWNLOAD "https://github.com/Teemperor/ClangAutoModules/releases/download/0.2.1/ClangModules.cmake"
        ${CMAKE_BINARY_DIR}/ClangModules.cmake
