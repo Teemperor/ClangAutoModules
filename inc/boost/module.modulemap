@@ -8320,6 +8320,7 @@ module boost_system {
   module "system__windows_error" { header "system/windows_error.hpp" export * }
 }
 module boost_test {
+  module "test__autounittest" { header "test/auto_unit_test.hpp" export * }
   module "test__data__config" { header "test/data/config.hpp" export * }
   module "test__data__for_each_sample" { header "test/data/for_each_sample.hpp" export * }
   module "test__data__index_sequence" { header "test/data/index_sequence.hpp" export * }
