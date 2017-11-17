@@ -824,6 +824,7 @@ module "boost_detail__algorithm" { header "detail/algorithm.hpp" export * }
 module "boost_detail__workaround" { header "detail/workaround.hpp" export * }
 module "boost_detail__lightweight_test" { header "detail/lightweight_test.hpp" export * }
 module boost_dll {
+  module "dll" { header "dll.hpp" export * }
   module "dll__alias" { header "dll/alias.hpp" export * }
   module "dll__detail__aggressive_ptr_cast" { header "dll/detail/aggressive_ptr_cast.hpp" export * }
   module "dll__detail__demangling__demangle_symbol" { header "dll/detail/demangling/demangle_symbol.hpp" export * }
