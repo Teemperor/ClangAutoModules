@@ -13,7 +13,7 @@ cd ..
 mkdir build
 cd build
 cmake -Duse_modules=$3 ..
-if [[ "$3" == "On" ]]; then
+if [[ "$3" == "On" || "$3" == "print" ]]; then
   echo "Building with modules on"
   set +e
   make -k VERBOSE=1
