@@ -20,8 +20,6 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" AND use_modules)
 
   if (textual_check)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -H -Wno-everything")
-  else()
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Rmodule-build")
   endif()
 
   file(DOWNLOAD "https://github.com/Teemperor/ClangAutoModules/releases/download/0.2.1/ClangModules.cmake"
