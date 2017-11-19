@@ -4969,35 +4969,25 @@ module boost_preprocessor {
   module "preprocessor__wstringize" { header "preprocessor/wstringize.hpp" export * }
 } */
 module boost_process {
-  module "process__detail__async_handler" { header "process/detail/async_handler.hpp" export * }
-  module "process__detail__child_decl" { header "process/detail/child_decl.hpp" export * }
-  module "process__detail__config" { header "process/detail/config.hpp" export * }
-  module "process__detail__handler_base" { header "process/detail/handler_base.hpp" export * }
-  module "process__detail__handler" { header "process/detail/handler.hpp" export * }
-  module "process__detail__on_exit" { header "process/detail/on_exit.hpp" export * }
-  module "process__detail__posix__asio_fwd" { header "process/detail/posix/asio_fwd.hpp" export * }
-  module "process__detail__posix__async_handler" { header "process/detail/posix/async_handler.hpp" export * }
-  module "process__detail__posix__child_handle" { header "process/detail/posix/child_handle.hpp" export * }
-  module "process__detail__posix__cmd" { header "process/detail/posix/cmd.hpp" export * }
-  module "process__detail__posix__compare_handles" { header "process/detail/posix/compare_handles.hpp" export * }
-  module "process__detail__posix__environment" { header "process/detail/posix/environment.hpp" export * }
-  module "process__detail__posix__exe" { header "process/detail/posix/exe.hpp" export * }
-  module "process__detail__posix__handler" { header "process/detail/posix/handler.hpp" export * }
-  module "process__detail__posix__is_running" { header "process/detail/posix/is_running.hpp" export * }
-  module "process__detail__posix__on_exit" { header "process/detail/posix/on_exit.hpp" export * }
-  module "process__detail__posix__signal" { header "process/detail/posix/signal.hpp" export * }
-  module "process__detail__posix__start_dir" { header "process/detail/posix/start_dir.hpp" export * }
-  module "process__detail__posix__terminate" { header "process/detail/posix/terminate.hpp" export * }
-  module "process__detail__posix__use_vfork" { header "process/detail/posix/use_vfork.hpp" export * }
-  module "process__detail__traits__async" { header "process/detail/traits/async.hpp" export * }
-  module "process__detail__traits__decl" { header "process/detail/traits/decl.hpp" export * }
-  module "process__detail__traits__env" { header "process/detail/traits/env.hpp" export * }
-  module "process__detail__traits__error" { header "process/detail/traits/error.hpp" export * }
-  module "process__detail__windows__asio_fwd" { header "process/detail/windows/asio_fwd.hpp" export * }
-  module "process__detail__windows__async_handler" { header "process/detail/windows/async_handler.hpp" export * }
-  module "process__detail__windows__handler" { header "process/detail/windows/handler.hpp" export * }
-  module "process__detail__windows__start_dir" { header "process/detail/windows/start_dir.hpp" export * }
-  module "process__exception" { header "process/exception.hpp" export * }
+  module "process.hpp" { header "process.hpp" export * }
+  module "process_args.hpp" { header "process/args.hpp" export * }
+  module "process_async.hpp" { header "process/async.hpp" export * }
+  module "process_async_pipe.hpp" { header "process/async_pipe.hpp" export * }
+  module "process_async_system.hpp" { header "process/async_system.hpp" export * }
+  module "process_child.hpp" { header "process/child.hpp" export * }
+  module "process_cmd.hpp" { header "process/cmd.hpp" export * }
+  module "process_environment.hpp" { header "process/environment.hpp" export * }
+  module "process_error.hpp" { header "process/error.hpp" export * }
+  module "process_exception.hpp" { header "process/exception.hpp" export * }
+  module "process_exe.hpp" { header "process/exe.hpp" export * }
+  module "process_extend.hpp" { header "process/extend.hpp" export * }
+  module "process_group.hpp" { header "process/group.hpp" export * }
+  module "process_io.hpp" { header "process/io.hpp" export * }
+  module "process_pipe.hpp" { header "process/pipe.hpp" export * }
+  module "process_search_path.hpp" { header "process/search_path.hpp" export * }
+  module "process_shell.hpp" { header "process/shell.hpp" export * }
+  module "process_spawn.hpp" { header "process/spawn.hpp" export * }
+  module "process_system.hpp" { header "process/system.hpp" export * }
 }
 module boost_program_options {
   module "program_options__cmdline" { header "program_options/cmdline.hpp" export * }
