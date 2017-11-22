@@ -20,7 +20,7 @@ function run_test {
   cd "$build_dir"
   test_name=`basename "$1"`
   echo "- Running test: $test_name"
-  
+
   # Copy our test directory to the tmp directory
   rm -rf "$test_name"
   mkdir "$test_name"
@@ -52,8 +52,7 @@ function run_test {
     while read p; do
       set +e
       # Verify that we used the right modules
-      find ./pcms/ -name "$p-*\\.pcm" | grep -q .
-      set -e
+      find ./pcm/ -name "$p-*\\.pcm" | grep -q .
 
       if [ $? -ne 0 ]; then
         echo "ERROR: can't find PCM for $p"
@@ -72,16 +71,17 @@ function run_test {
       else
         echo "-- Found PCM for $p: $(find . -name "$p-*\\.pcm")"
       fi
+      set -e
+
     done < ../NEEDS_PCMS
 
     if [ -f ../FORBIDDEN_PCMS ]; then
       while read p; do
         set +e
         # Verify that we didn't build forbidden pcms
-        find ./pcms/ -name "$p-*\\.pcm" | grep -q .
+        find ./pcm/ -name "$p-*\\.pcm" | grep -q .
 
         if [ $? -eq 0 ]; then
-          set -e
           echo "ERROR: built forbidden PCM for $p"
           echo "PWD: $(pwd)"
           cd ..
@@ -96,9 +96,9 @@ function run_test {
           cat CMakeFiles/CMakeOutput.log
           exit 1
         else
-          set -e
           echo "-- Found no PCM matching forbidden PCM: $p"
         fi
+        set -e
       done < ../FORBIDDEN_PCMS
     fi
   fi

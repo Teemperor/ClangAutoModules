@@ -67,6 +67,7 @@ if(ClangModules_WithoutClang OR ClangModules_IsClang)
                  --vfs-output "${ClangModules_OutputVFSFile}"
                  --required-modules "${ClangModules_RequiredModules}"
                  --check-only "${ClangModules_CheckOnlyFor}"
+                 --log "${CMAKE_BINARY_DIR}/ClangModules.log"
                  --invocation "${ClangModules_ClangInvocation}"
                  WORKING_DIRECTORY "${ClangModules_UNPACK_FOLDER}"
                  RESULT_VARIABLE ClangModules_py_exitcode

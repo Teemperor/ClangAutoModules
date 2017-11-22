@@ -1,12 +1,32 @@
 #!/usr/bin/env python
 
 import copy
+import datetime
 import json
 import subprocess
 import re
+import time
 import shutil
 import sys
 import os
+
+dbglog_file = None
+
+
+def dbglog(message, module=None):
+    if dbglog_file is None:
+        return
+    module_name = module.name
+    ts = time.time()
+    st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+    dbglog_file.write(st)
+    dbglog_file.write(": ")
+    if module:
+        dbglog_file.write("[" + module_name.center(15) + "] ")
+    else:
+        dbglog_file.write("[" + "general".center(15) + "] ")
+    dbglog_file.write(message)
+    dbglog_file.write("\n")
 
 
 def eprint(msg):
@@ -122,6 +142,8 @@ class Modulemap:
     def can_use_in_dir(self, path):
         for header in self.headers:
             if not os.path.isfile(os.path.sep.join([path, header])):
+                dbglog("Couldn't find header " + header + " for module in " +
+                       path, self)
                 return False
         return True
 
@@ -132,7 +154,9 @@ class Modulemap:
         for flags in self.needed_flags:
             found_flags = True
             for flag in flags:
-                if not (" " + flag + " ") in invok:
+                if not (flag) in invok:
+                    dbglog("Couldn't find flag '" + flag + "' in invocation: "
+                           + invok, self)
                     found_flags = False
                     break
             if found_flags:
@@ -414,6 +438,7 @@ class CLIArgs:
         self.vfs_output = None
         self.clang_flags = None
         self.file_prefix = ""
+        self.logfile = None
 
 
 def parse_args(args):
@@ -479,6 +504,11 @@ def parse_args(args):
                     if len(path) > 0:
                         r.extra_inc_dirs.append(path)
                 parsed_arg = True
+            elif arg == "--log":
+                if not next_arg:
+                    arg_parse_error("No arg supplied for --log")
+                r.logfile = next_arg
+                parsed_arg = True
             elif arg == "--output-dir":
                 if not next_arg:
                     arg_parse_error("No arg supplied for --output-dir")
@@ -507,7 +537,11 @@ def parse_args(args):
 
 
 def setup_modules(args, report_stream):
+    global dbglog_file
     args = parse_args(args)
+
+    if args.logfile:
+        dbglog_file = open(args.logfile, "a")
 
     vfs = VirtualFileSystem(args.vfs_output, args.output_dir, args.file_prefix)
 
@@ -549,8 +583,10 @@ def setup_modules(args, report_stream):
                                            args.clang_flags + test_cpp_file)
             success = (invoke_result.exit_code == 0)
             if success:
+                dbglog("Mounted module in " + inc_path, mm)
                 break
             else:
+                dbglog("Failed to mount module in " + inc_path, mm)
                 vfs.revert()
         if success:
             report_stream.write(" ->   OK! [" + str(inc_path) + "]\n")
@@ -564,6 +600,9 @@ def setup_modules(args, report_stream):
             if not m.requirement_success(mod):
                 eprint("Missing required module " + mod)
                 exit(2)
+
+    if dbglog_file:
+        dbglog_file.close()
 
     return args
 
