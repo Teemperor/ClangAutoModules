@@ -3,7 +3,7 @@ project (nlohmann-test)
 
 add_compile_options(-std=c++11)
 
-include(clang-modules/ClangModules.cmake)
 include_directories(.)
+include(clang-modules/ClangModules.cmake)
 add_executable(nlohmann-test main.cpp)
 TARGET_LINK_LIBRARIES(nlohmann-test glog)
