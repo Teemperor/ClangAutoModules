@@ -1,4 +1,0 @@
-// provides: sys
-module sys [system] {
-  module types { header "sys/types.h" export * }
-}
