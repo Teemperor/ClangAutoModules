@@ -10,9 +10,6 @@ compiler:
   - gcc
   - clang
 
-notifications:
-  email: false
-
 arch:
   packages:
     - cmake
