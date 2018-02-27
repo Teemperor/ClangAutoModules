@@ -25,7 +25,8 @@ module stl14 [system] {
   module "cstddef" { header "cstddef" export * } // typedefs for types such as size_t, NULL and others
   module "cstdint" { header "cstdint" export * } // (since C++11) fixed-size types and limits of other types
   module "cstdio" { header "cstdio" export * } //  C-style input-output functions
-  module "cstdlib" { header "cstdlib" export * } // General purpose utilities: program control, dynamic memory allocation, random numbers, sort and search
+  // Removed to fix cyclic dependencies between clang's builtin module and this module.
+  //module "cstdlib" { header "cstdlib" export * } // General purpose utilities: program control, dynamic memory allocation, random numbers, sort and search
   module "cstring" { header "cstring" export * } // various narrow character string handling functions
   module "ctime" { header "ctime" export * } // C-style time/date utilites
   module "cuchar" { header "cuchar" export * } // (since C++11)  C-style Unicode character conversion functions
