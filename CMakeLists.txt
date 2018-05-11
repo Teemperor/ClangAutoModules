@@ -2,11 +2,12 @@ project(boost-compile)
 cmake_minimum_required(VERSION 3.0)
 
 option(use_modules "Build with C++ modules" On)
-
 if(use_modules MATCHES print)
   set(textual_check On)
   set(use_modules On)
 endif()
+
+option(cms "Test CMS version of boost" On)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
@@ -17,6 +18,8 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" AND use_modules)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-declarations")
   # embed all headers to stress size limit
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Xclang -fmodules-embed-all-files")
+
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-modules-import-nested-redundant")
 
   if (textual_check)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -H -Wno-everything")
@@ -36,10 +39,20 @@ endif()
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 
-include_directories(inc)
+if (cms)
+  include_directories(inc-cms)
+else()
+  include_directories(inc)
+endif()
 
 find_package(PythonLibs REQUIRED)
 include_directories(${PYTHON_INCLUDE_DIRS})
 
 add_library(cms-test OBJECT cms.cpp)
-add_library(boost-test OBJECT compile.cpp)
+
+if (cms)
+  add_library(boost-test-cms OBJECT compile-cms.cpp)
+else()
+  add_library(boost-test OBJECT compile.cpp)
+endif()
+

@@ -21,4 +21,5 @@ addons:
     sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-5.0']
     packages: ['clang-5.0', 'g++-7']
 script:
-  - ./scripts/run_travis.sh $COMPILER $CXX_COMPILER $MODULES
+  - ./scripts/run_travis.sh $COMPILER $CXX_COMPILER $MODULES On
+  - ./scripts/run_travis.sh $COMPILER $CXX_COMPILER $MODULES Off
