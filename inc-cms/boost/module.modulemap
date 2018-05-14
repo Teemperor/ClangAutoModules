@@ -79,42 +79,6 @@ module boost_accumulators {
   module "accumulators__statistics__weighted_variance" { header "accumulators/statistics/weighted_variance.hpp" export * }
   module "accumulators__statistics__with_error" { header "accumulators/statistics/with_error.hpp" export * }
 }
-module boost_align {
-  module "align__aligned_allocator_adaptor_forward" { header "align/aligned_allocator_adaptor_forward.hpp" export * }
-  module "align__aligned_allocator_adaptor" { header "align/aligned_allocator_adaptor.hpp" export * }
-  module "align__aligned_allocator_forward" { header "align/aligned_allocator_forward.hpp" export * }
-  module "align__aligned_allocator" { header "align/aligned_allocator.hpp" export * }
-  module "align__aligned_alloc" { header "align/aligned_alloc.hpp" export * }
-  module "align__aligned_delete_forward" { header "align/aligned_delete_forward.hpp" export * }
-  module "align__aligned_delete" { header "align/aligned_delete.hpp" export * }
-  module "align__align" { header "align/align.hpp" export * }
-  module "align__alignment_of_forward" { header "align/alignment_of_forward.hpp" export * }
-  module "align__alignment_of" { header "align/alignment_of.hpp" export * }
-  module "align__detail__addressof" { header "align/detail/addressof.hpp" export * }
-  module "align__detail__align_cxx11" { header "align/detail/align_cxx11.hpp" export * }
-  module "align__detail__aligned_alloc_android" { header "align/detail/aligned_alloc_android.hpp" export * }
-  module "align__detail__aligned_alloc" { header "align/detail/aligned_alloc.hpp" export * }
-  module "align__detail__aligned_alloc_macos" { header "align/detail/aligned_alloc_macos.hpp" export * }
-  module "align__detail__aligned_alloc_posix" { header "align/detail/aligned_alloc_posix.hpp" export * }
-  module "align__detail__align" { header "align/detail/align.hpp" export * }
-  module "align__detail__alignment_of_clang" { header "align/detail/alignment_of_clang.hpp" export * }
-  module "align__detail__alignment_of_codegear" { header "align/detail/alignment_of_codegear.hpp" export * }
-  module "align__detail__alignment_of_cxx11" { header "align/detail/alignment_of_cxx11.hpp" export * }
-  module "align__detail__alignment_of_gcc" { header "align/detail/alignment_of_gcc.hpp" export * }
-  module "align__detail__alignment_of" { header "align/detail/alignment_of.hpp" export * }
-  module "align__detail__alignment_of_msvc" { header "align/detail/alignment_of_msvc.hpp" export * }
-  module "align__detail__integral_constant" { header "align/detail/integral_constant.hpp" export * }
-  module "align__detail__is_aligned" { header "align/detail/is_aligned.hpp" export * }
-  module "align__detail__is_alignment_constant" { header "align/detail/is_alignment_constant.hpp" export * }
-  module "align__detail__is_alignment" { header "align/detail/is_alignment.hpp" export * }
-  module "align__detail__max_align" { header "align/detail/max_align.hpp" export * }
-  module "align__detail__min_size" { header "align/detail/min_size.hpp" export * }
-  module "align" { header "align.hpp" export * }
-  module "align__is_aligned" { header "align/is_aligned.hpp" export * }
-}
-module boost_aligned_storage {
-  module "aligned_storage" { header "aligned_storage.hpp" export * }
-}
 module boost_any {
   module "any" { header "any.hpp" export * }
 }
@@ -150,7 +114,7 @@ module boost_asio {
   module "asio__detail__date_time_fwd" { header "asio/detail/date_time_fwd.hpp" export * }
   module "asio__detail__dependent_type" { header "asio/detail/dependent_type.hpp" export * }
   module "asio__detail__dev_poll_reactor" { header "asio/detail/dev_poll_reactor.hpp" export * }
-  module "asio__detail__fenced_block" { header "asio/detail/fenced_block.hpp" export * }
+  //module "asio__detail__fenced_block" { header "asio/detail/fenced_block.hpp" export * }
   module "asio__detail__function" { header "asio/detail/function.hpp" export * }
   module "asio__detail__gcc_arm_fenced_block" { header "asio/detail/gcc_arm_fenced_block.hpp" export * }
   module "asio__detail__gcc_hppa_fenced_block" { header "asio/detail/gcc_hppa_fenced_block.hpp" export * }
@@ -411,7 +375,7 @@ module boost_bimap {
   module "bimap__container_adaptor__vector_map_adaptor" { header "bimap/container_adaptor/vector_map_adaptor.hpp" export * }
   module "bimap__detail__bimap_core" { header "bimap/detail/bimap_core.hpp" export * }
   module "bimap__detail__concept_tags" { header "bimap/detail/concept_tags.hpp" export * }
-  module "bimap__detail__debug__static_error" { header "bimap/detail/debug/static_error.hpp" export * }
+  //module "bimap__detail__debug__static_error" { header "bimap/detail/debug/static_error.hpp" export * }
   module "bimap__detail__generate_index_binder" { header "bimap/detail/generate_index_binder.hpp" export * }
   module "bimap__detail__generate_relation_binder" { header "bimap/detail/generate_relation_binder.hpp" export * }
   module "bimap__detail__generate_view_binder" { header "bimap/detail/generate_view_binder.hpp" export * }
@@ -431,7 +395,7 @@ module boost_bimap {
   module "bimap__property_map__set_support" { header "bimap/property_map/set_support.hpp" export * }
   module "bimap__property_map__unordered_set_support" { header "bimap/property_map/unordered_set_support.hpp" export * }
   module "bimap__relation__detail__access_builder" { header "bimap/relation/detail/access_builder.hpp" export * }
-  module "bimap__relation__detail__metadata_access_builder" { header "bimap/relation/detail/metadata_access_builder.hpp" export * }
+  //module "bimap__relation__detail__metadata_access_builder" { header "bimap/relation/detail/metadata_access_builder.hpp" export * }
   module "bimap__relation__detail__mutant" { header "bimap/relation/detail/mutant.hpp" export * }
   module "bimap__relation__detail__static_access_builder" { header "bimap/relation/detail/static_access_builder.hpp" export * }
   module "bimap__relation__detail__to_mutable_relation_functor" { header "bimap/relation/detail/to_mutable_relation_functor.hpp" export * }
@@ -508,31 +472,12 @@ module boost_cerrno {
 module boost_checked_delete {
   module "checked_delete" { header "checked_delete.hpp" export * }
 }
-module boost_chrono {
-  module "chrono" { header "chrono.hpp" export * }
-  module "chrono__ceil" { header "chrono/ceil.hpp" export * }
-  module "chrono__clock_string" { header "chrono/clock_string.hpp" export * }
-  module "chrono__config" { header "chrono/config.hpp" export * }
-  module "chrono__detail__no_warning__signed_unsigned_cmp" { header "chrono/detail/no_warning/signed_unsigned_cmp.hpp" export * }
-  module "chrono__detail__scan_keyword" { header "chrono/detail/scan_keyword.hpp" export * }
-  module "chrono__detail__static_assert" { header "chrono/detail/static_assert.hpp" export * }
-  module "chrono__duration" { header "chrono/duration.hpp" export * }
-  module "chrono__floor" { header "chrono/floor.hpp" export * }
-  module "chrono__io__duration_style" { header "chrono/io/duration_style.hpp" export * }
-  module "chrono__io__duration_units" { header "chrono/io/duration_units.hpp" export * }
-  module "chrono__io__ios_base_state" { header "chrono/io/ios_base_state.hpp" export * }
-  module "chrono__io__timezone" { header "chrono/io/timezone.hpp" export * }
-  module "chrono__io__utility__manip_base" { header "chrono/io/utility/manip_base.hpp" export * }
-  module "chrono__io__utility__to_string" { header "chrono/io/utility/to_string.hpp" export * }
-  module "chrono__round" { header "chrono/round.hpp" export * }
-  module "chrono__time_point" { header "chrono/time_point.hpp" export * }
-  module "chrono__typeof__boost__ratio" { header "chrono/typeof/boost/ratio.hpp" export * }
-}
-module boost_circular_buffer {
+
+/*module boost_circular_buffer {
   module "circular_buffer__debug" { header "circular_buffer/debug.hpp" export * }
   module "circular_buffer__details" { header "circular_buffer/details.hpp" export * }
   module "circular_buffer" { header "circular_buffer.hpp" export * }
-}
+} */
 module boost_circular_buffer_fwd {
   module "circular_buffer_fwd" { header "circular_buffer_fwd.hpp" export * }
 }
@@ -558,11 +503,6 @@ module boost_concept {
   module "concept__detail__has_constraints" { header "concept/detail/has_constraints.hpp" export * }
   module "concept__requires" { header "concept/requires.hpp" export * }
   module "concept__usage" { header "concept/usage.hpp" export * }
-}
-module boost_concept_check {
-  module "concept_check__borland" { header "concept_check/borland.hpp" export * }
-  module "concept_check__general" { header "concept_check/general.hpp" export * }
-  module "concept_check" { header "concept_check.hpp" export * }
 }
 /*
 FIXME: This SHOULD be textual, but people really like to include it form inside
@@ -603,7 +543,7 @@ module boost_container {
   module "container__detail__node_alloc_holder" { header "container/detail/node_alloc_holder.hpp" export * }
   module "container__detail__node_pool_impl" { header "container/detail/node_pool_impl.hpp" export * }
   module "container__detail__pair" { header "container/detail/pair.hpp" export * }
-  module "container__detail__placement_new" { header "container/detail/placement_new.hpp" export * }
+  //module "container__detail__placement_new" { header "container/detail/placement_new.hpp" export * }
   module "container__detail__singleton" { header "container/detail/singleton.hpp" export * }
   module "container__detail__std_fwd" { header "container/detail/std_fwd.hpp" export * }
   module "container__detail__transform_iterator" { header "container/detail/transform_iterator.hpp" export * }
@@ -765,7 +705,7 @@ module boost_format {
   module "format__detail__unset_macros" { header "format/detail/unset_macros.hpp" export * }
   module "format__detail__workarounds_stlport" { header "format/detail/workarounds_stlport.hpp" export * }
   module "format__exceptions" { header "format/exceptions.hpp" export * }
-  module "format__feed_args" { header "format/feed_args.hpp" export * }
+  //module "format__feed_args" { header "format/feed_args.hpp" export * }
   module "format__format_class" { header "format/format_class.hpp" export * }
   module "format__format_fwd" { header "format/format_fwd.hpp" export * }
   module "format" { header "format.hpp" export * }
@@ -1359,7 +1299,7 @@ module boost_fusion {
   module "fusion__support__is_sequence" { header "fusion/support/is_sequence.hpp" export * }
   module "fusion__support__is_view" { header "fusion/support/is_view.hpp" export * }
   module "fusion__support__iterator_base" { header "fusion/support/iterator_base.hpp" export * }
-  module "fusion__support__pair" { header "fusion/support/pair.hpp" export * }
+  //module "fusion__support__pair" { header "fusion/support/pair.hpp" export * }
   module "fusion__support__sequence_base" { header "fusion/support/sequence_base.hpp" export * }
   module "fusion__support__tag_of_fwd" { header "fusion/support/tag_of_fwd.hpp" export * }
   module "fusion__support__tag_of" { header "fusion/support/tag_of.hpp" export * }
@@ -2017,7 +1957,7 @@ module boost_graph_pending_random_wrapper {
     module "graph__adjacency_iterator" { header "graph/adjacency_iterator.hpp" export * }
     module "graph__adjacency_list" { header "graph/adjacency_list.hpp" export * }
     module "graph__adjacency_list_io" { header "graph/adjacency_list_io.hpp" export * }
-    module "graph__adjacency_matrix" { header "graph/adjacency_matrix.hpp" export * }
+    //module "graph__adjacency_matrix" { header "graph/adjacency_matrix.hpp" export * }
     module "graph__adj_list_serialize" { header "graph/adj_list_serialize.hpp" export * }
     module "graph__astar_search" { header "graph/astar_search.hpp" export * }
     module "graph__bc_clustering" { header "graph/bc_clustering.hpp" export * }
@@ -2045,7 +1985,7 @@ module boost_graph_pending_random_wrapper {
     module "graph__detail__adj_list_edge_iterator" { header "graph/detail/adj_list_edge_iterator.hpp" export * }
     module "graph__detail__augment" { header "graph/detail/augment.hpp" export * }
     module "graph__detail__d_ary_heap" { header "graph/detail/d_ary_heap.hpp" export * }
-    module "graph__detail__edge" { header "graph/detail/edge.hpp" export * }
+    //module "graph__detail__edge" { header "graph/detail/edge.hpp" export * }
     module "graph__detail__geodesic" { header "graph/detail/geodesic.hpp" export * }
     module "graph__detail__incidence_iterator" { header "graph/detail/incidence_iterator.hpp" export * }
     module "graph__detail__incremental_components" { header "graph/detail/incremental_components.hpp" export * }
@@ -2070,7 +2010,7 @@ module boost_graph_pending_random_wrapper {
     module "graph__fruchterman_reingold" { header "graph/fruchterman_reingold.hpp" export * }
     module "graph__geodesic_distance" { header "graph/geodesic_distance.hpp" export * }
     module "graph__graph_archetypes" { header "graph/graph_archetypes.hpp" export * }
-    module "graph__graph_as_tree" { header "graph/graph_as_tree.hpp" export * }
+    //module "graph__graph_as_tree" { header "graph/graph_as_tree.hpp" export * }
     module "graph__graph_concepts" { header "graph/graph_concepts.hpp" export * }
     module "graph__graphml" { header "graph/graphml.hpp" export * }
     module "graph__graph_selectors" { header "graph/graph_selectors.hpp" export * }
@@ -2108,7 +2048,7 @@ module boost_graph_pending_random_wrapper {
     module "graph__maximum_adjacency_search" { header "graph/maximum_adjacency_search.hpp" export * }
     module "graph__mcgregor_common_subgraphs" { header "graph/mcgregor_common_subgraphs.hpp" export * }
     module "graph__mesh_graph_generator" { header "graph/mesh_graph_generator.hpp" export * }
-    module "graph__metric_tsp_approx" { header "graph/metric_tsp_approx.hpp" export * }
+    //module "graph__metric_tsp_approx" { header "graph/metric_tsp_approx.hpp" export * }
     module "graph__minimum_degree_ordering" { header "graph/minimum_degree_ordering.hpp" export * }
     module "graph__named_function_params" { header "graph/named_function_params.hpp" export * }
     module "graph__named_graph" { header "graph/named_graph.hpp" export * }
@@ -2134,7 +2074,7 @@ module boost_graph_pending_random_wrapper {
     module "graph__random" { header "graph/random.hpp" export * }
     module "graph__random_layout" { header "graph/random_layout.hpp" export * }
     module "graph__random_spanning_tree" { header "graph/random_spanning_tree.hpp" export * }
-    module "graph__r_c_shortest_paths" { header "graph/r_c_shortest_paths.hpp" export * }
+    //module "graph__r_c_shortest_paths" { header "graph/r_c_shortest_paths.hpp" export * }
     module "graph__read_dimacs" { header "graph/read_dimacs.hpp" export * }
     module "graph__relax" { header "graph/relax.hpp" export * }
     module "graph__reverse_graph" { header "graph/reverse_graph.hpp" export * }
@@ -2154,7 +2094,7 @@ module boost_graph_pending_random_wrapper {
     module "graph__transitive_closure" { header "graph/transitive_closure.hpp" export * }
     module "graph__transitive_reduction" { header "graph/transitive_reduction.hpp" export * }
     module "graph__transpose_graph" { header "graph/transpose_graph.hpp" export * }
-    module "graph__tree_traits" { header "graph/tree_traits.hpp" export * }
+    //module "graph__tree_traits" { header "graph/tree_traits.hpp" export * }
     module "graph__two_bit_color_map" { header "graph/two_bit_color_map.hpp" export * }
     module "graph__two_graphs_common_spanning_trees" { header "graph/two_graphs_common_spanning_trees.hpp" export * }
     module "graph__undirected_dfs" { header "graph/undirected_dfs.hpp" export * }
@@ -2304,7 +2244,7 @@ module boost_interprocess {
   module "interprocess__detail__config_end" { header "interprocess/detail/config_end.hpp" export * }
   module "interprocess__detail__config_external_begin" { header "interprocess/detail/config_external_begin.hpp" export * }
   module "interprocess__detail__config_external_end" { header "interprocess/detail/config_external_end.hpp" export * }
-  module "interprocess__detail__file_locking_helpers" { header "interprocess/detail/file_locking_helpers.hpp" export * }
+  //module "interprocess__detail__file_locking_helpers" { header "interprocess/detail/file_locking_helpers.hpp" export * }
   module "interprocess__detail__in_place_interface" { header "interprocess/detail/in_place_interface.hpp" export * }
   module "interprocess__detail__intermodule_singleton_common" { header "interprocess/detail/intermodule_singleton_common.hpp" export * }
   module "interprocess__detail__intermodule_singleton" { header "interprocess/detail/intermodule_singleton.hpp" export * }
@@ -2454,7 +2394,13 @@ module boost_intrusive {
   module "intrusive__detail__key_nodeptr_comp" { header "intrusive/detail/key_nodeptr_comp.hpp" export * }
   module "intrusive__detail__list_iterator" { header "intrusive/detail/list_iterator.hpp" export * }
   module "intrusive__detail__list_node" { header "intrusive/detail/list_node.hpp" export * }
-  module "intrusive__detail__math" { header "intrusive/detail/math.hpp" export * }
+  /*
+  /home/teemperor/CERN/boost-compile/inc-cms/boost/intrusive/detail/math.hpp:241:41: error: missing '#include "boost/intrusive/detail/mpl.hpp"'; declaration of 'enable_if' must
+      be imported from module 'boost_intrusive.intrusive__detail__mpl' before it is required
+struct sqrt2_pow_max<SizeType, typename enable_if< numbits_eq<SizeType, 32> >::type>
+                                        ^
+  */
+  //module "intrusive__detail__math" { header "intrusive/detail/math.hpp" export * }
   module "intrusive__detail__mpl" { header "intrusive/detail/mpl.hpp" export * }
   module "intrusive__detail__node_holder" { header "intrusive/detail/node_holder.hpp" export * }
   module "intrusive__detail__parent_from_member" { header "intrusive/detail/parent_from_member.hpp" export * }
@@ -2467,7 +2413,13 @@ module boost_intrusive {
   module "intrusive__detail__slist_node" { header "intrusive/detail/slist_node.hpp" export * }
   module "intrusive__detail__std_fwd" { header "intrusive/detail/std_fwd.hpp" export * }
   module "intrusive__detail__to_raw_pointer" { header "intrusive/detail/to_raw_pointer.hpp" export * }
-  module "intrusive__detail__transform_iterator" { header "intrusive/detail/transform_iterator.hpp" export * }
+  /*
+  /home/teemperor/CERN/boost-compile/inc-cms/boost/intrusive/detail/transform_iterator.hpp:57:31: error: missing '#include "boost/intrusive/detail/iiterator.hpp"'; declaration
+      of 'iterator' must be imported from module 'boost_intrusive.intrusive__detail__iiterator' before it is required
+   : public boost::intrusive::iterator
+                              ^
+                              */
+  //module "intrusive__detail__transform_iterator" { header "intrusive/detail/transform_iterator.hpp" export * }
   module "intrusive__detail__tree_iterator" { header "intrusive/detail/tree_iterator.hpp" export * }
   module "intrusive__detail__tree_node" { header "intrusive/detail/tree_node.hpp" export * }
   module "intrusive__detail__uncast" { header "intrusive/detail/uncast.hpp" export * }
@@ -2478,7 +2430,13 @@ module boost_intrusive {
   module "intrusive__link_mode" { header "intrusive/link_mode.hpp" export * }
   module "intrusive__list_hook" { header "intrusive/list_hook.hpp" export * }
   module "intrusive__list" { header "intrusive/list.hpp" export * }
-  module "intrusive__member_value_traits" { header "intrusive/member_value_traits.hpp" export * }
+  /*
+  /home/teemperor/CERN/boost-compile/inc-cms/boost/intrusive/member_value_traits.hpp:68:37: error: missing '#include "boost/intrusive/detail/to_raw_pointer.hpp"'; declaration
+      of 'to_raw_pointer' must be imported from module 'boost_intrusive.intrusive__detail__to_raw_pointer' before it is required
+         (boost::intrusive::detail::to_raw_pointer(n), PtrToMember));
+                                    ^
+  */
+  //module "intrusive__member_value_traits" { header "intrusive/member_value_traits.hpp" export * }
   module "intrusive__options" { header "intrusive/options.hpp" export * }
   module "intrusive__pack_options" { header "intrusive/pack_options.hpp" export * }
   module "intrusive__parent_from_member" { header "intrusive/parent_from_member.hpp" export * }
@@ -2543,6 +2501,12 @@ module boost_iterator {
   module "iterator__transform_iterator" { header "iterator/transform_iterator.hpp" export * }
   module "iterator__zip_iterator" { header "iterator/zip_iterator.hpp" export * }
 
+module boost_concept_check {
+  module "concept_check__borland" { header "concept_check/borland.hpp" export * }
+  module "concept_check__general" { header "concept_check/general.hpp" export * }
+  module "concept_check" { header "concept_check.hpp" export * }
+}
+
 module boost_concept_archetype {
   module "concept_archetype" { header "concept_archetype.hpp" export * }
 }
@@ -2552,6 +2516,10 @@ module boost_indirect_reference {
 }
 module boost_pointee {
   module "pointee" { header "pointee.hpp" export * }
+}
+
+module boost_operators {
+  module "operators" { header "operators.hpp" export * }
 }
 }
 module boost_lambda {
@@ -2867,458 +2835,7 @@ module boost_mpi {
   module "mpi__detail__ignore_skeleton_oarchive" { header "mpi/detail/ignore_skeleton_oarchive.hpp" export * }
   module "mpi__skeleton_and_content_fwd" { header "mpi/skeleton_and_content_fwd.hpp" export * }
 }
-module boost_mpl {
-  module "mpl__accumulate" { header "mpl/accumulate.hpp" export * }
-  module "mpl__advance_fwd" { header "mpl/advance_fwd.hpp" export * }
-  module "mpl__advance" { header "mpl/advance.hpp" export * }
-  module "mpl__always" { header "mpl/always.hpp" export * }
-  module "mpl__and" { header "mpl/and.hpp" export * }
-  module "mpl__apply_fwd" { header "mpl/apply_fwd.hpp" export * }
-  module "mpl__apply" { header "mpl/apply.hpp" export * }
-  module "mpl__apply_wrap" { header "mpl/apply_wrap.hpp" export * }
-  module "mpl__arg_fwd" { header "mpl/arg_fwd.hpp" export * }
-  module "mpl__arg" { header "mpl/arg.hpp" export * }
-  module "mpl__arithmetic" { header "mpl/arithmetic.hpp" export * }
-  module "mpl__as_sequence" { header "mpl/as_sequence.hpp" export * }
-  module "mpl__assert" { header "mpl/assert.hpp" export * }
-  module "mpl__at_fwd" { header "mpl/at_fwd.hpp" export * }
-  module "mpl__at" { header "mpl/at.hpp" export * }
-  module "mpl__aux___adl_barrier" { header "mpl/aux_/adl_barrier.hpp" export * }
-  module "mpl__aux___advance_backward" { header "mpl/aux_/advance_backward.hpp" export * }
-  module "mpl__aux___advance_forward" { header "mpl/aux_/advance_forward.hpp" export * }
-  module "mpl__aux___apply_1st" { header "mpl/aux_/apply_1st.hpp" export * }
-  module "mpl__aux___arg_typedef" { header "mpl/aux_/arg_typedef.hpp" export * }
-  module "mpl__aux___arity" { header "mpl/aux_/arity.hpp" export * }
-  module "mpl__aux___arity_spec" { header "mpl/aux_/arity_spec.hpp" export * }
-  module "mpl__aux___at_impl" { header "mpl/aux_/at_impl.hpp" export * }
-  module "mpl__aux___back_impl" { header "mpl/aux_/back_impl.hpp" export * }
-  module "mpl__aux___basic_bind" { header "mpl/aux_/basic_bind.hpp" export * }
-  module "mpl__aux___begin_end_impl" { header "mpl/aux_/begin_end_impl.hpp" export * }
-  module "mpl__aux___clear_impl" { header "mpl/aux_/clear_impl.hpp" export * }
-  module "mpl__aux___common_name_wknd" { header "mpl/aux_/common_name_wknd.hpp" export * }
-  module "mpl__aux___config__adl" { header "mpl/aux_/config/adl.hpp" export * }
-  module "mpl__aux___config__arrays" { header "mpl/aux_/config/arrays.hpp" export * }
-  module "mpl__aux___config__bcc" { header "mpl/aux_/config/bcc.hpp" export * }
-  module "mpl__aux___config__bind" { header "mpl/aux_/config/bind.hpp" export * }
-  module "mpl__aux___config__compiler" { header "mpl/aux_/config/compiler.hpp" export * }
-  module "mpl__aux___config__ctps" { header "mpl/aux_/config/ctps.hpp" export * }
-  module "mpl__aux___config__dependent_nttp" { header "mpl/aux_/config/dependent_nttp.hpp" export * }
-  module "mpl__aux___config__dmc_ambiguous_ctps" { header "mpl/aux_/config/dmc_ambiguous_ctps.hpp" export * }
-  module "mpl__aux___config__dtp" { header "mpl/aux_/config/dtp.hpp" export * }
-  module "mpl__aux___config__eti" { header "mpl/aux_/config/eti.hpp" export * }
-  module "mpl__aux___config__forwarding" { header "mpl/aux_/config/forwarding.hpp" export * }
-  module "mpl__aux___config__gcc" { header "mpl/aux_/config/gcc.hpp" export * }
-  module "mpl__aux___config__gpu" { header "mpl/aux_/config/gpu.hpp" export * }
-  module "mpl__aux___config__has_apply" { header "mpl/aux_/config/has_apply.hpp" export * }
-  module "mpl__aux___config__has_xxx" { header "mpl/aux_/config/has_xxx.hpp" export * }
-  module "mpl__aux___config__integral" { header "mpl/aux_/config/integral.hpp" export * }
-  module "mpl__aux___config__intel" { header "mpl/aux_/config/intel.hpp" export * }
-  module "mpl__aux___config__lambda" { header "mpl/aux_/config/lambda.hpp" export * }
-  module "mpl__aux___config__msvc" { header "mpl/aux_/config/msvc.hpp" export * }
-  module "mpl__aux___config__msvc_typename" { header "mpl/aux_/config/msvc_typename.hpp" export * }
-  module "mpl__aux___config__nttp" { header "mpl/aux_/config/nttp.hpp" export * }
-  module "mpl__aux___config__operators" { header "mpl/aux_/config/operators.hpp" export * }
-  module "mpl__aux___config__overload_resolution" { header "mpl/aux_/config/overload_resolution.hpp" export * }
-  module "mpl__aux___config__preprocessor" { header "mpl/aux_/config/preprocessor.hpp" export * }
-  module "mpl__aux___config__static_constant" { header "mpl/aux_/config/static_constant.hpp" export * }
-  module "mpl__aux___config__ttp" { header "mpl/aux_/config/ttp.hpp" export * }
-  module "mpl__aux___config__typeof" { header "mpl/aux_/config/typeof.hpp" export * }
-  module "mpl__aux___config__use_preprocessed" { header "mpl/aux_/config/use_preprocessed.hpp" export * }
-  module "mpl__aux___config__workaround" { header "mpl/aux_/config/workaround.hpp" export * }
-  module "mpl__aux___contains_impl" { header "mpl/aux_/contains_impl.hpp" export * }
-  module "mpl__aux___count_impl" { header "mpl/aux_/count_impl.hpp" export * }
-  module "mpl__aux___empty_impl" { header "mpl/aux_/empty_impl.hpp" export * }
-  module "mpl__aux___erase_impl" { header "mpl/aux_/erase_impl.hpp" export * }
-  module "mpl__aux___erase_key_impl" { header "mpl/aux_/erase_key_impl.hpp" export * }
-  module "mpl__aux___filter_iter" { header "mpl/aux_/filter_iter.hpp" export * }
-  module "mpl__aux___find_if_pred" { header "mpl/aux_/find_if_pred.hpp" export * }
-  module "mpl__aux___fold_impl" { header "mpl/aux_/fold_impl.hpp" export * }
-  module "mpl__aux___fold_op" { header "mpl/aux_/fold_op.hpp" export * }
-  module "mpl__aux___fold_pred" { header "mpl/aux_/fold_pred.hpp" export * }
-  module "mpl__aux___front_impl" { header "mpl/aux_/front_impl.hpp" export * }
-  module "mpl__aux___full_lambda" { header "mpl/aux_/full_lambda.hpp" export * }
-  module "mpl__aux___has_apply" { header "mpl/aux_/has_apply.hpp" export * }
-  module "mpl__aux___has_begin" { header "mpl/aux_/has_begin.hpp" export * }
-  module "mpl__aux___has_key_impl" { header "mpl/aux_/has_key_impl.hpp" export * }
-  module "mpl__aux___has_rebind" { header "mpl/aux_/has_rebind.hpp" export * }
-  module "mpl__aux___has_size" { header "mpl/aux_/has_size.hpp" export * }
-  module "mpl__aux___has_tag" { header "mpl/aux_/has_tag.hpp" export * }
-  module "mpl__aux___has_type" { header "mpl/aux_/has_type.hpp" export * }
-  module "mpl__aux___inserter_algorithm" { header "mpl/aux_/inserter_algorithm.hpp" export * }
-  module "mpl__aux___insert_impl" { header "mpl/aux_/insert_impl.hpp" export * }
-  module "mpl__aux___insert_range_impl" { header "mpl/aux_/insert_range_impl.hpp" export * }
-  module "mpl__aux___is_msvc_eti_arg" { header "mpl/aux_/is_msvc_eti_arg.hpp" export * }
-  module "mpl__aux___iter_apply" { header "mpl/aux_/iter_apply.hpp" export * }
-  module "mpl__aux___iter_fold_if_impl" { header "mpl/aux_/iter_fold_if_impl.hpp" export * }
-  module "mpl__aux___iter_fold_impl" { header "mpl/aux_/iter_fold_impl.hpp" export * }
-  module "mpl__aux___iter_push_front" { header "mpl/aux_/iter_push_front.hpp" export * }
-  module "mpl__aux___joint_iter" { header "mpl/aux_/joint_iter.hpp" export * }
-  module "mpl__aux___lambda_arity_param" { header "mpl/aux_/lambda_arity_param.hpp" export * }
-  module "mpl__aux___lambda_no_ctps" { header "mpl/aux_/lambda_no_ctps.hpp" export * }
-  module "mpl__aux___lambda_spec" { header "mpl/aux_/lambda_spec.hpp" export * }
-  module "mpl__aux___lambda_support" { header "mpl/aux_/lambda_support.hpp" export * }
-  module "mpl__aux___largest_int" { header "mpl/aux_/largest_int.hpp" export * }
-  module "mpl__aux___msvc_eti_base" { header "mpl/aux_/msvc_eti_base.hpp" export * }
-  module "mpl__aux___msvc_never_true" { header "mpl/aux_/msvc_never_true.hpp" export * }
-  module "mpl__aux___msvc_type" { header "mpl/aux_/msvc_type.hpp" export * }
-  module "mpl__aux___na_assert" { header "mpl/aux_/na_assert.hpp" export * }
-  module "mpl__aux___na_fwd" { header "mpl/aux_/na_fwd.hpp" export * }
-  module "mpl__aux___na" { header "mpl/aux_/na.hpp" export * }
-  module "mpl__aux___na_spec" { header "mpl/aux_/na_spec.hpp" export * }
-  module "mpl__aux___nested_type_wknd" { header "mpl/aux_/nested_type_wknd.hpp" export * }
-  module "mpl__aux___nttp_decl" { header "mpl/aux_/nttp_decl.hpp" export * }
-  module "mpl__aux___numeric_cast_utils" { header "mpl/aux_/numeric_cast_utils.hpp" export * }
-  module "mpl__aux___numeric_op" { header "mpl/aux_/numeric_op.hpp" export * }
-  module "mpl__aux___O1_size_impl" { header "mpl/aux_/O1_size_impl.hpp" export * }
-  module "mpl__aux___order_impl" { header "mpl/aux_/order_impl.hpp" export * }
-  module "mpl__aux___overload_names" { header "mpl/aux_/overload_names.hpp" export * }
-  module "mpl__aux___partition_op" { header "mpl/aux_/partition_op.hpp" export * }
-  module "mpl__aux___pop_back_impl" { header "mpl/aux_/pop_back_impl.hpp" export * }
-  module "mpl__aux___pop_front_impl" { header "mpl/aux_/pop_front_impl.hpp" export * }
-  module "mpl__aux___preprocessed__bcc551__bind_fwd" { header "mpl/aux_/preprocessed/bcc551/bind_fwd.hpp" export * }
-  module "mpl__aux___preprocessed__bcc551__quote" { header "mpl/aux_/preprocessed/bcc551/quote.hpp" export * }
-  module "mpl__aux___preprocessed__bcc__bind_fwd" { header "mpl/aux_/preprocessed/bcc/bind_fwd.hpp" export * }
-  module "mpl__aux___preprocessed__bcc_pre590__bind_fwd" { header "mpl/aux_/preprocessed/bcc_pre590/bind_fwd.hpp" export * }
-  module "mpl__aux___preprocessed__bcc_pre590__quote" { header "mpl/aux_/preprocessed/bcc_pre590/quote.hpp" export * }
-  module "mpl__aux___preprocessed__dmc__template_arity" { header "mpl/aux_/preprocessed/dmc/template_arity.hpp" export * }
-  module "mpl__aux___preprocessed__msvc60__apply_fwd" { header "mpl/aux_/preprocessed/msvc60/apply_fwd.hpp" export * }
-  module "mpl__aux___preprocessed__msvc60__bind_fwd" { header "mpl/aux_/preprocessed/msvc60/bind_fwd.hpp" export * }
-  module "mpl__aux___preprocessed__msvc60__quote" { header "mpl/aux_/preprocessed/msvc60/quote.hpp" export * }
-  module "mpl__aux___preprocessed__msvc70__apply_fwd" { header "mpl/aux_/preprocessed/msvc70/apply_fwd.hpp" export * }
-  module "mpl__aux___preprocessed__msvc70__bind_fwd" { header "mpl/aux_/preprocessed/msvc70/bind_fwd.hpp" export * }
-  module "mpl__aux___preprocessed__mwcw__template_arity" { header "mpl/aux_/preprocessed/mwcw/template_arity.hpp" export * }
-  module "mpl__aux___preprocessed__no_ttp__quote" { header "mpl/aux_/preprocessed/no_ttp/quote.hpp" export * }
-  module "mpl__aux___preprocessed__plain__template_arity" { header "mpl/aux_/preprocessed/plain/template_arity.hpp" export * }
-  module "mpl__aux___preprocessor__add" { header "mpl/aux_/preprocessor/add.hpp" export * }
-  module "mpl__aux___preprocessor__default_params" { header "mpl/aux_/preprocessor/default_params.hpp" export * }
-  module "mpl__aux___preprocessor__def_params_tail" { header "mpl/aux_/preprocessor/def_params_tail.hpp" export * }
-  module "mpl__aux___preprocessor__enum" { header "mpl/aux_/preprocessor/enum.hpp" export * }
-  module "mpl__aux___preprocessor__ext_params" { header "mpl/aux_/preprocessor/ext_params.hpp" export * }
-  module "mpl__aux___preprocessor__filter_params" { header "mpl/aux_/preprocessor/filter_params.hpp" export * }
-  module "mpl__aux___preprocessor__is_seq" { header "mpl/aux_/preprocessor/is_seq.hpp" export * }
-  module "mpl__aux___preprocessor__params" { header "mpl/aux_/preprocessor/params.hpp" export * }
-  module "mpl__aux___preprocessor__partial_spec_params" { header "mpl/aux_/preprocessor/partial_spec_params.hpp" export * }
-  module "mpl__aux___preprocessor__range" { header "mpl/aux_/preprocessor/range.hpp" export * }
-  module "mpl__aux___preprocessor__repeat" { header "mpl/aux_/preprocessor/repeat.hpp" export * }
-  module "mpl__aux___preprocessor__sub" { header "mpl/aux_/preprocessor/sub.hpp" export * }
-  module "mpl__aux___preprocessor__token_equal" { header "mpl/aux_/preprocessor/token_equal.hpp" export * }
-  module "mpl__aux___preprocessor__tuple" { header "mpl/aux_/preprocessor/tuple.hpp" export * }
-  module "mpl__aux___ptr_to_ref" { header "mpl/aux_/ptr_to_ref.hpp" export * }
-  module "mpl__aux___push_back_impl" { header "mpl/aux_/push_back_impl.hpp" export * }
-  module "mpl__aux___push_front_impl" { header "mpl/aux_/push_front_impl.hpp" export * }
-  module "mpl__aux___range_c__back" { header "mpl/aux_/range_c/back.hpp" export * }
-  module "mpl__aux___range_c__empty" { header "mpl/aux_/range_c/empty.hpp" export * }
-  module "mpl__aux___range_c__front" { header "mpl/aux_/range_c/front.hpp" export * }
-  module "mpl__aux___range_c__O1_size" { header "mpl/aux_/range_c/O1_size.hpp" export * }
-  module "mpl__aux___range_c__size" { header "mpl/aux_/range_c/size.hpp" export * }
-  module "mpl__aux___range_c__tag" { header "mpl/aux_/range_c/tag.hpp" export * }
-  module "mpl__aux___reverse_fold_impl" { header "mpl/aux_/reverse_fold_impl.hpp" export * }
-  module "mpl__aux___reverse_iter_fold_impl" { header "mpl/aux_/reverse_iter_fold_impl.hpp" export * }
-  module "mpl__aux___single_element_iter" { header "mpl/aux_/single_element_iter.hpp" export * }
-  module "mpl__aux___size_impl" { header "mpl/aux_/size_impl.hpp" export * }
-  module "mpl__aux___sort_impl" { header "mpl/aux_/sort_impl.hpp" export * }
-  module "mpl__aux___static_cast" { header "mpl/aux_/static_cast.hpp" export * }
-  module "mpl__aux___template_arity_fwd" { header "mpl/aux_/template_arity_fwd.hpp" export * }
-  module "mpl__aux___template_arity" { header "mpl/aux_/template_arity.hpp" export * }
-  module "mpl__aux___test__assert" { header "mpl/aux_/test/assert.hpp" export * }
-  module "mpl__aux___test__data" { header "mpl/aux_/test/data.hpp" export * }
-  module "mpl__aux___test__test_case" { header "mpl/aux_/test/test_case.hpp" export * }
-  module "mpl__aux___traits_lambda_spec" { header "mpl/aux_/traits_lambda_spec.hpp" export * }
-  module "mpl__aux___transform_iter" { header "mpl/aux_/transform_iter.hpp" export * }
-  module "mpl__aux___type_wrapper" { header "mpl/aux_/type_wrapper.hpp" export * }
-  module "mpl__aux___unwrap" { header "mpl/aux_/unwrap.hpp" export * }
-  module "mpl__aux___value_wknd" { header "mpl/aux_/value_wknd.hpp" export * }
-  module "mpl__aux___yes_no" { header "mpl/aux_/yes_no.hpp" export * }
-  module "mpl__back_fwd" { header "mpl/back_fwd.hpp" export * }
-  module "mpl__back" { header "mpl/back.hpp" export * }
-  module "mpl__back_inserter" { header "mpl/back_inserter.hpp" export * }
-  module "mpl__base" { header "mpl/base.hpp" export * }
-  module "mpl__begin_end_fwd" { header "mpl/begin_end_fwd.hpp" export * }
-  module "mpl__begin_end" { header "mpl/begin_end.hpp" export * }
-  module "mpl__begin" { header "mpl/begin.hpp" export * }
-  module "mpl__bind_fwd" { header "mpl/bind_fwd.hpp" export * }
-  module "mpl__bind" { header "mpl/bind.hpp" export * }
-  module "mpl__bitand" { header "mpl/bitand.hpp" export * }
-  module "mpl__bitor" { header "mpl/bitor.hpp" export * }
-  module "mpl__bitwise" { header "mpl/bitwise.hpp" export * }
-  module "mpl__bitxor" { header "mpl/bitxor.hpp" export * }
-  module "mpl__bool_fwd" { header "mpl/bool_fwd.hpp" export * }
-  module "mpl__bool" { header "mpl/bool.hpp" export * }
-  module "mpl__char_fwd" { header "mpl/char_fwd.hpp" export * }
-  module "mpl__char" { header "mpl/char.hpp" export * }
-  module "mpl__clear_fwd" { header "mpl/clear_fwd.hpp" export * }
-  module "mpl__clear" { header "mpl/clear.hpp" export * }
-  module "mpl__comparison" { header "mpl/comparison.hpp" export * }
-  module "mpl__contains_fwd" { header "mpl/contains_fwd.hpp" export * }
-  module "mpl__contains" { header "mpl/contains.hpp" export * }
-  module "mpl__copy" { header "mpl/copy.hpp" export * }
-  module "mpl__copy_if" { header "mpl/copy_if.hpp" export * }
-  module "mpl__count_fwd" { header "mpl/count_fwd.hpp" export * }
-  module "mpl__count" { header "mpl/count.hpp" export * }
-  module "mpl__count_if" { header "mpl/count_if.hpp" export * }
-  module "mpl__deque" { header "mpl/deque.hpp" export * }
-  module "mpl__deref" { header "mpl/deref.hpp" export * }
-  module "mpl__distance_fwd" { header "mpl/distance_fwd.hpp" export * }
-  module "mpl__distance" { header "mpl/distance.hpp" export * }
-  module "mpl__divides" { header "mpl/divides.hpp" export * }
-  module "mpl__empty_base" { header "mpl/empty_base.hpp" export * }
-  module "mpl__empty_fwd" { header "mpl/empty_fwd.hpp" export * }
-  module "mpl__empty" { header "mpl/empty.hpp" export * }
-  module "mpl__empty_sequence" { header "mpl/empty_sequence.hpp" export * }
-  module "mpl__end" { header "mpl/end.hpp" export * }
-  module "mpl__equal" { header "mpl/equal.hpp" export * }
-  module "mpl__equal_to" { header "mpl/equal_to.hpp" export * }
-  module "mpl__erase_fwd" { header "mpl/erase_fwd.hpp" export * }
-  module "mpl__erase" { header "mpl/erase.hpp" export * }
-  module "mpl__erase_key_fwd" { header "mpl/erase_key_fwd.hpp" export * }
-  module "mpl__erase_key" { header "mpl/erase_key.hpp" export * }
-  module "mpl__eval_if" { header "mpl/eval_if.hpp" export * }
-  module "mpl__filter_view" { header "mpl/filter_view.hpp" export * }
-  module "mpl__find" { header "mpl/find.hpp" export * }
-  module "mpl__find_if" { header "mpl/find_if.hpp" export * }
-  module "mpl__fold" { header "mpl/fold.hpp" export * }
-  // cyclic dependency utility <-> mpl module "mpl__for_each" { header "mpl/for_each.hpp" export * }
-  module "mpl__front_fwd" { header "mpl/front_fwd.hpp" export * }
-  module "mpl__front" { header "mpl/front.hpp" export * }
-  module "mpl__front_inserter" { header "mpl/front_inserter.hpp" export * }
-  module "mpl__greater_equal" { header "mpl/greater_equal.hpp" export * }
-  module "mpl__greater" { header "mpl/greater.hpp" export * }
-  module "mpl__has_key_fwd" { header "mpl/has_key_fwd.hpp" export * }
-  module "mpl__has_key" { header "mpl/has_key.hpp" export * }
-  module "mpl__has_xxx" { header "mpl/has_xxx.hpp" export * }
-  module "mpl__identity" { header "mpl/identity.hpp" export * }
-  module "mpl__if" { header "mpl/if.hpp" export * }
-  module "mpl__index_if" { header "mpl/index_if.hpp" export * }
-  module "mpl__index_of" { header "mpl/index_of.hpp" export * }
-  module "mpl__inherit" { header "mpl/inherit.hpp" export * }
-  module "mpl__inherit_linearly" { header "mpl/inherit_linearly.hpp" export * }
-  module "mpl__inserter" { header "mpl/inserter.hpp" export * }
-  module "mpl__insert_fwd" { header "mpl/insert_fwd.hpp" export * }
-  module "mpl__insert" { header "mpl/insert.hpp" export * }
-  module "mpl__insert_range_fwd" { header "mpl/insert_range_fwd.hpp" export * }
-  module "mpl__insert_range" { header "mpl/insert_range.hpp" export * }
-  module "mpl__integral_c_fwd" { header "mpl/integral_c_fwd.hpp" export * }
-  module "mpl__integral_c" { header "mpl/integral_c.hpp" export * }
-  module "mpl__integral_c_tag" { header "mpl/integral_c_tag.hpp" export * }
-  module "mpl__int_fwd" { header "mpl/int_fwd.hpp" export * }
-  module "mpl__int" { header "mpl/int.hpp" export * }
-  module "mpl__is_placeholder" { header "mpl/is_placeholder.hpp" export * }
-  module "mpl__is_sequence" { header "mpl/is_sequence.hpp" export * }
-  module "mpl__iterator_category" { header "mpl/iterator_category.hpp" export * }
-  module "mpl__iterator_range" { header "mpl/iterator_range.hpp" export * }
-  module "mpl__iterator_tags" { header "mpl/iterator_tags.hpp" export * }
-  module "mpl__iter_fold" { header "mpl/iter_fold.hpp" export * }
-  module "mpl__iter_fold_if" { header "mpl/iter_fold_if.hpp" export * }
-  module "mpl__joint_view" { header "mpl/joint_view.hpp" export * }
-  module "mpl__key_type_fwd" { header "mpl/key_type_fwd.hpp" export * }
-  module "mpl__key_type" { header "mpl/key_type.hpp" export * }
-  module "mpl__lambda_fwd" { header "mpl/lambda_fwd.hpp" export * }
-  module "mpl__lambda" { header "mpl/lambda.hpp" export * }
-  module "mpl__less_equal" { header "mpl/less_equal.hpp" export * }
-  module "mpl__less" { header "mpl/less.hpp" export * }
-  module "mpl__limits__arity" { header "mpl/limits/arity.hpp" export * }
-  module "mpl__limits__list" { header "mpl/limits/list.hpp" export * }
-  module "mpl__limits__map" { header "mpl/limits/map.hpp" export * }
-  module "mpl__limits__set" { header "mpl/limits/set.hpp" export * }
-  module "mpl__limits__string" { header "mpl/limits/string.hpp" export * }
-  module "mpl__limits__unrolling" { header "mpl/limits/unrolling.hpp" export * }
-  module "mpl__limits__vector" { header "mpl/limits/vector.hpp" export * }
-  module "mpl__list__aux___begin_end" { header "mpl/list/aux_/begin_end.hpp" export * }
-  module "mpl__list__aux___clear" { header "mpl/list/aux_/clear.hpp" export * }
-  module "mpl__list__aux___empty" { header "mpl/list/aux_/empty.hpp" export * }
-  module "mpl__list__aux___front" { header "mpl/list/aux_/front.hpp" export * }
-  module "mpl__list__aux___item" { header "mpl/list/aux_/item.hpp" export * }
-  module "mpl__list__aux___iterator" { header "mpl/list/aux_/iterator.hpp" export * }
-  module "mpl__list__aux___numbered_c" { header "mpl/list/aux_/numbered_c.hpp" export * }
-  module "mpl__list__aux___numbered" { header "mpl/list/aux_/numbered.hpp" export * }
-  module "mpl__list__aux___O1_size" { header "mpl/list/aux_/O1_size.hpp" export * }
-  module "mpl__list__aux___pop_front" { header "mpl/list/aux_/pop_front.hpp" export * }
-  module "mpl__list__aux___push_back" { header "mpl/list/aux_/push_back.hpp" export * }
-  module "mpl__list__aux___push_front" { header "mpl/list/aux_/push_front.hpp" export * }
-  module "mpl__list__aux___size" { header "mpl/list/aux_/size.hpp" export * }
-  module "mpl__list__aux___tag" { header "mpl/list/aux_/tag.hpp" export * }
-  module "mpl__list_c" { header "mpl/list_c.hpp" export * }
-  module "mpl__list" { header "mpl/list.hpp" export * }
-  module "mpl__list__list0_c" { header "mpl/list/list0_c.hpp" export * }
-  module "mpl__list__list0" { header "mpl/list/list0.hpp" export * }
-  module "mpl__list__list10_c" { header "mpl/list/list10_c.hpp" export * }
-  module "mpl__list__list10" { header "mpl/list/list10.hpp" export * }
-  module "mpl__list__list20_c" { header "mpl/list/list20_c.hpp" export * }
-  module "mpl__list__list20" { header "mpl/list/list20.hpp" export * }
-  module "mpl__list__list30_c" { header "mpl/list/list30_c.hpp" export * }
-  module "mpl__list__list30" { header "mpl/list/list30.hpp" export * }
-  module "mpl__list__list40_c" { header "mpl/list/list40_c.hpp" export * }
-  module "mpl__list__list40" { header "mpl/list/list40.hpp" export * }
-  module "mpl__list__list50_c" { header "mpl/list/list50_c.hpp" export * }
-  module "mpl__list__list50" { header "mpl/list/list50.hpp" export * }
-  module "mpl__logical" { header "mpl/logical.hpp" export * }
-  module "mpl__long_fwd" { header "mpl/long_fwd.hpp" export * }
-  module "mpl__long" { header "mpl/long.hpp" export * }
-  module "mpl__lower_bound" { header "mpl/lower_bound.hpp" export * }
-  module "mpl__map__aux___at_impl" { header "mpl/map/aux_/at_impl.hpp" export * }
-  module "mpl__map__aux___begin_end_impl" { header "mpl/map/aux_/begin_end_impl.hpp" export * }
-  module "mpl__map__aux___clear_impl" { header "mpl/map/aux_/clear_impl.hpp" export * }
-  module "mpl__map__aux___contains_impl" { header "mpl/map/aux_/contains_impl.hpp" export * }
-  module "mpl__map__aux___empty_impl" { header "mpl/map/aux_/empty_impl.hpp" export * }
-  module "mpl__map__aux___erase_impl" { header "mpl/map/aux_/erase_impl.hpp" export * }
-  module "mpl__map__aux___erase_key_impl" { header "mpl/map/aux_/erase_key_impl.hpp" export * }
-  module "mpl__map__aux___has_key_impl" { header "mpl/map/aux_/has_key_impl.hpp" export * }
-  module "mpl__map__aux___insert_impl" { header "mpl/map/aux_/insert_impl.hpp" export * }
-  module "mpl__map__aux___item" { header "mpl/map/aux_/item.hpp" export * }
-  module "mpl__map__aux___iterator" { header "mpl/map/aux_/iterator.hpp" export * }
-  module "mpl__map__aux___key_type_impl" { header "mpl/map/aux_/key_type_impl.hpp" export * }
-  module "mpl__map__aux___map0" { header "mpl/map/aux_/map0.hpp" export * }
-  module "mpl__map__aux___numbered" { header "mpl/map/aux_/numbered.hpp" export * }
-  module "mpl__map__aux___size_impl" { header "mpl/map/aux_/size_impl.hpp" export * }
-  module "mpl__map__aux___tag" { header "mpl/map/aux_/tag.hpp" export * }
-  module "mpl__map__aux___value_type_impl" { header "mpl/map/aux_/value_type_impl.hpp" export * }
-  module "mpl__map" { header "mpl/map.hpp" export * }
-  module "mpl__map__map0" { header "mpl/map/map0.hpp" export * }
-  module "mpl__map__map10" { header "mpl/map/map10.hpp" export * }
-  module "mpl__map__map20" { header "mpl/map/map20.hpp" export * }
-  module "mpl__map__map30" { header "mpl/map/map30.hpp" export * }
-  module "mpl__map__map40" { header "mpl/map/map40.hpp" export * }
-  module "mpl__map__map50" { header "mpl/map/map50.hpp" export * }
-  module "mpl__math__fixed_c" { header "mpl/math/fixed_c.hpp" export * }
-  module "mpl__math__is_even" { header "mpl/math/is_even.hpp" export * }
-  module "mpl__math__rational_c" { header "mpl/math/rational_c.hpp" export * }
-  module "mpl__max_element" { header "mpl/max_element.hpp" export * }
-  module "mpl__max" { header "mpl/max.hpp" export * }
-  module "mpl__min_element" { header "mpl/min_element.hpp" export * }
-  module "mpl__min" { header "mpl/min.hpp" export * }
-  module "mpl__min_max" { header "mpl/min_max.hpp" export * }
-  module "mpl__minus" { header "mpl/minus.hpp" export * }
-  module "mpl__modulus" { header "mpl/modulus.hpp" export * }
-  module "mpl__multiplies" { header "mpl/multiplies.hpp" export * }
-  module "mpl__multiset__aux___count_impl" { header "mpl/multiset/aux_/count_impl.hpp" export * }
-  module "mpl__multiset__aux___insert_impl" { header "mpl/multiset/aux_/insert_impl.hpp" export * }
-  module "mpl__multiset__aux___item" { header "mpl/multiset/aux_/item.hpp" export * }
-  module "mpl__multiset__aux___multiset0" { header "mpl/multiset/aux_/multiset0.hpp" export * }
-  module "mpl__multiset__aux___tag" { header "mpl/multiset/aux_/tag.hpp" export * }
-  module "mpl__multiset__multiset0" { header "mpl/multiset/multiset0.hpp" export * }
-  module "mpl__negate" { header "mpl/negate.hpp" export * }
-  module "mpl__next" { header "mpl/next.hpp" export * }
-  module "mpl__next_prior" { header "mpl/next_prior.hpp" export * }
-  module "mpl__not_equal_to" { header "mpl/not_equal_to.hpp" export * }
-  module "mpl__not" { header "mpl/not.hpp" export * }
-  module "mpl__numeric_cast" { header "mpl/numeric_cast.hpp" export * }
-  module "mpl__O1_size_fwd" { header "mpl/O1_size_fwd.hpp" export * }
-  module "mpl__O1_size" { header "mpl/O1_size.hpp" export * }
-  module "mpl__order_fwd" { header "mpl/order_fwd.hpp" export * }
-  module "mpl__order" { header "mpl/order.hpp" export * }
-  module "mpl__or" { header "mpl/or.hpp" export * }
-  module "mpl__pair" { header "mpl/pair.hpp" export * }
-  module "mpl__pair_view" { header "mpl/pair_view.hpp" export * }
-  module "mpl__partition" { header "mpl/partition.hpp" export * }
-  module "mpl__placeholders" { header "mpl/placeholders.hpp" export * }
-  module "mpl__plus" { header "mpl/plus.hpp" export * }
-  module "mpl__pop_back_fwd" { header "mpl/pop_back_fwd.hpp" export * }
-  module "mpl__pop_back" { header "mpl/pop_back.hpp" export * }
-  module "mpl__pop_front_fwd" { header "mpl/pop_front_fwd.hpp" export * }
-  module "mpl__pop_front" { header "mpl/pop_front.hpp" export * }
-  module "mpl__print" { header "mpl/print.hpp" export * }
-  module "mpl__prior" { header "mpl/prior.hpp" export * }
-  module "mpl__protect" { header "mpl/protect.hpp" export * }
-  module "mpl__push_back_fwd" { header "mpl/push_back_fwd.hpp" export * }
-  module "mpl__push_back" { header "mpl/push_back.hpp" export * }
-  module "mpl__push_front_fwd" { header "mpl/push_front_fwd.hpp" export * }
-  module "mpl__push_front" { header "mpl/push_front.hpp" export * }
-  module "mpl__quote" { header "mpl/quote.hpp" export * }
-  module "mpl__range_c" { header "mpl/range_c.hpp" export * }
-  module "mpl__remove" { header "mpl/remove.hpp" export * }
-  module "mpl__remove_if" { header "mpl/remove_if.hpp" export * }
-  module "mpl__replace" { header "mpl/replace.hpp" export * }
-  module "mpl__replace_if" { header "mpl/replace_if.hpp" export * }
-  module "mpl__reverse_fold" { header "mpl/reverse_fold.hpp" export * }
-  module "mpl__reverse" { header "mpl/reverse.hpp" export * }
-  module "mpl__reverse_iter_fold" { header "mpl/reverse_iter_fold.hpp" export * }
-  module "mpl__same_as" { header "mpl/same_as.hpp" export * }
-  module "mpl__sequence_tag_fwd" { header "mpl/sequence_tag_fwd.hpp" export * }
-  module "mpl__sequence_tag" { header "mpl/sequence_tag.hpp" export * }
-  module "mpl__set__aux___at_impl" { header "mpl/set/aux_/at_impl.hpp" export * }
-  module "mpl__set__aux___begin_end_impl" { header "mpl/set/aux_/begin_end_impl.hpp" export * }
-  module "mpl__set__aux___clear_impl" { header "mpl/set/aux_/clear_impl.hpp" export * }
-  module "mpl__set__aux___empty_impl" { header "mpl/set/aux_/empty_impl.hpp" export * }
-  module "mpl__set__aux___has_key_impl" { header "mpl/set/aux_/has_key_impl.hpp" export * }
-  module "mpl__set__aux___iterator" { header "mpl/set/aux_/iterator.hpp" export * }
-  module "mpl__set__aux___key_type_impl" { header "mpl/set/aux_/key_type_impl.hpp" export * }
-  module "mpl__set__aux___numbered_c" { header "mpl/set/aux_/numbered_c.hpp" export * }
-  module "mpl__set__aux___numbered" { header "mpl/set/aux_/numbered.hpp" export * }
-  module "mpl__set__aux___set0" { header "mpl/set/aux_/set0.hpp" export * }
-  module "mpl__set__aux___size_impl" { header "mpl/set/aux_/size_impl.hpp" export * }
-  module "mpl__set__aux___tag" { header "mpl/set/aux_/tag.hpp" export * }
-  module "mpl__set__aux___value_type_impl" { header "mpl/set/aux_/value_type_impl.hpp" export * }
-  module "mpl__set_c" { header "mpl/set_c.hpp" export * }
-  module "mpl__set" { header "mpl/set.hpp" export * }
-  module "mpl__set__set0_c" { header "mpl/set/set0_c.hpp" export * }
-  module "mpl__set__set0" { header "mpl/set/set0.hpp" export * }
-  module "mpl__set__set10_c" { header "mpl/set/set10_c.hpp" export * }
-  module "mpl__set__set10" { header "mpl/set/set10.hpp" export * }
-  module "mpl__set__set20_c" { header "mpl/set/set20_c.hpp" export * }
-  module "mpl__set__set20" { header "mpl/set/set20.hpp" export * }
-  module "mpl__set__set30_c" { header "mpl/set/set30_c.hpp" export * }
-  module "mpl__set__set30" { header "mpl/set/set30.hpp" export * }
-  module "mpl__set__set40_c" { header "mpl/set/set40_c.hpp" export * }
-  module "mpl__set__set40" { header "mpl/set/set40.hpp" export * }
-  module "mpl__set__set50_c" { header "mpl/set/set50_c.hpp" export * }
-  module "mpl__set__set50" { header "mpl/set/set50.hpp" export * }
-  module "mpl__shift_left" { header "mpl/shift_left.hpp" export * }
-  module "mpl__shift_right" { header "mpl/shift_right.hpp" export * }
-  module "mpl__single_view" { header "mpl/single_view.hpp" export * }
-  module "mpl__size_fwd" { header "mpl/size_fwd.hpp" export * }
-  module "mpl__size" { header "mpl/size.hpp" export * }
-  module "mpl__sizeof" { header "mpl/sizeof.hpp" export * }
-  module "mpl__size_t_fwd" { header "mpl/size_t_fwd.hpp" export * }
-  module "mpl__size_t" { header "mpl/size_t.hpp" export * }
-  module "mpl__sort" { header "mpl/sort.hpp" export * }
-  module "mpl__stable_partition" { header "mpl/stable_partition.hpp" export * }
-  module "mpl__string" { header "mpl/string.hpp" export * }
-  module "mpl__switch" { header "mpl/switch.hpp" export * }
-  module "mpl__tag" { header "mpl/tag.hpp" export * }
-  module "mpl__times" { header "mpl/times.hpp" export * }
-  module "mpl__transform" { header "mpl/transform.hpp" export * }
-  module "mpl__transform_view" { header "mpl/transform_view.hpp" export * }
-  module "mpl__unique" { header "mpl/unique.hpp" export * }
-  module "mpl__unpack_args" { header "mpl/unpack_args.hpp" export * }
-  module "mpl__upper_bound" { header "mpl/upper_bound.hpp" export * }
-  module "mpl__value_type_fwd" { header "mpl/value_type_fwd.hpp" export * }
-  module "mpl__value_type" { header "mpl/value_type.hpp" export * }
-  module "mpl__vector__aux___at" { header "mpl/vector/aux_/at.hpp" export * }
-  module "mpl__vector__aux___back" { header "mpl/vector/aux_/back.hpp" export * }
-  module "mpl__vector__aux___begin_end" { header "mpl/vector/aux_/begin_end.hpp" export * }
-  module "mpl__vector__aux___clear" { header "mpl/vector/aux_/clear.hpp" export * }
-  module "mpl__vector__aux___empty" { header "mpl/vector/aux_/empty.hpp" export * }
-  module "mpl__vector__aux___front" { header "mpl/vector/aux_/front.hpp" export * }
-  module "mpl__vector__aux___item" { header "mpl/vector/aux_/item.hpp" export * }
-  module "mpl__vector__aux___iterator" { header "mpl/vector/aux_/iterator.hpp" export * }
-  module "mpl__vector__aux___numbered_c" { header "mpl/vector/aux_/numbered_c.hpp" export * }
-  module "mpl__vector__aux___numbered" { header "mpl/vector/aux_/numbered.hpp" export * }
-  module "mpl__vector__aux___O1_size" { header "mpl/vector/aux_/O1_size.hpp" export * }
-  module "mpl__vector__aux___pop_back" { header "mpl/vector/aux_/pop_back.hpp" export * }
-  module "mpl__vector__aux___pop_front" { header "mpl/vector/aux_/pop_front.hpp" export * }
-  module "mpl__vector__aux___push_back" { header "mpl/vector/aux_/push_back.hpp" export * }
-  module "mpl__vector__aux___push_front" { header "mpl/vector/aux_/push_front.hpp" export * }
-  module "mpl__vector__aux___size" { header "mpl/vector/aux_/size.hpp" export * }
-  module "mpl__vector__aux___tag" { header "mpl/vector/aux_/tag.hpp" export * }
-  module "mpl__vector__aux___vector0" { header "mpl/vector/aux_/vector0.hpp" export * }
-  module "mpl__vector_c" { header "mpl/vector_c.hpp" export * }
-  module "mpl__vector" { header "mpl/vector.hpp" export * }
-  module "mpl__vector__vector0_c" { header "mpl/vector/vector0_c.hpp" export * }
-  module "mpl__vector__vector0" { header "mpl/vector/vector0.hpp" export * }
-  module "mpl__vector__vector10_c" { header "mpl/vector/vector10_c.hpp" export * }
-  module "mpl__vector__vector10" { header "mpl/vector/vector10.hpp" export * }
-  module "mpl__vector__vector20_c" { header "mpl/vector/vector20_c.hpp" export * }
-  module "mpl__vector__vector20" { header "mpl/vector/vector20.hpp" export * }
-  module "mpl__vector__vector30_c" { header "mpl/vector/vector30_c.hpp" export * }
-  module "mpl__vector__vector30" { header "mpl/vector/vector30.hpp" export * }
-  module "mpl__vector__vector40_c" { header "mpl/vector/vector40_c.hpp" export * }
-  module "mpl__vector__vector40" { header "mpl/vector/vector40.hpp" export * }
-  module "mpl__vector__vector50_c" { header "mpl/vector/vector50_c.hpp" export * }
-  module "mpl__vector__vector50" { header "mpl/vector/vector50.hpp" export * }
-  module "mpl__void_fwd" { header "mpl/void_fwd.hpp" export * }
-  module "mpl__void" { header "mpl/void.hpp" export * }
-  module "mpl__zip_view" { header "mpl/zip_view.hpp" export * }
-}
+
 module boost_msm {
   module "msm__active_state_switching_policies" { header "msm/active_state_switching_policies.hpp" export * }
   module "msm__back__args" { header "msm/back/args.hpp" export * }
@@ -3497,9 +3014,6 @@ module boost_multiprecision {
   module "multiprecision__rational_adaptor" { header "multiprecision/rational_adaptor.hpp" export * }
   module "multiprecision__traits__extract_exponent_type" { header "multiprecision/traits/extract_exponent_type.hpp" export * }
 }
-module boost_next_prior {
-  module "next_prior" { header "next_prior.hpp" export * }
-}
 module boost_noncopyable {
   module "noncopyable" { header "noncopyable.hpp" export * }
 }
@@ -3514,9 +3028,6 @@ module boost_none_t {
 }
 module boost_non_type {
   module "non_type" { header "non_type.hpp" export * }
-}
-module boost_operators {
-  module "operators" { header "operators.hpp" export * }
 }
 module boost_operators_v1 {
 }
@@ -3591,16 +3102,6 @@ module boost_polymorphic_cast {
   module "polymorphic_cast" { header "polymorphic_cast.hpp" export * }
 }
 module boost_polymorphic_pointer_cast {
-}
-module boost_pool {
-  module "pool__detail__guard" { header "pool/detail/guard.hpp" export * }
-  module "pool__detail__mutex" { header "pool/detail/mutex.hpp" export * }
-  module "pool__object_pool" { header "pool/object_pool.hpp" export * }
-  module "pool__pool_alloc" { header "pool/pool_alloc.hpp" export * }
-  module "pool__poolfwd" { header "pool/poolfwd.hpp" export * }
-  module "pool__pool" { header "pool/pool.hpp" export * }
-  module "pool__simple_segregated_storage" { header "pool/simple_segregated_storage.hpp" export * }
-  module "pool__singleton_pool" { header "pool/singleton_pool.hpp" export * }
 }
 /*
 module boost_preprocessor {
@@ -3924,7 +3425,7 @@ module boost_ptr_container {
   module "ptr_container__indirect_fun" { header "ptr_container/indirect_fun.hpp" export * }
   module "ptr_container__nullable" { header "ptr_container/nullable.hpp" export * }
   module "ptr_container__ptr_array" { header "ptr_container/ptr_array.hpp" export * }
-  module "ptr_container__ptr_circular_buffer" { header "ptr_container/ptr_circular_buffer.hpp" export * }
+  //module "ptr_container__ptr_circular_buffer" { header "ptr_container/ptr_circular_buffer.hpp" export * }
   module "ptr_container__ptr_container" { header "ptr_container/ptr_container.hpp" export * }
   module "ptr_container__ptr_deque" { header "ptr_container/ptr_deque.hpp" export * }
   module "ptr_container__ptr_inserter" { header "ptr_container/ptr_inserter.hpp" export * }
@@ -4157,10 +3658,47 @@ module boost_qvm {
 // This modules form a cycle, so we want to create a wrapper module for them
 module boost_modules_wrapper {
 
+module boost_pool {
+  module "pool__detail__guard" { header "pool/detail/guard.hpp" export * }
+  module "pool__detail__mutex" { header "pool/detail/mutex.hpp" export * }
+  module "pool__object_pool" { header "pool/object_pool.hpp" export * }
+  module "pool__pool_alloc" { header "pool/pool_alloc.hpp" export * }
+  module "pool__poolfwd" { header "pool/poolfwd.hpp" export * }
+  module "pool__pool" { header "pool/pool.hpp" export * }
+  module "pool__simple_segregated_storage" { header "pool/simple_segregated_storage.hpp" export * }
+  module "pool__singleton_pool" { header "pool/singleton_pool.hpp" export * }
+}
+module boost_chrono {
+  module "chrono" { header "chrono.hpp" export * }
+  module "chrono__ceil" { header "chrono/ceil.hpp" export * }
+  module "chrono__clock_string" { header "chrono/clock_string.hpp" export * }
+  module "chrono__config" { header "chrono/config.hpp" export * }
+  module "chrono__detail__no_warning__signed_unsigned_cmp" { header "chrono/detail/no_warning/signed_unsigned_cmp.hpp" export * }
+  module "chrono__detail__scan_keyword" { header "chrono/detail/scan_keyword.hpp" export * }
+  module "chrono__detail__static_assert" { header "chrono/detail/static_assert.hpp" export * }
+  module "chrono__duration" { header "chrono/duration.hpp" export * }
+  module "chrono__floor" { header "chrono/floor.hpp" export * }
+  module "chrono__io__duration_style" { header "chrono/io/duration_style.hpp" export * }
+  module "chrono__io__duration_units" { header "chrono/io/duration_units.hpp" export * }
+  module "chrono__io__ios_base_state" { header "chrono/io/ios_base_state.hpp" export * }
+  module "chrono__io__timezone" { header "chrono/io/timezone.hpp" export * }
+  module "chrono__io__utility__manip_base" { header "chrono/io/utility/manip_base.hpp" export * }
+  module "chrono__io__utility__to_string" { header "chrono/io/utility/to_string.hpp" export * }
+  module "chrono__round" { header "chrono/round.hpp" export * }
+  module "chrono__time_point" { header "chrono/time_point.hpp" export * }
+  module "chrono__typeof__boost__ratio" { header "chrono/typeof/boost/ratio.hpp" export * }
+}
+
 module boost_thread {
   module "thread" { header "thread.hpp" export * }
   module "thread__thread" { header "thread/thread.hpp" export * }
-  module "thread__caller_context" { header "thread/caller_context.hpp" export * }
+  /*
+  /home/teemperor/CERN/boost-compile/inc-cms/boost/thread/caller_context.hpp:45:7: error: missing '#include "boost/io_fwd.hpp"'; declaration of 'io' must be imported from
+      module 'boost_io_fwd.io_fwd' before it is required
+      io::ios_flags_saver ifs(os);
+      ^
+  */
+  //module "thread__caller_context" { header "thread/caller_context.hpp" export * }
   module "thread__csbl__deque" { header "thread/csbl/deque.hpp" export * }
   module "thread__csbl__functional" { header "thread/csbl/functional.hpp" export * }
   module "thread__csbl__list" { header "thread/csbl/list.hpp" export * }
@@ -4330,7 +3868,7 @@ module boost_date_time {
   module "date_time__gregorian__gregorian" { header "date_time/gregorian/gregorian.hpp" export * }
   module "date_time__gregorian__gregorian_io" { header "date_time/gregorian/gregorian_io.hpp" export * }
   module "date_time__gregorian__gregorian_types" { header "date_time/gregorian/gregorian_types.hpp" export * }
-  module "date_time__gregorian__greg_serialize" { header "date_time/gregorian/greg_serialize.hpp" export * }
+  //module "date_time__gregorian__greg_serialize" { header "date_time/gregorian/greg_serialize.hpp" export * }
   module "date_time__gregorian__greg_weekday" { header "date_time/gregorian/greg_weekday.hpp" export * }
   module "date_time__gregorian__greg_year" { header "date_time/gregorian/greg_year.hpp" export * }
   module "date_time__gregorian__greg_ymd" { header "date_time/gregorian/greg_ymd.hpp" export * }
@@ -4480,7 +4018,7 @@ module boost_date_time {
     module "units__base_units__us__teaspoon" { header "units/base_units/us/teaspoon.hpp" export * }
     module "units__base_units__us__ton" { header "units/base_units/us/ton.hpp" export * }
     module "units__base_units__us__yard" { header "units/base_units/us/yard.hpp" export * }
-    module "units__cmath" { header "units/cmath.hpp" export * }
+    //module "units__cmath" { header "units/cmath.hpp" export * }
     module "units__config" { header "units/config.hpp" export * }
     module "units__conversion" { header "units/conversion.hpp" export * }
     module "units__derived_dimension" { header "units/derived_dimension.hpp" export * }
@@ -5413,7 +4951,7 @@ In file included from /home/teemperor/boost-compile/inc/boost/spirit/home/karma/
     module "spirit__home__qi__string__lit" { header "spirit/home/qi/string/lit.hpp" export * }
     module "spirit__home__qi__string__symbols" { header "spirit/home/qi/string/symbols.hpp" export * }
     module "spirit__home__qi__string__tst" { header "spirit/home/qi/string/tst.hpp" export * }
-    module "spirit__home__qi__string__tst_map" { header "spirit/home/qi/string/tst_map.hpp" export * }
+    //module "spirit__home__qi__string__tst_map" { header "spirit/home/qi/string/tst_map.hpp" export * }
     module "spirit__home__qi__what" { header "spirit/home/qi/what.hpp" export * }
     module "spirit__home__support__action_dispatch" { header "spirit/home/support/action_dispatch.hpp" export * }
     module "spirit__home__support__adapt_adt_attributes" { header "spirit/home/support/adapt_adt_attributes.hpp" export * }
@@ -5556,7 +5094,7 @@ namespace boost { namespace spirit { namespace detail
     module "spirit__home__x3__char" { header "spirit/home/x3/char.hpp" export * }
     module "spirit__home__x3__char__literal_char" { header "spirit/home/x3/char/literal_char.hpp" export * }
     module "spirit__home__x3__char__negated_char_parser" { header "spirit/home/x3/char/negated_char_parser.hpp" export * }
-    module "spirit__home__x3__char__unicode" { header "spirit/home/x3/char/unicode.hpp" export * }
+    //module "spirit__home__x3__char__unicode" { header "spirit/home/x3/char/unicode.hpp" export * }
     module "spirit__home__x3__core__call" { header "spirit/home/x3/core/call.hpp" export * }
     module "spirit__home__x3__core" { header "spirit/home/x3/core.hpp" export * }
     module "spirit__home__x3__core__parse" { header "spirit/home/x3/core/parse.hpp" export * }
@@ -5571,7 +5109,7 @@ namespace boost { namespace spirit { namespace detail
     module "spirit__home__x3" { header "spirit/home/x3.hpp" export * }
     module "spirit__home__x3__nonterminal__debug_handler_state" { header "spirit/home/x3/nonterminal/debug_handler_state.hpp" export * }
     module "spirit__home__x3__nonterminal__detail__transform_attribute" { header "spirit/home/x3/nonterminal/detail/transform_attribute.hpp" export * }
-    module "spirit__home__x3__nonterminal__simple_trace" { header "spirit/home/x3/nonterminal/simple_trace.hpp" export * }
+    //module "spirit__home__x3__nonterminal__simple_trace" { header "spirit/home/x3/nonterminal/simple_trace.hpp" export * }
     module "spirit__home__x3__numeric__bool_policies" { header "spirit/home/x3/numeric/bool_policies.hpp" export * }
     module "spirit__home__x3__numeric__int" { header "spirit/home/x3/numeric/int.hpp" export * }
     module "spirit__home__x3__numeric__real" { header "spirit/home/x3/numeric/real.hpp" export * }
@@ -5596,7 +5134,7 @@ namespace boost { namespace spirit { namespace detail
     module "spirit__home__x3__support__numeric_utils__extract_real" { header "spirit/home/x3/support/numeric_utils/extract_real.hpp" export * }
     module "spirit__home__x3__support__numeric_utils__pow10" { header "spirit/home/x3/support/numeric_utils/pow10.hpp" export * }
     module "spirit__home__x3__support__numeric_utils__sign" { header "spirit/home/x3/support/numeric_utils/sign.hpp" export * }
-    module "spirit__home__x3__support__subcontext" { header "spirit/home/x3/support/subcontext.hpp" export * }
+    //module "spirit__home__x3__support__subcontext" { header "spirit/home/x3/support/subcontext.hpp" export * }
     module "spirit__home__x3__support__traits__attribute_category" { header "spirit/home/x3/support/traits/attribute_category.hpp" export * }
     module "spirit__home__x3__support__traits__attribute_of" { header "spirit/home/x3/support/traits/attribute_of.hpp" export * }
     module "spirit__home__x3__support__traits__attribute_type" { header "spirit/home/x3/support/traits/attribute_type.hpp" export * }
@@ -5930,7 +5468,7 @@ namespace boost { namespace spirit { namespace detail
     module "lexical_cast__detail__converter_lexical" { header "lexical_cast/detail/converter_lexical.hpp" export * }
     module "lexical_cast__detail__converter_numeric" { header "lexical_cast/detail/converter_numeric.hpp" export * }
     module "lexical_cast__detail__inf_nan" { header "lexical_cast/detail/inf_nan.hpp" export * }
-    module "lexical_cast__detail__is_character" { header "lexical_cast/detail/is_character.hpp" export * }
+    //module "lexical_cast__detail__is_character" { header "lexical_cast/detail/is_character.hpp" export * }
     module "lexical_cast__detail__lcast_char_constants" { header "lexical_cast/detail/lcast_char_constants.hpp" export * }
     module "lexical_cast__detail__lcast_unsigned_converters" { header "lexical_cast/detail/lcast_unsigned_converters.hpp" export * }
     module "lexical_cast" { header "lexical_cast.hpp" export * }
@@ -6110,7 +5648,7 @@ namespace boost { namespace spirit { namespace detail
     module "variant__detail__forced_return" { header "variant/detail/forced_return.hpp" export * }
     module "variant__detail__generic_result_type" { header "variant/detail/generic_result_type.hpp" export * }
     module "variant__detail__hash_variant" { header "variant/detail/hash_variant.hpp" export * }
-    module "variant__detail__initializer" { header "variant/detail/initializer.hpp" export * }
+    //module "variant__detail__initializer" { header "variant/detail/initializer.hpp" export * }
     module "variant__detail__make_variant_list" { header "variant/detail/make_variant_list.hpp" export * }
     module "variant__detail__move" { header "variant/detail/move.hpp" export * }
     module "variant__detail__substitute_fwd" { header "variant/detail/substitute_fwd.hpp" export * }
@@ -6135,20 +5673,20 @@ namespace boost { namespace spirit { namespace detail
     module "serialization__binary_object" { header "serialization/binary_object.hpp" export * }
     module "serialization__bitset" { header "serialization/bitset.hpp" export * }
     module "serialization__collection_size_type" { header "serialization/collection_size_type.hpp" export * }
-    module "serialization__collections_load_imp" { header "serialization/collections_load_imp.hpp" export * }
-    module "serialization__collections_save_imp" { header "serialization/collections_save_imp.hpp" export * }
+    //module "serialization__collections_load_imp" { header "serialization/collections_load_imp.hpp" export * }
+    //module "serialization__collections_save_imp" { header "serialization/collections_save_imp.hpp" export * }
     module "serialization__collection_traits" { header "serialization/collection_traits.hpp" export * }
     module "serialization__complex" { header "serialization/complex.hpp" export * }
     module "serialization__config" { header "serialization/config.hpp" export * }
     module "serialization__deque" { header "serialization/deque.hpp" export * }
     module "serialization__detail__get_data" { header "serialization/detail/get_data.hpp" export * }
-    module "serialization__detail__stack_constructor" { header "serialization/detail/stack_constructor.hpp" export * }
+    //module "serialization__detail__stack_constructor" { header "serialization/detail/stack_constructor.hpp" export * }
     module "serialization__ephemeral" { header "serialization/ephemeral.hpp" export * }
     module "serialization__export" { header "serialization/export.hpp" export * }
     module "serialization__extended_type_info" { header "serialization/extended_type_info.hpp" export * }
     module "serialization__extended_type_info_no_rtti" { header "serialization/extended_type_info_no_rtti.hpp" export * }
     module "serialization__extended_type_info_typeid" { header "serialization/extended_type_info_typeid.hpp" export * }
-    module "serialization__factory" { header "serialization/factory.hpp" export * }
+    //module "serialization__factory" { header "serialization/factory.hpp" export * }
     module "serialization__force_include" { header "serialization/force_include.hpp" export * }
     module "serialization__forward_list" { header "serialization/forward_list.hpp" export * }
     module "serialization__hash_collections_load_imp" { header "serialization/hash_collections_load_imp.hpp" export * }
@@ -6161,19 +5699,19 @@ namespace boost { namespace spirit { namespace detail
     module "serialization__map" { header "serialization/map.hpp" export * }
     module "serialization__nvp" { header "serialization/nvp.hpp" export * }
     module "serialization__optional" { header "serialization/optional.hpp" export * }
-    module "serialization__priority_queue" { header "serialization/priority_queue.hpp" export * }
-    module "serialization__queue" { header "serialization/queue.hpp" export * }
+    //module "serialization__priority_queue" { header "serialization/priority_queue.hpp" export * }
+    //module "serialization__queue" { header "serialization/queue.hpp" export * }
     module "serialization__scoped_ptr" { header "serialization/scoped_ptr.hpp" export * }
     module "serialization__serialization" { header "serialization/serialization.hpp" export * }
     module "serialization__set" { header "serialization/set.hpp" export * }
-    module "serialization__shared_ptr_helper" { header "serialization/shared_ptr_helper.hpp" export * }
-    module "serialization__shared_ptr" { header "serialization/shared_ptr.hpp" export * }
+    //module "serialization__shared_ptr_helper" { header "serialization/shared_ptr_helper.hpp" export * }
+    //module "serialization__shared_ptr" { header "serialization/shared_ptr.hpp" export * }
     module "serialization__singleton" { header "serialization/singleton.hpp" export * }
     module "serialization__slist" { header "serialization/slist.hpp" export * }
     module "serialization__smart_cast" { header "serialization/smart_cast.hpp" export * }
     module "serialization__split_free" { header "serialization/split_free.hpp" export * }
     module "serialization__split_member" { header "serialization/split_member.hpp" export * }
-    module "serialization__stack" { header "serialization/stack.hpp" export * }
+    //module "serialization__stack" { header "serialization/stack.hpp" export * }
     module "serialization__state_saver" { header "serialization/state_saver.hpp" export * }
     module "serialization__static_warning" { header "serialization/static_warning.hpp" export * }
     module "serialization__string" { header "serialization/string.hpp" export * }
@@ -6196,7 +5734,7 @@ namespace boost { namespace spirit { namespace detail
     module "serialization__version" { header "serialization/version.hpp" export * }
     module "serialization__void_cast_fwd" { header "serialization/void_cast_fwd.hpp" export * }
     module "serialization__void_cast" { header "serialization/void_cast.hpp" export * }
-    module "serialization__weak_ptr" { header "serialization/weak_ptr.hpp" export * }
+    //module "serialization__weak_ptr" { header "serialization/weak_ptr.hpp" export * }
     module "serialization__wrapper" { header "serialization/wrapper.hpp" export * }
   }
   module boost_archive {
@@ -6280,6 +5818,7 @@ class back_insert_iterator<basic_string<char> > : public
     module "archive__xml_oarchive" { header "archive/xml_oarchive.hpp" export * }
     module "archive__xml_woarchive" { header "archive/xml_woarchive.hpp" export * }
   }
+  /*
   module boost_numeric {
     module "numeric__conversion__bounds" { header "numeric/conversion/bounds.hpp" export * }
     module "numeric__conversion__cast" { header "numeric/conversion/cast.hpp" export * }
@@ -6468,7 +6007,7 @@ class back_insert_iterator<basic_string<char> > : public
     module "numeric__ublas__vector_of_vector" { header "numeric/ublas/vector_of_vector.hpp" export * }
     module "numeric__ublas__vector_proxy" { header "numeric/ublas/vector_proxy.hpp" export * }
     module "numeric__ublas__vector_sparse" { header "numeric/ublas/vector_sparse.hpp" export * }
-  }
+  } */
   module boost_cast {
     module "cast" { header "cast.hpp" export * }
   }
@@ -6481,7 +6020,7 @@ class back_insert_iterator<basic_string<char> > : public
     module "range__adaptor__formatted" { header "range/adaptor/formatted.hpp" export * }
     module "range__adaptor__indexed" { header "range/adaptor/indexed.hpp" export * }
     module "range__adaptor__indirected" { header "range/adaptor/indirected.hpp" export * }
-    module "range__adaptor__map" { header "range/adaptor/map.hpp" export * }
+    //module "range__adaptor__map" { header "range/adaptor/map.hpp" export * }
     module "range__adaptor__replaced" { header "range/adaptor/replaced.hpp" export * }
     module "range__adaptor__replaced_if" { header "range/adaptor/replaced_if.hpp" export * }
     module "range__adaptor__reversed" { header "range/adaptor/reversed.hpp" export * }
@@ -6490,7 +6029,7 @@ class back_insert_iterator<basic_string<char> > : public
     module "range__adaptor__strided" { header "range/adaptor/strided.hpp" export * }
     module "range__adaptor__tokenized" { header "range/adaptor/tokenized.hpp" export * }
     module "range__adaptor__transformed" { header "range/adaptor/transformed.hpp" export * }
-    module "range__adaptor__type_erased" { header "range/adaptor/type_erased.hpp" export * }
+    //module "range__adaptor__type_erased" { header "range/adaptor/type_erased.hpp" export * }
     module "range__adaptor__uniqued" { header "range/adaptor/uniqued.hpp" export * }
     module "range__algorithm__adjacent_find" { header "range/algorithm/adjacent_find.hpp" export * }
     module "range__algorithm__binary_search" { header "range/algorithm/binary_search.hpp" export * }
@@ -6556,7 +6095,7 @@ class back_insert_iterator<basic_string<char> > : public
     module "range__algorithm__unique_copy" { header "range/algorithm/unique_copy.hpp" export * }
     module "range__algorithm__unique" { header "range/algorithm/unique.hpp" export * }
     module "range__algorithm__upper_bound" { header "range/algorithm/upper_bound.hpp" export * }
-    module "range__any_range" { header "range/any_range.hpp" export * }
+   // module "range__any_range" { header "range/any_range.hpp" export * }
     module "range__as_array" { header "range/as_array.hpp" export * }
     module "range__as_literal" { header "range/as_literal.hpp" export * }
     module "range__begin" { header "range/begin.hpp" export * }
@@ -6568,7 +6107,7 @@ class back_insert_iterator<basic_string<char> > : public
     module "range__const_reverse_iterator" { header "range/const_reverse_iterator.hpp" export * }
     module "range__counting_range" { header "range/counting_range.hpp" export * }
     module "range__detail__any_iterator_buffer" { header "range/detail/any_iterator_buffer.hpp" export * }
-    module "range__detail__any_iterator" { header "range/detail/any_iterator.hpp" export * }
+    //module "range__detail__any_iterator" { header "range/detail/any_iterator.hpp" export * }
     // Breaks compilation:
     /*
     While building module 'boost_asio' imported from /home/teemperor/boost-compile/inc/boost/asio.hpp:20:
@@ -6690,6 +6229,655 @@ module boost_shared_container_iterator {
 // These modules form a cycle, so we have to merge them into one module.
 module boost_utils {
 
+module boost_next_prior {
+  module "next_prior" { header "next_prior.hpp" export * }
+}
+module boost_align {
+  module "align__aligned_allocator_adaptor_forward" { header "align/aligned_allocator_adaptor_forward.hpp" export * }
+  module "align__aligned_allocator_adaptor" { header "align/aligned_allocator_adaptor.hpp" export * }
+  module "align__aligned_allocator_forward" { header "align/aligned_allocator_forward.hpp" export * }
+  module "align__aligned_allocator" { header "align/aligned_allocator.hpp" export * }
+  module "align__aligned_alloc" { header "align/aligned_alloc.hpp" export * }
+  module "align__aligned_delete_forward" { header "align/aligned_delete_forward.hpp" export * }
+  module "align__aligned_delete" { header "align/aligned_delete.hpp" export * }
+  module "align__align" { header "align/align.hpp" export * }
+  module "align__alignment_of_forward" { header "align/alignment_of_forward.hpp" export * }
+  module "align__alignment_of" { header "align/alignment_of.hpp" export * }
+  module "align__detail__addressof" { header "align/detail/addressof.hpp" export * }
+  module "align__detail__align_cxx11" { header "align/detail/align_cxx11.hpp" export * }
+  module "align__detail__aligned_alloc_android" { header "align/detail/aligned_alloc_android.hpp" export * }
+  module "align__detail__aligned_alloc" { header "align/detail/aligned_alloc.hpp" export * }
+  module "align__detail__aligned_alloc_macos" { header "align/detail/aligned_alloc_macos.hpp" export * }
+  module "align__detail__aligned_alloc_posix" { header "align/detail/aligned_alloc_posix.hpp" export * }
+  module "align__detail__align" { header "align/detail/align.hpp" export * }
+  module "align__detail__alignment_of_clang" { header "align/detail/alignment_of_clang.hpp" export * }
+  module "align__detail__alignment_of_codegear" { header "align/detail/alignment_of_codegear.hpp" export * }
+  module "align__detail__alignment_of_cxx11" { header "align/detail/alignment_of_cxx11.hpp" export * }
+  module "align__detail__alignment_of_gcc" { header "align/detail/alignment_of_gcc.hpp" export * }
+  module "align__detail__alignment_of" { header "align/detail/alignment_of.hpp" export * }
+  module "align__detail__alignment_of_msvc" { header "align/detail/alignment_of_msvc.hpp" export * }
+  module "align__detail__integral_constant" { header "align/detail/integral_constant.hpp" export * }
+  module "align__detail__is_aligned" { header "align/detail/is_aligned.hpp" export * }
+  module "align__detail__is_alignment_constant" { header "align/detail/is_alignment_constant.hpp" export * }
+  module "align__detail__is_alignment" { header "align/detail/is_alignment.hpp" export * }
+  module "align__detail__max_align" { header "align/detail/max_align.hpp" export * }
+  module "align__detail__min_size" { header "align/detail/min_size.hpp" export * }
+  module "align" { header "align.hpp" export * }
+  module "align__is_aligned" { header "align/is_aligned.hpp" export * }
+}
+module boost_aligned_storage {
+  module "aligned_storage" { header "aligned_storage.hpp" export * }
+}
+module boost_type_traits {
+  module "type_traits__add_const" { header "type_traits/add_const.hpp" export * }
+  module "type_traits__add_cv" { header "type_traits/add_cv.hpp" export * }
+  module "type_traits__add_lvalue_reference" { header "type_traits/add_lvalue_reference.hpp" export * }
+  module "type_traits__add_pointer" { header "type_traits/add_pointer.hpp" export * }
+  module "type_traits__add_reference" { header "type_traits/add_reference.hpp" export * }
+  module "type_traits__add_rvalue_reference" { header "type_traits/add_rvalue_reference.hpp" export * }
+  module "type_traits__add_volatile" { header "type_traits/add_volatile.hpp" export * }
+  module "type_traits__aligned_storage" { header "type_traits/aligned_storage.hpp" export * }
+  module "type_traits__alignment_of" { header "type_traits/alignment_of.hpp" export * }
+  module "type_traits__alignment_traits" { header "type_traits/alignment_traits.hpp" export * }
+  module "type_traits__arithmetic_traits" { header "type_traits/arithmetic_traits.hpp" export * }
+  module "type_traits__array_traits" { header "type_traits/array_traits.hpp" export * }
+  module "type_traits__broken_compiler_spec" { header "type_traits/broken_compiler_spec.hpp" export * }
+  module "type_traits__common_type" { header "type_traits/common_type.hpp" export * }
+  module "type_traits__composite_traits" { header "type_traits/composite_traits.hpp" export * }
+  module "type_traits__conditional" { header "type_traits/conditional.hpp" export * }
+  module "type_traits__config" { header "type_traits/config.hpp" export * }
+  module "type_traits__conversion_traits" { header "type_traits/conversion_traits.hpp" export * }
+  module "type_traits__cv_traits" { header "type_traits/cv_traits.hpp" export * }
+  module "type_traits__decay" { header "type_traits/decay.hpp" export * }
+  //module "type_traits__detail__bool_trait_def" { header "type_traits/detail/bool_trait_def.hpp" export * }
+  //module "type_traits__detail__bool_trait_undef" { header "type_traits/detail/bool_trait_undef.hpp" export * }
+  // Breaks lookup somehow:
+  /*
+  In module 'boost_type_traits' imported from /home/teemperor/boost-compile/inc/boost/thread/detail/move.hpp:13:
+/home/teemperor/boost-compile/inc/boost/type_traits/common_type.hpp:133:79: error: missing '#include "boost/type_traits/detail/common_type_impl.hpp"'; definition of 'common_type_impl<T, T>'
+      must be imported from module 'boost_type_traits.type_traits__detail__common_type_impl' before it is required
+template<class T1, class T2> struct common_type_decay_helper<T1, T2, T1, T2>: common_type_impl<T1, T2>
+                                                                              ^
+  */
+  module "type_traits__detail__ice_and" { header "type_traits/detail/ice_and.hpp" export * }
+  module "type_traits__detail__ice_eq" { header "type_traits/detail/ice_eq.hpp" export * }
+  module "type_traits__detail__ice_not" { header "type_traits/detail/ice_not.hpp" export * }
+  module "type_traits__detail__ice_or" { header "type_traits/detail/ice_or.hpp" export * }
+  module "type_traits__detail__is_mem_fun_pointer_impl" { header "type_traits/detail/is_mem_fun_pointer_impl.hpp" export * }
+  module "type_traits__detail__is_mem_fun_pointer_tester" { header "type_traits/detail/is_mem_fun_pointer_tester.hpp" export * }
+  module "type_traits__detail__template_arity_spec" { header "type_traits/detail/template_arity_spec.hpp" export * }
+  module "type_traits__detail__yes_no_type" { header "type_traits/detail/yes_no_type.hpp" export * }
+  module "type_traits__extent" { header "type_traits/extent.hpp" export * }
+  module "type_traits__floating_point_promotion" { header "type_traits/floating_point_promotion.hpp" export * }
+  module "type_traits__function_traits" { header "type_traits/function_traits.hpp" export * }
+  module "type_traits__has_bit_and_assign" { header "type_traits/has_bit_and_assign.hpp" export * }
+  module "type_traits__has_bit_and" { header "type_traits/has_bit_and.hpp" export * }
+  module "type_traits__has_bit_or_assign" { header "type_traits/has_bit_or_assign.hpp" export * }
+  module "type_traits__has_bit_or" { header "type_traits/has_bit_or.hpp" export * }
+  module "type_traits__has_bit_xor_assign" { header "type_traits/has_bit_xor_assign.hpp" export * }
+  module "type_traits__has_bit_xor" { header "type_traits/has_bit_xor.hpp" export * }
+  module "type_traits__has_complement" { header "type_traits/has_complement.hpp" export * }
+  module "type_traits__has_dereference" { header "type_traits/has_dereference.hpp" export * }
+  module "type_traits__has_divides_assign" { header "type_traits/has_divides_assign.hpp" export * }
+  module "type_traits__has_divides" { header "type_traits/has_divides.hpp" export * }
+  module "type_traits__has_equal_to" { header "type_traits/has_equal_to.hpp" export * }
+  module "type_traits__has_greater_equal" { header "type_traits/has_greater_equal.hpp" export * }
+  module "type_traits__has_greater" { header "type_traits/has_greater.hpp" export * }
+  module "type_traits__has_left_shift_assign" { header "type_traits/has_left_shift_assign.hpp" export * }
+  module "type_traits__has_left_shift" { header "type_traits/has_left_shift.hpp" export * }
+  module "type_traits__has_less_equal" { header "type_traits/has_less_equal.hpp" export * }
+  module "type_traits__has_less" { header "type_traits/has_less.hpp" export * }
+  module "type_traits__has_logical_and" { header "type_traits/has_logical_and.hpp" export * }
+  module "type_traits__has_logical_not" { header "type_traits/has_logical_not.hpp" export * }
+  module "type_traits__has_logical_or" { header "type_traits/has_logical_or.hpp" export * }
+  module "type_traits__has_minus_assign" { header "type_traits/has_minus_assign.hpp" export * }
+  module "type_traits__has_minus" { header "type_traits/has_minus.hpp" export * }
+  module "type_traits__has_modulus_assign" { header "type_traits/has_modulus_assign.hpp" export * }
+  module "type_traits__has_modulus" { header "type_traits/has_modulus.hpp" export * }
+  module "type_traits__has_multiplies_assign" { header "type_traits/has_multiplies_assign.hpp" export * }
+  module "type_traits__has_multiplies" { header "type_traits/has_multiplies.hpp" export * }
+  module "type_traits__has_negate" { header "type_traits/has_negate.hpp" export * }
+  module "type_traits__has_new_operator" { header "type_traits/has_new_operator.hpp" export * }
+  module "type_traits__has_not_equal_to" { header "type_traits/has_not_equal_to.hpp" export * }
+  module "type_traits__has_nothrow_assign" { header "type_traits/has_nothrow_assign.hpp" export * }
+  module "type_traits__has_nothrow_constructor" { header "type_traits/has_nothrow_constructor.hpp" export * }
+  module "type_traits__has_nothrow_copy" { header "type_traits/has_nothrow_copy.hpp" export * }
+  module "type_traits__has_nothrow_destructor" { header "type_traits/has_nothrow_destructor.hpp" export * }
+  module "type_traits__has_operator" { header "type_traits/has_operator.hpp" export * }
+  module "type_traits__has_plus_assign" { header "type_traits/has_plus_assign.hpp" export * }
+  module "type_traits__has_plus" { header "type_traits/has_plus.hpp" export * }
+  module "type_traits__has_post_decrement" { header "type_traits/has_post_decrement.hpp" export * }
+  module "type_traits__has_post_increment" { header "type_traits/has_post_increment.hpp" export * }
+  module "type_traits__has_pre_decrement" { header "type_traits/has_pre_decrement.hpp" export * }
+  module "type_traits__has_pre_increment" { header "type_traits/has_pre_increment.hpp" export * }
+  module "type_traits__has_right_shift_assign" { header "type_traits/has_right_shift_assign.hpp" export * }
+  module "type_traits__has_right_shift" { header "type_traits/has_right_shift.hpp" export * }
+  module "type_traits__has_trivial_assign" { header "type_traits/has_trivial_assign.hpp" export * }
+  module "type_traits__has_trivial_constructor" { header "type_traits/has_trivial_constructor.hpp" export * }
+  module "type_traits__has_trivial_copy" { header "type_traits/has_trivial_copy.hpp" export * }
+  module "type_traits__has_trivial_destructor" { header "type_traits/has_trivial_destructor.hpp" export * }
+  module "type_traits__has_trivial_move_assign" { header "type_traits/has_trivial_move_assign.hpp" export * }
+  module "type_traits__has_trivial_move_constructor" { header "type_traits/has_trivial_move_constructor.hpp" export * }
+  module "type_traits__has_unary_minus" { header "type_traits/has_unary_minus.hpp" export * }
+  module "type_traits__has_unary_plus" { header "type_traits/has_unary_plus.hpp" export * }
+  module "type_traits__has_virtual_destructor" { header "type_traits/has_virtual_destructor.hpp" export * }
+  module "type_traits" { header "type_traits.hpp" export * }
+  module "type_traits__ice" { header "type_traits/ice.hpp" export * }
+  module "type_traits__integral_constant" { header "type_traits/integral_constant.hpp" export * }
+  module "type_traits__integral_promotion" { header "type_traits/integral_promotion.hpp" export * }
+  module "type_traits__intrinsics" { header "type_traits/intrinsics.hpp" export * }
+  module "type_traits__is_abstract" { header "type_traits/is_abstract.hpp" export * }
+  module "type_traits__is_arithmetic" { header "type_traits/is_arithmetic.hpp" export * }
+  module "type_traits__is_array" { header "type_traits/is_array.hpp" export * }
+  module "type_traits__is_base_and_derived" { header "type_traits/is_base_and_derived.hpp" export * }
+  module "type_traits__is_base_of" { header "type_traits/is_base_of.hpp" export * }
+  module "type_traits__is_base_of_tr1" { header "type_traits/is_base_of_tr1.hpp" export * }
+  module "type_traits__is_class" { header "type_traits/is_class.hpp" export * }
+  module "type_traits__is_complex" { header "type_traits/is_complex.hpp" export * }
+  module "type_traits__is_compound" { header "type_traits/is_compound.hpp" export * }
+  module "type_traits__is_const" { header "type_traits/is_const.hpp" export * }
+  module "type_traits__is_convertible" { header "type_traits/is_convertible.hpp" export * }
+  module "type_traits__is_copy_assignable" { header "type_traits/is_copy_assignable.hpp" export * }
+  module "type_traits__is_copy_constructible" { header "type_traits/is_copy_constructible.hpp" export * }
+  module "type_traits__is_empty" { header "type_traits/is_empty.hpp" export * }
+  module "type_traits__is_enum" { header "type_traits/is_enum.hpp" export * }
+  module "type_traits__is_final" { header "type_traits/is_final.hpp" export * }
+  module "type_traits__is_float" { header "type_traits/is_float.hpp" export * }
+  module "type_traits__is_floating_point" { header "type_traits/is_floating_point.hpp" export * }
+  module "type_traits__is_function" { header "type_traits/is_function.hpp" export * }
+  module "type_traits__is_fundamental" { header "type_traits/is_fundamental.hpp" export * }
+  module "type_traits__is_integral" { header "type_traits/is_integral.hpp" export * }
+  module "type_traits__is_lvalue_reference" { header "type_traits/is_lvalue_reference.hpp" export * }
+  module "type_traits__is_member_function_pointer" { header "type_traits/is_member_function_pointer.hpp" export * }
+  module "type_traits__is_member_object_pointer" { header "type_traits/is_member_object_pointer.hpp" export * }
+  module "type_traits__is_member_pointer" { header "type_traits/is_member_pointer.hpp" export * }
+  module "type_traits__is_nothrow_move_assignable" { header "type_traits/is_nothrow_move_assignable.hpp" export * }
+  module "type_traits__is_nothrow_move_constructible" { header "type_traits/is_nothrow_move_constructible.hpp" export * }
+  module "type_traits__is_object" { header "type_traits/is_object.hpp" export * }
+  module "type_traits__is_pod" { header "type_traits/is_pod.hpp" export * }
+  module "type_traits__is_pointer" { header "type_traits/is_pointer.hpp" export * }
+  module "type_traits__is_polymorphic" { header "type_traits/is_polymorphic.hpp" export * }
+  module "type_traits__is_reference" { header "type_traits/is_reference.hpp" export * }
+  module "type_traits__is_rvalue_reference" { header "type_traits/is_rvalue_reference.hpp" export * }
+  module "type_traits__is_same" { header "type_traits/is_same.hpp" export * }
+  module "type_traits__is_scalar" { header "type_traits/is_scalar.hpp" export * }
+  module "type_traits__is_signed" { header "type_traits/is_signed.hpp" export * }
+  module "type_traits__is_stateless" { header "type_traits/is_stateless.hpp" export * }
+  module "type_traits__is_union" { header "type_traits/is_union.hpp" export * }
+  module "type_traits__is_unsigned" { header "type_traits/is_unsigned.hpp" export * }
+  module "type_traits__is_virtual_base_of" { header "type_traits/is_virtual_base_of.hpp" export * }
+  module "type_traits__is_void" { header "type_traits/is_void.hpp" export * }
+  module "type_traits__is_volatile" { header "type_traits/is_volatile.hpp" export * }
+  module "type_traits__make_signed" { header "type_traits/make_signed.hpp" export * }
+  module "type_traits__make_unsigned" { header "type_traits/make_unsigned.hpp" export * }
+  module "type_traits__object_traits" { header "type_traits/object_traits.hpp" export * }
+  module "type_traits__promote" { header "type_traits/promote.hpp" export * }
+  module "type_traits__rank" { header "type_traits/rank.hpp" export * }
+  module "type_traits__reference_traits" { header "type_traits/reference_traits.hpp" export * }
+  module "type_traits__remove_all_extents" { header "type_traits/remove_all_extents.hpp" export * }
+  module "type_traits__remove_bounds" { header "type_traits/remove_bounds.hpp" export * }
+  module "type_traits__remove_const" { header "type_traits/remove_const.hpp" export * }
+  module "type_traits__remove_cv" { header "type_traits/remove_cv.hpp" export * }
+  module "type_traits__remove_extent" { header "type_traits/remove_extent.hpp" export * }
+  module "type_traits__remove_reference" { header "type_traits/remove_reference.hpp" export * }
+  module "type_traits__remove_volatile" { header "type_traits/remove_volatile.hpp" export * }
+  module "type_traits__same_traits" { header "type_traits/same_traits.hpp" export * }
+  module "type_traits__transform_traits" { header "type_traits/transform_traits.hpp" export * }
+  module "type_traits__type_with_alignment" { header "type_traits/type_with_alignment.hpp" export * }
+}
+module boost_mpl {
+  module "mpl__accumulate" { header "mpl/accumulate.hpp" export * }
+  module "mpl__advance_fwd" { header "mpl/advance_fwd.hpp" export * }
+  module "mpl__advance" { header "mpl/advance.hpp" export * }
+  module "mpl__always" { header "mpl/always.hpp" export * }
+  module "mpl__and" { header "mpl/and.hpp" export * }
+  module "mpl__apply_fwd" { header "mpl/apply_fwd.hpp" export * }
+  module "mpl__apply" { header "mpl/apply.hpp" export * }
+  module "mpl__apply_wrap" { header "mpl/apply_wrap.hpp" export * }
+  module "mpl__arg_fwd" { header "mpl/arg_fwd.hpp" export * }
+  module "mpl__arg" { header "mpl/arg.hpp" export * }
+  module "mpl__arithmetic" { header "mpl/arithmetic.hpp" export * }
+  module "mpl__as_sequence" { header "mpl/as_sequence.hpp" export * }
+  module "mpl__assert" { header "mpl/assert.hpp" export * }
+  module "mpl__at_fwd" { header "mpl/at_fwd.hpp" export * }
+  module "mpl__at" { header "mpl/at.hpp" export * }
+  module "mpl__aux___adl_barrier" { header "mpl/aux_/adl_barrier.hpp" export * }
+  module "mpl__aux___advance_backward" { header "mpl/aux_/advance_backward.hpp" export * }
+  module "mpl__aux___advance_forward" { header "mpl/aux_/advance_forward.hpp" export * }
+  module "mpl__aux___apply_1st" { header "mpl/aux_/apply_1st.hpp" export * }
+  module "mpl__aux___arg_typedef" { header "mpl/aux_/arg_typedef.hpp" export * }
+  module "mpl__aux___arity" { header "mpl/aux_/arity.hpp" export * }
+  module "mpl__aux___arity_spec" { header "mpl/aux_/arity_spec.hpp" export * }
+  module "mpl__aux___at_impl" { header "mpl/aux_/at_impl.hpp" export * }
+  module "mpl__aux___back_impl" { header "mpl/aux_/back_impl.hpp" export * }
+  module "mpl__aux___basic_bind" { header "mpl/aux_/basic_bind.hpp" export * }
+  module "mpl__aux___begin_end_impl" { header "mpl/aux_/begin_end_impl.hpp" export * }
+  module "mpl__aux___clear_impl" { header "mpl/aux_/clear_impl.hpp" export * }
+  module "mpl__aux___common_name_wknd" { header "mpl/aux_/common_name_wknd.hpp" export * }
+  module "mpl__aux___config__adl" { header "mpl/aux_/config/adl.hpp" export * }
+  module "mpl__aux___config__arrays" { header "mpl/aux_/config/arrays.hpp" export * }
+  module "mpl__aux___config__bcc" { header "mpl/aux_/config/bcc.hpp" export * }
+  module "mpl__aux___config__bind" { header "mpl/aux_/config/bind.hpp" export * }
+  module "mpl__aux___config__compiler" { header "mpl/aux_/config/compiler.hpp" export * }
+  module "mpl__aux___config__ctps" { header "mpl/aux_/config/ctps.hpp" export * }
+  module "mpl__aux___config__dependent_nttp" { header "mpl/aux_/config/dependent_nttp.hpp" export * }
+  module "mpl__aux___config__dmc_ambiguous_ctps" { header "mpl/aux_/config/dmc_ambiguous_ctps.hpp" export * }
+  module "mpl__aux___config__dtp" { header "mpl/aux_/config/dtp.hpp" export * }
+  module "mpl__aux___config__eti" { header "mpl/aux_/config/eti.hpp" export * }
+  module "mpl__aux___config__forwarding" { header "mpl/aux_/config/forwarding.hpp" export * }
+  module "mpl__aux___config__gcc" { header "mpl/aux_/config/gcc.hpp" export * }
+  module "mpl__aux___config__gpu" { header "mpl/aux_/config/gpu.hpp" export * }
+  module "mpl__aux___config__has_apply" { header "mpl/aux_/config/has_apply.hpp" export * }
+  module "mpl__aux___config__has_xxx" { header "mpl/aux_/config/has_xxx.hpp" export * }
+  module "mpl__aux___config__integral" { header "mpl/aux_/config/integral.hpp" export * }
+  module "mpl__aux___config__intel" { header "mpl/aux_/config/intel.hpp" export * }
+  module "mpl__aux___config__lambda" { header "mpl/aux_/config/lambda.hpp" export * }
+  module "mpl__aux___config__msvc" { header "mpl/aux_/config/msvc.hpp" export * }
+  module "mpl__aux___config__msvc_typename" { header "mpl/aux_/config/msvc_typename.hpp" export * }
+  module "mpl__aux___config__nttp" { header "mpl/aux_/config/nttp.hpp" export * }
+  module "mpl__aux___config__operators" { header "mpl/aux_/config/operators.hpp" export * }
+  module "mpl__aux___config__overload_resolution" { header "mpl/aux_/config/overload_resolution.hpp" export * }
+  module "mpl__aux___config__preprocessor" { header "mpl/aux_/config/preprocessor.hpp" export * }
+  module "mpl__aux___config__static_constant" { header "mpl/aux_/config/static_constant.hpp" export * }
+  module "mpl__aux___config__ttp" { header "mpl/aux_/config/ttp.hpp" export * }
+  module "mpl__aux___config__typeof" { header "mpl/aux_/config/typeof.hpp" export * }
+  module "mpl__aux___config__use_preprocessed" { header "mpl/aux_/config/use_preprocessed.hpp" export * }
+  module "mpl__aux___config__workaround" { header "mpl/aux_/config/workaround.hpp" export * }
+  module "mpl__aux___contains_impl" { header "mpl/aux_/contains_impl.hpp" export * }
+  module "mpl__aux___count_impl" { header "mpl/aux_/count_impl.hpp" export * }
+  module "mpl__aux___empty_impl" { header "mpl/aux_/empty_impl.hpp" export * }
+  module "mpl__aux___erase_impl" { header "mpl/aux_/erase_impl.hpp" export * }
+  module "mpl__aux___erase_key_impl" { header "mpl/aux_/erase_key_impl.hpp" export * }
+  module "mpl__aux___filter_iter" { header "mpl/aux_/filter_iter.hpp" export * }
+  module "mpl__aux___find_if_pred" { header "mpl/aux_/find_if_pred.hpp" export * }
+  module "mpl__aux___fold_impl" { header "mpl/aux_/fold_impl.hpp" export * }
+  module "mpl__aux___fold_op" { header "mpl/aux_/fold_op.hpp" export * }
+  module "mpl__aux___fold_pred" { header "mpl/aux_/fold_pred.hpp" export * }
+  module "mpl__aux___front_impl" { header "mpl/aux_/front_impl.hpp" export * }
+  module "mpl__aux___full_lambda" { header "mpl/aux_/full_lambda.hpp" export * }
+  module "mpl__aux___has_apply" { header "mpl/aux_/has_apply.hpp" export * }
+  module "mpl__aux___has_begin" { header "mpl/aux_/has_begin.hpp" export * }
+  module "mpl__aux___has_key_impl" { header "mpl/aux_/has_key_impl.hpp" export * }
+  module "mpl__aux___has_rebind" { header "mpl/aux_/has_rebind.hpp" export * }
+  module "mpl__aux___has_size" { header "mpl/aux_/has_size.hpp" export * }
+  module "mpl__aux___has_tag" { header "mpl/aux_/has_tag.hpp" export * }
+  module "mpl__aux___has_type" { header "mpl/aux_/has_type.hpp" export * }
+  module "mpl__aux___inserter_algorithm" { header "mpl/aux_/inserter_algorithm.hpp" export * }
+  module "mpl__aux___insert_impl" { header "mpl/aux_/insert_impl.hpp" export * }
+  module "mpl__aux___insert_range_impl" { header "mpl/aux_/insert_range_impl.hpp" export * }
+  module "mpl__aux___is_msvc_eti_arg" { header "mpl/aux_/is_msvc_eti_arg.hpp" export * }
+  module "mpl__aux___iter_apply" { header "mpl/aux_/iter_apply.hpp" export * }
+  module "mpl__aux___iter_fold_if_impl" { header "mpl/aux_/iter_fold_if_impl.hpp" export * }
+  module "mpl__aux___iter_fold_impl" { header "mpl/aux_/iter_fold_impl.hpp" export * }
+  module "mpl__aux___iter_push_front" { header "mpl/aux_/iter_push_front.hpp" export * }
+  module "mpl__aux___joint_iter" { header "mpl/aux_/joint_iter.hpp" export * }
+  module "mpl__aux___lambda_arity_param" { header "mpl/aux_/lambda_arity_param.hpp" export * }
+  module "mpl__aux___lambda_no_ctps" { header "mpl/aux_/lambda_no_ctps.hpp" export * }
+  module "mpl__aux___lambda_spec" { header "mpl/aux_/lambda_spec.hpp" export * }
+  module "mpl__aux___lambda_support" { header "mpl/aux_/lambda_support.hpp" export * }
+  module "mpl__aux___largest_int" { header "mpl/aux_/largest_int.hpp" export * }
+  module "mpl__aux___msvc_eti_base" { header "mpl/aux_/msvc_eti_base.hpp" export * }
+  module "mpl__aux___msvc_never_true" { header "mpl/aux_/msvc_never_true.hpp" export * }
+  module "mpl__aux___msvc_type" { header "mpl/aux_/msvc_type.hpp" export * }
+  module "mpl__aux___na_assert" { header "mpl/aux_/na_assert.hpp" export * }
+  module "mpl__aux___na_fwd" { header "mpl/aux_/na_fwd.hpp" export * }
+  module "mpl__aux___na" { header "mpl/aux_/na.hpp" export * }
+  module "mpl__aux___na_spec" { header "mpl/aux_/na_spec.hpp" export * }
+  module "mpl__aux___nested_type_wknd" { header "mpl/aux_/nested_type_wknd.hpp" export * }
+  module "mpl__aux___nttp_decl" { header "mpl/aux_/nttp_decl.hpp" export * }
+  module "mpl__aux___numeric_cast_utils" { header "mpl/aux_/numeric_cast_utils.hpp" export * }
+  module "mpl__aux___numeric_op" { header "mpl/aux_/numeric_op.hpp" export * }
+  module "mpl__aux___O1_size_impl" { header "mpl/aux_/O1_size_impl.hpp" export * }
+  module "mpl__aux___order_impl" { header "mpl/aux_/order_impl.hpp" export * }
+  module "mpl__aux___overload_names" { header "mpl/aux_/overload_names.hpp" export * }
+  module "mpl__aux___partition_op" { header "mpl/aux_/partition_op.hpp" export * }
+  module "mpl__aux___pop_back_impl" { header "mpl/aux_/pop_back_impl.hpp" export * }
+  module "mpl__aux___pop_front_impl" { header "mpl/aux_/pop_front_impl.hpp" export * }
+  module "mpl__aux___preprocessed__bcc551__bind_fwd" { header "mpl/aux_/preprocessed/bcc551/bind_fwd.hpp" export * }
+  module "mpl__aux___preprocessed__bcc551__quote" { header "mpl/aux_/preprocessed/bcc551/quote.hpp" export * }
+  module "mpl__aux___preprocessed__bcc__bind_fwd" { header "mpl/aux_/preprocessed/bcc/bind_fwd.hpp" export * }
+  module "mpl__aux___preprocessed__bcc_pre590__bind_fwd" { header "mpl/aux_/preprocessed/bcc_pre590/bind_fwd.hpp" export * }
+  module "mpl__aux___preprocessed__bcc_pre590__quote" { header "mpl/aux_/preprocessed/bcc_pre590/quote.hpp" export * }
+  module "mpl__aux___preprocessed__dmc__template_arity" { header "mpl/aux_/preprocessed/dmc/template_arity.hpp" export * }
+  module "mpl__aux___preprocessed__msvc60__apply_fwd" { header "mpl/aux_/preprocessed/msvc60/apply_fwd.hpp" export * }
+  module "mpl__aux___preprocessed__msvc60__bind_fwd" { header "mpl/aux_/preprocessed/msvc60/bind_fwd.hpp" export * }
+  module "mpl__aux___preprocessed__msvc60__quote" { header "mpl/aux_/preprocessed/msvc60/quote.hpp" export * }
+  module "mpl__aux___preprocessed__msvc70__apply_fwd" { header "mpl/aux_/preprocessed/msvc70/apply_fwd.hpp" export * }
+  module "mpl__aux___preprocessed__msvc70__bind_fwd" { header "mpl/aux_/preprocessed/msvc70/bind_fwd.hpp" export * }
+  module "mpl__aux___preprocessed__mwcw__template_arity" { header "mpl/aux_/preprocessed/mwcw/template_arity.hpp" export * }
+  module "mpl__aux___preprocessed__no_ttp__quote" { header "mpl/aux_/preprocessed/no_ttp/quote.hpp" export * }
+  module "mpl__aux___preprocessed__plain__template_arity" { header "mpl/aux_/preprocessed/plain/template_arity.hpp" export * }
+  module "mpl__aux___preprocessor__add" { header "mpl/aux_/preprocessor/add.hpp" export * }
+  module "mpl__aux___preprocessor__default_params" { header "mpl/aux_/preprocessor/default_params.hpp" export * }
+  module "mpl__aux___preprocessor__def_params_tail" { header "mpl/aux_/preprocessor/def_params_tail.hpp" export * }
+  module "mpl__aux___preprocessor__enum" { header "mpl/aux_/preprocessor/enum.hpp" export * }
+  module "mpl__aux___preprocessor__ext_params" { header "mpl/aux_/preprocessor/ext_params.hpp" export * }
+  module "mpl__aux___preprocessor__filter_params" { header "mpl/aux_/preprocessor/filter_params.hpp" export * }
+  module "mpl__aux___preprocessor__is_seq" { header "mpl/aux_/preprocessor/is_seq.hpp" export * }
+  module "mpl__aux___preprocessor__params" { header "mpl/aux_/preprocessor/params.hpp" export * }
+  module "mpl__aux___preprocessor__partial_spec_params" { header "mpl/aux_/preprocessor/partial_spec_params.hpp" export * }
+  module "mpl__aux___preprocessor__range" { header "mpl/aux_/preprocessor/range.hpp" export * }
+  module "mpl__aux___preprocessor__repeat" { header "mpl/aux_/preprocessor/repeat.hpp" export * }
+  module "mpl__aux___preprocessor__sub" { header "mpl/aux_/preprocessor/sub.hpp" export * }
+  module "mpl__aux___preprocessor__token_equal" { header "mpl/aux_/preprocessor/token_equal.hpp" export * }
+  module "mpl__aux___preprocessor__tuple" { header "mpl/aux_/preprocessor/tuple.hpp" export * }
+  module "mpl__aux___ptr_to_ref" { header "mpl/aux_/ptr_to_ref.hpp" export * }
+  module "mpl__aux___push_back_impl" { header "mpl/aux_/push_back_impl.hpp" export * }
+  module "mpl__aux___push_front_impl" { header "mpl/aux_/push_front_impl.hpp" export * }
+  module "mpl__aux___range_c__back" { header "mpl/aux_/range_c/back.hpp" export * }
+  module "mpl__aux___range_c__empty" { header "mpl/aux_/range_c/empty.hpp" export * }
+  module "mpl__aux___range_c__front" { header "mpl/aux_/range_c/front.hpp" export * }
+  module "mpl__aux___range_c__O1_size" { header "mpl/aux_/range_c/O1_size.hpp" export * }
+  module "mpl__aux___range_c__size" { header "mpl/aux_/range_c/size.hpp" export * }
+  module "mpl__aux___range_c__tag" { header "mpl/aux_/range_c/tag.hpp" export * }
+  module "mpl__aux___reverse_fold_impl" { header "mpl/aux_/reverse_fold_impl.hpp" export * }
+  module "mpl__aux___reverse_iter_fold_impl" { header "mpl/aux_/reverse_iter_fold_impl.hpp" export * }
+  module "mpl__aux___single_element_iter" { header "mpl/aux_/single_element_iter.hpp" export * }
+  module "mpl__aux___size_impl" { header "mpl/aux_/size_impl.hpp" export * }
+  module "mpl__aux___sort_impl" { header "mpl/aux_/sort_impl.hpp" export * }
+  module "mpl__aux___static_cast" { header "mpl/aux_/static_cast.hpp" export * }
+  module "mpl__aux___template_arity_fwd" { header "mpl/aux_/template_arity_fwd.hpp" export * }
+  module "mpl__aux___template_arity" { header "mpl/aux_/template_arity.hpp" export * }
+  module "mpl__aux___test__assert" { header "mpl/aux_/test/assert.hpp" export * }
+  module "mpl__aux___test__data" { header "mpl/aux_/test/data.hpp" export * }
+  module "mpl__aux___test__test_case" { header "mpl/aux_/test/test_case.hpp" export * }
+  module "mpl__aux___traits_lambda_spec" { header "mpl/aux_/traits_lambda_spec.hpp" export * }
+  module "mpl__aux___transform_iter" { header "mpl/aux_/transform_iter.hpp" export * }
+  module "mpl__aux___type_wrapper" { header "mpl/aux_/type_wrapper.hpp" export * }
+  module "mpl__aux___unwrap" { header "mpl/aux_/unwrap.hpp" export * }
+  module "mpl__aux___value_wknd" { header "mpl/aux_/value_wknd.hpp" export * }
+  module "mpl__aux___yes_no" { header "mpl/aux_/yes_no.hpp" export * }
+  module "mpl__back_fwd" { header "mpl/back_fwd.hpp" export * }
+  module "mpl__back" { header "mpl/back.hpp" export * }
+  module "mpl__back_inserter" { header "mpl/back_inserter.hpp" export * }
+  module "mpl__base" { header "mpl/base.hpp" export * }
+  module "mpl__begin_end_fwd" { header "mpl/begin_end_fwd.hpp" export * }
+  module "mpl__begin_end" { header "mpl/begin_end.hpp" export * }
+  module "mpl__begin" { header "mpl/begin.hpp" export * }
+  module "mpl__bind_fwd" { header "mpl/bind_fwd.hpp" export * }
+  module "mpl__bind" { header "mpl/bind.hpp" export * }
+  module "mpl__bitand" { header "mpl/bitand.hpp" export * }
+  module "mpl__bitor" { header "mpl/bitor.hpp" export * }
+  module "mpl__bitwise" { header "mpl/bitwise.hpp" export * }
+  module "mpl__bitxor" { header "mpl/bitxor.hpp" export * }
+  module "mpl__bool_fwd" { header "mpl/bool_fwd.hpp" export * }
+  module "mpl__bool" { header "mpl/bool.hpp" export * }
+  module "mpl__char_fwd" { header "mpl/char_fwd.hpp" export * }
+  module "mpl__char" { header "mpl/char.hpp" export * }
+  module "mpl__clear_fwd" { header "mpl/clear_fwd.hpp" export * }
+  module "mpl__clear" { header "mpl/clear.hpp" export * }
+  module "mpl__comparison" { header "mpl/comparison.hpp" export * }
+  module "mpl__contains_fwd" { header "mpl/contains_fwd.hpp" export * }
+  module "mpl__contains" { header "mpl/contains.hpp" export * }
+  module "mpl__copy" { header "mpl/copy.hpp" export * }
+  module "mpl__copy_if" { header "mpl/copy_if.hpp" export * }
+  module "mpl__count_fwd" { header "mpl/count_fwd.hpp" export * }
+  module "mpl__count" { header "mpl/count.hpp" export * }
+  module "mpl__count_if" { header "mpl/count_if.hpp" export * }
+  module "mpl__deque" { header "mpl/deque.hpp" export * }
+  module "mpl__deref" { header "mpl/deref.hpp" export * }
+  module "mpl__distance_fwd" { header "mpl/distance_fwd.hpp" export * }
+  module "mpl__distance" { header "mpl/distance.hpp" export * }
+  module "mpl__divides" { header "mpl/divides.hpp" export * }
+  module "mpl__empty_base" { header "mpl/empty_base.hpp" export * }
+  module "mpl__empty_fwd" { header "mpl/empty_fwd.hpp" export * }
+  module "mpl__empty" { header "mpl/empty.hpp" export * }
+  module "mpl__empty_sequence" { header "mpl/empty_sequence.hpp" export * }
+  module "mpl__end" { header "mpl/end.hpp" export * }
+  module "mpl__equal" { header "mpl/equal.hpp" export * }
+  module "mpl__equal_to" { header "mpl/equal_to.hpp" export * }
+  module "mpl__erase_fwd" { header "mpl/erase_fwd.hpp" export * }
+  module "mpl__erase" { header "mpl/erase.hpp" export * }
+  module "mpl__erase_key_fwd" { header "mpl/erase_key_fwd.hpp" export * }
+  module "mpl__erase_key" { header "mpl/erase_key.hpp" export * }
+  module "mpl__eval_if" { header "mpl/eval_if.hpp" export * }
+  module "mpl__filter_view" { header "mpl/filter_view.hpp" export * }
+  module "mpl__find" { header "mpl/find.hpp" export * }
+  module "mpl__find_if" { header "mpl/find_if.hpp" export * }
+  module "mpl__fold" { header "mpl/fold.hpp" export * }
+  // cyclic dependency utility <-> mpl module "mpl__for_each" { header "mpl/for_each.hpp" export * }
+  module "mpl__front_fwd" { header "mpl/front_fwd.hpp" export * }
+  module "mpl__front" { header "mpl/front.hpp" export * }
+  module "mpl__front_inserter" { header "mpl/front_inserter.hpp" export * }
+  module "mpl__greater_equal" { header "mpl/greater_equal.hpp" export * }
+  module "mpl__greater" { header "mpl/greater.hpp" export * }
+  module "mpl__has_key_fwd" { header "mpl/has_key_fwd.hpp" export * }
+  module "mpl__has_key" { header "mpl/has_key.hpp" export * }
+  module "mpl__has_xxx" { header "mpl/has_xxx.hpp" export * }
+  module "mpl__identity" { header "mpl/identity.hpp" export * }
+  module "mpl__if" { header "mpl/if.hpp" export * }
+  module "mpl__index_if" { header "mpl/index_if.hpp" export * }
+  module "mpl__index_of" { header "mpl/index_of.hpp" export * }
+  module "mpl__inherit" { header "mpl/inherit.hpp" export * }
+  module "mpl__inherit_linearly" { header "mpl/inherit_linearly.hpp" export * }
+  module "mpl__inserter" { header "mpl/inserter.hpp" export * }
+  module "mpl__insert_fwd" { header "mpl/insert_fwd.hpp" export * }
+  module "mpl__insert" { header "mpl/insert.hpp" export * }
+  module "mpl__insert_range_fwd" { header "mpl/insert_range_fwd.hpp" export * }
+  module "mpl__insert_range" { header "mpl/insert_range.hpp" export * }
+  module "mpl__integral_c_fwd" { header "mpl/integral_c_fwd.hpp" export * }
+  module "mpl__integral_c" { header "mpl/integral_c.hpp" export * }
+  module "mpl__integral_c_tag" { header "mpl/integral_c_tag.hpp" export * }
+  module "mpl__int_fwd" { header "mpl/int_fwd.hpp" export * }
+  module "mpl__int" { header "mpl/int.hpp" export * }
+  module "mpl__is_placeholder" { header "mpl/is_placeholder.hpp" export * }
+  module "mpl__is_sequence" { header "mpl/is_sequence.hpp" export * }
+  module "mpl__iterator_category" { header "mpl/iterator_category.hpp" export * }
+  module "mpl__iterator_range" { header "mpl/iterator_range.hpp" export * }
+  module "mpl__iterator_tags" { header "mpl/iterator_tags.hpp" export * }
+  module "mpl__iter_fold" { header "mpl/iter_fold.hpp" export * }
+  module "mpl__iter_fold_if" { header "mpl/iter_fold_if.hpp" export * }
+  module "mpl__joint_view" { header "mpl/joint_view.hpp" export * }
+  module "mpl__key_type_fwd" { header "mpl/key_type_fwd.hpp" export * }
+  module "mpl__key_type" { header "mpl/key_type.hpp" export * }
+  module "mpl__lambda_fwd" { header "mpl/lambda_fwd.hpp" export * }
+  module "mpl__lambda" { header "mpl/lambda.hpp" export * }
+  module "mpl__less_equal" { header "mpl/less_equal.hpp" export * }
+  module "mpl__less" { header "mpl/less.hpp" export * }
+  module "mpl__limits__arity" { header "mpl/limits/arity.hpp" export * }
+  module "mpl__limits__list" { header "mpl/limits/list.hpp" export * }
+  module "mpl__limits__map" { header "mpl/limits/map.hpp" export * }
+  module "mpl__limits__set" { header "mpl/limits/set.hpp" export * }
+  module "mpl__limits__string" { header "mpl/limits/string.hpp" export * }
+  module "mpl__limits__unrolling" { header "mpl/limits/unrolling.hpp" export * }
+  module "mpl__limits__vector" { header "mpl/limits/vector.hpp" export * }
+  module "mpl__list__aux___begin_end" { header "mpl/list/aux_/begin_end.hpp" export * }
+  module "mpl__list__aux___clear" { header "mpl/list/aux_/clear.hpp" export * }
+  module "mpl__list__aux___empty" { header "mpl/list/aux_/empty.hpp" export * }
+  module "mpl__list__aux___front" { header "mpl/list/aux_/front.hpp" export * }
+  module "mpl__list__aux___item" { header "mpl/list/aux_/item.hpp" export * }
+  module "mpl__list__aux___iterator" { header "mpl/list/aux_/iterator.hpp" export * }
+  module "mpl__list__aux___numbered_c" { header "mpl/list/aux_/numbered_c.hpp" export * }
+  module "mpl__list__aux___numbered" { header "mpl/list/aux_/numbered.hpp" export * }
+  module "mpl__list__aux___O1_size" { header "mpl/list/aux_/O1_size.hpp" export * }
+  module "mpl__list__aux___pop_front" { header "mpl/list/aux_/pop_front.hpp" export * }
+  module "mpl__list__aux___push_back" { header "mpl/list/aux_/push_back.hpp" export * }
+  module "mpl__list__aux___push_front" { header "mpl/list/aux_/push_front.hpp" export * }
+  module "mpl__list__aux___size" { header "mpl/list/aux_/size.hpp" export * }
+  module "mpl__list__aux___tag" { header "mpl/list/aux_/tag.hpp" export * }
+  module "mpl__list_c" { header "mpl/list_c.hpp" export * }
+  module "mpl__list" { header "mpl/list.hpp" export * }
+  module "mpl__list__list0_c" { header "mpl/list/list0_c.hpp" export * }
+  module "mpl__list__list0" { header "mpl/list/list0.hpp" export * }
+  module "mpl__list__list10_c" { header "mpl/list/list10_c.hpp" export * }
+  module "mpl__list__list10" { header "mpl/list/list10.hpp" export * }
+  module "mpl__list__list20_c" { header "mpl/list/list20_c.hpp" export * }
+  module "mpl__list__list20" { header "mpl/list/list20.hpp" export * }
+  module "mpl__list__list30_c" { header "mpl/list/list30_c.hpp" export * }
+  module "mpl__list__list30" { header "mpl/list/list30.hpp" export * }
+  module "mpl__list__list40_c" { header "mpl/list/list40_c.hpp" export * }
+  module "mpl__list__list40" { header "mpl/list/list40.hpp" export * }
+  module "mpl__list__list50_c" { header "mpl/list/list50_c.hpp" export * }
+  module "mpl__list__list50" { header "mpl/list/list50.hpp" export * }
+  module "mpl__logical" { header "mpl/logical.hpp" export * }
+  module "mpl__long_fwd" { header "mpl/long_fwd.hpp" export * }
+  module "mpl__long" { header "mpl/long.hpp" export * }
+  module "mpl__lower_bound" { header "mpl/lower_bound.hpp" export * }
+  module "mpl__map__aux___at_impl" { header "mpl/map/aux_/at_impl.hpp" export * }
+  module "mpl__map__aux___begin_end_impl" { header "mpl/map/aux_/begin_end_impl.hpp" export * }
+  module "mpl__map__aux___clear_impl" { header "mpl/map/aux_/clear_impl.hpp" export * }
+  module "mpl__map__aux___contains_impl" { header "mpl/map/aux_/contains_impl.hpp" export * }
+  module "mpl__map__aux___empty_impl" { header "mpl/map/aux_/empty_impl.hpp" export * }
+  module "mpl__map__aux___erase_impl" { header "mpl/map/aux_/erase_impl.hpp" export * }
+  module "mpl__map__aux___erase_key_impl" { header "mpl/map/aux_/erase_key_impl.hpp" export * }
+  module "mpl__map__aux___has_key_impl" { header "mpl/map/aux_/has_key_impl.hpp" export * }
+  module "mpl__map__aux___insert_impl" { header "mpl/map/aux_/insert_impl.hpp" export * }
+  module "mpl__map__aux___item" { header "mpl/map/aux_/item.hpp" export * }
+  module "mpl__map__aux___iterator" { header "mpl/map/aux_/iterator.hpp" export * }
+  module "mpl__map__aux___key_type_impl" { header "mpl/map/aux_/key_type_impl.hpp" export * }
+  module "mpl__map__aux___map0" { header "mpl/map/aux_/map0.hpp" export * }
+  module "mpl__map__aux___numbered" { header "mpl/map/aux_/numbered.hpp" export * }
+  module "mpl__map__aux___size_impl" { header "mpl/map/aux_/size_impl.hpp" export * }
+  module "mpl__map__aux___tag" { header "mpl/map/aux_/tag.hpp" export * }
+  module "mpl__map__aux___value_type_impl" { header "mpl/map/aux_/value_type_impl.hpp" export * }
+  module "mpl__map" { header "mpl/map.hpp" export * }
+  module "mpl__map__map0" { header "mpl/map/map0.hpp" export * }
+  module "mpl__map__map10" { header "mpl/map/map10.hpp" export * }
+  module "mpl__map__map20" { header "mpl/map/map20.hpp" export * }
+  module "mpl__map__map30" { header "mpl/map/map30.hpp" export * }
+  module "mpl__map__map40" { header "mpl/map/map40.hpp" export * }
+  module "mpl__map__map50" { header "mpl/map/map50.hpp" export * }
+  module "mpl__math__fixed_c" { header "mpl/math/fixed_c.hpp" export * }
+  module "mpl__math__is_even" { header "mpl/math/is_even.hpp" export * }
+  module "mpl__math__rational_c" { header "mpl/math/rational_c.hpp" export * }
+  module "mpl__max_element" { header "mpl/max_element.hpp" export * }
+  module "mpl__max" { header "mpl/max.hpp" export * }
+  module "mpl__min_element" { header "mpl/min_element.hpp" export * }
+  module "mpl__min" { header "mpl/min.hpp" export * }
+  module "mpl__min_max" { header "mpl/min_max.hpp" export * }
+  module "mpl__minus" { header "mpl/minus.hpp" export * }
+  module "mpl__modulus" { header "mpl/modulus.hpp" export * }
+  module "mpl__multiplies" { header "mpl/multiplies.hpp" export * }
+  module "mpl__multiset__aux___count_impl" { header "mpl/multiset/aux_/count_impl.hpp" export * }
+  module "mpl__multiset__aux___insert_impl" { header "mpl/multiset/aux_/insert_impl.hpp" export * }
+  module "mpl__multiset__aux___item" { header "mpl/multiset/aux_/item.hpp" export * }
+  module "mpl__multiset__aux___multiset0" { header "mpl/multiset/aux_/multiset0.hpp" export * }
+  module "mpl__multiset__aux___tag" { header "mpl/multiset/aux_/tag.hpp" export * }
+  module "mpl__multiset__multiset0" { header "mpl/multiset/multiset0.hpp" export * }
+  module "mpl__negate" { header "mpl/negate.hpp" export * }
+  module "mpl__next" { header "mpl/next.hpp" export * }
+  module "mpl__next_prior" { header "mpl/next_prior.hpp" export * }
+  module "mpl__not_equal_to" { header "mpl/not_equal_to.hpp" export * }
+  module "mpl__not" { header "mpl/not.hpp" export * }
+  module "mpl__numeric_cast" { header "mpl/numeric_cast.hpp" export * }
+  module "mpl__O1_size_fwd" { header "mpl/O1_size_fwd.hpp" export * }
+  module "mpl__O1_size" { header "mpl/O1_size.hpp" export * }
+  module "mpl__order_fwd" { header "mpl/order_fwd.hpp" export * }
+  module "mpl__order" { header "mpl/order.hpp" export * }
+  module "mpl__or" { header "mpl/or.hpp" export * }
+  module "mpl__pair" { header "mpl/pair.hpp" export * }
+  module "mpl__pair_view" { header "mpl/pair_view.hpp" export * }
+  module "mpl__partition" { header "mpl/partition.hpp" export * }
+  module "mpl__placeholders" { header "mpl/placeholders.hpp" export * }
+  module "mpl__plus" { header "mpl/plus.hpp" export * }
+  module "mpl__pop_back_fwd" { header "mpl/pop_back_fwd.hpp" export * }
+  module "mpl__pop_back" { header "mpl/pop_back.hpp" export * }
+  module "mpl__pop_front_fwd" { header "mpl/pop_front_fwd.hpp" export * }
+  module "mpl__pop_front" { header "mpl/pop_front.hpp" export * }
+  module "mpl__print" { header "mpl/print.hpp" export * }
+  module "mpl__prior" { header "mpl/prior.hpp" export * }
+  module "mpl__protect" { header "mpl/protect.hpp" export * }
+  module "mpl__push_back_fwd" { header "mpl/push_back_fwd.hpp" export * }
+  module "mpl__push_back" { header "mpl/push_back.hpp" export * }
+  module "mpl__push_front_fwd" { header "mpl/push_front_fwd.hpp" export * }
+  module "mpl__push_front" { header "mpl/push_front.hpp" export * }
+  module "mpl__quote" { header "mpl/quote.hpp" export * }
+  module "mpl__range_c" { header "mpl/range_c.hpp" export * }
+  module "mpl__remove" { header "mpl/remove.hpp" export * }
+  module "mpl__remove_if" { header "mpl/remove_if.hpp" export * }
+  module "mpl__replace" { header "mpl/replace.hpp" export * }
+  module "mpl__replace_if" { header "mpl/replace_if.hpp" export * }
+  module "mpl__reverse_fold" { header "mpl/reverse_fold.hpp" export * }
+  module "mpl__reverse" { header "mpl/reverse.hpp" export * }
+  module "mpl__reverse_iter_fold" { header "mpl/reverse_iter_fold.hpp" export * }
+  module "mpl__same_as" { header "mpl/same_as.hpp" export * }
+  module "mpl__sequence_tag_fwd" { header "mpl/sequence_tag_fwd.hpp" export * }
+  module "mpl__sequence_tag" { header "mpl/sequence_tag.hpp" export * }
+  module "mpl__set__aux___at_impl" { header "mpl/set/aux_/at_impl.hpp" export * }
+  module "mpl__set__aux___begin_end_impl" { header "mpl/set/aux_/begin_end_impl.hpp" export * }
+  module "mpl__set__aux___clear_impl" { header "mpl/set/aux_/clear_impl.hpp" export * }
+  module "mpl__set__aux___empty_impl" { header "mpl/set/aux_/empty_impl.hpp" export * }
+  module "mpl__set__aux___has_key_impl" { header "mpl/set/aux_/has_key_impl.hpp" export * }
+  module "mpl__set__aux___iterator" { header "mpl/set/aux_/iterator.hpp" export * }
+  module "mpl__set__aux___key_type_impl" { header "mpl/set/aux_/key_type_impl.hpp" export * }
+  module "mpl__set__aux___numbered_c" { header "mpl/set/aux_/numbered_c.hpp" export * }
+  module "mpl__set__aux___numbered" { header "mpl/set/aux_/numbered.hpp" export * }
+  module "mpl__set__aux___set0" { header "mpl/set/aux_/set0.hpp" export * }
+  module "mpl__set__aux___size_impl" { header "mpl/set/aux_/size_impl.hpp" export * }
+  module "mpl__set__aux___tag" { header "mpl/set/aux_/tag.hpp" export * }
+  module "mpl__set__aux___value_type_impl" { header "mpl/set/aux_/value_type_impl.hpp" export * }
+  module "mpl__set_c" { header "mpl/set_c.hpp" export * }
+  module "mpl__set" { header "mpl/set.hpp" export * }
+  module "mpl__set__set0_c" { header "mpl/set/set0_c.hpp" export * }
+  module "mpl__set__set0" { header "mpl/set/set0.hpp" export * }
+  module "mpl__set__set10_c" { header "mpl/set/set10_c.hpp" export * }
+  module "mpl__set__set10" { header "mpl/set/set10.hpp" export * }
+  module "mpl__set__set20_c" { header "mpl/set/set20_c.hpp" export * }
+  module "mpl__set__set20" { header "mpl/set/set20.hpp" export * }
+  module "mpl__set__set30_c" { header "mpl/set/set30_c.hpp" export * }
+  module "mpl__set__set30" { header "mpl/set/set30.hpp" export * }
+  module "mpl__set__set40_c" { header "mpl/set/set40_c.hpp" export * }
+  module "mpl__set__set40" { header "mpl/set/set40.hpp" export * }
+  module "mpl__set__set50_c" { header "mpl/set/set50_c.hpp" export * }
+  module "mpl__set__set50" { header "mpl/set/set50.hpp" export * }
+  module "mpl__shift_left" { header "mpl/shift_left.hpp" export * }
+  module "mpl__shift_right" { header "mpl/shift_right.hpp" export * }
+  module "mpl__single_view" { header "mpl/single_view.hpp" export * }
+  module "mpl__size_fwd" { header "mpl/size_fwd.hpp" export * }
+  module "mpl__size" { header "mpl/size.hpp" export * }
+  module "mpl__sizeof" { header "mpl/sizeof.hpp" export * }
+  module "mpl__size_t_fwd" { header "mpl/size_t_fwd.hpp" export * }
+  module "mpl__size_t" { header "mpl/size_t.hpp" export * }
+  module "mpl__sort" { header "mpl/sort.hpp" export * }
+  module "mpl__stable_partition" { header "mpl/stable_partition.hpp" export * }
+  module "mpl__string" { header "mpl/string.hpp" export * }
+  module "mpl__switch" { header "mpl/switch.hpp" export * }
+  module "mpl__tag" { header "mpl/tag.hpp" export * }
+  module "mpl__times" { header "mpl/times.hpp" export * }
+  module "mpl__transform" { header "mpl/transform.hpp" export * }
+  module "mpl__transform_view" { header "mpl/transform_view.hpp" export * }
+  module "mpl__unique" { header "mpl/unique.hpp" export * }
+  module "mpl__unpack_args" { header "mpl/unpack_args.hpp" export * }
+  module "mpl__upper_bound" { header "mpl/upper_bound.hpp" export * }
+  module "mpl__value_type_fwd" { header "mpl/value_type_fwd.hpp" export * }
+  module "mpl__value_type" { header "mpl/value_type.hpp" export * }
+  module "mpl__vector__aux___at" { header "mpl/vector/aux_/at.hpp" export * }
+  module "mpl__vector__aux___back" { header "mpl/vector/aux_/back.hpp" export * }
+  module "mpl__vector__aux___begin_end" { header "mpl/vector/aux_/begin_end.hpp" export * }
+  module "mpl__vector__aux___clear" { header "mpl/vector/aux_/clear.hpp" export * }
+  module "mpl__vector__aux___empty" { header "mpl/vector/aux_/empty.hpp" export * }
+  module "mpl__vector__aux___front" { header "mpl/vector/aux_/front.hpp" export * }
+  module "mpl__vector__aux___item" { header "mpl/vector/aux_/item.hpp" export * }
+  module "mpl__vector__aux___iterator" { header "mpl/vector/aux_/iterator.hpp" export * }
+  module "mpl__vector__aux___numbered_c" { header "mpl/vector/aux_/numbered_c.hpp" export * }
+  module "mpl__vector__aux___numbered" { header "mpl/vector/aux_/numbered.hpp" export * }
+  module "mpl__vector__aux___O1_size" { header "mpl/vector/aux_/O1_size.hpp" export * }
+  module "mpl__vector__aux___pop_back" { header "mpl/vector/aux_/pop_back.hpp" export * }
+  module "mpl__vector__aux___pop_front" { header "mpl/vector/aux_/pop_front.hpp" export * }
+  module "mpl__vector__aux___push_back" { header "mpl/vector/aux_/push_back.hpp" export * }
+  module "mpl__vector__aux___push_front" { header "mpl/vector/aux_/push_front.hpp" export * }
+  module "mpl__vector__aux___size" { header "mpl/vector/aux_/size.hpp" export * }
+  module "mpl__vector__aux___tag" { header "mpl/vector/aux_/tag.hpp" export * }
+  module "mpl__vector__aux___vector0" { header "mpl/vector/aux_/vector0.hpp" export * }
+  module "mpl__vector_c" { header "mpl/vector_c.hpp" export * }
+  module "mpl__vector" { header "mpl/vector.hpp" export * }
+  module "mpl__vector__vector0_c" { header "mpl/vector/vector0_c.hpp" export * }
+  module "mpl__vector__vector0" { header "mpl/vector/vector0.hpp" export * }
+  module "mpl__vector__vector10_c" { header "mpl/vector/vector10_c.hpp" export * }
+  module "mpl__vector__vector10" { header "mpl/vector/vector10.hpp" export * }
+  module "mpl__vector__vector20_c" { header "mpl/vector/vector20_c.hpp" export * }
+  module "mpl__vector__vector20" { header "mpl/vector/vector20.hpp" export * }
+  module "mpl__vector__vector30_c" { header "mpl/vector/vector30_c.hpp" export * }
+  module "mpl__vector__vector30" { header "mpl/vector/vector30.hpp" export * }
+  module "mpl__vector__vector40_c" { header "mpl/vector/vector40_c.hpp" export * }
+  module "mpl__vector__vector40" { header "mpl/vector/vector40.hpp" export * }
+  module "mpl__vector__vector50_c" { header "mpl/vector/vector50_c.hpp" export * }
+  module "mpl__vector__vector50" { header "mpl/vector/vector50.hpp" export * }
+  module "mpl__void_fwd" { header "mpl/void_fwd.hpp" export * }
+  module "mpl__void" { header "mpl/void.hpp" export * }
+  module "mpl__zip_view" { header "mpl/zip_view.hpp" export * }
+}
+
 module boost_move {
   module "move__algorithm" { header "move/algorithm.hpp" export * }
   module "move__core" { header "move/core.hpp" export * }
@@ -6745,7 +6933,7 @@ module boost_utility {
   module "utility__declval" { header "utility/declval.hpp" export * }
   module "utility__detail__in_place_factory_prefix" { header "utility/detail/in_place_factory_prefix.hpp" export * }
   module "utility__detail__in_place_factory_suffix" { header "utility/detail/in_place_factory_suffix.hpp" export * }
-  module "utility__empty_deleter" { header "utility/empty_deleter.hpp" export * }
+  // deprecated: module "utility__empty_deleter" { header "utility/empty_deleter.hpp" export * }
   module "utility__explicit_operator_bool" { header "utility/explicit_operator_bool.hpp" export * }
   module "utility" { header "utility.hpp" export * }
   module "utility__identity_type" { header "utility/identity_type.hpp" export * }
@@ -6888,8 +7076,8 @@ module boost_smart_ptr {
 }
 
 
-module boost_signals2 {
-  module "signals2__connection" { header "signals2/connection.hpp" export * }
+/*module boost_signals2 {
+  //module "signals2__connection" { header "signals2/connection.hpp" export * }
   module "signals2__deconstruct" { header "signals2/deconstruct.hpp" export * }
   module "signals2__deconstruct_ptr" { header "signals2/deconstruct_ptr.hpp" export * }
   module "signals2__detail__auto_buffer" { header "signals2/detail/auto_buffer.hpp" export * }
@@ -6901,9 +7089,9 @@ module boost_signals2 {
   module "signals2__detail__result_type_wrapper" { header "signals2/detail/result_type_wrapper.hpp" export * }
   module "signals2__detail__signals_common" { header "signals2/detail/signals_common.hpp" export * }
   module "signals2__detail__signals_common_macros" { header "signals2/detail/signals_common_macros.hpp" export * }
-  module "signals2__detail__slot_call_iterator" { header "signals2/detail/slot_call_iterator.hpp" export * }
-  module "signals2__detail__slot_groups" { header "signals2/detail/slot_groups.hpp" export * }
-  module "signals2__detail__tracked_objects_visitor" { header "signals2/detail/tracked_objects_visitor.hpp" export * }
+  //module "signals2__detail__slot_call_iterator" { header "signals2/detail/slot_call_iterator.hpp" export * }
+  //module "signals2__detail__slot_groups" { header "signals2/detail/slot_groups.hpp" export * }
+  //module "signals2__detail__tracked_objects_visitor" { header "signals2/detail/tracked_objects_visitor.hpp" export * }
   module "signals2__detail__unique_lock" { header "signals2/detail/unique_lock.hpp" export * }
   module "signals2__detail__variadic_arg_type" { header "signals2/detail/variadic_arg_type.hpp" export * }
   module "signals2__dummy_mutex" { header "signals2/dummy_mutex.hpp" export * }
@@ -6920,7 +7108,7 @@ module boost_signals2 {
   module "signals2__slot_base" { header "signals2/slot_base.hpp" export * }
   module "signals2__slot" { header "signals2/slot.hpp" export * }
   module "signals2__trackable" { header "signals2/trackable.hpp" export * }
-}
+}*/
 module boost_signals {
   module "signals__connection" { header "signals/connection.hpp" export * }
   module "signals__detail__config" { header "signals/detail/config.hpp" export * }
@@ -7029,7 +7217,7 @@ module boost_test {
   module "test__utils__custom_manip" { header "test/utils/custom_manip.hpp" export * }
   module "test__utils__foreach" { header "test/utils/foreach.hpp" export * }
   module "test__utils__iterator__input_iterator_facade" { header "test/utils/iterator/input_iterator_facade.hpp" export * }
-  module "test__utils__iterator__token_iterator" { header "test/utils/iterator/token_iterator.hpp" export * }
+  //module "test__utils__iterator__token_iterator" { header "test/utils/iterator/token_iterator.hpp" export * }
   module "test__utils__lazy_ostream" { header "test/utils/lazy_ostream.hpp" export * }
   module "test__utils__named_params" { header "test/utils/named_params.hpp" export * }
   module "test__utils__nullstream" { header "test/utils/nullstream.hpp" export * }
@@ -7210,163 +7398,6 @@ module boost_typeof {
   module "typeof__type_template_param" { header "typeof/type_template_param.hpp" export * }
   module "typeof__unsupported" { header "typeof/unsupported.hpp" export * }
   module "typeof__vector" { header "typeof/vector.hpp" export * }
-}
-module boost_type_traits {
-  module "type_traits__add_const" { header "type_traits/add_const.hpp" export * }
-  module "type_traits__add_cv" { header "type_traits/add_cv.hpp" export * }
-  module "type_traits__add_lvalue_reference" { header "type_traits/add_lvalue_reference.hpp" export * }
-  module "type_traits__add_pointer" { header "type_traits/add_pointer.hpp" export * }
-  module "type_traits__add_reference" { header "type_traits/add_reference.hpp" export * }
-  module "type_traits__add_rvalue_reference" { header "type_traits/add_rvalue_reference.hpp" export * }
-  module "type_traits__add_volatile" { header "type_traits/add_volatile.hpp" export * }
-  module "type_traits__aligned_storage" { header "type_traits/aligned_storage.hpp" export * }
-  module "type_traits__alignment_of" { header "type_traits/alignment_of.hpp" export * }
-  module "type_traits__alignment_traits" { header "type_traits/alignment_traits.hpp" export * }
-  module "type_traits__arithmetic_traits" { header "type_traits/arithmetic_traits.hpp" export * }
-  module "type_traits__array_traits" { header "type_traits/array_traits.hpp" export * }
-  module "type_traits__broken_compiler_spec" { header "type_traits/broken_compiler_spec.hpp" export * }
-  module "type_traits__common_type" { header "type_traits/common_type.hpp" export * }
-  module "type_traits__composite_traits" { header "type_traits/composite_traits.hpp" export * }
-  module "type_traits__conditional" { header "type_traits/conditional.hpp" export * }
-  module "type_traits__config" { header "type_traits/config.hpp" export * }
-  module "type_traits__conversion_traits" { header "type_traits/conversion_traits.hpp" export * }
-  module "type_traits__cv_traits" { header "type_traits/cv_traits.hpp" export * }
-  module "type_traits__decay" { header "type_traits/decay.hpp" export * }
-  //module "type_traits__detail__bool_trait_def" { header "type_traits/detail/bool_trait_def.hpp" export * }
-  //module "type_traits__detail__bool_trait_undef" { header "type_traits/detail/bool_trait_undef.hpp" export * }
-  // Breaks lookup somehow:
-  /*
-  In module 'boost_type_traits' imported from /home/teemperor/boost-compile/inc/boost/thread/detail/move.hpp:13:
-/home/teemperor/boost-compile/inc/boost/type_traits/common_type.hpp:133:79: error: missing '#include "boost/type_traits/detail/common_type_impl.hpp"'; definition of 'common_type_impl<T, T>'
-      must be imported from module 'boost_type_traits.type_traits__detail__common_type_impl' before it is required
-template<class T1, class T2> struct common_type_decay_helper<T1, T2, T1, T2>: common_type_impl<T1, T2>
-                                                                              ^
-  */
-  module "type_traits__detail__ice_and" { header "type_traits/detail/ice_and.hpp" export * }
-  module "type_traits__detail__ice_eq" { header "type_traits/detail/ice_eq.hpp" export * }
-  module "type_traits__detail__ice_not" { header "type_traits/detail/ice_not.hpp" export * }
-  module "type_traits__detail__ice_or" { header "type_traits/detail/ice_or.hpp" export * }
-  module "type_traits__detail__is_mem_fun_pointer_impl" { header "type_traits/detail/is_mem_fun_pointer_impl.hpp" export * }
-  module "type_traits__detail__is_mem_fun_pointer_tester" { header "type_traits/detail/is_mem_fun_pointer_tester.hpp" export * }
-  module "type_traits__detail__template_arity_spec" { header "type_traits/detail/template_arity_spec.hpp" export * }
-  module "type_traits__detail__yes_no_type" { header "type_traits/detail/yes_no_type.hpp" export * }
-  module "type_traits__extent" { header "type_traits/extent.hpp" export * }
-  module "type_traits__floating_point_promotion" { header "type_traits/floating_point_promotion.hpp" export * }
-  module "type_traits__function_traits" { header "type_traits/function_traits.hpp" export * }
-  module "type_traits__has_bit_and_assign" { header "type_traits/has_bit_and_assign.hpp" export * }
-  module "type_traits__has_bit_and" { header "type_traits/has_bit_and.hpp" export * }
-  module "type_traits__has_bit_or_assign" { header "type_traits/has_bit_or_assign.hpp" export * }
-  module "type_traits__has_bit_or" { header "type_traits/has_bit_or.hpp" export * }
-  module "type_traits__has_bit_xor_assign" { header "type_traits/has_bit_xor_assign.hpp" export * }
-  module "type_traits__has_bit_xor" { header "type_traits/has_bit_xor.hpp" export * }
-  module "type_traits__has_complement" { header "type_traits/has_complement.hpp" export * }
-  module "type_traits__has_dereference" { header "type_traits/has_dereference.hpp" export * }
-  module "type_traits__has_divides_assign" { header "type_traits/has_divides_assign.hpp" export * }
-  module "type_traits__has_divides" { header "type_traits/has_divides.hpp" export * }
-  module "type_traits__has_equal_to" { header "type_traits/has_equal_to.hpp" export * }
-  module "type_traits__has_greater_equal" { header "type_traits/has_greater_equal.hpp" export * }
-  module "type_traits__has_greater" { header "type_traits/has_greater.hpp" export * }
-  module "type_traits__has_left_shift_assign" { header "type_traits/has_left_shift_assign.hpp" export * }
-  module "type_traits__has_left_shift" { header "type_traits/has_left_shift.hpp" export * }
-  module "type_traits__has_less_equal" { header "type_traits/has_less_equal.hpp" export * }
-  module "type_traits__has_less" { header "type_traits/has_less.hpp" export * }
-  module "type_traits__has_logical_and" { header "type_traits/has_logical_and.hpp" export * }
-  module "type_traits__has_logical_not" { header "type_traits/has_logical_not.hpp" export * }
-  module "type_traits__has_logical_or" { header "type_traits/has_logical_or.hpp" export * }
-  module "type_traits__has_minus_assign" { header "type_traits/has_minus_assign.hpp" export * }
-  module "type_traits__has_minus" { header "type_traits/has_minus.hpp" export * }
-  module "type_traits__has_modulus_assign" { header "type_traits/has_modulus_assign.hpp" export * }
-  module "type_traits__has_modulus" { header "type_traits/has_modulus.hpp" export * }
-  module "type_traits__has_multiplies_assign" { header "type_traits/has_multiplies_assign.hpp" export * }
-  module "type_traits__has_multiplies" { header "type_traits/has_multiplies.hpp" export * }
-  module "type_traits__has_negate" { header "type_traits/has_negate.hpp" export * }
-  module "type_traits__has_new_operator" { header "type_traits/has_new_operator.hpp" export * }
-  module "type_traits__has_not_equal_to" { header "type_traits/has_not_equal_to.hpp" export * }
-  module "type_traits__has_nothrow_assign" { header "type_traits/has_nothrow_assign.hpp" export * }
-  module "type_traits__has_nothrow_constructor" { header "type_traits/has_nothrow_constructor.hpp" export * }
-  module "type_traits__has_nothrow_copy" { header "type_traits/has_nothrow_copy.hpp" export * }
-  module "type_traits__has_nothrow_destructor" { header "type_traits/has_nothrow_destructor.hpp" export * }
-  module "type_traits__has_operator" { header "type_traits/has_operator.hpp" export * }
-  module "type_traits__has_plus_assign" { header "type_traits/has_plus_assign.hpp" export * }
-  module "type_traits__has_plus" { header "type_traits/has_plus.hpp" export * }
-  module "type_traits__has_post_decrement" { header "type_traits/has_post_decrement.hpp" export * }
-  module "type_traits__has_post_increment" { header "type_traits/has_post_increment.hpp" export * }
-  module "type_traits__has_pre_decrement" { header "type_traits/has_pre_decrement.hpp" export * }
-  module "type_traits__has_pre_increment" { header "type_traits/has_pre_increment.hpp" export * }
-  module "type_traits__has_right_shift_assign" { header "type_traits/has_right_shift_assign.hpp" export * }
-  module "type_traits__has_right_shift" { header "type_traits/has_right_shift.hpp" export * }
-  module "type_traits__has_trivial_assign" { header "type_traits/has_trivial_assign.hpp" export * }
-  module "type_traits__has_trivial_constructor" { header "type_traits/has_trivial_constructor.hpp" export * }
-  module "type_traits__has_trivial_copy" { header "type_traits/has_trivial_copy.hpp" export * }
-  module "type_traits__has_trivial_destructor" { header "type_traits/has_trivial_destructor.hpp" export * }
-  module "type_traits__has_trivial_move_assign" { header "type_traits/has_trivial_move_assign.hpp" export * }
-  module "type_traits__has_trivial_move_constructor" { header "type_traits/has_trivial_move_constructor.hpp" export * }
-  module "type_traits__has_unary_minus" { header "type_traits/has_unary_minus.hpp" export * }
-  module "type_traits__has_unary_plus" { header "type_traits/has_unary_plus.hpp" export * }
-  module "type_traits__has_virtual_destructor" { header "type_traits/has_virtual_destructor.hpp" export * }
-  module "type_traits" { header "type_traits.hpp" export * }
-  module "type_traits__ice" { header "type_traits/ice.hpp" export * }
-  module "type_traits__integral_constant" { header "type_traits/integral_constant.hpp" export * }
-  module "type_traits__integral_promotion" { header "type_traits/integral_promotion.hpp" export * }
-  module "type_traits__intrinsics" { header "type_traits/intrinsics.hpp" export * }
-  module "type_traits__is_abstract" { header "type_traits/is_abstract.hpp" export * }
-  module "type_traits__is_arithmetic" { header "type_traits/is_arithmetic.hpp" export * }
-  module "type_traits__is_array" { header "type_traits/is_array.hpp" export * }
-  module "type_traits__is_base_and_derived" { header "type_traits/is_base_and_derived.hpp" export * }
-  module "type_traits__is_base_of" { header "type_traits/is_base_of.hpp" export * }
-  module "type_traits__is_base_of_tr1" { header "type_traits/is_base_of_tr1.hpp" export * }
-  module "type_traits__is_class" { header "type_traits/is_class.hpp" export * }
-  module "type_traits__is_complex" { header "type_traits/is_complex.hpp" export * }
-  module "type_traits__is_compound" { header "type_traits/is_compound.hpp" export * }
-  module "type_traits__is_const" { header "type_traits/is_const.hpp" export * }
-  module "type_traits__is_convertible" { header "type_traits/is_convertible.hpp" export * }
-  module "type_traits__is_copy_assignable" { header "type_traits/is_copy_assignable.hpp" export * }
-  module "type_traits__is_copy_constructible" { header "type_traits/is_copy_constructible.hpp" export * }
-  module "type_traits__is_empty" { header "type_traits/is_empty.hpp" export * }
-  module "type_traits__is_enum" { header "type_traits/is_enum.hpp" export * }
-  module "type_traits__is_final" { header "type_traits/is_final.hpp" export * }
-  module "type_traits__is_float" { header "type_traits/is_float.hpp" export * }
-  module "type_traits__is_floating_point" { header "type_traits/is_floating_point.hpp" export * }
-  module "type_traits__is_function" { header "type_traits/is_function.hpp" export * }
-  module "type_traits__is_fundamental" { header "type_traits/is_fundamental.hpp" export * }
-  module "type_traits__is_integral" { header "type_traits/is_integral.hpp" export * }
-  module "type_traits__is_lvalue_reference" { header "type_traits/is_lvalue_reference.hpp" export * }
-  module "type_traits__is_member_function_pointer" { header "type_traits/is_member_function_pointer.hpp" export * }
-  module "type_traits__is_member_object_pointer" { header "type_traits/is_member_object_pointer.hpp" export * }
-  module "type_traits__is_member_pointer" { header "type_traits/is_member_pointer.hpp" export * }
-  module "type_traits__is_nothrow_move_assignable" { header "type_traits/is_nothrow_move_assignable.hpp" export * }
-  module "type_traits__is_nothrow_move_constructible" { header "type_traits/is_nothrow_move_constructible.hpp" export * }
-  module "type_traits__is_object" { header "type_traits/is_object.hpp" export * }
-  module "type_traits__is_pod" { header "type_traits/is_pod.hpp" export * }
-  module "type_traits__is_pointer" { header "type_traits/is_pointer.hpp" export * }
-  module "type_traits__is_polymorphic" { header "type_traits/is_polymorphic.hpp" export * }
-  module "type_traits__is_reference" { header "type_traits/is_reference.hpp" export * }
-  module "type_traits__is_rvalue_reference" { header "type_traits/is_rvalue_reference.hpp" export * }
-  module "type_traits__is_same" { header "type_traits/is_same.hpp" export * }
-  module "type_traits__is_scalar" { header "type_traits/is_scalar.hpp" export * }
-  module "type_traits__is_signed" { header "type_traits/is_signed.hpp" export * }
-  module "type_traits__is_stateless" { header "type_traits/is_stateless.hpp" export * }
-  module "type_traits__is_union" { header "type_traits/is_union.hpp" export * }
-  module "type_traits__is_unsigned" { header "type_traits/is_unsigned.hpp" export * }
-  module "type_traits__is_virtual_base_of" { header "type_traits/is_virtual_base_of.hpp" export * }
-  module "type_traits__is_void" { header "type_traits/is_void.hpp" export * }
-  module "type_traits__is_volatile" { header "type_traits/is_volatile.hpp" export * }
-  module "type_traits__make_signed" { header "type_traits/make_signed.hpp" export * }
-  module "type_traits__make_unsigned" { header "type_traits/make_unsigned.hpp" export * }
-  module "type_traits__object_traits" { header "type_traits/object_traits.hpp" export * }
-  module "type_traits__promote" { header "type_traits/promote.hpp" export * }
-  module "type_traits__rank" { header "type_traits/rank.hpp" export * }
-  module "type_traits__reference_traits" { header "type_traits/reference_traits.hpp" export * }
-  module "type_traits__remove_all_extents" { header "type_traits/remove_all_extents.hpp" export * }
-  module "type_traits__remove_bounds" { header "type_traits/remove_bounds.hpp" export * }
-  module "type_traits__remove_const" { header "type_traits/remove_const.hpp" export * }
-  module "type_traits__remove_cv" { header "type_traits/remove_cv.hpp" export * }
-  module "type_traits__remove_extent" { header "type_traits/remove_extent.hpp" export * }
-  module "type_traits__remove_reference" { header "type_traits/remove_reference.hpp" export * }
-  module "type_traits__remove_volatile" { header "type_traits/remove_volatile.hpp" export * }
-  module "type_traits__same_traits" { header "type_traits/same_traits.hpp" export * }
-  module "type_traits__transform_traits" { header "type_traits/transform_traits.hpp" export * }
-  module "type_traits__type_with_alignment" { header "type_traits/type_with_alignment.hpp" export * }
 }
 module boost_unordered {
   module "unordered__detail__fwd" { header "unordered/detail/fwd.hpp" export * }

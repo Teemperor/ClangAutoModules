@@ -20,15 +20,19 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" AND use_modules)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Xclang -fmodules-embed-all-files")
 
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-modules-import-nested-redundant")
+  if (cms)
+    # CMS' boost version has a few of those...
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-module-import-in-extern-c")
+  endif()
 
   if (textual_check)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -H -Wno-everything")
   endif()
 
-  file(DOWNLOAD "https://github.com/Teemperor/ClangAutoModules/releases/download/0.2.1/ClangModules.cmake"
-       ${CMAKE_BINARY_DIR}/ClangModules.cmake
-       EXPECTED_HASH SHA256=66ca91179df6806f3b7a7e25667d819252b026263aa5f69b868e3588c95c16a8)
-  set(ClangModules_CheckOnlyFor stl14 libc sys_types_only pthreads)
+  file(DOWNLOAD "https://github.com/Teemperor/ClangAutoModules/releases/download/0.2.2/ClangModules.cmake"
+     ${CMAKE_BINARY_DIR}/ClangModules.cmake
+     EXPECTED_HASH SHA256=94b68fac283bf204d48e523afb590ec4534465b1a8c0d709fc0ebb0b883782c4)
+  set(ClangModules_CheckOnlyFor stl14 libc sys_types_only pthreads posix)
   include(${CMAKE_BINARY_DIR}/ClangModules.cmake)
 
 elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
